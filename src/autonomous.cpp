@@ -17,6 +17,7 @@
 void autonomous() {
   okapi::Controller master;
 	DriveSubsystem drive(master);
-  CommandRunner(LogVelocityCommand(&drive, 10));
+  CommandRunner velocityCommand(new LogVelocityCommand(&drive, 10));
 
+  velocityCommand.runCommand();
 }

@@ -11,7 +11,7 @@
 #include <string>
 
 
-class LogVelocityCommand : Command {
+class LogVelocityCommand : public Command {
 public:
 	LogVelocityCommand(DriveSubsystem* drive, double timeout);
 
@@ -23,7 +23,7 @@ public:
 private:
   DriveSubsystem* driveTrain;
   FILE* logFile;
-  private double pastPosition, currentPosition, pastTime;
+  double pastPosition, currentPosition, pastTime;
 
 };
 

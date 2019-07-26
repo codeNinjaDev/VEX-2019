@@ -4,11 +4,11 @@
 #include "user/command.h"
 class CommandRunner {
 public:
-  CommandRunner(Command command);
-
+  CommandRunner(Command* command);
+  ~CommandRunner();
   void runCommand();
 private:
-  Command command;
+  Command* command;
 };
 
 #endif

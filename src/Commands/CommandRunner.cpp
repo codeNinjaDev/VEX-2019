@@ -1,14 +1,20 @@
 #include "user/commandrunner.h"
 
-CommandRunner::CommandRunner(Command command) : command(command);
+CommandRunner::CommandRunner(Command* command) {
+  this->command = command;
+}
+
+CommandRunner::~CommandRunner() {
+  delete this->command;
+}
 
 void CommandRunner::runCommand() {
-  command.start();
+  command->start();
 
-  while(!command.isFinished && pros::competition::is_autonomous()) {
-    command.update();
+  while(!command->isFinished() && pros::competition::is_autonomous()) {
+    command->update();
   }
 
-  command.finish();
-  
+  command->finish();
+
 }
