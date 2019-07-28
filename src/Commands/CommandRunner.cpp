@@ -4,7 +4,7 @@
 CommandRunner::~CommandRunner() {
 }
 
-void CommandRunner::runCommand(Command* command) {
+void CommandRunner::runCommand(std::unique_ptr<Command> command) {
 
   command->start();
 
@@ -14,11 +14,10 @@ void CommandRunner::runCommand(Command* command) {
   }
 
   command->finish();
-  delete command;
 }
 
-void CommandRunner::runCommandGroup(std::vector<Command*> commandGroup) {
+void CommandRunner::runCommandGroup(std::vector<std::unique_ptr<Command>> commandGroup) {
   for(int i = 0; i < commandGroup.size(); i++) {
-      runCommand(commandGroup[i]);
+      runCommand(std::move(commandGroup[i]));
     }
 }

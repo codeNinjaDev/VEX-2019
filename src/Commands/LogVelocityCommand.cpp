@@ -1,10 +1,9 @@
 #include "user/logvelocitycommand.h"
 #include <cmath>
 #include <math.h>
-LogVelocityCommand::LogVelocityCommand(DriveSubsystem* drive, double timeout)
+LogVelocityCommand::LogVelocityCommand(std::unique_ptr<DriveSubsystem> drive, double timeout) : driveTrain(std::move(drive))
 {
   this->goalTime = timeout;
-  this->driveTrain = drive;
 
   logFile = fopen("/usd/velocityLog.csv", "w");
   fprintf(logFile, "%s,%s\n", "Velocity (Inches/second)", "Time (seconds)");
@@ -14,7 +13,7 @@ LogVelocityCommand::LogVelocityCommand(DriveSubsystem* drive, double timeout)
 }
 
 void LogVelocityCommand::start() {
-  startTime = timer.millis().getValue() / 1000;
+  startTime = timer.millis().convert(okapi::millisecond);
   driveTrain->reset();
 }
 
@@ -22,7 +21,7 @@ void LogVelocityCommand::update() {
   driveTrain->ArcadeDrive(0, 1, false);
   currentPosition = driveTrain->getLeftEncoder();
 
-  double currentTime = timer.millis().getValue() / 1000;
+  double currentTime =  timer.millis().convert(okapi::millisecond) - startTime;
   double deltaPosition = currentPosition - pastPosition;
   double deltaTime = currentTime - pastTime;
   double velocity = (deltaPosition / deltaTime);

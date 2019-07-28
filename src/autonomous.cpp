@@ -1,8 +1,12 @@
 #include "main.h"
+
 #include "user/Command.h"
 #include "user/CommandRunner.h"
+#include "user/CommandFactory.h"
 #include "user/DriveSubsystem.h"
 #include "user/LogVelocityCommand.h"
+#include "user/LogPositionCommand.h"
+
 /**
  * Runs the user autonomous code. This function will be started in its own task
  * with the default priority and stack size whenever the robot is enabled via
@@ -16,7 +20,8 @@
  */
 void autonomous() {
   okapi::Controller master;
-	DriveSubsystem drive(master);
-  CommandRunner::runCommand(new LogVelocityCommand(&drive, 10));
+  std::unique_ptr<DriveSubsystem> drive (new DriveSubsystem(master));
+  CommandRunner::runCommand(CommandFactory::create(new LogVelocityCommand(std::move(drive), 10)));
+  CommandRunner::runCommand(CommandFactory::create(new LogPositionCommand(std::move(drive), 10)));
 
 }

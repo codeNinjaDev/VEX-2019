@@ -1,5 +1,5 @@
-#ifndef LOGVELOCITYCOMMAND_H_
-#define LOGVELOCITYCOMMAND_H_
+#ifndef LOGPOSITIONCOMMAND_H_
+#define LOGPOSITIONCOMMAND_H_
 #include "../main.h"
 #include "Command.h"
 #include "InchEncoder.h"
@@ -11,9 +11,9 @@
 #include <string>
 
 
-class LogVelocityCommand : public Command {
+class LogPositionCommand : public Command {
 public:
-	LogVelocityCommand(std::unique_ptr<DriveSubsystem> drive, double timeout);
+	LogPositionCommand(std::unique_ptr<DriveSubsystem> drive, double timeout);
 
 	void start();
 	void update();
@@ -23,7 +23,7 @@ public:
 private:
   std::unique_ptr<DriveSubsystem> driveTrain;
   FILE* logFile;
-  double pastPosition, currentPosition, pastTime;
+  double currentPosition;
 
 };
 

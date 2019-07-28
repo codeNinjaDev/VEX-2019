@@ -7,7 +7,7 @@
 #include <iostream>
 
 
-class DriveSubsystem : Subsystem {
+class DriveSubsystem : public Subsystem {
 public:
 	DriveSubsystem(okapi::Controller driverController);
 

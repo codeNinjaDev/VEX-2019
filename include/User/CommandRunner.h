@@ -6,8 +6,8 @@ class CommandRunner {
 public:
   CommandRunner();
   ~CommandRunner();
-  static void runCommand(Command* command);
-  static void runCommandGroup(std::vector<Command*> commandGroup);
+  static void runCommand(std::unique_ptr<Command> command);
+  static void runCommandGroup(std::vector<std::unique_ptr<Command>> commandGroup);
 private:
 
 };
