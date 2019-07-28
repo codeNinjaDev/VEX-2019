@@ -4,11 +4,12 @@
 #include "user/command.h"
 class CommandRunner {
 public:
-  CommandRunner(Command* command);
+  CommandRunner();
   ~CommandRunner();
-  void runCommand();
+  static void runCommand(Command* command);
+  static void runCommandGroup(std::vector<Command*> commandGroup);
 private:
-  Command* command;
+
 };
 
 #endif
