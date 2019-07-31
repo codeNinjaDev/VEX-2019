@@ -1,5 +1,6 @@
 #include "main.h"
-
+#include "User/AutoSelector.h"
+#include "User/Constants.h"
 void on_center_button() {
 	static bool pressed = false;
 	pressed = !pressed;
@@ -39,4 +40,16 @@ void disabled() {}
  * This task will exit when the robot is enabled and autonomous or opcontrol
  * starts.
  */
-void competition_initialize() {}
+void competition_initialize() {
+	AutoSelector autoSelector("Do Nothing", DO_NOTHING_AUTO);
+	autoSelector.registerAuto("Log Position RED", LOG_POS_AUTO);
+	autoSelector.registerAuto("Log Velocity RED", LOG_VEL_AUTO);
+
+	while (!pros::competition::is_autonomous() && !autoSelector.play) {
+		autoSelector.listOptions();
+	}
+	SELECTED_AUTO_NUMBER = autoSelector.getSelectedAuto();
+
+
+
+}
