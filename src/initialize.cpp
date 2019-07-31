@@ -47,6 +47,7 @@ void competition_initialize() {
 
 	while (!pros::competition::is_autonomous() && !autoSelector.play) {
 		autoSelector.listOptions();
+		pros::delay(20);
 	}
 	SELECTED_AUTO_NUMBER = autoSelector.getSelectedAuto();
 
