@@ -13,7 +13,7 @@
 
 class LogPositionCommand : public Command {
 public:
-	LogPositionCommand(std::unique_ptr<DriveSubsystem> drive, double timeout);
+	LogPositionCommand(std::shared_ptr<DriveSubsystem> drive, double timeout);
 
 	void start();
 	void update();
@@ -21,7 +21,7 @@ public:
   void finish();
 
 private:
-  std::unique_ptr<DriveSubsystem> driveTrain;
+  std::shared_ptr<DriveSubsystem> driveTrain;
   FILE* logFile;
   double currentPosition;
 

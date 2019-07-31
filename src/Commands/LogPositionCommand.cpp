@@ -1,7 +1,7 @@
 #include "user/logpositioncommand.h"
 #include <cmath>
 #include <math.h>
-LogPositionCommand::LogPositionCommand(std::unique_ptr<DriveSubsystem> drive, double timeout) : driveTrain(std::move(drive))
+LogPositionCommand::LogPositionCommand(std::shared_ptr<DriveSubsystem> drive, double timeout) : driveTrain(drive)
 {
   this->goalTime = timeout;
 
@@ -24,7 +24,6 @@ void LogPositionCommand::update() {
 
   fprintf(logFile, "%f,%f\n", currentPosition, currentTime);
 
-  pastTime = currentTime;
 
 }
 

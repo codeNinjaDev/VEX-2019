@@ -19,22 +19,22 @@
  * from where it left off.
  */
 void doNothingAuto();
-void logPositionAuto(std::unique_ptr<DriveSubsystem> drive);
-void logVelocityAuto(std::unique_ptr<DriveSubsystem> drive);
+void logPositionAuto(std::shared_ptr<DriveSubsystem>);
+void logVelocityAuto(std::shared_ptr<DriveSubsystem>);
 
 void autonomous() {
   okapi::Controller master;
-  std::unique_ptr<DriveSubsystem> drive (new DriveSubsystem(master));
+  std::shared_ptr<DriveSubsystem> drive (new DriveSubsystem(master));
 
   switch (SELECTED_AUTO_NUMBER) {
     case DO_NOTHING_AUTO:
       doNothingAuto();
       break;
     case LOG_POS_AUTO:
-      logPositionAuto(std::move(drive));
+      logPositionAuto(drive);
       break;
     case LOG_VEL_AUTO:
-      logVelocityAuto(std::move(drive));
+      logVelocityAuto(drive);
       break;
     default:
       doNothingAuto();
@@ -42,12 +42,12 @@ void autonomous() {
   }
 }
 
-void logPositionAuto(std::unique_ptr<DriveSubsystem> drive) {
-  CommandRunner::runCommand(CommandFactory::create(new LogPositionCommand(std::move(drive), 10)));
+void logPositionAuto(std::shared_ptr<DriveSubsystem> drive) {
+  CommandRunner::runCommand(CommandFactory::create(new LogPositionCommand(drive, 10)));
 }
 
-void logVelocityAuto(std::unique_ptr<DriveSubsystem> drive) {
-  CommandRunner::runCommand(CommandFactory::create(new LogVelocityCommand(std::move(drive), 10)));
+void logVelocityAuto(std::shared_ptr<DriveSubsystem> drive) {
+  CommandRunner::runCommand(CommandFactory::create(new LogVelocityCommand(drive, 10)));
 }
 
 void doNothingAuto() {}

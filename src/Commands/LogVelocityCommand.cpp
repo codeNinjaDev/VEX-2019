@@ -1,7 +1,7 @@
 #include "user/logvelocitycommand.h"
 #include <cmath>
 #include <math.h>
-LogVelocityCommand::LogVelocityCommand(std::unique_ptr<DriveSubsystem> drive, double timeout) : driveTrain(std::move(drive))
+LogVelocityCommand::LogVelocityCommand(std::shared_ptr<DriveSubsystem> drive, double timeout) : driveTrain(drive)
 {
   this->goalTime = timeout;
 
