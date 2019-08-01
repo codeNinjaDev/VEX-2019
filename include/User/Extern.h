@@ -1,0 +1,7 @@
+#ifndef EXTERN_H
+#define EXTERN_H
+
+
+//NOT TECHNICALLY A CONSTANT
+extern int SELECTED_AUTO_NUMBER;
+#endif

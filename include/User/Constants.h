@@ -13,7 +13,7 @@ const int LEFT_BOTTOM_ENCODER_PORT = 7;
 const int RIGHT_TOP_ENCODER_PORT = 0;
 const int RIGHT_BOTTOM_ENCODER_PORT = 1;
 
-const bool ARCADE_DRIVE = false;
+const bool ARCADE_DRIVE = true;
 
 const double BACK_WHEEL_DIAMETER = 4;
 const double FRONT_WHEEL_DIAMETER = 3.25;
@@ -24,7 +24,4 @@ const int DO_NOTHING_AUTO = 0;
 const int LOG_POS_AUTO = 1;
 const int LOG_VEL_AUTO = 2;
 
-
-//NOT TECHNICALLY A CONSTANT
-extern int SELECTED_AUTO_NUMBER = 0;
 #endif

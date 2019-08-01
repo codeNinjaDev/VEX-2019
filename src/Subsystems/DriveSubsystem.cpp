@@ -1,6 +1,6 @@
-#include "user/drivesubsystem.h"
+#include "User/DriveSubsystem.h"
 #include <cmath>
-#include "user/constants.h"
+#include "User/Constants.h"
 
 DriveSubsystem::DriveSubsystem(okapi::Controller iDriverController) : driverController(iDriverController)
   , driveTrain(okapi::ChassisControllerFactory::create({-BACK_LEFT_MOTOR_PORT,-FRONT_LEFT_MOTOR_PORT}
@@ -41,7 +41,7 @@ void DriveSubsystem::update() {
           , true);
       } else {
         TankDrive(driverController.getAnalog(okapi::ControllerAnalog::leftY)
-          , driverController.getAnalog(okapi::ControllerAnalog::rightY)
+          , -driverController.getAnalog(okapi::ControllerAnalog::rightY)
           , true);
       }
       break;

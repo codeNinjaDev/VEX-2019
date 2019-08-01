@@ -3,11 +3,11 @@
 #ifndef AUTOSELECTOR_H_
 #define AUTOSELECTOR_H_
 #include "../main.h"
+#include "User/Constants.h"
 class AutoSelector {
 public:
   AutoSelector(std::string autoName, int defaultAutoNumber);
   void registerAuto(std::string autoName,int autoNumber);
-  static bool play;
 
   // Only call after finishing registerAutos
   void listOptions();

@@ -2,7 +2,6 @@
 AutoSelector::AutoSelector(std::string autoName, int defaultAutoNumber) {
   this->autoNames.push_back(autoName);
   this->autoNumbers.push_back(defaultAutoNumber);
-  this->play = false;
 }
 
 void AutoSelector::registerAuto(std::string autoName, int autoNumber) {
@@ -31,7 +30,6 @@ int AutoSelector::getSelectedAuto() {
 
 
 lv_res_t AutoSelector::playButtonIsClicked(lv_obj_t * btn) {
-  AutoSelector::play = true;
   return LV_RES_OK;
 
 }

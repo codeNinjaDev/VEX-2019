@@ -1,6 +1,7 @@
 #include "main.h"
 #include "User/AutoSelector.h"
 #include "User/Constants.h"
+#include "User/Extern.h"
 void on_center_button() {
 	static bool pressed = false;
 	pressed = !pressed;
@@ -45,12 +46,10 @@ void competition_initialize() {
 	autoSelector.registerAuto("Log Position RED", LOG_POS_AUTO);
 	autoSelector.registerAuto("Log Velocity RED", LOG_VEL_AUTO);
 
-	while (!pros::competition::is_autonomous() && !autoSelector.play) {
+	while (!pros::competition::is_autonomous()) {
 		autoSelector.listOptions();
 		pros::delay(20);
 	}
 	SELECTED_AUTO_NUMBER = autoSelector.getSelectedAuto();
-
-
 
 }
