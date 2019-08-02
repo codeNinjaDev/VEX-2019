@@ -2,15 +2,9 @@
 #include "User/AutoSelector.h"
 #include "User/Constants.h"
 #include "User/Extern.h"
-void on_center_button() {
-	static bool pressed = false;
-	pressed = !pressed;
-	if (pressed) {
-		pros::lcd::set_text(2, "I was pressed!");
-	} else {
-		pros::lcd::clear_line(2);
-	}
-}
+
+int SELECTED_AUTO_NUMBER;
+AutoSelector autoSelector("Do Nothing", DO_NOTHING_AUTO);
 
 /**
  * Runs initialization code. This occurs as soon as the program is started.
@@ -19,10 +13,9 @@ void on_center_button() {
  * to keep execution time for this mode under a few seconds.
  */
 void initialize() {
-	pros::lcd::initialize();
-	pros::lcd::set_text(1, "Hello PROS User!");
-
-	pros::lcd::register_btn1_cb(on_center_button);
+	autoSelector.registerAuto("Log Position RED", LOG_POS_AUTO);
+	autoSelector.registerAuto("Log Velocity RED", LOG_VEL_AUTO);
+	autoSelector.listOptions();
 }
 
 /**
@@ -42,14 +35,9 @@ void disabled() {}
  * starts.
  */
 void competition_initialize() {
-	AutoSelector autoSelector("Do Nothing", DO_NOTHING_AUTO);
-	autoSelector.registerAuto("Log Position RED", LOG_POS_AUTO);
-	autoSelector.registerAuto("Log Velocity RED", LOG_VEL_AUTO);
 
-	while (!pros::competition::is_autonomous()) {
-		autoSelector.listOptions();
-		pros::delay(20);
+	while(!pros::competition::is_autonomous()) {
+		SELECTED_AUTO_NUMBER = autoSelector.getSelectedAuto();
 	}
-	SELECTED_AUTO_NUMBER = autoSelector.getSelectedAuto();
 
 }

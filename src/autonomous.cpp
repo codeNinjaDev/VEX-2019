@@ -26,6 +26,7 @@ void logVelocityAuto(std::shared_ptr<DriveSubsystem>);
 
 void autonomous() {
   okapi::Controller master;
+
   std::shared_ptr<DriveSubsystem> drive (new DriveSubsystem(master));
 
   switch (SELECTED_AUTO_NUMBER) {
@@ -42,6 +43,7 @@ void autonomous() {
       doNothingAuto();
       break;
   }
+
 }
 
 void logPositionAuto(std::shared_ptr<DriveSubsystem> drive) {

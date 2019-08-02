@@ -36,11 +36,11 @@ void DriveSubsystem::update() {
       break;
     case (DriveState::kTeleopDrive):
       if (ARCADE_DRIVE) {
-        ArcadeDrive(driverController.getAnalog(okapi::ControllerAnalog::leftY)
-          , driverController.getAnalog(okapi::ControllerAnalog::rightX)
+        ArcadeDrive(-driverController.getAnalog(okapi::ControllerAnalog::leftY)
+          , -driverController.getAnalog(okapi::ControllerAnalog::rightX)
           , true);
       } else {
-        TankDrive(driverController.getAnalog(okapi::ControllerAnalog::leftY)
+        TankDrive(-driverController.getAnalog(okapi::ControllerAnalog::leftY)
           , -driverController.getAnalog(okapi::ControllerAnalog::rightY)
           , true);
       }
