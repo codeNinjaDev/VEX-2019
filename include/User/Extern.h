@@ -2,6 +2,9 @@
 #define EXTERN_H
 
 
-//NOT TECHNICALLY A CONSTANT
+/**
+ * External variable that selects the autonomous routine.
+ * It is set by the dropdown in initialize.cpp and used in autonomous.cpp
+ */
 extern int SELECTED_AUTO_NUMBER;
 #endif

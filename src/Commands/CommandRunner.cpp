@@ -1,9 +1,6 @@
 #include "user/commandrunner.h"
 
 
-CommandRunner::~CommandRunner() {
-}
-
 void CommandRunner::runCommand(std::unique_ptr<Command> command) {
 
   command->start();

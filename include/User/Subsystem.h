@@ -10,15 +10,21 @@
 
 #include "user/constants.h"
 #include "../main.h"
+
+/**
+ * Base class for subsystems of robot
+ */
 class Subsystem {
 public:
 
-
+	/**
+	 * Abstract function that configures sensors and motors or anything else that needs
+	 * to be done before the robot runs.
+	 */
 	virtual void initialize() = 0;
   virtual void update() = 0;
   virtual void reset() = 0;
 	virtual void stop() = 0;
-	static std::unique_ptr<Subsystem> toPointer(Subsystem* subsystem);
 };
 
 #endif /* SRC_SUBSYSTEMS_SUBSYSTEM */
