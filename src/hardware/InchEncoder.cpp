@@ -8,6 +8,8 @@ InchEncoder::InchEncoder(std::uint8_t iportTop, std::uint8_t iportBottom, double
 }
 
 double InchEncoder::getInches() {
-  // in/degrees * degrees = inches
+  // 2pi*r = circumference
+  // circumference = 1 revolution traveled = 360 ticks
+  // Distance traveled = 2pi*r*get_value / 360
   return (M_PI * wheelDiameter * pros::ADIEncoder::get_value()) / 360;
 }

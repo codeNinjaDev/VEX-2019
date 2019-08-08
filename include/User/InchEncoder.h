@@ -15,6 +15,7 @@ public:
 	 */
 	InchEncoder(std::uint8_t iportTop, std::uint8_t iportBottom, double wheelDiameter, bool ireversed = false);
 	/**
+	 * Gets inches from encoder
 	 * @returns Get the distance in inches
 	 */
 	double getInches();

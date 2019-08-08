@@ -2,6 +2,8 @@
 #include <cmath>
 #include "User/Constants.h"
 
+// Set drivetrain with reversed left side, green gearset, wheel diameter, TRACK_WIDTH
+// Set Encoder ports
 DriveSubsystem::DriveSubsystem(okapi::Controller iDriverController) : driverController(iDriverController)
   , driveTrain(okapi::ChassisControllerFactory::create({-BACK_LEFT_MOTOR_PORT,-FRONT_LEFT_MOTOR_PORT}
     ,  {BACK_RIGHT_MOTOR_PORT, FRONT_RIGHT_MOTOR_PORT}
@@ -9,6 +11,7 @@ DriveSubsystem::DriveSubsystem(okapi::Controller iDriverController) : driverCont
   , leftEncoder(LEFT_TOP_ENCODER_PORT, LEFT_BOTTOM_ENCODER_PORT, FRONT_WHEEL_DIAMETER, false)
   , rightEncoder(LEFT_TOP_ENCODER_PORT, LEFT_BOTTOM_ENCODER_PORT, FRONT_WHEEL_DIAMETER, false)
 {
+  // Set current state to initialize state
   m_stateVal = DriveState::kInitialize;
 }
 
@@ -18,6 +21,7 @@ void DriveSubsystem::initialize() {
 }
 
 void DriveSubsystem::reset() {
+  // Reset sensors and stop all drive motors
   leftEncoder.reset();
   rightEncoder.reset();
   driveTrain.resetSensors();
@@ -29,40 +33,50 @@ void DriveSubsystem::stop() {
 }
 
 void DriveSubsystem::update() {
+
   switch (m_stateVal) {
     case (DriveState::kInitialize):
+      /*
+       If current state is kInitialize,
+       run the initialize function and set the next state to be teleop
+       */
       initialize();
       nextState = DriveState::kTeleopDrive;
       break;
     case (DriveState::kTeleopDrive):
+    /*
+     If current state is kTeleopDrive,
+     run the drive train
+     */
       if (ARCADE_DRIVE) {
-        ArcadeDrive(-driverController.getAnalog(okapi::ControllerAnalog::leftY)
+        arcadeDrive(-driverController.getAnalog(okapi::ControllerAnalog::leftY)
           , -driverController.getAnalog(okapi::ControllerAnalog::rightX)
           , true);
       } else {
-        TankDrive(-driverController.getAnalog(okapi::ControllerAnalog::leftY)
+        tankDrive(-driverController.getAnalog(okapi::ControllerAnalog::leftY)
           , -driverController.getAnalog(okapi::ControllerAnalog::rightY)
           , true);
       }
       break;
   }
 
+  // Set current state to next state
   m_stateVal = nextState;
 }
 
-void DriveSubsystem::ArcadeDrive(double forward, double rotate, bool teleOp) {
+void DriveSubsystem::arcadeDrive(double forward, double rotate, bool teleOp) {
   if (teleOp) {
     // Square the joystick inputs, but keep the orignal sign
-    driveTrain.arcade(copysign(pow(forward, 2), forward), copysign(pow(rotate, 2), rotate));
+    driveTrain.arcade(squareInput(forward), squareInput(rotate));
   } else {
     driveTrain.arcade(forward, rotate);
   }
 }
 
-void DriveSubsystem::TankDrive(double myLeft, double myRight, bool teleOp) {
+void DriveSubsystem::tankDrive(double myLeft, double myRight, bool teleOp) {
   if (teleOp) {
     // Square the joystick inputs, but keep the orignal sign
-    driveTrain.tank(copysign(pow(myLeft, 2), myLeft), copysign(pow(myRight, 2), myRight));
+    driveTrain.tank(squareInput(myLeft), squareInput(myRight));
   } else {
     driveTrain.tank(myLeft, myRight);
   }
@@ -73,4 +87,9 @@ double DriveSubsystem::getLeftEncoder() {
 
 double DriveSubsystem::getRightEncoder() {
   return rightEncoder.getInches();
+}
+
+double DriveSubsystem::squareInput(double input) {
+  // Keeps the original sign, but squares the magnitude.
+  return copysign(pow(input, 2), input);
 }

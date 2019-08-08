@@ -63,6 +63,11 @@ private:
   uint32_t nextState;
   okapi::Controller driverController;
 	InchEncoder leftEncoder, rightEncoder;
+	/**
+	 * Squqre the variable without changing the sign
+	 * @param input The value to be squared
+	 */
+	double squareInput(double input);
 
 };
 

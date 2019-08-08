@@ -4,6 +4,7 @@
 #include "User/Extern.h"
 
 int SELECTED_AUTO_NUMBER;
+// Initialize autoSelector and set default values
 AutoSelector autoSelector("Do Nothing", DO_NOTHING_AUTO);
 
 /**
@@ -13,8 +14,10 @@ AutoSelector autoSelector("Do Nothing", DO_NOTHING_AUTO);
  * to keep execution time for this mode under a few seconds.
  */
 void initialize() {
+	// Register the rest of the autonomous routines
 	autoSelector.registerAuto("Log Position RED", LOG_POS_AUTO);
 	autoSelector.registerAuto("Log Velocity RED", LOG_VEL_AUTO);
+	// Create the dropdown
 	autoSelector.listOptions();
 }
 
@@ -35,7 +38,7 @@ void disabled() {}
  * starts.
  */
 void competition_initialize() {
-
+	// Keep checking if the dropdown selection is updated
 	while(!pros::competition::is_autonomous()) {
 		SELECTED_AUTO_NUMBER = autoSelector.getSelectedAuto();
 	}

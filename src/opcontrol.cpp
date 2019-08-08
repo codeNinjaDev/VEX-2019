@@ -17,8 +17,6 @@ void opcontrol() {
 	okapi::Controller master;
 	DriveSubsystem drive(master);
 
-
-
 	while (true) {
 		drive.update();
 		pros::delay(20);

@@ -29,6 +29,7 @@ void autonomous() {
 
   std::shared_ptr<DriveSubsystem> drive (new DriveSubsystem(master));
 
+  // Determine which autonomous routine to run
   switch (SELECTED_AUTO_NUMBER) {
     case DO_NOTHING_AUTO:
       doNothingAuto();

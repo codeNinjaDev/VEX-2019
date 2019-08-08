@@ -22,8 +22,17 @@ public:
 	 * to be done before the robot runs.
 	 */
 	virtual void initialize() = 0;
+	/**
+	 * Looped function to run subsystem motors
+	 */
   virtual void update() = 0;
+	/**
+	 * Function to reset subsystems sensors, etc...
+	 */
   virtual void reset() = 0;
+	/**
+	 * Function to stop subsystem operations such as setting motors to zero
+	 */
 	virtual void stop() = 0;
 };
 
