@@ -4,31 +4,44 @@
 LogPositionCommand::LogPositionCommand(std::shared_ptr<DriveSubsystem> drive, double timeout) : driveTrain(drive)
 {
   this->goalTime = timeout;
-
-  logFile = fopen("/usd/position.csv", "w");
-  fprintf(logFile, "%s,%s\n", "Position (Inches)", "Time (seconds)");
+  // create csv file to write to
+  //logFile = fopen("/usd/position.csv", "w");
+  // Make the header
+  //fprintf(logFile, "%s,%s\n", "Position (Inches)", "Time (seconds)");
   currentPosition = 0;
+  std::printf("%s\n", "Log Constructor");
 }
 
 void LogPositionCommand::start() {
-
-  startTime = timer.millis().convert(okapi::millisecond);
+  // set the start time to the current timestamp
+  startTime = timer.millis().getValue() / 1000;
   driveTrain->reset();
+  std::printf("Start Time is %f\n", startTime);
+
 }
 
 void LogPositionCommand::update() {
-  driveTrain->ArcadeDrive(0, 1, false);
+  // Spin the robot full speed
+
+  driveTrain->arcadeDrive(0, .1, false);
+
   currentPosition = driveTrain->getLeftEncoder();
 
-  double currentTime = timer.millis().convert(okapi::millisecond) - startTime;
+  double currentTime = (timer.millis().getValue() / 1000) - startTime;
+  std::printf("Curr Time %3f\n", currentTime);
 
-  fprintf(logFile, "%f,%f\n", currentPosition, currentTime);
+  // Log the current position and current time
+  //fprintf(logFile, "%f,%f\n", currentPosition, currentTime);
 
 
 }
 
 bool LogPositionCommand::isFinished() {
+
+  // Check if the timeout (if it has reached it's time limit) is completed
   double currentTime = timer.millis().getValue() / 1000;
+  std::printf("Time elapsed: %f, Goal Time: %f, Distance: %\n", currentTime - startTime, goalTime, driveTrain->getLeftEncoder());
+
   if (currentTime - startTime >= goalTime) {
     return true;
   }
@@ -36,9 +49,13 @@ bool LogPositionCommand::isFinished() {
   if ( abs(driveTrain->getLeftEncoder()) >= 100) {
     return true;
   }
+  return false;
 }
 
 void LogPositionCommand::finish() {
-  fclose(logFile);
+  // Close the file
+  //fclose(logFile);
+  // Stop driving
+  std::printf("%s\n", "Log FInish");
   driveTrain->stop();
 }

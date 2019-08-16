@@ -18,7 +18,7 @@ void LogVelocityCommand::start() {
 }
 
 void LogVelocityCommand::update() {
-  driveTrain->ArcadeDrive(0, 1, false);
+  driveTrain->arcadeDrive(0, 1, false);
   currentPosition = driveTrain->getLeftEncoder();
 
   double currentTime =  timer.millis().convert(okapi::millisecond) - startTime;
@@ -42,6 +42,7 @@ bool LogVelocityCommand::isFinished() {
   if ( abs(driveTrain->getLeftEncoder()) >= 100) {
     return true;
   }
+  return false;
 }
 
 void LogVelocityCommand::finish() {

@@ -2,7 +2,7 @@
 #define DRIVESUBYSTEM_H_
 #include "../main.h"
 #include "Subsystem.h"
-#include "InchEncoder.h"
+#include "user/encoderutil.h"
 
 #include <iostream>
 
@@ -62,7 +62,6 @@ private:
 	// Upcoming state of drive train
   uint32_t nextState;
   okapi::Controller driverController;
-	InchEncoder leftEncoder, rightEncoder;
 	/**
 	 * Squqre the variable without changing the sign
 	 * @param input The value to be squared

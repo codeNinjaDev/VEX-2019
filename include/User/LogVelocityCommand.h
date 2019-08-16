@@ -2,7 +2,6 @@
 #define LOGVELOCITYCOMMAND_H_
 #include "../main.h"
 #include "Command.h"
-#include "InchEncoder.h"
 #include "DriveSubsystem.h"
 #include <iostream>
 

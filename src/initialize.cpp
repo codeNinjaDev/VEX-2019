@@ -19,6 +19,8 @@ void initialize() {
 	autoSelector.registerAuto("Log Velocity RED", LOG_VEL_AUTO);
 	// Create the dropdown
 	autoSelector.listOptions();
+
+
 }
 
 /**
@@ -39,8 +41,12 @@ void disabled() {}
  */
 void competition_initialize() {
 	// Keep checking if the dropdown selection is updated
-	while(!pros::competition::is_autonomous()) {
+	SELECTED_AUTO_NUMBER = LOG_POS_AUTO;
+	/*while(true) {
+		std::printf("%s\n", "Running init");
 		SELECTED_AUTO_NUMBER = autoSelector.getSelectedAuto();
-	}
+		std::printf("%d\n", SELECTED_AUTO_NUMBER);
+		pros::delay(20);
+	}*/
 
 }

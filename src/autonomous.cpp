@@ -21,6 +21,10 @@
  * from where it left off.
  */
 void doNothingAuto();
+/**
+ * Spins the robot while logging the position vs time
+ * @param std::shared_ptr<DriveSubsystem> Needed to drive
+ */
 void logPositionAuto(std::shared_ptr<DriveSubsystem>);
 void logVelocityAuto(std::shared_ptr<DriveSubsystem>);
 
@@ -28,6 +32,9 @@ void autonomous() {
   okapi::Controller master;
 
   std::shared_ptr<DriveSubsystem> drive (new DriveSubsystem(master));
+  std::printf("%s\n", "Running autonomous");
+  std::printf("%d\n", SELECTED_AUTO_NUMBER);
+
 
   // Determine which autonomous routine to run
   switch (SELECTED_AUTO_NUMBER) {
@@ -35,6 +42,7 @@ void autonomous() {
       doNothingAuto();
       break;
     case LOG_POS_AUTO:
+
       logPositionAuto(drive);
       break;
     case LOG_VEL_AUTO:
@@ -48,6 +56,8 @@ void autonomous() {
 }
 
 void logPositionAuto(std::shared_ptr<DriveSubsystem> drive) {
+  std::printf("%s\n", "Running LOG POS");
+
   CommandRunner::runCommand(CommandFactory::create(new LogPositionCommand(drive, 10)));
 }
 

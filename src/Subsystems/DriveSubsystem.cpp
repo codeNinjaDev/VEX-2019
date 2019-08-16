@@ -8,8 +8,6 @@ DriveSubsystem::DriveSubsystem(okapi::Controller iDriverController) : driverCont
   , driveTrain(okapi::ChassisControllerFactory::create({-BACK_LEFT_MOTOR_PORT,-FRONT_LEFT_MOTOR_PORT}
     ,  {BACK_RIGHT_MOTOR_PORT, FRONT_RIGHT_MOTOR_PORT}
     , okapi::AbstractMotor::gearset::green, {BACK_WHEEL_DIAMETER, TRACK_WIDTH}))
-  , leftEncoder(LEFT_TOP_ENCODER_PORT, LEFT_BOTTOM_ENCODER_PORT, FRONT_WHEEL_DIAMETER, false)
-  , rightEncoder(LEFT_TOP_ENCODER_PORT, LEFT_BOTTOM_ENCODER_PORT, FRONT_WHEEL_DIAMETER, false)
 {
   // Set current state to initialize state
   m_stateVal = DriveState::kInitialize;
@@ -22,8 +20,6 @@ void DriveSubsystem::initialize() {
 
 void DriveSubsystem::reset() {
   // Reset sensors and stop all drive motors
-  leftEncoder.reset();
-  rightEncoder.reset();
   driveTrain.resetSensors();
   stop();
 }
@@ -82,11 +78,11 @@ void DriveSubsystem::tankDrive(double myLeft, double myRight, bool teleOp) {
   }
 }
 double DriveSubsystem::getLeftEncoder() {
-  return leftEncoder.getInches();
+  return EncoderUtil::getInches(driveTrain.getSensorVals()[0], BACK_WHEEL_DIAMETER);
 }
 
 double DriveSubsystem::getRightEncoder() {
-  return rightEncoder.getInches();
+  return EncoderUtil::getInches(driveTrain.getSensorVals()[1], BACK_WHEEL_DIAMETER);
 }
 
 double DriveSubsystem::squareInput(double input) {
