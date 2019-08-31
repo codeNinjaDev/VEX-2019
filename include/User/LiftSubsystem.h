@@ -6,6 +6,7 @@
 #include <iostream>
 
 /**
+ * Gearset 100:1
  * Gear ratio 7:1
  * Class that controls the lift
  * @param driverController VEX Gamepad
@@ -55,6 +56,11 @@ public:
    */
   void towerScorePostiton();
 
+	void disablePID();
+
+	void enablePID();
+
+	bool home();
 	/**
 	 * State of the Subsystem
 	 */
@@ -66,9 +72,19 @@ private:
 	uint32_t m_stateVal;
 	// Upcoming state of drive train
   uint32_t nextState;
+
   okapi::Controller driverController;
-	LinearEncoder liftEncoder;
-  okapi::AsyncPosPIDController liftPID;
+	okapi::Motor leftLiftMotor, rightLiftMotor;
+	okapi::MotorGroup liftMotors;
+
+	okapi::Motor intakeMotor;
+	okapi::Motor clampMotor;
+
+  okapi::AsyncPosIntegratedController liftController;
+	double targetHeight = 0;
+	bool manualMode();
+	bool manualStatus;
+	pros::ADILightSensor beamBreak;
 
 };
 

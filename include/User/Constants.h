@@ -8,13 +8,14 @@ const int FRONT_RIGHT_MOTOR_PORT = 2;
 const int BACK_LEFT_MOTOR_PORT = 4;
 const int BACK_RIGHT_MOTOR_PORT = 1;
 
-// ENCODER PORTS
+const int LEFT_LIFT_MOTOR_PORT = 5;
+const int RIGHT_LIFT_MOTOR_PORT = 6;
 
-const int LEFT_TOP_ENCODER_PORT = 6;
-const int LEFT_BOTTOM_ENCODER_PORT = 7;
+const int INTAKE_MOTOR_PORT = 7;
+const int CLAMP_MOTOR_PORT = 8;
 
-const int RIGHT_TOP_ENCODER_PORT = 0;
-const int RIGHT_BOTTOM_ENCODER_PORT = 1;
+
+const int LIGHT_SENSOR_PORT = 0;
 
 // ROBOT CONSTANTS
 
@@ -39,5 +40,13 @@ const bool ARCADE_DRIVE = true;
 const int DO_NOTHING_AUTO = 0;
 const int LOG_POS_AUTO = 1;
 const int LOG_VEL_AUTO = 2;
+const int HOME_LIFT_AUTO = 3;
+
+// LIFT SETPOINTS
+const double HOME = 1;
+const double LIFT_TOP_HEIGHT = 46;
+// GAME PIECE Constants
+const double HEIGHT_OF_CUBE = 6;
+const double HEIGHT_OF_TOWER = 18;
 
 #endif

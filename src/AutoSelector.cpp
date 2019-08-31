@@ -38,6 +38,7 @@ int AutoSelector::getSelectedAuto() {
 lv_obj_t * AutoSelector::createDropdown(lv_obj_t * parent, lv_coord_t x, lv_coord_t y, lv_coord_t width, lv_coord_t height,
     int id)
 {
+    
     lv_obj_t * dd = lv_ddlist_create(parent, NULL);
     lv_obj_set_pos(dd, x, y);
     lv_obj_set_size(dd, width, height);

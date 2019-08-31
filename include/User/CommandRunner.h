@@ -15,6 +15,8 @@ public:
    * @param command The command to be run
    */
   static void runCommand(std::unique_ptr<Command> command);
+  static void runCommand(Command* command);
+
   /**
    * Runs an array of commands sequentially
    * @param command An array(vector) of commands

@@ -5,9 +5,9 @@ LogPositionCommand::LogPositionCommand(std::shared_ptr<DriveSubsystem> drive, do
 {
   this->goalTime = timeout;
   // create csv file to write to
-  //logFile = fopen("/usd/position.csv", "w");
+  logFile = fopen("/usd/position.csv", "w");
   // Make the header
-  //fprintf(logFile, "%s,%s\n", "Position (Inches)", "Time (seconds)");
+  fprintf(logFile, "%s,%s\n", "Position (Inches)", "Time (seconds)");
   currentPosition = 0;
   std::printf("%s\n", "Log Constructor");
 }
@@ -31,7 +31,7 @@ void LogPositionCommand::update() {
   std::printf("Curr Time %3f\n", currentTime);
 
   // Log the current position and current time
-  //fprintf(logFile, "%f,%f\n", currentPosition, currentTime);
+  fprintf(logFile, "%f,%f\n", currentPosition, currentTime);
 
 
 }
@@ -40,7 +40,7 @@ bool LogPositionCommand::isFinished() {
 
   // Check if the timeout (if it has reached it's time limit) is completed
   double currentTime = timer.millis().getValue() / 1000;
-  std::printf("Time elapsed: %f, Goal Time: %f, Distance: %\n", currentTime - startTime, goalTime, driveTrain->getLeftEncoder());
+  std::printf("Time elapsed: %f, Goal Time: %f, Distance: %f\n", currentTime - startTime, goalTime, driveTrain->getLeftEncoder());
 
   if (currentTime - startTime >= goalTime) {
     return true;
@@ -54,7 +54,7 @@ bool LogPositionCommand::isFinished() {
 
 void LogPositionCommand::finish() {
   // Close the file
-  //fclose(logFile);
+  fclose(logFile);
   // Stop driving
   std::printf("%s\n", "Log FInish");
   driveTrain->stop();
