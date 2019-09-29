@@ -10,6 +10,7 @@ DriveSubsystem::DriveSubsystem(okapi::Controller iDriverController) : driverCont
     , okapi::AbstractMotor::gearset::green, {BACK_WHEEL_DIAMETER, TRACK_WIDTH}))
 {
   // Set current state to initialize state
+  toggle = false;
   m_stateVal = DriveState::kInitialize;
 }
 
@@ -44,7 +45,11 @@ void DriveSubsystem::update() {
      If current state is kTeleopDrive,
      run the drive train
      */
-      if (true) {
+      if(driverController.operator[](okapi::ControllerDigital::down).changedToPressed()) {
+        toggle = !toggle;
+      }
+
+      if (toggle) {
         arcadeDrive(-driverController.getAnalog(okapi::ControllerAnalog::leftY)
           , -driverController.getAnalog(okapi::ControllerAnalog::rightX)
           , true);

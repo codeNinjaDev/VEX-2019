@@ -45,7 +45,7 @@ const int SCORE_SINGLE_CUBE_AUTO = 4;
 
 // LIFT SETPOINTS
 const double HOME = 0;
-const double LIFT_TOP_HEIGHT = 46;
+const double LIFT_TOP_HEIGHT = 40;
 // GAME PIECE Constants
 const double HEIGHT_OF_CUBE = 6;
 const double HEIGHT_OF_TOWER = 18;

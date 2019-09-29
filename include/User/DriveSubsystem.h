@@ -67,6 +67,7 @@ private:
 	 * @param input The value to be squared
 	 */
 	double squareInput(double input);
+	bool toggle;
 
 };
 

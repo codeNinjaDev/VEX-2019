@@ -1,30 +1,20 @@
 #include "main.h"
-#include "User/AutoSelector.h"
 #include "User/Constants.h"
-
 #include "User/Command.h"
 #include "User/CommandRunner.h"
 #include "user/CommandFactory.h"
 #include "user/DriveSubsystem.h"
-#include "user/LogVelocityCommand.h"
-#include "user/LogPositionCommand.h"
-#include "user/HomeLiftCommand.h"
-#include "user/DriveDistanceCommand.h"
+#include "user/LiftSubsystem.h"
+
+
 /**
  * A callback function for LLEMU's center button.
  *
  * When this callback is fired, it will toggle line 2 of the LCD text between
  * "I was pressed!" and nothing.
  */
-void on_center_button() {
-	static bool pressed = false;
-	pressed = !pressed;
-	if (pressed) {
-		pros::lcd::set_text(2, "I was pressed!");
-	} else {
-		pros::lcd::clear_line(2);
-	}
-}
+
+
 
 /**
  * Runs initialization code. This occurs as soon as the program is started.
@@ -33,10 +23,6 @@ void on_center_button() {
  * to keep execution time for this mode under a few seconds.
  */
 void initialize() {
-	pros::lcd::initialize();
-	pros::lcd::set_text(1, "Hello PROS User!");
-
-	pros::lcd::register_btn1_cb(on_center_button);
 }
 
 /**
@@ -84,9 +70,12 @@ void autonomous() {}
  * task, not resume it from where it left off.
  */
  void opcontrol() {
- 	okapi::Controller master;
- 	std::shared_ptr<DriveSubsystem> drive (new DriveSubsystem(master));
- 	std::shared_ptr<LiftSubsystem> lift (new LiftSubsystem(master));
+	okapi::Controller driver (okapi::ControllerId::master);
+  okapi::Controller operatorController (okapi::ControllerId::partner);
+
+  std::shared_ptr<DriveSubsystem> drive (new DriveSubsystem(driver));
+  std::shared_ptr<LiftSubsystem> lift (new LiftSubsystem(driver, operatorController));
+	lift->reset();
  	while (true) {
  		std::printf("Running");
  		drive->update();
@@ -94,5 +83,5 @@ void autonomous() {}
  		pros::delay(20);
  	}
  	drive->stop();
-
+  //lift->stop();
  }
