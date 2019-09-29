@@ -44,10 +44,12 @@ void DriveSubsystem::update() {
      If current state is kTeleopDrive,
      run the drive train
      */
-      if (ARCADE_DRIVE) {
+      if (true) {
         arcadeDrive(-driverController.getAnalog(okapi::ControllerAnalog::leftY)
           , -driverController.getAnalog(okapi::ControllerAnalog::rightX)
           , true);
+
+          std::printf("%f", -driverController.getAnalog(okapi::ControllerAnalog::leftY));
       } else {
         tankDrive(-driverController.getAnalog(okapi::ControllerAnalog::leftY)
           , -driverController.getAnalog(okapi::ControllerAnalog::rightY)

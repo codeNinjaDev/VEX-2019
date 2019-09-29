@@ -1,21 +1,21 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
-// MOTOR PORTS
+// Drive MOTOR PORTS
 
-const int FRONT_LEFT_MOTOR_PORT = 3;
-const int FRONT_RIGHT_MOTOR_PORT = 2;
-const int BACK_LEFT_MOTOR_PORT = 4;
-const int BACK_RIGHT_MOTOR_PORT = 1;
+const int FRONT_LEFT_MOTOR_PORT = 18;
+const int FRONT_RIGHT_MOTOR_PORT = 13;
+const int BACK_LEFT_MOTOR_PORT = 20;
+const int BACK_RIGHT_MOTOR_PORT = 11;
 
-const int LEFT_LIFT_MOTOR_PORT = 5;
-const int RIGHT_LIFT_MOTOR_PORT = 6;
+const int LEFT_LIFT_MOTOR_PORT =  19;
+const int RIGHT_LIFT_MOTOR_PORT = 12;
 
-const int INTAKE_MOTOR_PORT = 7;
-const int CLAMP_MOTOR_PORT = 8;
+const int INTAKE_MOTOR_PORT = 16;
+const int CLAMP_MOTOR_PORT = 17;
 
 
-const int LIGHT_SENSOR_PORT = 0;
+const int LIGHT_SENSOR_PORT = 'H';
 
 // ROBOT CONSTANTS
 
@@ -41,9 +41,10 @@ const int DO_NOTHING_AUTO = 0;
 const int LOG_POS_AUTO = 1;
 const int LOG_VEL_AUTO = 2;
 const int HOME_LIFT_AUTO = 3;
+const int SCORE_SINGLE_CUBE_AUTO = 4;
 
 // LIFT SETPOINTS
-const double HOME = 1;
+const double HOME = 0;
 const double LIFT_TOP_HEIGHT = 46;
 // GAME PIECE Constants
 const double HEIGHT_OF_CUBE = 6;

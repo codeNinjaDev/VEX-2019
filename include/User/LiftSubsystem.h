@@ -55,18 +55,31 @@ public:
    * Tower postion
    */
   void towerScorePostiton();
-
+	/**
+   * Disable PID
+   */
 	void disablePID();
 
+	/**
+	 * Enable pid
+	 */
 	void enablePID();
 
+	/**
+	 * Tare the encoder position when it hits the bottom
+	 */
 	bool home();
 	/**
-	 * State of the Subsystem
+	 * State of the Lift
 	 */
 	enum LiftState {
 		kInitialize, kTeleopDrive
 	};
+	double setHeight(double inches);
+	double getHeight();
+	okapi::Motor leftLiftMotor, rightLiftMotor;
+	okapi::MotorGroup liftMotors;
+
 private:
 	// Current state of drive train
 	uint32_t m_stateVal;
@@ -74,17 +87,16 @@ private:
   uint32_t nextState;
 
   okapi::Controller driverController;
-	okapi::Motor leftLiftMotor, rightLiftMotor;
-	okapi::MotorGroup liftMotors;
-
 	okapi::Motor intakeMotor;
 	okapi::Motor clampMotor;
 
-  okapi::AsyncPosIntegratedController liftController;
 	double targetHeight = 0;
 	bool manualMode();
 	bool manualStatus;
-	pros::ADILightSensor beamBreak;
+	pros::ADIButton cubeSensor;
+
+	PIDController pidController;
+
 
 };
 

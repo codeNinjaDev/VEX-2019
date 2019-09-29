@@ -1,6 +1,7 @@
 #include "user/logpositioncommand.h"
 #include <cmath>
 #include <math.h>
+
 LogPositionCommand::LogPositionCommand(std::shared_ptr<DriveSubsystem> drive, double timeout) : driveTrain(drive)
 {
   this->goalTime = timeout;
