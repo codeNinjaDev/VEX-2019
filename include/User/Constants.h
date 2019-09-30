@@ -38,7 +38,7 @@ const bool ARCADE_DRIVE = true;
 // AUTONOMOUS ROUTINES
 
 const int DO_NOTHING_AUTO = 0;
-const int LOG_POS_AUTO = 1;
+const int DRIVE_FORWARD_AUTO = 1;
 const int LOG_VEL_AUTO = 2;
 const int HOME_LIFT_AUTO = 3;
 const int SCORE_SINGLE_CUBE_AUTO = 4;

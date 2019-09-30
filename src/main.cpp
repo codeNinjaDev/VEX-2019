@@ -5,77 +5,49 @@
 #include "user/CommandFactory.h"
 #include "user/DriveSubsystem.h"
 #include "user/LiftSubsystem.h"
+#include "user/AutoSelector.h"
+#include "User/DriveDistanceCommand.h"
+int SELECTED_AUTO;
 
+okapi::Controller driver (okapi::ControllerId::master);
+okapi::Controller operatorController (okapi::ControllerId::partner);
 
-/**
- * A callback function for LLEMU's center button.
- *
- * When this callback is fired, it will toggle line 2 of the LCD text between
- * "I was pressed!" and nothing.
- */
-
-
-
-/**
- * Runs initialization code. This occurs as soon as the program is started.
- *
- * All other competition modes are blocked by initialize; it is recommended
- * to keep execution time for this mode under a few seconds.
- */
+AutoSelector autoSelector("Do Nothing", DO_NOTHING_AUTO);
+std::shared_ptr<DriveSubsystem> drive;
+std::shared_ptr<LiftSubsystem> lift;
 void initialize() {
+  drive.reset(new DriveSubsystem(driver));
+  lift.reset(new LiftSubsystem(driver, operatorController));
+  lift->reset();
+
+  autoSelector.registerAuto("DRIVE FORWARD AUTO", DRIVE_FORWARD_AUTO);
+  autoSelector.listOptions();
 }
 
-/**
- * Runs while the robot is in the disabled state of Field Management System or
- * the VEX Competition Switch, following either autonomous or opcontrol. When
- * the robot is enabled, this task will exit.
- */
+
 void disabled() {}
 
-/**
- * Runs after initialize(), and before autonomous when connected to the Field
- * Management System or the VEX Competition Switch. This is intended for
- * competition-specific initialization routines, such as an autonomous selector
- * on the LCD.
- *
- * This task will exit when the robot is enabled and autonomous or opcontrol
- * starts.
- */
-void competition_initialize() {}
 
-/**
- * Runs the user autonomous code. This function will be started in its own task
- * with the default priority and stack size whenever the robot is enabled via
- * the Field Management System or the VEX Competition Switch in the autonomous
- * mode. Alternatively, this function may be called in initialize or opcontrol
- * for non-competition testing purposes.
- *
- * If the robot is disabled or communications is lost, the autonomous task
- * will be stopped. Re-enabling the robot will restart the task, not re-start it
- * from where it left off.
- */
-void autonomous() {}
+void competition_initialize() {
+  while (true) {
+    SELECTED_AUTO = autoSelector.getSelectedAuto();
+    pros::delay(20);
+  }
+}
 
-/**
- * Runs the operator control code. This function will be started in its own task
- * with the default priority and stack size whenever the robot is enabled via
- * the Field Management System or the VEX Competition Switch in the operator
- * control mode.
- *
- * If no competition control is connected, this function will run immediately
- * following initialize().
- *
- * If the robot is disabled or communications is lost, the
- * operator control task will be stopped. Re-enabling the robot will restart the
- * task, not resume it from where it left off.
- */
- void opcontrol() {
-	okapi::Controller driver (okapi::ControllerId::master);
-  okapi::Controller operatorController (okapi::ControllerId::partner);
+void autonomous() {
+  switch(SELECTED_AUTO) {
+    case DO_NOTHING_AUTO:
+    break;
+    case DRIVE_FORWARD_AUTO:
+      CommandRunner::runCommand(new DriveDistanceCommand(drive, 20, 1, 5));
+      break;
+    default:
+    break;
+  }
+}
 
-  std::shared_ptr<DriveSubsystem> drive (new DriveSubsystem(driver));
-  std::shared_ptr<LiftSubsystem> lift (new LiftSubsystem(driver, operatorController));
-	lift->reset();
+void opcontrol() {
  	while (true) {
  		std::printf("Running");
  		drive->update();
@@ -83,5 +55,5 @@ void autonomous() {}
  		pros::delay(20);
  	}
  	drive->stop();
-  //lift->stop();
+  lift->stop();
  }
