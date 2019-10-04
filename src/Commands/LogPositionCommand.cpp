@@ -1,4 +1,4 @@
-#include "user/logpositioncommand.h"
+#include "User/LogPositionCommand.h"
 #include <cmath>
 #include <math.h>
 

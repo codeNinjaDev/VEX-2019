@@ -1,4 +1,4 @@
-#include "user/commandfactory.h"
+#include "User/CommandFactory.h"
 
 std::unique_ptr<Command> CommandFactory::create(Command* command) {
   // Create unique_ptr

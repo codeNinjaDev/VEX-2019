@@ -8,7 +8,7 @@ LiftSubsystem::LiftSubsystem(okapi::Controller iDriverController, okapi::Control
   , rightLiftMotor(RIGHT_LIFT_MOTOR_PORT)
   , liftMotors({this->leftLiftMotor, this->rightLiftMotor})
   , intakeMotor(INTAKE_MOTOR_PORT)
-  , clampMotor(CLAMP_MOTOR_PORT)
+  , clampMotor(-CLAMP_MOTOR_PORT)
 {
   targetHeight = HOME;
   manualStatus = false;

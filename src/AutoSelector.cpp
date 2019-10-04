@@ -1,4 +1,4 @@
-#include "user/autoselector.h"
+#include "User/AutoSelector.h"
 
 AutoSelector::AutoSelector(std::string autoName, int defaultAutoNumber) {
   // Append default values to the vectors first
