@@ -40,6 +40,9 @@ public:
 		kSlant = 0, kStack = 457
 	};
 
+	void moveTray(TrayPosition position, double targetVelocity);
+	void moveArm(IntakePosition position, double targetVelocity);
+
 private:
 	// Current state of robot
 	uint32_t m_stateVal;

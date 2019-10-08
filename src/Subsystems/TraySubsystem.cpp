@@ -85,23 +85,31 @@ void TraySubsystem::update() {
 
       // Tray functions
       if (scoreStackButton.isPressed()) {
-        trayMotor.moveAbsolute((double) TrayPosition::kStack, 100);
+        moveTray(TrayPosition::kStack, 100);
       } else {
-        trayMotor.moveAbsolute((double) TrayPosition::kSlant, 100);
+        moveTray(TrayPosition::kSlant, 100);
       }
 
       // Arm functions
       if(moveLowTowerButton.isPressed()) {
-        intakeArmMotor.moveAbsolute((double) IntakePosition::kLowTower, 75);
+        moveArm(IntakePosition::kLowTower,75);
       } else if(moveMidTowerButton.isPressed()) {
-        intakeArmMotor.moveAbsolute((double) IntakePosition::kMidTower, 100);
+        moveArm(IntakePosition::kMidTower,100);
       } else if(moveHighTowerButton.isPressed()) {
-        intakeArmMotor.moveAbsolute((double) IntakePosition::kHighTower, 100);
+        moveArm(IntakePosition::kHighTower,100);
       } else {
-        intakeArmMotor.moveAbsolute((double) IntakePosition::kIntake, 80);
+        moveArm(IntakePosition::kIntake,80);
       }
 
       break;
   }
   m_stateVal = nextState;
+}
+
+void TraySubsystem::moveTray(TrayPosition position, double targetVelocity) {
+  trayMotor.moveAbsolute((double) position, targetVelocity);
+}
+
+void TraySubsystem::moveArm(IntakePosition position, double targetVelocity) {
+  intakeArmMotor.moveAbsolute((double) position, targetVelocity);
 }
