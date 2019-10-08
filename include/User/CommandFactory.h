@@ -1,7 +1,7 @@
 
 #ifndef COMMANDFACTORY_H_
 #define COMMANDFACTORY_H_
-#include "user/command.h"
+#include "User/Command.h"
 /**
  * CLass to create a unique_ptr of a command
  */

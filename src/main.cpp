@@ -4,7 +4,6 @@
 #include "User/CommandRunner.h"
 #include "User/CommandFactory.h"
 #include "User/DriveSubsystem.h"
-#include "User/LiftSubsystem.h"
 #include "User/AutoSelector.h"
 #include "User/DriveDistanceCommand.h"
 int SELECTED_AUTO;
@@ -14,11 +13,8 @@ okapi::Controller operatorController (okapi::ControllerId::partner);
 
 AutoSelector autoSelector("Do Nothing", DO_NOTHING_AUTO);
 std::shared_ptr<DriveSubsystem> drive;
-std::shared_ptr<LiftSubsystem> lift;
 void initialize() {
   drive.reset(new DriveSubsystem(driver));
-  lift.reset(new LiftSubsystem(driver, operatorController));
-  lift->reset();
 
   autoSelector.registerAuto("DRIVE FORWARD AUTO", DRIVE_FORWARD_AUTO);
   autoSelector.listOptions();
@@ -51,9 +47,7 @@ void opcontrol() {
  	while (true) {
  		std::printf("Running");
  		drive->update();
- 		lift->update();
  		pros::delay(20);
  	}
  	drive->stop();
-  lift->stop();
  }

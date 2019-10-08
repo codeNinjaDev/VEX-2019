@@ -1,7 +1,7 @@
 
 #ifndef COMMANDRUNNER_H_
 #define COMMANDRUNNER_H_
-#include "user/command.h"
+#include "User/Command.h"
 
 /**
  * Class that runs and "schedules" a command

@@ -3,19 +3,20 @@
 
 // Drive MOTOR PORTS
 
-const int FRONT_LEFT_MOTOR_PORT = 18;
-const int FRONT_RIGHT_MOTOR_PORT = 13;
-const int BACK_LEFT_MOTOR_PORT = 20;
-const int BACK_RIGHT_MOTOR_PORT = 11;
+const int FRONT_LEFT_MOTOR_PORT = 1;
+const int FRONT_RIGHT_MOTOR_PORT = 10;
+const int BACK_LEFT_MOTOR_PORT = 14;
+const int BACK_RIGHT_MOTOR_PORT = 20;
 
-const int LEFT_LIFT_MOTOR_PORT =  19;
-const int RIGHT_LIFT_MOTOR_PORT = 14;
+const int TRAY_MOTOR_PORT =  11;
 
-const int INTAKE_MOTOR_PORT = 16;
-const int CLAMP_MOTOR_PORT = 17;
+const int LEFT_INTAKE_MOTOR_PORT = 13;
+const int RIGHT_INTAKE_MOTOR_PORT = 18;
+
+const int ARM_MOTOR_PORT = 19;
 
 
-const int LIGHT_SENSOR_PORT = 'H';
+const int LIMIT_SWITCH_PORT = 'A';
 
 // ROBOT CONSTANTS
 
