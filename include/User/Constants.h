@@ -9,7 +9,7 @@ const int BACK_LEFT_MOTOR_PORT = 20;
 const int BACK_RIGHT_MOTOR_PORT = 11;
 
 const int LEFT_LIFT_MOTOR_PORT =  19;
-const int RIGHT_LIFT_MOTOR_PORT = 12;
+const int RIGHT_LIFT_MOTOR_PORT = 14;
 
 const int INTAKE_MOTOR_PORT = 16;
 const int CLAMP_MOTOR_PORT = 17;
@@ -45,7 +45,7 @@ const int SCORE_SINGLE_CUBE_AUTO = 4;
 
 // LIFT SETPOINTS
 const double HOME = 0;
-const double LIFT_TOP_HEIGHT = 40;
+static double LIFT_TOP_HEIGHT = 40;
 // GAME PIECE Constants
 const double HEIGHT_OF_CUBE = 6;
 const double HEIGHT_OF_TOWER = 18;

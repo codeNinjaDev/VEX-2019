@@ -45,8 +45,9 @@ void DriveSubsystem::update() {
      If current state is kTeleopDrive,
      run the drive train
      */
-      if(driverController.operator[](okapi::ControllerDigital::down).changedToPressed()) {
+      if(driverController.operator[](okapi::ControllerDigital::right).changedToPressed()) {
         toggle = !toggle;
+        driverController.rumble("..");
       }
 
       if (toggle) {

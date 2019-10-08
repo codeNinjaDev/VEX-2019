@@ -35,7 +35,7 @@ void LiftSubsystem::reset() {
 
 bool LiftSubsystem::manualMode() {
   if(operatorController.operator[](okapi::ControllerDigital::Y).changedToPressed()) {
-    driverController.rumble(".");
+    operatorController.rumble(".");
     manualStatus = !manualStatus;
   }
   return manualStatus;
@@ -49,8 +49,8 @@ void LiftSubsystem::stop() {
 
 void LiftSubsystem::update() {
   // Left Bumper is outtake
-  if (operatorController.getDigital(okapi::ControllerDigital::left)) {
-    clampMotor.moveAbsolute(100, 200);
+  if (operatorController.getDigital(okapi::ControllerDigital::R1)) {
+    clampMotor.moveAbsolute(200, 100);
   } else {
     clampMotor.moveAbsolute(0, 200);
   }
@@ -64,7 +64,7 @@ void LiftSubsystem::update() {
 
   if(manualMode()) {
     if (operatorController.getDigital(okapi::ControllerDigital::L1)) {
-      liftMotors.moveVelocity(50);
+      liftMotors.moveVelocity(75);
     // If down arrow is pressed move arm down slowly
   } else if (operatorController.getDigital(okapi::ControllerDigital::L2)) {
 
@@ -93,11 +93,18 @@ void LiftSubsystem::update() {
     } else if (operatorController.operator[](okapi::ControllerDigital::X).changedToPressed()) {
         targetHeight = HEIGHT_OF_TOWER;
 
+    } else if (operatorController.operator[](okapi::ControllerDigital::R2).changedToPressed()) {
+        targetHeight = 200/48;
+        operatorController.rumble("-");
+
     }
 
     // If target height is less than home, set target height to HOME
     if (targetHeight <= HOME) {
       targetHeight = HOME;
+    }
+    if(abs(liftMotors.getPosition()) > 1500) {
+      LIFT_TOP_HEIGHT--;
     }
     // If target height is greater than MAX_HEIGHT, set target height to MAX_HEIGHT
     if (targetHeight >= LIFT_TOP_HEIGHT) {

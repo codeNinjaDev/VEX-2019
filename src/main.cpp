@@ -2,10 +2,10 @@
 #include "User/Constants.h"
 #include "User/Command.h"
 #include "User/CommandRunner.h"
-#include "user/CommandFactory.h"
-#include "user/DriveSubsystem.h"
-#include "user/LiftSubsystem.h"
-#include "user/AutoSelector.h"
+#include "User/CommandFactory.h"
+#include "User/DriveSubsystem.h"
+#include "User/LiftSubsystem.h"
+#include "User/AutoSelector.h"
 #include "User/DriveDistanceCommand.h"
 int SELECTED_AUTO;
 
