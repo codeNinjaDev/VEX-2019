@@ -70,13 +70,13 @@ void TraySubsystem::update() {
 
       if(intakeRollersButton.isPressed()) {
         // If driver wants to intake cube, run intake at 100 rpm or half speed
-        intakeMotors.moveVelocity(100);
+        intakeCube();
       } else if(outtakeMidTowerButton.isPressed()) {
         // If driver wants to outtake cube or score in low towers, run intake at -100 rpm or half negative velocity
-        intakeMotors.moveVelocity(-100);
+        outtakeCube(100);
       } else if(outtakeHighTowerButton.isPressed()) {
         // Shoot cube out as fast as possible
-        intakeMotors.moveVelocity(-200);
+        outtakeCube(200);
       } else {
         intakeMotors.moveVelocity(0);
       }
@@ -112,4 +112,12 @@ void TraySubsystem::moveTray(TrayPosition position, double targetVelocity) {
 
 void TraySubsystem::moveArm(IntakePosition position, double targetVelocity) {
   intakeArmMotor.moveAbsolute((double) position, targetVelocity);
+}
+
+void TraySubsystem::intakeCube() {
+  intakeMotors.moveVelocity(100);
+}
+
+void TraySubsystem::outtakeCube(double targetSpeed) {
+  intakeMotors.moveVelocity(-targetSpeed);
 }

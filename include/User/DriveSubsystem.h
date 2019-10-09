@@ -2,7 +2,7 @@
 #define DRIVESUBYSTEM_H_
 #include "../main.h"
 #include "Subsystem.h"
-#include "user/encoderutil.h"
+#include "User/EncoderUtil.h"
 
 #include <iostream>
 
@@ -45,6 +45,11 @@ public:
 	 */
 	void tankDrive(double myLeft, double myRight, bool teleOp);
 
+	void moveMetersAsync(double meters);
+	void moveInchesAsync(double inches);
+	void turnDegrees(double angle);
+
+
 	okapi::ChassisControllerIntegrated driveTrain;
 	/**
 	 * State of the Subsystem
@@ -62,12 +67,17 @@ private:
 	// Upcoming state of drive train
   uint32_t nextState;
   okapi::Controller driverController;
+
+	okapi::ControllerButton SlowDown1, SlowDown2;
+	okapi::ControllerButton toggleDriveButton, toggleDefenseButton;
+
 	/**
 	 * Squqre the variable without changing the sign
 	 * @param input The value to be squared
 	 */
 	double squareInput(double input);
-	bool toggle;
+	bool toggleDrive;
+	bool toggleDefense;
 
 };
 

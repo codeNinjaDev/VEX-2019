@@ -42,6 +42,9 @@ public:
 
 	void moveTray(TrayPosition position, double targetVelocity);
 	void moveArm(IntakePosition position, double targetVelocity);
+	void intakeCube();
+	void outtakeCube(double targetVelocity);
+	okapi::Motor trayMotor;
 
 private:
 	// Current state of robot
@@ -50,7 +53,6 @@ private:
   uint32_t nextState;
 
   okapi::Controller driverController, operatorController;
-	okapi::Motor trayMotor;
 	okapi::Motor intakeArmMotor;
 
 	okapi::Motor leftIntakeMotor, rightIntakeMotor;
