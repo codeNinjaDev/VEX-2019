@@ -8,6 +8,12 @@ DriveSubsystem::DriveSubsystem(okapi::Controller iDriverController) : driverCont
   , driveTrain(okapi::ChassisControllerFactory::create({-BACK_LEFT_MOTOR_PORT,-FRONT_LEFT_MOTOR_PORT}
     ,  {BACK_RIGHT_MOTOR_PORT, FRONT_RIGHT_MOTOR_PORT}
     , okapi::AbstractMotor::gearset::green, {BACK_WHEEL_DIAMETER, TRACK_WIDTH}))
+    , profileController(okapi::AsyncControllerFactory::motionProfile(
+      1.0,  // Maximum linear velocity of the Chassis in m/s
+      2.0,  // Maximum linear acceleration of the Chassis in m/s/s
+      10.0, // Maximum linear jerk of the Chassis in m/s/s/s
+      driveTrain // Chassis Controller
+    ))
     , SlowDown1(okapi::ControllerId::master, okapi::ControllerDigital::R2)
     , SlowDown2(okapi::ControllerId::master, okapi::ControllerDigital::L2)
     , toggleDriveButton(okapi::ControllerId::master, okapi::ControllerDigital::right)
@@ -156,4 +162,23 @@ void DriveSubsystem::moveInchesAsync(double inches) {
 
 void DriveSubsystem::turnDegrees(double angle) {
   driveTrain.turnAngleAsync(angle * okapi::degree);
+}
+
+void DriveSubsystem::generatePath(std::initializer_list<okapi::Point> pathPoints, std::string pathName) {
+  profileController.generatePath(pathPoints, pathName);
+}
+
+void DriveSubsystem::followPath(std::string pathName, bool backwards, bool waitTilSettled) {
+  profileController.setTarget(pathName, backwards);
+  if(waitTilSettled) {
+    profileController.waitUntilSettled();
+  }
+}
+
+void DriveSubsystem::adjustPath(std::initializer_list<okapi::Point> pathPoints) {
+  profileController.moveTo(pathPoints);
+}
+
+bool DriveSubsystem::isPathCompleted() {
+  return profileController.isSettled();
 }

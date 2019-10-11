@@ -49,6 +49,10 @@ public:
 	void moveInchesAsync(double inches);
 	void turnDegrees(double angle);
 
+	void generatePath(std::initializer_list<okapi::Point> pathPoints, std::string pathName);
+	void followPath(std::string pathName, bool backwards, bool waitTilSettled);
+	void adjustPath(std::initializer_list<okapi::Point> pathPoints);
+	bool isPathCompleted();
 
 	okapi::ChassisControllerIntegrated driveTrain;
 	/**
@@ -57,6 +61,7 @@ public:
 	enum DriveState {
 		kInitialize, kTeleopDrive
 	};
+
 
 
 
@@ -70,7 +75,7 @@ private:
 
 	okapi::ControllerButton SlowDown1, SlowDown2;
 	okapi::ControllerButton toggleDriveButton, toggleDefenseButton;
-
+	okapi::AsyncMotionProfileController profileController;
 	/**
 	 * Squqre the variable without changing the sign
 	 * @param input The value to be squared
