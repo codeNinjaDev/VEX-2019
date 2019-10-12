@@ -12,6 +12,7 @@ TraySubsystem::TraySubsystem(okapi::Controller iDriverController, okapi::Control
   , intakeMotors({this->leftIntakeMotor, this->rightIntakeMotor})
   , limitSwitch(LIMIT_SWITCH_PORT)
   , intakeRollersButton(okapi::ControllerId::master ,okapi::ControllerDigital::R1)
+  , outtakeRollersButton(okapi::ControllerId::master ,okapi::ControllerDigital::L1)
   , scoreStackButton(okapi::ControllerId::partner, okapi::ControllerDigital::R2)
   , slantButton(okapi::ControllerId::partner, okapi::ControllerDigital::L2)
   , lowTowerButton(okapi::ControllerId::partner, okapi::ControllerDigital::L1)
@@ -69,6 +70,8 @@ void TraySubsystem::update() {
       if(intakeRollersButton.isPressed()) {
         // If driver wants to intake cube, run intake at 100 rpm or half speed
         intakeCube();
+      } else if(outtakeRollersButton.isPressed()){
+        outtakeCube(100);
       } else {
         intakeMotors.moveVelocity(0);
       }
