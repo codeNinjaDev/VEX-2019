@@ -15,7 +15,8 @@ TraySubsystem::TraySubsystem(okapi::Controller iDriverController, okapi::Control
   , scoreStackButton(okapi::ControllerId::partner, okapi::ControllerDigital::R2)
   , slantButton(okapi::ControllerId::partner, okapi::ControllerDigital::L2)
   , lowTowerButton(okapi::ControllerId::partner, okapi::ControllerDigital::L1)
-  , highTowerButton(okapi::ControllerId::partner, okapi::ControllerDigital::R1)
+  , highTowerButton(okapi::ControllerId::partner, okapi::ControllerDigital::down)
+  , extendTrayButton(okapi::ControllerId::partner, okapi::ControllerDigital::up)
 {
 
 
@@ -86,6 +87,8 @@ void TraySubsystem::update() {
         scoreTower(TowerPosition::kLowTower,75);
       } else if(highTowerButton.isPressed()) {
         scoreTower(TowerPosition::kHighTower,75);
+      } else if(extendTrayButton.isPressed()) {
+        scoreTower(TowerPosition::kExtendTray,75);
       } else {
         scoreTower(TowerPosition::kTray,80);
       }
@@ -104,7 +107,7 @@ void TraySubsystem::scoreTower(TowerPosition position, double targetVelocity) {
 }
 
 void TraySubsystem::intakeCube() {
-  intakeMotors.moveVelocity(100);
+  intakeMotors.moveVelocity(200);
 }
 
 void TraySubsystem::outtakeCube(double targetSpeed) {

@@ -30,14 +30,14 @@ public:
 	 * Positions of the Intake Arm
 	 */
 	enum TowerPosition {
-		kTray = 0, kLowTower = 648, kHighTower = 0
+		kTray = 0, kLowTower = 400, kHighTower = 0, kExtendTray = 350
 	};
 
 	/**
 	 * Positions of the Intake Arm
 	 */
 	enum TrayPosition {
-		kSlant = 0, kStack = 457
+		kSlant = 0, kStack = 1747
 	};
 
 	void moveTray(TrayPosition position, double targetVelocity);
@@ -64,7 +64,7 @@ private:
 	okapi::ControllerButton intakeRollersButton;
 
 	// Operator Buttons
-	okapi::ControllerButton scoreStackButton, slantButton, lowTowerButton, highTowerButton;
+	okapi::ControllerButton scoreStackButton, slantButton, lowTowerButton, highTowerButton, extendTrayButton;
 
 
 };

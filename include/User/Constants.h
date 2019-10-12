@@ -21,7 +21,7 @@ const int LIMIT_SWITCH_PORT = 'A';
 // ROBOT CONSTANTS
 
 const double BACK_WHEEL_DIAMETER = 4;
-const double FRONT_WHEEL_DIAMETER = 3.25;
+
 /**
  * Horizontal distance between center of left
  * side wheels and center of right side wheels
