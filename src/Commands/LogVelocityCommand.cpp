@@ -1,4 +1,4 @@
-#include "user/logvelocitycommand.h"
+#include "User/LogVelocityCommand.h"
 #include <cmath>
 #include <math.h>
 LogVelocityCommand::LogVelocityCommand(std::shared_ptr<DriveSubsystem> drive, double timeout) : driveTrain(drive)
