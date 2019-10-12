@@ -10,7 +10,7 @@ const int BACK_RIGHT_MOTOR_PORT = 20;
 
 const int TRAY_MOTOR_PORT =  11;
 
-const int LEFT_INTAKE_MOTOR_PORT = 13;
+const int LEFT_INTAKE_MOTOR_PORT = 15;
 const int RIGHT_INTAKE_MOTOR_PORT = 18;
 
 const int ARM_MOTOR_PORT = 19;
@@ -21,7 +21,7 @@ const int LIMIT_SWITCH_PORT = 'A';
 // ROBOT CONSTANTS
 
 const double BACK_WHEEL_DIAMETER = 4;
-const double FRONT_WHEEL_DIAMETER = 3.25;
+
 /**
  * Horizontal distance between center of left
  * side wheels and center of right side wheels
