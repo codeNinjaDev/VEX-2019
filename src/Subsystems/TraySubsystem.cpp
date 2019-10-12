@@ -6,19 +6,16 @@
 TraySubsystem::TraySubsystem(okapi::Controller iDriverController, okapi::Controller iOperatorController) : driverController(iDriverController)
   , operatorController(iOperatorController)
   , trayMotor(-TRAY_MOTOR_PORT)
-  , intakeArmMotor(ARM_MOTOR_PORT)
+  , cubeScorer(ARM_MOTOR_PORT)
   , leftIntakeMotor(LEFT_INTAKE_MOTOR_PORT)
   , rightIntakeMotor(-RIGHT_INTAKE_MOTOR_PORT)
   , intakeMotors({this->leftIntakeMotor, this->rightIntakeMotor})
   , limitSwitch(LIMIT_SWITCH_PORT)
   , intakeRollersButton(okapi::ControllerId::master ,okapi::ControllerDigital::R1)
-  , outtakeMidTowerButton(okapi::ControllerId::master, okapi::ControllerDigital::L1)
-  , outtakeHighTowerButton(okapi::ControllerId::master, okapi::ControllerDigital::up)
   , scoreStackButton(okapi::ControllerId::partner, okapi::ControllerDigital::R2)
   , slantButton(okapi::ControllerId::partner, okapi::ControllerDigital::L2)
-  , moveLowTowerButton(okapi::ControllerId::partner, okapi::ControllerDigital::X)
-  , moveMidTowerButton(okapi::ControllerId::partner, okapi::ControllerDigital::L1)
-  , moveHighTowerButton(okapi::ControllerId::partner, okapi::ControllerDigital::R1)
+  , lowTowerButton(okapi::ControllerId::partner, okapi::ControllerDigital::L1)
+  , highTowerButton(okapi::ControllerId::partner, okapi::ControllerDigital::R1)
 {
 
 
@@ -26,8 +23,8 @@ TraySubsystem::TraySubsystem(okapi::Controller iDriverController, okapi::Control
   trayMotor.setEncoderUnits(okapi::AbstractMotor::encoderUnits::degrees);
   //trayMotor.setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
 
-  intakeArmMotor.setGearing(okapi::AbstractMotor::gearset::red);
-  intakeArmMotor.setEncoderUnits(okapi::AbstractMotor::encoderUnits::degrees);
+  cubeScorer.setGearing(okapi::AbstractMotor::gearset::red);
+  cubeScorer.setEncoderUnits(okapi::AbstractMotor::encoderUnits::degrees);
 
   intakeMotors.setGearing(okapi::AbstractMotor::gearset::green);
   intakeMotors.setEncoderUnits(okapi::AbstractMotor::encoderUnits::rotations);
@@ -47,14 +44,14 @@ void TraySubsystem::initialize() {
 
 void TraySubsystem::reset() {
   trayMotor.tarePosition();
-  intakeArmMotor.tarePosition();
+  cubeScorer.tarePosition();
 }
 
 
 void TraySubsystem::stop() {
 
   trayMotor.moveVelocity(0);
-  intakeArmMotor.moveVelocity(0);
+  cubeScorer.moveVelocity(0);
   intakeMotors.moveVelocity(0);
 }
 
@@ -71,12 +68,6 @@ void TraySubsystem::update() {
       if(intakeRollersButton.isPressed()) {
         // If driver wants to intake cube, run intake at 100 rpm or half speed
         intakeCube();
-      } else if(outtakeMidTowerButton.isPressed()) {
-        // If driver wants to outtake cube or score in low towers, run intake at -100 rpm or half negative velocity
-        outtakeCube(100);
-      } else if(outtakeHighTowerButton.isPressed()) {
-        // Shoot cube out as fast as possible
-        outtakeCube(200);
       } else {
         intakeMotors.moveVelocity(0);
       }
@@ -91,14 +82,12 @@ void TraySubsystem::update() {
       }
 
       // Arm functions
-      if(moveLowTowerButton.isPressed()) {
-        moveArm(IntakePosition::kLowTower,75);
-      } else if(moveMidTowerButton.isPressed()) {
-        moveArm(IntakePosition::kMidTower,100);
-      } else if(moveHighTowerButton.isPressed()) {
-        moveArm(IntakePosition::kHighTower,100);
+      if(lowTowerButton.isPressed()) {
+        scoreTower(TowerPosition::kLowTower,75);
+      } else if(highTowerButton.isPressed()) {
+        scoreTower(TowerPosition::kHighTower,75);
       } else {
-        moveArm(IntakePosition::kIntake,80);
+        scoreTower(TowerPosition::kTray,80);
       }
 
       break;
@@ -110,8 +99,8 @@ void TraySubsystem::moveTray(TrayPosition position, double targetVelocity) {
   trayMotor.moveAbsolute((double) position, targetVelocity);
 }
 
-void TraySubsystem::moveArm(IntakePosition position, double targetVelocity) {
-  intakeArmMotor.moveAbsolute((double) position, targetVelocity);
+void TraySubsystem::scoreTower(TowerPosition position, double targetVelocity) {
+  cubeScorer.moveAbsolute((double) position, targetVelocity);
 }
 
 void TraySubsystem::intakeCube() {

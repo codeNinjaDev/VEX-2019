@@ -29,8 +29,8 @@ public:
 	/**
 	 * Positions of the Intake Arm
 	 */
-	enum IntakePosition {
-		kIntake = 0, kLowTower = 0, kMidTower = 0, kHighTower = 0
+	enum TowerPosition {
+		kTray = 0, kLowTower = 648, kHighTower = 0
 	};
 
 	/**
@@ -41,7 +41,7 @@ public:
 	};
 
 	void moveTray(TrayPosition position, double targetVelocity);
-	void moveArm(IntakePosition position, double targetVelocity);
+	void scoreTower(TowerPosition position, double targetVelocity);
 	void intakeCube();
 	void outtakeCube(double targetVelocity);
 	okapi::Motor trayMotor;
@@ -53,7 +53,7 @@ private:
   uint32_t nextState;
 
   okapi::Controller driverController, operatorController;
-	okapi::Motor intakeArmMotor;
+	okapi::Motor cubeScorer;
 
 	okapi::Motor leftIntakeMotor, rightIntakeMotor;
 	okapi::MotorGroup intakeMotors;
@@ -61,10 +61,10 @@ private:
 	okapi::ADIButton limitSwitch;
 
 	// Driver Buttons
-	okapi::ControllerButton intakeRollersButton, outtakeMidTowerButton, outtakeHighTowerButton;
+	okapi::ControllerButton intakeRollersButton;
 
 	// Operator Buttons
-	okapi::ControllerButton scoreStackButton, slantButton, moveLowTowerButton, moveMidTowerButton, moveHighTowerButton;
+	okapi::ControllerButton scoreStackButton, slantButton, lowTowerButton, highTowerButton;
 
 
 };
