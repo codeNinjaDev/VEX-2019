@@ -23,7 +23,7 @@ public:
 private:
   std::shared_ptr<DriveSubsystem> drive;
   double distance, maxSpeed;
-	
+
 
 };
 

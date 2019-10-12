@@ -15,7 +15,7 @@ const int RIGHT_INTAKE_MOTOR_PORT = 18;
 
 const int ARM_MOTOR_PORT = 19;
 
-
+const double ROBOT_LENGTH = 15.5;
 const int LIMIT_SWITCH_PORT = 'A';
 
 // ROBOT CONSTANTS
@@ -40,15 +40,14 @@ const bool ARCADE_DRIVE = true;
 
 const int DO_NOTHING_AUTO = 0;
 const int DRIVE_FORWARD_AUTO = 1;
-const int LOG_VEL_AUTO = 2;
-const int HOME_LIFT_AUTO = 3;
-const int SCORE_SINGLE_CUBE_AUTO = 4;
+const int SMALL_RED = 2;
+const int SMALL_BLUE = 2;
+
 
 // LIFT SETPOINTS
 const double HOME = 0;
-static double LIFT_TOP_HEIGHT = 40;
 // GAME PIECE Constants
-const double HEIGHT_OF_CUBE = 6;
+const double HEIGHT_OF_CUBE = 5.5;
 const double HEIGHT_OF_TOWER = 18;
 
 #endif

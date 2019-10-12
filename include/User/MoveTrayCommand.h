@@ -15,7 +15,7 @@
  * All funtions of this class must be implemented in child classes
  *
  */
-class MoveTrayCommand : Command {
+class MoveTrayCommand : public Command {
 public:
 
 	MoveTrayCommand(std::shared_ptr<TraySubsystem> tray, TraySubsystem::TrayPosition position, double timeout);

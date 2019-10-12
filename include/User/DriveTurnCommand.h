@@ -12,7 +12,7 @@
 #include "DriveSubsystem.h"
 
 
-class DriveTurnCommand : Command {
+class DriveTurnCommand : public Command {
 public:
 
 	DriveTurnCommand(std::shared_ptr<DriveSubsystem> drive, double angle, double maxSpeed, double timeout);

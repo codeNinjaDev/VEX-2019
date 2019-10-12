@@ -13,18 +13,20 @@ DriveDistanceCommand::DriveDistanceCommand(std::shared_ptr<DriveSubsystem> drive
 
 void DriveDistanceCommand::start() {
   this->startTime = (timer.millis().getValue() / 1000);
-
+  drive->moveInchesAsync(distance);
+  drive->driveTrain.waitUntilSettled();
 }
 
 void DriveDistanceCommand::update() {
-  drive->arcadeDrive(maxSpeed, 0, false);
+  //drive->arcadeDrive(maxSpeed, 0, false);
 }
 
 bool DriveDistanceCommand::isFinished() {
-  double currentTime = (timer.millis().getValue() / 1000);
+  return true;
+  /*double currentTime = (timer.millis().getValue() / 1000);
   bool reachTimeout = (currentTime  - startTime) >= goalTime;
   bool reachedDistance = ((drive->getLeftEncoder() + drive->getRightEncoder()) / 2) >= distance;
-  return reachTimeout || reachedDistance;
+  return reachTimeout || reachedDistance;*/
 }
 
 void DriveDistanceCommand::finish() {

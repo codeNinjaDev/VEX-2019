@@ -14,7 +14,7 @@
 class DriveAndIntakeCommand : public Command {
 public:
 
-	DriveAndIntakeCommand(std::shared_ptr<DriveSubsystem> drive, std::shared_ptr<TraySubsystem> tray,double distance, double maxSpeed, double timeout);
+	DriveAndIntakeCommand(std::shared_ptr<DriveSubsystem> drive, std::shared_ptr<TraySubsystem> tray,double distance, double timeout);
 
 	void start();
 	void update();
@@ -25,7 +25,7 @@ private:
   std::shared_ptr<DriveSubsystem> drive;
 	std::shared_ptr<TraySubsystem> tray;
 
-  double distance, maxSpeed;
+  double distance;
 
 
 };
