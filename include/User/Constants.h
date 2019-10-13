@@ -26,11 +26,10 @@ const double BACK_WHEEL_DIAMETER = 4;
  * Horizontal distance between center of left
  * side wheels and center of right side wheels
  *
- * OR
  *
  * Distance between center of front left wheel and center of back left wheel
  */
-const double TRACK_WIDTH = 11.25;
+const double WHEELBASE_WIDTH = 10;
 
 // PARAMETERS
 

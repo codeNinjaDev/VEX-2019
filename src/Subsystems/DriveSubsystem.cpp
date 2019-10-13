@@ -5,10 +5,14 @@
 // Set drivetrain with reversed left side, green gearset, wheel diameter, TRACK_WIDTH
 // Set Encoder ports
 DriveSubsystem::DriveSubsystem(okapi::Controller iDriverController) : driverController(iDriverController)
-  , driveTrain(okapi::ChassisControllerFactory::create({BACK_LEFT_MOTOR_PORT,FRONT_LEFT_MOTOR_PORT}
-    ,  {-BACK_RIGHT_MOTOR_PORT, -FRONT_RIGHT_MOTOR_PORT}
-    , okapi::AbstractMotor::gearset::green, {BACK_WHEEL_DIAMETER, TRACK_WIDTH}))
-    , profileController(okapi::AsyncControllerFactory::motionProfile(
+  , backLeftDriveMotor(BACK_LEFT_MOTOR_PORT)
+  , backRightDriveMotor(-BACK_RIGHT_MOTOR_PORT)
+  , frontLeftDriveMotor(FRONT_LEFT_MOTOR_PORT)
+  , frontRightDriveMotor(-FRONT_RIGHT_MOTOR_PORT)
+  , leftMotors({backLeftDriveMotor, frontLeftDriveMotor})
+  , rightMotors({backRightDriveMotor, frontRightDriveMotor})
+  , driveTrain(okapi::ChassisControllerFactory::create(leftMotors,rightMotors, okapi::AbstractMotor::gearset::green, {BACK_WHEEL_DIAMETER, WHEELBASE_WIDTH}))
+  , profileController(okapi::AsyncControllerFactory::motionProfile(
       1.0,  // Maximum linear velocity of the Chassis in m/s
       2.0,  // Maximum linear acceleration of the Chassis in m/s/s
       10.0, // Maximum linear jerk of the Chassis in m/s/s/s
@@ -23,7 +27,10 @@ DriveSubsystem::DriveSubsystem(okapi::Controller iDriverController) : driverCont
   toggleDrive = false;
   toggleDefense = false;
 
-  driveTrain.setBrakeMode(okapi::AbstractMotor::brakeMode::brake);
+
+  driveTrain.setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
+  driveTrain.setEncoderUnits(okapi::AbstractMotor::encoderUnits::degrees);
+
   m_stateVal = DriveState::kInitialize;
 }
 
@@ -40,6 +47,7 @@ void DriveSubsystem::reset() {
 
 void DriveSubsystem::stop() {
   driveTrain.stop();
+  driveTrain.setMaxVelocity(200);
 }
 
 void DriveSubsystem::update() {
@@ -161,7 +169,7 @@ void DriveSubsystem::moveInchesAsync(double inches) {
 }
 
 void DriveSubsystem::turnDegrees(double angle) {
-  driveTrain.turnAngleAsync(angle * okapi::degree);
+  driveTrain.turnAngleAsync(angle);
 }
 
 void DriveSubsystem::generatePath(std::initializer_list<okapi::Point> pathPoints, std::string pathName) {

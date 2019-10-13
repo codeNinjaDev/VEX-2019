@@ -13,7 +13,8 @@ DriveTurnCommand::DriveTurnCommand(std::shared_ptr<DriveSubsystem> drive, double
 
 void DriveTurnCommand::start() {
   this->startTime = (timer.millis().getValue() / 1000);
-  drive->turnDegrees(angle);
+  drive->driveTrain.setMaxVelocity(maxSpeed);
+  drive->turnDegrees((380/180) * angle);
   drive->driveTrain.waitUntilSettled();
 }
 
