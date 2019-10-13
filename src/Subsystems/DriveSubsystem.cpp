@@ -5,8 +5,8 @@
 // Set drivetrain with reversed left side, green gearset, wheel diameter, TRACK_WIDTH
 // Set Encoder ports
 DriveSubsystem::DriveSubsystem(okapi::Controller iDriverController) : driverController(iDriverController)
-  , driveTrain(okapi::ChassisControllerFactory::create({-BACK_LEFT_MOTOR_PORT,-FRONT_LEFT_MOTOR_PORT}
-    ,  {BACK_RIGHT_MOTOR_PORT, FRONT_RIGHT_MOTOR_PORT}
+  , driveTrain(okapi::ChassisControllerFactory::create({BACK_LEFT_MOTOR_PORT,FRONT_LEFT_MOTOR_PORT}
+    ,  {-BACK_RIGHT_MOTOR_PORT, -FRONT_RIGHT_MOTOR_PORT}
     , okapi::AbstractMotor::gearset::green, {BACK_WHEEL_DIAMETER, TRACK_WIDTH}))
     , profileController(okapi::AsyncControllerFactory::motionProfile(
       1.0,  // Maximum linear velocity of the Chassis in m/s
@@ -77,14 +77,14 @@ void DriveSubsystem::update() {
       }
 
       if (toggleDrive) {
-        arcadeDrive(-driverController.getAnalog(okapi::ControllerAnalog::leftY)
+        arcadeDrive(driverController.getAnalog(okapi::ControllerAnalog::leftY)
           , -driverController.getAnalog(okapi::ControllerAnalog::rightX)
           , true);
 
           std::printf("%f", -driverController.getAnalog(okapi::ControllerAnalog::leftY));
       } else {
-        tankDrive(-driverController.getAnalog(okapi::ControllerAnalog::leftY)
-          , -driverController.getAnalog(okapi::ControllerAnalog::rightY)
+        tankDrive(driverController.getAnalog(okapi::ControllerAnalog::leftY)
+          , driverController.getAnalog(okapi::ControllerAnalog::rightY)
           , true);
       }
       break;

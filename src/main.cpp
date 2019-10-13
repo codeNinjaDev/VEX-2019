@@ -50,17 +50,21 @@ void autonomous() {
       CommandRunner::runCommand(new DriveDistanceCommand(drive, 20, 1, 5));
       break;
     case SMALL_RED:
-      CommandRunner::runCommand(new DriveAndIntakeCommand(drive, tray, 24 + HEIGHT_OF_CUBE - ROBOT_LENGTH, 3));
-      CommandRunner::runCommand(new DriveDistanceCommand(drive, -16, 1, 3));
-      CommandRunner::runCommand(new DriveTurnCommand(drive, 90, 1, 1));
-      CommandRunner::runCommand(new DriveDistanceCommand(drive, 12, 1, 3));
+      CommandRunner::runCommand(new DriveAndIntakeCommand(drive, tray, 12 + 24 + HEIGHT_OF_CUBE - ROBOT_LENGTH, 3));
+      pros::delay(1000);
+      CommandRunner::runCommand(new DriveDistanceCommand(drive, -16, .25, 3));
+      pros::delay(1000);
+      CommandRunner::runCommand(new DriveTurnCommand(drive, 90, .25, 1));
+      pros::delay(1000);
+      CommandRunner::runCommand(new DriveDistanceCommand(drive, 12, .25, 3));
+      pros::delay(1000);
       CommandRunner::runCommand(new DriveTurnCommand(drive, -90, 1, 1));
       CommandRunner::runCommand(new DriveDistanceCommand(drive, 12, 1, 2));
       CommandRunner::runCommand(new DriveTurnCommand(drive, 90, 1, 1));
       CommandRunner::runCommand(new DriveDistanceCommand(drive, 12, 1, 2));
       CommandRunner::runCommand(new DriveTurnCommand(drive, 90, 12, 1.5));
       CommandRunner::runCommand(new DriveDistanceCommand(drive, 24, 1, 3));
-      CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kSlant, 3));
+      //CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kSlant, 3));
       CommandRunner::runCommand(new DriveDistanceCommand(drive, -4, 1, 3));
       break;
     default:

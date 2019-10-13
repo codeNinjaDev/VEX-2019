@@ -2,7 +2,7 @@
 #include <cmath>
 #include <math.h>
 
-DriveAndIntakeCommand::DriveAndIntakeCommand(std::shared_ptr<DriveSubsystem> drive, std::shared_ptr<TraySubsystem> tray,double distance, double timeout) : drive(drive)
+DriveAndIntakeCommand::DriveAndIntakeCommand(std::shared_ptr<DriveSubsystem> drive, std::shared_ptr<TraySubsystem> tray,double distance, double maxSpeed, double timeout) : drive(drive)
   , tray(tray)
 {
 
@@ -11,6 +11,7 @@ DriveAndIntakeCommand::DriveAndIntakeCommand(std::shared_ptr<DriveSubsystem> dri
   drive->stop();
   drive->reset();
   this->distance = distance;
+  this->maxSpeed = maxSpeed;
   this->goalTime = timeout;
 }
 
