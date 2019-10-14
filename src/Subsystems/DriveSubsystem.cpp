@@ -116,6 +116,9 @@ void DriveSubsystem::arcadeDrive(double forward, double rotate, bool teleOp) {
     multiplier = 1;
   }
 
+  double left = forward + rotate;
+  double right = forward - rotate;
+
   if (teleOp) {
     // Square the joystick inputs, but keep the orignal sign
     driveTrain.arcade(squareInput(forward) * multiplier, squareInput(rotate) * multiplier);
@@ -139,20 +142,21 @@ void DriveSubsystem::tankDrive(double myLeft, double myRight, bool teleOp) {
   }
 
   if (teleOp) {
-    // Square the joystick inputs, but keep the orignal sign
-    driveTrain.tank(squareInput(myLeft) * multiplier, squareInput(myRight) * multiplier);
+    leftMotors.controllerSet(squareInput(myLeft) * multiplier);
+    rightMotors.controllerSet(squareInput(myRight) * multiplier);
   } else {
-    driveTrain.tank(myLeft * multiplier, myRight * multiplier);
+    leftMotors.controllerSet(myLeft * multiplier);
+    rightMotors.controllerSet(myRight * multiplier);
   }
 
 }
 
 double DriveSubsystem::getLeftEncoder() {
-  return EncoderUtil::getInches(driveTrain.getSensorVals()[0], BACK_WHEEL_DIAMETER);
+  return EncoderUtil::getInches(driveTrain.getSensorVals()[0], BACK_WHEEL_DIAMETER.getValue());
 }
 
 double DriveSubsystem::getRightEncoder() {
-  return EncoderUtil::getInches(driveTrain.getSensorVals()[1], BACK_WHEEL_DIAMETER);
+  return EncoderUtil::getInches(driveTrain.getSensorVals()[1], BACK_WHEEL_DIAMETER.getValue());
 }
 
 double DriveSubsystem::squareInput(double input) {
@@ -168,8 +172,12 @@ void DriveSubsystem::moveInchesAsync(double inches) {
   driveTrain.moveDistanceAsync(inches * okapi::inch);
 }
 
-void DriveSubsystem::turnDegrees(double angle) {
-  driveTrain.turnAngleAsync(angle);
+void DriveSubsystem::turnAngleAsync(double angle) {
+  driveTrain.turnAngleAsync(angle * okapi::degree);
+}
+
+void DriveSubsystem::turnDegreesAsync(double degrees) {
+  driveTrain.turnAngleAsync(degrees);
 }
 
 void DriveSubsystem::generatePath(std::initializer_list<okapi::Point> pathPoints, std::string pathName) {

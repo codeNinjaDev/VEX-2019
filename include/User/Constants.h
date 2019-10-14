@@ -1,6 +1,8 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
+#include "../main.h"
+
 // Drive MOTOR PORTS
 
 const int FRONT_LEFT_MOTOR_PORT = 1;
@@ -15,21 +17,20 @@ const int RIGHT_INTAKE_MOTOR_PORT = 18;
 
 const int ARM_MOTOR_PORT = 19;
 
-const double ROBOT_LENGTH = 15.5;
+const okapi::QLength ROBOT_LENGTH = 15.5_in;
 const int LIMIT_SWITCH_PORT = 'A';
 
 // ROBOT CONSTANTS
 
-const double BACK_WHEEL_DIAMETER = 4;
+const okapi::QLength BACK_WHEEL_DIAMETER = 4_in;
 
 /**
  * Horizontal distance between center of left
  * side wheels and center of right side wheels
  *
  *
- * Distance between center of front left wheel and center of back left wheel
  */
-const double WHEELBASE_WIDTH = 10;
+const okapi::QLength WHEELBASE_WIDTH = 10_in;
 
 // PARAMETERS
 
@@ -46,7 +47,7 @@ const int SMALL_BLUE = 2;
 // LIFT SETPOINTS
 const double HOME = 0;
 // GAME PIECE Constants
-const double HEIGHT_OF_CUBE = 5.5;
-const double HEIGHT_OF_TOWER = 18;
+const okapi::QLength HEIGHT_OF_CUBE = 5.5_in;
+const okapi::QLength HEIGHT_OF_TOWER = 18_in;
 
 #endif

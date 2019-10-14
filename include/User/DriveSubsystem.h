@@ -47,7 +47,9 @@ public:
 
 	void moveMetersAsync(double meters);
 	void moveInchesAsync(double inches);
-	void turnDegrees(double angle);
+	void turnDegreesAsync(double degrees);
+	void turnAngleAsync(double angle);
+
 
 	void generatePath(std::initializer_list<okapi::Point> pathPoints, std::string pathName);
 	void followPath(std::string pathName, bool backwards, bool waitTilSettled);

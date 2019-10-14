@@ -14,7 +14,7 @@ DriveDistanceCommand::DriveDistanceCommand(std::shared_ptr<DriveSubsystem> drive
 void DriveDistanceCommand::start() {
   this->startTime = (timer.millis().getValue() / 1000);
   drive->driveTrain.setMaxVelocity(maxSpeed);
-  drive->driveTrain.moveDistanceAsync(distance * (360/(3.1415*BACK_WHEEL_DIAMETER)));
+  drive->moveInchesAsync(distance);
   drive->driveTrain.waitUntilSettled();
 
 }

@@ -19,7 +19,7 @@ void DriveAndIntakeCommand::start() {
   this->startTime = (timer.millis().getValue() / 1000);
   tray->intakeCube();
   drive->driveTrain.setMaxVelocity(maxSpeed);
-  drive->driveTrain.moveDistanceAsync(distance * (360/(3.1415*BACK_WHEEL_DIAMETER)));
+  drive->moveInchesAsync(distance);
   drive->driveTrain.waitUntilSettled();
 }
 
