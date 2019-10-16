@@ -41,13 +41,16 @@ void DriveSubsystem::initialize() {
 
 void DriveSubsystem::reset() {
   // Reset sensors and stop all drive motors
+  leftMotors.tarePosition();
+  rightMotors.tarePosition();
   driveTrain.resetSensors();
-  stop();
+  driveTrain.resetSensors();
 }
 
 void DriveSubsystem::stop() {
   driveTrain.stop();
   driveTrain.setMaxVelocity(200);
+
 }
 
 void DriveSubsystem::update() {
@@ -86,7 +89,7 @@ void DriveSubsystem::update() {
 
       if (toggleDrive) {
         arcadeDrive(driverController.getAnalog(okapi::ControllerAnalog::leftY)
-          , -driverController.getAnalog(okapi::ControllerAnalog::rightX)
+          , driverController.getAnalog(okapi::ControllerAnalog::rightX)
           , true);
 
           std::printf("%f", -driverController.getAnalog(okapi::ControllerAnalog::leftY));
@@ -142,11 +145,10 @@ void DriveSubsystem::tankDrive(double myLeft, double myRight, bool teleOp) {
   }
 
   if (teleOp) {
-    leftMotors.controllerSet(squareInput(myLeft) * multiplier);
-    rightMotors.controllerSet(squareInput(myRight) * multiplier);
+    driveTrain.tank((squareInput(myLeft) * multiplier), (squareInput(myRight) * multiplier));
   } else {
-    leftMotors.controllerSet(myLeft * multiplier);
-    rightMotors.controllerSet(myRight * multiplier);
+    driveTrain.tank(myLeft * multiplier, myRight * multiplier);
+
   }
 
 }
@@ -165,18 +167,22 @@ double DriveSubsystem::squareInput(double input) {
 }
 
 void DriveSubsystem::moveMetersAsync(double meters) {
+  reset();
   driveTrain.moveDistanceAsync(meters * okapi::meter);
 }
 
 void DriveSubsystem::moveInchesAsync(double inches) {
+  reset();
   driveTrain.moveDistanceAsync(inches * okapi::inch);
 }
 
 void DriveSubsystem::turnAngleAsync(double angle) {
+  reset();
   driveTrain.turnAngleAsync(angle * okapi::degree);
 }
 
 void DriveSubsystem::turnDegreesAsync(double degrees) {
+  reset();
   driveTrain.turnAngleAsync(degrees);
 }
 

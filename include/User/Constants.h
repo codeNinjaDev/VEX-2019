@@ -22,7 +22,7 @@ const int LIMIT_SWITCH_PORT = 'A';
 
 // ROBOT CONSTANTS
 
-const okapi::QLength BACK_WHEEL_DIAMETER = 4_in;
+const okapi::QLength BACK_WHEEL_DIAMETER = 4.1_in;
 
 /**
  * Horizontal distance between center of left
@@ -41,7 +41,7 @@ const bool ARCADE_DRIVE = true;
 const int DO_NOTHING_AUTO = 0;
 const int DRIVE_FORWARD_AUTO = 1;
 const int SMALL_RED = 2;
-const int SMALL_BLUE = 2;
+const int SMALL_BLUE = 3;
 
 
 // LIFT SETPOINTS

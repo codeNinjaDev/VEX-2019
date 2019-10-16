@@ -5,7 +5,7 @@
 
 TraySubsystem::TraySubsystem(okapi::Controller iDriverController, okapi::Controller iOperatorController) : driverController(iDriverController)
   , operatorController(iOperatorController)
-  , trayMotor(-TRAY_MOTOR_PORT)
+  , trayMotor(TRAY_MOTOR_PORT)
   , cubeScorer(ARM_MOTOR_PORT)
   , leftIntakeMotor(LEFT_INTAKE_MOTOR_PORT)
   , rightIntakeMotor(-RIGHT_INTAKE_MOTOR_PORT)
@@ -21,7 +21,7 @@ TraySubsystem::TraySubsystem(okapi::Controller iDriverController, okapi::Control
 {
 
 
-  trayMotor.setGearing(okapi::AbstractMotor::gearset::green);
+  trayMotor.setGearing(okapi::AbstractMotor::gearset::red);
   trayMotor.setEncoderUnits(okapi::AbstractMotor::encoderUnits::degrees);
   //trayMotor.setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
 

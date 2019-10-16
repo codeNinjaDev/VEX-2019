@@ -47,22 +47,37 @@ void autonomous() {
     case DO_NOTHING_AUTO:
     break;
     case DRIVE_FORWARD_AUTO:
-    CommandRunner::runCommand(new DriveTurnCommand(drive, 90, 75, 1));
-
+      CommandRunner::runCommand(new DriveDistanceCommand(drive, 48, 200, 3));
+      CommandRunner::runCommand(new DriveDistanceCommand(drive, -46, 200, 3));
+      CommandRunner::runCommand(new DriveTurnCommand(drive, 110, 75, 1));
+      CommandRunner::runCommand(new DriveDistanceCommand(drive, 25, 100, 3));
+      CommandRunner::runCommand(new DriveTurnCommand(drive, -90, 75, 1));
+      CommandRunner::runCommand(new DriveDistanceCommand(drive, 48, 200, 3));
+      CommandRunner::runCommand(new DriveDistanceCommand(drive, -46, 200, 3));
+      CommandRunner::runCommand(new DriveTurnCommand(drive, 110, 75, 1));
+      CommandRunner::runCommand(new DriveDistanceCommand(drive, 15, 100, 3));
+      CommandRunner::runCommand(new DriveDistanceCommand(drive, -10, 100, 3));
       break;
     case SMALL_RED:
-      CommandRunner::runCommand(new DriveAndIntakeCommand(drive, tray, 40, 100, 3));
-      CommandRunner::runCommand(new DriveDistanceCommand(drive, -24, 75, 3));
-      CommandRunner::runCommand(new DriveTurnCommand(drive, 150, 75, 1));
-      CommandRunner::runCommand(new DriveDistanceCommand(drive, 40, 100, 3));
-      CommandRunner::runCommand(new DriveTurnCommand(drive, -150, 75, 1));
-      CommandRunner::runCommand(new DriveAndIntakeCommand(drive, tray, 24, 100, 3));
-      CommandRunner::runCommand(new DriveTurnCommand(drive, 90, 75, 1));
-      CommandRunner::runCommand(new DriveDistanceCommand(drive, 24, 100, 2));
-      CommandRunner::runCommand(new DriveTurnCommand(drive, 90, 120, 1.5));
-      CommandRunner::runCommand(new DriveDistanceCommand(drive, 48, 100, 3));
-      //CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kSlant, 3));
-      CommandRunner::runCommand(new DriveDistanceCommand(drive, -12, 100, 3));
+      CommandRunner::runCommand(new DriveDistanceCommand(drive, 100, 105, 3));
+      CommandRunner::runCommand(new DriveTurnCommand(drive, -40, 75, 1));
+      CommandRunner::runCommand(new DriveDistanceCommand(drive, -15, 105, 3));
+      CommandRunner::runCommand(new DriveDistanceCommand(drive, 20, 105, 3));
+      CommandRunner::runCommand(new DriveTurnCommand(drive, -45, 75, 1));
+      CommandRunner::runCommand(new DriveDistanceCommand(drive, -23, 105, 3));
+      CommandRunner::runCommand(new DriveDistanceCommand(drive, 6, 105, 3));
+      CommandRunner::runCommand(new DriveTurnCommand(drive, 180, 75, 1));
+      CommandRunner::runCommand(new DriveDistanceCommand(drive, 14, 105, 3));
+      CommandRunner::runCommand(new DriveTurnCommand(drive, 10, 75, 1));
+      CommandRunner::runCommand(new DriveDistanceCommand(drive, -30, 105, 3));
+      CommandRunner::runCommand(new DriveTurnCommand(drive, -50, 75, 1));
+      CommandRunner::runCommand(new DriveDistanceCommand(drive, 60, 105, 3));
+
+
+
+
+
+
       break;
     default:
       break;
