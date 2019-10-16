@@ -28,6 +28,7 @@ TraySubsystem::TraySubsystem(okapi::Controller iDriverController, okapi::Control
   cubeScorer.setGearing(okapi::AbstractMotor::gearset::red);
   cubeScorer.setEncoderUnits(okapi::AbstractMotor::encoderUnits::degrees);
   cubeScorer.setBrakeMode(okapi::AbstractMotor::brakeMode::hold);
+  intakeMotors.setBrakeMode(okapi::AbstractMotor::brakeMode::hold);
   intakeMotors.setGearing(okapi::AbstractMotor::gearset::green);
   intakeMotors.setEncoderUnits(okapi::AbstractMotor::encoderUnits::rotations);
 
