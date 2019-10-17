@@ -18,7 +18,7 @@
 class MoveTrayCommand : public Command {
 public:
 
-	MoveTrayCommand(std::shared_ptr<TraySubsystem> tray, TraySubsystem::TrayPosition position, double timeout);
+	MoveTrayCommand(std::shared_ptr<TraySubsystem> tray, TraySubsystem::TrayPosition position, double maxSpeed, double timeout);
 
 	void start();
 	void update();
@@ -27,6 +27,7 @@ public:
 
 private:
 	std::shared_ptr<TraySubsystem> tray;
+	double maxSpeed;
 
 	TraySubsystem::TrayPosition position;
 };

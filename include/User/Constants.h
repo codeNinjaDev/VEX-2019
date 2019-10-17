@@ -39,9 +39,12 @@ const bool ARCADE_DRIVE = true;
 // AUTONOMOUS ROUTINES
 
 const int DO_NOTHING_AUTO = 0;
-const int DRIVE_FORWARD_AUTO = 1;
-const int SMALL_RED = 2;
-const int SMALL_BLUE = 3;
+const int SMALL_RED = 1;
+const int SMALL_BLUE = 2;
+const int LARGE_RED = 3;
+const int LARGE_BLUE = 4;
+const int SKILLS_RUN = 5;
+const int DRIVE_FORWARD_AUTO = 6;
 
 
 // LIFT SETPOINTS

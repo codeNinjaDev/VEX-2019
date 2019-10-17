@@ -13,8 +13,8 @@ TraySubsystem::TraySubsystem(okapi::Controller iDriverController, okapi::Control
   , limitSwitch(LIMIT_SWITCH_PORT)
   , intakeRollersButton(okapi::ControllerId::master ,okapi::ControllerDigital::R1)
   , outtakeRollersButton(okapi::ControllerId::master ,okapi::ControllerDigital::L1)
-  , scoreStackButton(okapi::ControllerId::partner, okapi::ControllerDigital::R2)
-  , slantButton(okapi::ControllerId::partner, okapi::ControllerDigital::L2)
+  , scoreStackButton(okapi::ControllerId::partner, okapi::ControllerDigital::R1)
+  , slantButton(okapi::ControllerId::partner, okapi::ControllerDigital::R2)
   , lowTowerButton(okapi::ControllerId::partner, okapi::ControllerDigital::L1)
   , highTowerButton(okapi::ControllerId::partner, okapi::ControllerDigital::down)
   , extendTrayButton(okapi::ControllerId::partner, okapi::ControllerDigital::up)
@@ -23,6 +23,7 @@ TraySubsystem::TraySubsystem(okapi::Controller iDriverController, okapi::Control
 
   trayMotor.setGearing(okapi::AbstractMotor::gearset::red);
   trayMotor.setEncoderUnits(okapi::AbstractMotor::encoderUnits::degrees);
+  trayMotor.setBrakeMode(okapi::AbstractMotor::brakeMode::hold);
   //trayMotor.setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
 
   cubeScorer.setGearing(okapi::AbstractMotor::gearset::red);
@@ -81,11 +82,12 @@ void TraySubsystem::update() {
 
       // Tray functions
       if (scoreStackButton.isPressed()) {
-        moveTray(TrayPosition::kStack, 100);
-      } else {
+        moveTray(TrayPosition::kStack, 50);
+      } else if(slantButton.isPressed()){
         moveTray(TrayPosition::kSlant, 100);
+      } else{
+        trayMotor.moveVelocity(0);
       }
-
       // Arm functions
       if(lowTowerButton.isPressed()) {
         scoreTower(TowerPosition::kLowTower,75);
@@ -110,7 +112,7 @@ void TraySubsystem::scoreTower(TowerPosition position, double targetVelocity) {
   cubeScorer.moveAbsolute((double) position, targetVelocity);
 }
 
-void TraySubsystem::intakeCube() {
+void TraySubsystem::intakeCube(){
   intakeMotors.moveVelocity(200);
 }
 
