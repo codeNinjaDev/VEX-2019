@@ -21,7 +21,7 @@ public:
 private:
     std::shared_ptr<TraySubsystem> tray;
 
-    double intakeSpeed;
+    double intakeSpeed, timeout;
 };
 
 #endif /* INTAKECOMMAND_H_ */

@@ -1,8 +1,8 @@
-#include "User/MoveTrayCommand.h"
+#include "User/ScoreCubeCommand.h"
 #include <cmath>
 #include <math.h>
 
-MoveTrayCommand::MoveTrayCommand(std::shared_ptr<TraySubsystem> tray, TraySubsystem::TrayPosition position, double maxSpeed, double timeout) : tray(tray)
+ScoreCubeCommand::ScoreCubeCommand(std::shared_ptr<TraySubsystem> tray, TraySubsystem::TowerPosition position, double maxSpeed, double timeout) : tray(tray)
 {
 
   this->position = position;
@@ -10,22 +10,23 @@ MoveTrayCommand::MoveTrayCommand(std::shared_ptr<TraySubsystem> tray, TraySubsys
   this->timeout = timeout;
 }
 
-void MoveTrayCommand::start() {
+void ScoreCubeCommand::start() {
   this->startTime = (timer.millis().getValue() / 1000);
-  tray->moveTray(position, maxSpeed);
+  tray->scoreTower(TraySubsystem::TowerPosition::kLowTower, 50);
 }
 
-void MoveTrayCommand::update() {
+void ScoreCubeCommand::update() {
 
 }
 
-bool MoveTrayCommand::isFinished() {
+bool ScoreCubeCommand::isFinished() {
   double currentTime = (timer.millis().getValue() / 1000);
   bool reachTimeout = (currentTime  - startTime) >= timeout;
   bool hitTarget = abs(tray->trayMotor.getTargetPosition() - tray->trayMotor.getPosition()) < 3;
   return reachTimeout || hitTarget;
 }
 
-void MoveTrayCommand::finish() {
+void ScoreCubeCommand::finish() {
+  tray->scoreTower(TraySubsystem::TowerPosition::kTray, 50);
   tray->stop();
 }

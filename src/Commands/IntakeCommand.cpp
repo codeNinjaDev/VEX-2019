@@ -5,12 +5,12 @@
 IntakeCommand::IntakeCommand(std::shared_ptr<TraySubsystem> tray, double intakeSpeed, double timeout) : tray(tray)
 {
   this->intakeSpeed = intakeSpeed;
-  this->goalTime = timeout;
+  this->timeout = timeout;
 }
 
 void IntakeCommand::start() {
   tray->outtakeCube(-intakeSpeed);
-  pros::delay(1000*goalTime);
+  pros::delay(1000*timeout);
 }
 
 void IntakeCommand::update() {

@@ -52,6 +52,7 @@ void autonomous() {
       break;
     case SMALL_RED:
       //works most consistantly
+      //CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kRealeaseTray, 100, 2.5));
       CommandRunner::runCommand(new IntakeCommand(tray, 100, 1));
       CommandRunner::runCommand(new DriveAndIntakeCommand(drive, tray, 48, 70, 3));
       CommandRunner::runCommand(new DriveAndIntakeCommand(drive, tray, -44.5, 100, 3));
@@ -66,23 +67,26 @@ void autonomous() {
       CommandRunner::runCommand(new DriveDistanceCommand(drive, -15, 105, 3));
       break;
     case SMALL_BLUE:
+      CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kRealeaseTray, 100, 2.5));
+      CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kSlant, 100, 2.5));
+
       //should work with timeout
       CommandRunner::runCommand(new IntakeCommand(tray, 100, .5));
       CommandRunner::runCommand(new DriveAndIntakeCommand(drive, tray, 48, 70, 3));
-      CommandRunner::runCommand(new DriveAndIntakeCommand(drive, tray, -44.5, 100, 3));
-      CommandRunner::runCommand(new DriveTurnCommand(drive, -115, 75, 1));
-      CommandRunner::runCommand(new DriveDistanceCommand(drive, 3.5, 100, 3));
+      CommandRunner::runCommand(new DriveAndIntakeCommand(drive, tray, -33, 100, 3));
+      CommandRunner::runCommand(new DriveTurnCommand(drive, -125, 75, 1));
+      CommandRunner::runCommand(new DriveDistanceCommand(drive, 14, 100, 3));
       CommandRunner::runCommand(new IntakeCommand(tray, -100, .65));
       CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kStack, 60, 2.5));
-      pros::delay(100);
+      /*pros::delay(100);
       CommandRunner::runCommand(new DriveDistanceCommand(drive, .5, 100, 1));
       pros::delay(250);
       CommandRunner::runCommand(new DriveTurnCommand(drive, -45, 75, 1));
-      pros::delay(100);
-      CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kPartialStack, 60, 1));
-      CommandRunner::runCommand(new DriveDistanceCommand(drive, -15, 105, 3));
+      pros::delay(100);*/
+      CommandRunner::runCommand(new DriveDistanceCommand(drive, -20, 100, 3));
       break;
     case LARGE_RED:
+      CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kRealeaseTray, 100, 2.5));
       //should work with timeout
       CommandRunner::runCommand(new IntakeCommand(tray, 100, .5));
       CommandRunner::runCommand(new DriveAndIntakeCommand(drive, tray, 48, 70, 3));
@@ -98,6 +102,7 @@ void autonomous() {
       CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kSlant, 100, 2.5));
       break;
     case LARGE_BLUE:
+      CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kRealeaseTray, 100, 2.5));
       //should work with timeout
       CommandRunner::runCommand(new IntakeCommand(tray, 100, .5));
       CommandRunner::runCommand(new DriveAndIntakeCommand(drive, tray, 48, 70, 3));
@@ -112,6 +117,7 @@ void autonomous() {
       CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kSlant, 100, 2.5));
       break;
     case SKILLS_RUN:
+      CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kRealeaseTray, 100, 2.5));
       //hasn't been tested or changed since Monday
       CommandRunner::runCommand(new DriveAndIntakeCommand(drive, tray, 100, 105, 3));
       CommandRunner::runCommand(new DriveTurnCommand(drive, -40, 75, 1));
@@ -128,6 +134,8 @@ void autonomous() {
       CommandRunner::runCommand(new DriveDistanceCommand(drive, 60, 105, 3));
       break;
     case DRIVE_FORWARD_AUTO:
+      CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kRealeaseTray, 60, 2.5));
+      CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kSlant, 60, 2.5));
       CommandRunner::runCommand(new DriveDistanceCommand(drive, 12, 200, 3));
       CommandRunner::runCommand(new DriveDistanceCommand(drive, -12, 200, 3));
       break;

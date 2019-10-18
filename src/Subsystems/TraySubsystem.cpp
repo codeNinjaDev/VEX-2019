@@ -6,7 +6,7 @@
 TraySubsystem::TraySubsystem(okapi::Controller iDriverController, okapi::Controller iOperatorController) : driverController(iDriverController)
   , operatorController(iOperatorController)
   , trayMotor(TRAY_MOTOR_PORT)
-  , cubeScorer(ARM_MOTOR_PORT)
+  , cubeScorer(-ARM_MOTOR_PORT)
   , leftIntakeMotor(LEFT_INTAKE_MOTOR_PORT)
   , rightIntakeMotor(-RIGHT_INTAKE_MOTOR_PORT)
   , intakeMotors({this->leftIntakeMotor, this->rightIntakeMotor})
@@ -33,12 +33,27 @@ TraySubsystem::TraySubsystem(okapi::Controller iDriverController, okapi::Control
   intakeMotors.setGearing(okapi::AbstractMotor::gearset::green);
   intakeMotors.setEncoderUnits(okapi::AbstractMotor::encoderUnits::rotations);
 
-
+  extendToggle = false;
   // Set current state to initialize state
   m_stateVal = RobotState::kInitialize;
 
 }
 
+void TraySubsystem::moveTray(TrayPosition position, double targetVelocity) {
+  trayMotor.moveAbsolute((double) position, targetVelocity);
+}
+
+void TraySubsystem::scoreTower(TowerPosition position, double targetVelocity) {
+  cubeScorer.moveAbsolute((double) position, targetVelocity);
+}
+
+void TraySubsystem::intakeCube(){
+  intakeMotors.moveVelocity(200);
+}
+
+void TraySubsystem::outtakeCube(double targetSpeed) {
+  intakeMotors.moveVelocity(-targetSpeed);
+}
 
 void TraySubsystem::initialize() {
   reset();
@@ -88,12 +103,15 @@ void TraySubsystem::update() {
       } else{
         trayMotor.moveVelocity(0);
       }
+
+      if(extendTrayButton.changedToPressed()) {
+        extendToggle = !extendToggle;
+      }
+
       // Arm functions
       if(lowTowerButton.isPressed()) {
         scoreTower(TowerPosition::kLowTower,75);
-      } else if(highTowerButton.isPressed()) {
-        scoreTower(TowerPosition::kHighTower,75);
-      } else if(extendTrayButton.isPressed()) {
+      } else if(extendToggle) {
         scoreTower(TowerPosition::kExtendTray,75);
       } else {
         scoreTower(TowerPosition::kTray,80);
@@ -102,20 +120,4 @@ void TraySubsystem::update() {
       break;
   }
   m_stateVal = nextState;
-}
-
-void TraySubsystem::moveTray(TrayPosition position, double targetVelocity) {
-  trayMotor.moveAbsolute((double) position, targetVelocity);
-}
-
-void TraySubsystem::scoreTower(TowerPosition position, double targetVelocity) {
-  cubeScorer.moveAbsolute((double) position, targetVelocity);
-}
-
-void TraySubsystem::intakeCube(){
-  intakeMotors.moveVelocity(200);
-}
-
-void TraySubsystem::outtakeCube(double targetSpeed) {
-  intakeMotors.moveVelocity(-targetSpeed);
 }

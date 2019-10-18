@@ -5,8 +5,8 @@
  *      Author: mikechacko
  */
 
-#ifndef MOVETRAYCOMMAND_H_
-#define MOVETRAYCOMMAND_H_
+#ifndef SCORECUBECOMMAND_H_
+#define SCORECUBECOMMAND_H_
 #include "../main.h"
 #include "Command.h"
 #include "TraySubsystem.h"
@@ -15,10 +15,10 @@
  * All funtions of this class must be implemented in child classes
  *
  */
-class MoveTrayCommand : public Command {
+class ScoreCubeCommand : public Command {
 public:
 
-	MoveTrayCommand(std::shared_ptr<TraySubsystem> tray, TraySubsystem::TrayPosition position, double maxSpeed, double timeout);
+	ScoreCubeCommand(std::shared_ptr<TraySubsystem> tray, TraySubsystem::TowerPosition position, double maxSpeed, double timeout);
 
 	void start();
 	void update();
@@ -29,7 +29,7 @@ private:
 	std::shared_ptr<TraySubsystem> tray;
 	double maxSpeed, timeout;
 
-	TraySubsystem::TrayPosition position;
+	TraySubsystem::TowerPosition position;
 };
 
 #endif /* COMMAND_H_ */

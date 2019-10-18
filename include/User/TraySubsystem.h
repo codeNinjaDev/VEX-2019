@@ -37,7 +37,7 @@ public:
 	 * Positions of the Intake Arm
 	 */
 	enum TrayPosition {
-		kSlant = 0, kStack = 580, kPartialStack = 525, kRealeaseTray = 20
+		kSlant = 0, kStack = 580, kPartialStack = 510, kRealeaseTray = 150
 	};
 
 	void moveTray(TrayPosition position, double targetVelocity);
@@ -66,6 +66,8 @@ private:
 	// Operator Buttons
 	okapi::ControllerButton scoreStackButton, slantButton, lowTowerButton, highTowerButton, extendTrayButton;
 
+	//toggles
+	bool extendToggle;
 
 };
 
