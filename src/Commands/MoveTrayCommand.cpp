@@ -2,16 +2,17 @@
 #include <cmath>
 #include <math.h>
 
-MoveTrayCommand::MoveTrayCommand(std::shared_ptr<TraySubsystem> tray, TraySubsystem::TrayPosition position, double timeout) : tray(tray)
+MoveTrayCommand::MoveTrayCommand(std::shared_ptr<TraySubsystem> tray, TraySubsystem::TrayPosition position, double maxSpeed, double timeout) : tray(tray)
 {
 
   this->position = position;
+  this->maxSpeed = maxSpeed;
   this->goalTime = timeout;
 }
 
 void MoveTrayCommand::start() {
   this->startTime = (timer.millis().getValue() / 1000);
-  tray->moveTray(position, 100);
+  tray->moveTray(position, maxSpeed);
 }
 
 void MoveTrayCommand::update() {
