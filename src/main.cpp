@@ -52,7 +52,9 @@ void autonomous() {
       break;
     case SMALL_RED:
       //works most consistantly
-      //CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kRealeaseTray, 100, 2.5));
+      CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kRealeaseTray, 100, 2.5));
+      CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kSlant, 100, 2.5));
+
       CommandRunner::runCommand(new IntakeCommand(tray, 100, 1));
       CommandRunner::runCommand(new DriveAndIntakeCommand(drive, tray, 48, 70, 3));
       CommandRunner::runCommand(new DriveAndIntakeCommand(drive, tray, -44.5, 100, 3));
@@ -73,9 +75,9 @@ void autonomous() {
       //should work with timeout
       CommandRunner::runCommand(new IntakeCommand(tray, 100, .5));
       CommandRunner::runCommand(new DriveAndIntakeCommand(drive, tray, 48, 70, 3));
-      CommandRunner::runCommand(new DriveAndIntakeCommand(drive, tray, -33, 100, 3));
+      CommandRunner::runCommand(new DriveAndIntakeCommand(drive, tray, -31, 100, 3));
       CommandRunner::runCommand(new DriveTurnCommand(drive, -125, 75, 1));
-      CommandRunner::runCommand(new DriveDistanceCommand(drive, 14, 100, 3));
+      CommandRunner::runCommand(new DriveDistanceCommand(drive, 13, 100, 3));
       CommandRunner::runCommand(new IntakeCommand(tray, -100, .65));
       CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kStack, 60, 2.5));
       /*pros::delay(100);
