@@ -28,8 +28,8 @@ void initialize() {
   autoSelector.registerAuto("SMALL BLUE ZONE", SMALL_BLUE);
   autoSelector.registerAuto("LARGE RED ZONE", LARGE_RED);
   autoSelector.registerAuto("LARGE BLUE ZONE", LARGE_BLUE);
+  autoSelector.registerAuto("BACK", DRIVE_FORWARD_AUTO);
   autoSelector.registerAuto("SKILLS RUN", SKILLS_RUN);
-  autoSelector.registerAuto("DRIVE FORWARD AUTO", DRIVE_FORWARD_AUTO);
   autoSelector.listOptions();
 }
 
@@ -47,10 +47,33 @@ void competition_initialize() {
 void autonomous() {
   tray->reset();
   drive->reset();
+  drive->driveTrain.setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
   switch(SELECTED_AUTO) {
     case DO_NOTHING_AUTO:
       break;
     case SMALL_RED:
+    CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kRealeaseTray, 100, 2.5));
+    CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kSlant, 100, 2.5));
+
+    //should work with timeout
+    CommandRunner::runCommand(new IntakeCommand(tray, 100, .5));
+    CommandRunner::runCommand(new DriveAndIntakeCommand(drive, tray, 48, 70, 3));
+    CommandRunner::runCommand(new DriveAndIntakeCommand(drive, tray, -31, 100, 3));
+    CommandRunner::runCommand(new DriveTurnCommand(drive, 117, 75, 1));
+    CommandRunner::runCommand(new DriveDistanceCommand(drive, 12.5, 100, 3));
+    CommandRunner::runCommand(new IntakeCommand(tray, -100, .65));
+    CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kPartialStack, 60, 2.5));
+    pros::delay(50);
+    CommandRunner::runCommand(new DriveTurnCommand(drive, -20, 45, 1));
+
+
+    /*pros::delay(100);
+    CommandRunner::runCommand(new DriveDistanceCommand(drive, .5, 100, 1));
+    pros::delay(250);
+    CommandRunner::runCommand(new DriveTurnCommand(drive, -45, 75, 1));
+    pros::delay(100);*/
+
+    /*
       //works most consistantly
       CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kRealeaseTray, 100, 2.5));
       CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kSlant, 100, 2.5));
@@ -67,6 +90,7 @@ void autonomous() {
       pros::delay(250);
       CommandRunner::runCommand(new DriveTurnCommand(drive, 10, 75, 1));
       CommandRunner::runCommand(new DriveDistanceCommand(drive, -15, 105, 3));
+      */
       break;
     case SMALL_BLUE:
       CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kRealeaseTray, 100, 2.5));
@@ -76,7 +100,7 @@ void autonomous() {
       CommandRunner::runCommand(new IntakeCommand(tray, 100, .5));
       CommandRunner::runCommand(new DriveAndIntakeCommand(drive, tray, 48, 70, 3));
       CommandRunner::runCommand(new DriveAndIntakeCommand(drive, tray, -31, 100, 3));
-      CommandRunner::runCommand(new DriveTurnCommand(drive, -125, 75, 1));
+      CommandRunner::runCommand(new DriveTurnCommand(drive, -117, 75, 1));
       CommandRunner::runCommand(new DriveDistanceCommand(drive, 13, 100, 3));
       CommandRunner::runCommand(new IntakeCommand(tray, -100, .65));
       CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kStack, 60, 2.5));
@@ -136,10 +160,9 @@ void autonomous() {
       CommandRunner::runCommand(new DriveDistanceCommand(drive, 60, 105, 3));
       break;
     case DRIVE_FORWARD_AUTO:
-      CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kRealeaseTray, 60, 2.5));
-      CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kSlant, 60, 2.5));
-      CommandRunner::runCommand(new DriveDistanceCommand(drive, 12, 200, 3));
       CommandRunner::runCommand(new DriveDistanceCommand(drive, -12, 200, 3));
+      CommandRunner::runCommand(new DriveDistanceCommand(drive, 12, 200, 3));
+
       break;
     default:
       break;

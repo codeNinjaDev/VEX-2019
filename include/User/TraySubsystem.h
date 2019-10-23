@@ -37,7 +37,7 @@ public:
 	 * Positions of the Intake Arm
 	 */
 	enum TrayPosition {
-		kSlant = 0, kStack = 580, kPartialStack = 510, kRealeaseTray = 160
+		kSlant = 0, kStack = 580, kPartialStack = 550, kRealeaseTray = 175
 	};
 
 	void moveTray(TrayPosition position, double targetVelocity);

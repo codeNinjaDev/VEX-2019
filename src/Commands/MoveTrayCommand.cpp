@@ -22,7 +22,7 @@ void MoveTrayCommand::update() {
 bool MoveTrayCommand::isFinished() {
   double currentTime = (timer.millis().getValue() / 1000);
   bool reachTimeout = (currentTime  - startTime) >= timeout;
-  bool hitTarget = abs(tray->trayMotor.getTargetPosition() - tray->trayMotor.getPosition()) < 3;
+  bool hitTarget = abs(tray->trayMotor.getTargetPosition() - tray->trayMotor.getPosition()) < 35;
   return reachTimeout || hitTarget;
 }
 
