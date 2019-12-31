@@ -11,15 +11,9 @@ DriveSubsystem::DriveSubsystem(okapi::Controller iDriverController) : driverCont
   , frontRightDriveMotor(-FRONT_RIGHT_MOTOR_PORT)
   , leftMotors({backLeftDriveMotor, frontLeftDriveMotor})
   , rightMotors({backRightDriveMotor, frontRightDriveMotor})
-  , driveTrain(okapi::ChassisControllerFactory::create(leftMotors,rightMotors, okapi::AbstractMotor::gearset::green, {BACK_WHEEL_DIAMETER, WHEELBASE_WIDTH}))
-  , profileController(okapi::AsyncControllerFactory::motionProfile(
-      1.0,  // Maximum linear velocity of the Chassis in m/s
-      2.0,  // Maximum linear acceleration of the Chassis in m/s/s
-      10.0, // Maximum linear jerk of the Chassis in m/s/s/s
-      driveTrain // Chassis Controller
-    ))
+  , driveTrain(okapi::ChassisControllerBuilder().withMotors(leftMotors, rightMotors).withDimensions(okapi::AbstractMotor::gearset::green, {{4_in, 11.5_in}, okapi::imev5GreenTPR}).withOdometry().buildOdometry()) // use the same scales as the chassis (above)
+     // build an odometry chassis) // build an odometry chassis
     , SlowDown1(okapi::ControllerId::master, okapi::ControllerDigital::R2)
-    , SlowDown2(okapi::ControllerId::master, okapi::ControllerDigital::L2)
     , toggleDriveButton(okapi::ControllerId::master, okapi::ControllerDigital::right)
     , toggleDefenseButton(okapi::ControllerId::master, okapi::ControllerDigital::X)
 {
@@ -28,8 +22,7 @@ DriveSubsystem::DriveSubsystem(okapi::Controller iDriverController) : driverCont
   toggleDefense = false;
 
 
-  driveTrain.setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
-  driveTrain.setEncoderUnits(okapi::AbstractMotor::encoderUnits::degrees);
+  driveTrain->getModel()->setEncoderUnits(okapi::AbstractMotor::encoderUnits::degrees);
 
   m_stateVal = DriveState::kInitialize;
 }
@@ -43,13 +36,12 @@ void DriveSubsystem::reset() {
   // Reset sensors and stop all drive motors
   leftMotors.tarePosition();
   rightMotors.tarePosition();
-  driveTrain.resetSensors();
-  driveTrain.resetSensors();
+  driveTrain->getModel()->resetSensors();
 }
 
 void DriveSubsystem::stop() {
-  driveTrain.stop();
-  driveTrain.setMaxVelocity(200);
+  driveTrain->stop();
+  driveTrain->getModel()->setMaxVelocity(200);
 
 }
 
@@ -62,7 +54,7 @@ void DriveSubsystem::update() {
        run the initialize function and set the next state to be teleop
        */
       initialize();
-      driveTrain.setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
+      driveTrain->getModel()->setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
 
       nextState = DriveState::kTeleopDrive;
       break;
@@ -81,11 +73,6 @@ void DriveSubsystem::update() {
         driverController.rumble("-.");
       }
 
-      if(toggleDefense) {
-        driveTrain.setBrakeMode(okapi::AbstractMotor::brakeMode::hold);
-      } else {
-        driveTrain.setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
-      }
 
       if (toggleDrive) {
         arcadeDrive(driverController.getAnalog(okapi::ControllerAnalog::leftY)
@@ -98,6 +85,14 @@ void DriveSubsystem::update() {
           , driverController.getAnalog(okapi::ControllerAnalog::rightY)
           , true);
       }
+      okapi::AbstractMotor::brakeMode currBrake = leftMotors.getBrakeMode();
+      
+      if(toggleDefense) {
+        driveTrain->getModel()->setBrakeMode(okapi::AbstractMotor::brakeMode::hold);
+      } else {
+        driveTrain->getModel()->setBrakeMode(currBrake);
+      }
+
       break;
   }
   // Set current state to next state
@@ -109,14 +104,13 @@ void DriveSubsystem::arcadeDrive(double forward, double rotate, bool teleOp) {
 
   double multiplier = 1;
 
-  if (SlowDown1.isPressed() && SlowDown1.isPressed()) {
-    multiplier = 0.4;
-    driveTrain.setBrakeMode(okapi::AbstractMotor::brakeMode::brake);
-  } else if (SlowDown1.isPressed() || SlowDown1.isPressed()) {
+  if (SlowDown1.isPressed()) {
     multiplier = 0.75;
-    driveTrain.setBrakeMode(okapi::AbstractMotor::brakeMode::brake);
+    driveTrain->getModel()->setBrakeMode(okapi::AbstractMotor::brakeMode::brake);
   } else {
     multiplier = 1;
+    driveTrain->getModel()->setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
+
   }
 
   double left = forward + rotate;
@@ -124,9 +118,9 @@ void DriveSubsystem::arcadeDrive(double forward, double rotate, bool teleOp) {
 
   if (teleOp) {
     // Square the joystick inputs, but keep the orignal sign
-    driveTrain.arcade(squareInput(forward) * multiplier, squareInput(rotate) * multiplier);
+    driveTrain->getModel()->arcade(squareInput(forward) * multiplier, squareInput(rotate) * multiplier);
   } else {
-    driveTrain.arcade(forward * multiplier, rotate * multiplier);
+    driveTrain->getModel()->arcade(forward * multiplier, rotate * multiplier);
   }
 
 }
@@ -134,31 +128,29 @@ void DriveSubsystem::arcadeDrive(double forward, double rotate, bool teleOp) {
 void DriveSubsystem::tankDrive(double myLeft, double myRight, bool teleOp) {
 
   double multiplier = 1;
-  if (SlowDown1.isPressed() && SlowDown1.isPressed()) {
-    multiplier = 0.4;
-    driveTrain.setBrakeMode(okapi::AbstractMotor::brakeMode::brake);
-  } else if (SlowDown1.isPressed() || SlowDown1.isPressed()) {
+  if (SlowDown1.isPressed()) {
     multiplier = 0.75;
-    driveTrain.setBrakeMode(okapi::AbstractMotor::brakeMode::brake);
+    driveTrain->getModel()->setBrakeMode(okapi::AbstractMotor::brakeMode::brake);
   } else {
     multiplier = 1;
+    driveTrain->getModel()->setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
   }
 
   if (teleOp) {
-    driveTrain.tank((squareInput(myLeft) * multiplier), (squareInput(myRight) * multiplier));
+    driveTrain->getModel()->tank((squareInput(myLeft) * multiplier), (squareInput(myRight) * multiplier));
   } else {
-    driveTrain.tank(myLeft * multiplier, myRight * multiplier);
+    driveTrain->getModel()->tank(myLeft * multiplier, myRight * multiplier);
 
   }
 
 }
 
 double DriveSubsystem::getLeftEncoder() {
-  return EncoderUtil::getInches(driveTrain.getSensorVals()[0], BACK_WHEEL_DIAMETER.getValue());
+  return EncoderUtil::getInches(driveTrain->getModel()->getSensorVals()[0], BACK_WHEEL_DIAMETER.getValue());
 }
 
 double DriveSubsystem::getRightEncoder() {
-  return EncoderUtil::getInches(driveTrain.getSensorVals()[1], BACK_WHEEL_DIAMETER.getValue());
+  return EncoderUtil::getInches(driveTrain->getModel()->getSensorVals()[1], BACK_WHEEL_DIAMETER.getValue());
 }
 
 double DriveSubsystem::squareInput(double input) {
@@ -168,39 +160,15 @@ double DriveSubsystem::squareInput(double input) {
 
 void DriveSubsystem::moveMetersAsync(double meters) {
   reset();
-  driveTrain.moveDistanceAsync(meters * okapi::meter);
+  driveTrain->moveDistanceAsync(meters * okapi::meter);
 }
 
 void DriveSubsystem::moveInchesAsync(double inches) {
   reset();
-  driveTrain.moveDistanceAsync(inches * okapi::inch);
+  driveTrain->moveDistanceAsync(inches * okapi::inch);
 }
 
 void DriveSubsystem::turnAngleAsync(double angle) {
   reset();
-  driveTrain.turnAngleAsync(angle * okapi::degree);
-}
-
-void DriveSubsystem::turnDegreesAsync(double degrees) {
-  reset();
-  driveTrain.turnAngleAsync(degrees);
-}
-
-void DriveSubsystem::generatePath(std::initializer_list<okapi::Point> pathPoints, std::string pathName) {
-  profileController.generatePath(pathPoints, pathName);
-}
-
-void DriveSubsystem::followPath(std::string pathName, bool backwards, bool waitTilSettled) {
-  profileController.setTarget(pathName, backwards);
-  if(waitTilSettled) {
-    profileController.waitUntilSettled();
-  }
-}
-
-void DriveSubsystem::adjustPath(std::initializer_list<okapi::Point> pathPoints) {
-  profileController.moveTo(pathPoints);
-}
-
-bool DriveSubsystem::isPathCompleted() {
-  return profileController.isSettled();
+  driveTrain->turnAngleAsync(angle * okapi::degree);
 }

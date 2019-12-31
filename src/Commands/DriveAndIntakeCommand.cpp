@@ -2,7 +2,7 @@
 #include <cmath>
 #include <math.h>
 
-DriveAndIntakeCommand::DriveAndIntakeCommand(std::shared_ptr<DriveSubsystem> drive, std::shared_ptr<TraySubsystem> tray,double distance, double maxSpeed, double timeout) : drive(drive)
+DriveAndIntakeCommand::DriveAndIntakeCommand(std::shared_ptr<DriveSubsystem> drive, std::shared_ptr<TraySubsystem> tray,double distance, double maxSpeed) : drive(drive)
   , tray(tray)
 {
 
@@ -12,15 +12,12 @@ DriveAndIntakeCommand::DriveAndIntakeCommand(std::shared_ptr<DriveSubsystem> dri
   drive->reset();
   this->distance = distance;
   this->maxSpeed = maxSpeed;
-  this->goalTime = timeout;
 }
 
 void DriveAndIntakeCommand::start() {
-  this->startTime = (timer.millis().getValue() / 1000);
   tray->intakeCube();
-  drive->driveTrain.setMaxVelocity(maxSpeed);
+  drive->driveTrain->getModel()->setMaxVelocity(maxSpeed);
   drive->moveInchesAsync(distance);
-  drive->driveTrain.waitUntilSettled();
 }
 
 void DriveAndIntakeCommand::update() {
@@ -28,10 +25,7 @@ void DriveAndIntakeCommand::update() {
 }
 
 bool DriveAndIntakeCommand::isFinished() {
-  /*double currentTime = (timer.millis().getValue() / 1000);
-  bool reachTimeout = (currentTime  - startTime) >= goalTime;
-  bool reachedDistance = ((drive->getLeftEncoder() + drive->getRightEncoder()) / 2) >= distance;*/
-  return true;
+  return drive->driveTrain->isSettled();
 }
 
 void DriveAndIntakeCommand::finish() {

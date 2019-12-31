@@ -13,11 +13,10 @@ TraySubsystem::TraySubsystem(okapi::Controller iDriverController, okapi::Control
   , limitSwitch(LIMIT_SWITCH_PORT)
   , intakeRollersButton(okapi::ControllerId::master ,okapi::ControllerDigital::R1)
   , outtakeRollersButton(okapi::ControllerId::master ,okapi::ControllerDigital::L1)
-  , scoreStackButton(okapi::ControllerId::partner, okapi::ControllerDigital::R1)
-  , slantButton(okapi::ControllerId::partner, okapi::ControllerDigital::R2)
-  , lowTowerButton(okapi::ControllerId::partner, okapi::ControllerDigital::L1)
-  , highTowerButton(okapi::ControllerId::partner, okapi::ControllerDigital::down)
-  , extendTrayButton(okapi::ControllerId::partner, okapi::ControllerDigital::up)
+  , scoreStackButton(okapi::ControllerId::master, okapi::ControllerDigital::L2)
+  , lowTowerButton(okapi::ControllerId::partner, okapi::ControllerDigital::L2)
+  , midTowerButton(okapi::ControllerId::partner, okapi::ControllerDigital::L1)
+  , intakePosButton(okapi::ControllerId::partner, okapi::ControllerDigital::B)
 {
 
 
@@ -33,14 +32,16 @@ TraySubsystem::TraySubsystem(okapi::Controller iDriverController, okapi::Control
   intakeMotors.setGearing(okapi::AbstractMotor::gearset::green);
   intakeMotors.setEncoderUnits(okapi::AbstractMotor::encoderUnits::rotations);
 
-  extendToggle = false;
+  towerToggles = 0;
   // Set current state to initialize state
   m_stateVal = RobotState::kInitialize;
 
 }
 
 void TraySubsystem::moveTray(TrayPosition position, double targetVelocity) {
-  trayMotor.moveAbsolute((double) position, targetVelocity);
+  double currPosition = trayMotor.getPosition();
+  trayMotor.moveAbsolute((double) position, abs(targetVelocity - (90/(double) position)*currPosition));
+
 }
 
 void TraySubsystem::scoreTower(TowerPosition position, double targetVelocity) {
@@ -96,26 +97,32 @@ void TraySubsystem::update() {
       // Operator functions
 
       // Tray functions
-      if (scoreStackButton.isPressed()) {
-        moveTray(TrayPosition::kStack, 50);
-      } else if(slantButton.isPressed()){
-        moveTray(TrayPosition::kSlant, 100);
-      } else{
-        trayMotor.moveVelocity(0);
+      if (scoreStackButton.changedToPressed()) {
+        stackTrayToggle = !stackTrayToggle;
       }
 
-      if(extendTrayButton.changedToPressed()) {
-        extendToggle = !extendToggle;
-      }
-
-      // Arm functions
-      if(lowTowerButton.isPressed()) {
-        scoreTower(TowerPosition::kLowTower,75);
-      } else if(extendToggle) {
-        scoreTower(TowerPosition::kExtendTray,75);
+      if(stackTrayToggle) {
+        moveTray(TrayPosition::kStack, 100);
       } else {
-        scoreTower(TowerPosition::kTray,80);
+        moveTray(TrayPosition::kSlant, 100);
       }
+
+      if(midTowerButton.changedToPressed()) {
+        towerToggles = 2;
+      } else if(lowTowerButton.changedToPressed()) {
+        towerToggles = 1;
+      } else if(intakePosButton.changedToPressed()) {
+        towerToggles = 0;
+      }
+
+      if(towerToggles == 0) {
+        scoreTower(TowerPosition::kIntake, 100);
+      } else if(towerToggles == 1) {
+        scoreTower(TowerPosition::kLowTower, 100);
+      } else if(towerToggles == 2) {
+        scoreTower(TowerPosition::kMidTower, 100);
+      }
+
 
       break;
   }

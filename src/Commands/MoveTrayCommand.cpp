@@ -2,28 +2,26 @@
 #include <cmath>
 #include <math.h>
 
-MoveTrayCommand::MoveTrayCommand(std::shared_ptr<TraySubsystem> tray, TraySubsystem::TrayPosition position, double maxSpeed, double timeout) : tray(tray)
+MoveTrayCommand::MoveTrayCommand(std::shared_ptr<TraySubsystem> tray, TraySubsystem::TrayPosition position, double maxSpeed) : tray(tray)
 {
 
   this->position = position;
   this->maxSpeed = maxSpeed;
-  this->timeout = timeout;
 }
 
 void MoveTrayCommand::start() {
-  this->startTime = (timer.millis().getValue() / 1000);
-  tray->moveTray(position, maxSpeed);
+  
 }
 
 void MoveTrayCommand::update() {
+  double currPosition = tray->trayMotor.getPosition();
+  tray->moveTray(position, maxSpeed - (90/(double) position)*currPosition);
 
 }
 
 bool MoveTrayCommand::isFinished() {
-  double currentTime = (timer.millis().getValue() / 1000);
-  bool reachTimeout = (currentTime  - startTime) >= timeout;
-  bool hitTarget = abs(tray->trayMotor.getTargetPosition() - tray->trayMotor.getPosition()) < 35;
-  return reachTimeout || hitTarget;
+  bool hitTarget = abs(tray->trayMotor.getTargetPosition() - tray->trayMotor.getPosition()) < 10;
+  return hitTarget;
 }
 
 void MoveTrayCommand::finish() {
