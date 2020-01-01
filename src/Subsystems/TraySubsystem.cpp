@@ -17,6 +17,9 @@ TraySubsystem::TraySubsystem(okapi::Controller iDriverController, okapi::Control
   , lowTowerButton(okapi::ControllerId::partner, okapi::ControllerDigital::L2)
   , midTowerButton(okapi::ControllerId::partner, okapi::ControllerDigital::L1)
   , intakePosButton(okapi::ControllerId::partner, okapi::ControllerDigital::B)
+  , toggleManualTowerButton(okapi::ControllerId::partner, okapi::ControllerDigital::X)
+  , manualUpButton(okapi::ControllerId::partner, okapi::ControllerDigital::up)
+  , manualDownButton(okapi::ControllerId::partner, okapi::ControllerDigital::down)
 {
 
 
@@ -33,6 +36,7 @@ TraySubsystem::TraySubsystem(okapi::Controller iDriverController, okapi::Control
   intakeMotors.setEncoderUnits(okapi::AbstractMotor::encoderUnits::rotations);
 
   towerToggles = 0;
+  toggleManualTower = false;
   // Set current state to initialize state
   m_stateVal = RobotState::kInitialize;
 
@@ -101,6 +105,11 @@ void TraySubsystem::update() {
         stackTrayToggle = !stackTrayToggle;
       }
 
+      if (toggleManualTowerButton.changedToPressed()) {
+        toggleManualTower = !toggleManualTower;
+        operatorController.rumble(".-.");
+      }
+
       if(stackTrayToggle) {
         moveTray(TrayPosition::kStack, 100);
       } else {
@@ -115,15 +124,24 @@ void TraySubsystem::update() {
         towerToggles = 0;
       }
 
-      if(towerToggles == 0) {
-        scoreTower(TowerPosition::kIntake, 100);
-      } else if(towerToggles == 1) {
-        scoreTower(TowerPosition::kLowTower, 100);
-      } else if(towerToggles == 2) {
-        scoreTower(TowerPosition::kMidTower, 100);
+      if(toggleManualTower) {
+        if(manualUpButton.isPressed()) {
+          cubeScorer.moveVelocity(50);
+        } else if(manualDownButton.isPressed()) {
+          cubeScorer.moveVelocity(-50);
+        } else {
+          cubeScorer.moveVelocity(0);
+        }
+      } else {
+        if(towerToggles == 0) {
+          scoreTower(TowerPosition::kIntake, 100);
+        } else if(towerToggles == 1) {
+          scoreTower(TowerPosition::kLowTower, 100);
+        } else if(towerToggles == 2) {
+          scoreTower(TowerPosition::kMidTower, 100);
+        }
+
       }
-
-
       break;
   }
   m_stateVal = nextState;
