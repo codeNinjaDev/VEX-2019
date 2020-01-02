@@ -1,0 +1,79 @@
+.TH "LogPositionCommand" 3 "Sun Oct 13 2019" "Version 0.0.5" "VEX-2019 Team Convergence" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+LogPositionCommand
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <LogPositionCommand\&.h>\fP
+.PP
+Inherits \fBCommand\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLogPositionCommand\fP (std::shared_ptr< \fBDriveSubsystem\fP > drive, double timeout)"
+.br
+.ti -1c
+.RI "void \fBstart\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdate\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisFinished\fP ()"
+.br
+.ti -1c
+.RI "void \fBfinish\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+\fBCommand\fP to log the distance of the robot (to a csv file) while spinning in order to find the max constants for motion profiling\&. 
+.PP
+Definition at line 16 of file LogPositionCommand\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "LogPositionCommand::LogPositionCommand (std::shared_ptr< \fBDriveSubsystem\fP > drive, double timeout)"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIdrive\fP Needs drive subsystem 
+.br
+\fItimeout\fP Time limit for the command 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void LogPositionCommand::finish ()\fC [virtual]\fP"
+Abstract function that runs after the while loop and only once\&. Normally wraps up a command and gets the robot ready to transition to a new command\&. 
+.PP
+Implements \fBCommand\fP\&.
+.SS "bool LogPositionCommand::isFinished ()\fC [virtual]\fP"
+Abstract function that runs in a while loop and continously checks if the command should end\&. If true, ends while loop\&. Common use case is to check if timeout for command is exceeded 
+.PP
+\fBReturns\fP
+.RS 4
+True if command should end, false if it should not\&. 
+.RE
+.PP
+
+.PP
+Implements \fBCommand\fP\&.
+.SS "void LogPositionCommand::start ()\fC [virtual]\fP"
+Abstract function that is called before the while loop only once\&. Common use case is to setup the command\&. 
+.PP
+Implements \fBCommand\fP\&.
+.SS "void LogPositionCommand::update ()\fC [virtual]\fP"
+Abstract function that is run in a while loop until \fI\fBisFinished()\fP\fP returns true and contains the meat of the command, such as running motors\&. 
+.PP
+Implements \fBCommand\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for VEX-2019 Team Convergence from the source code\&.

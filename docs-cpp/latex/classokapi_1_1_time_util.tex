@@ -1,0 +1,50 @@
+\hypertarget{classokapi_1_1_time_util}{}\doxysection{okapi\+::Time\+Util Class Reference}
+\label{classokapi_1_1_time_util}\index{okapi::TimeUtil@{okapi::TimeUtil}}
+
+
+{\ttfamily \#include $<$time\+Util.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_time_util_a5c723190393428cab7621d3f9e60fc85}\label{classokapi_1_1_time_util_a5c723190393428cab7621d3f9e60fc85}} 
+{\bfseries Time\+Util} (const \mbox{\hyperlink{classokapi_1_1_supplier}{Supplier}}$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_timer}{Abstract\+Timer}} $>$$>$ \&itimer\+Supplier, const \mbox{\hyperlink{classokapi_1_1_supplier}{Supplier}}$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_rate}{Abstract\+Rate}} $>$$>$ \&irate\+Supplier, const \mbox{\hyperlink{classokapi_1_1_supplier}{Supplier}}$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_settled_util}{Settled\+Util}} $>$$>$ \&isettled\+Util\+Supplier)
+\item 
+\mbox{\Hypertarget{classokapi_1_1_time_util_a13544bd5e4689fa83b948d3e0ec2b749}\label{classokapi_1_1_time_util_a13544bd5e4689fa83b948d3e0ec2b749}} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_timer}{Abstract\+Timer}} $>$ {\bfseries get\+Timer} () const
+\item 
+\mbox{\Hypertarget{classokapi_1_1_time_util_a7e1680a2744e8b1975776909ed7e54ab}\label{classokapi_1_1_time_util_a7e1680a2744e8b1975776909ed7e54ab}} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_rate}{Abstract\+Rate}} $>$ {\bfseries get\+Rate} () const
+\item 
+\mbox{\Hypertarget{classokapi_1_1_time_util_af7c3ebf2f3f5c45a836203b82b4d9425}\label{classokapi_1_1_time_util_af7c3ebf2f3f5c45a836203b82b4d9425}} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_settled_util}{Settled\+Util}} $>$ {\bfseries get\+Settled\+Util} () const
+\item 
+\mbox{\Hypertarget{classokapi_1_1_time_util_ae14a3a145a91203d6cd4292a1c556884}\label{classokapi_1_1_time_util_ae14a3a145a91203d6cd4292a1c556884}} 
+const \mbox{\hyperlink{classokapi_1_1_supplier}{Supplier}}$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_timer}{Abstract\+Timer}} $>$ $>$ {\bfseries get\+Timer\+Supplier} () const
+\item 
+\mbox{\Hypertarget{classokapi_1_1_time_util_a823df7960b3cb93a5b52916fea593f79}\label{classokapi_1_1_time_util_a823df7960b3cb93a5b52916fea593f79}} 
+const \mbox{\hyperlink{classokapi_1_1_supplier}{Supplier}}$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_rate}{Abstract\+Rate}} $>$ $>$ {\bfseries get\+Rate\+Supplier} () const
+\item 
+\mbox{\Hypertarget{classokapi_1_1_time_util_ada192dd50723012029486b54d4a7849d}\label{classokapi_1_1_time_util_ada192dd50723012029486b54d4a7849d}} 
+const \mbox{\hyperlink{classokapi_1_1_supplier}{Supplier}}$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_settled_util}{Settled\+Util}} $>$ $>$ {\bfseries get\+Settled\+Util\+Supplier} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_time_util_ac1d9f2cc535d5de97172645a3456e141}\label{classokapi_1_1_time_util_ac1d9f2cc535d5de97172645a3456e141}} 
+\mbox{\hyperlink{classokapi_1_1_supplier}{Supplier}}$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_timer}{Abstract\+Timer}} $>$ $>$ {\bfseries timer\+Supplier}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_time_util_afdd2a5ab8f268868daf26ecd74580983}\label{classokapi_1_1_time_util_afdd2a5ab8f268868daf26ecd74580983}} 
+\mbox{\hyperlink{classokapi_1_1_supplier}{Supplier}}$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_rate}{Abstract\+Rate}} $>$ $>$ {\bfseries rate\+Supplier}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_time_util_aab5bc0e4f9c14b511c53211f2374fa1b}\label{classokapi_1_1_time_util_aab5bc0e4f9c14b511c53211f2374fa1b}} 
+\mbox{\hyperlink{classokapi_1_1_supplier}{Supplier}}$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_settled_util}{Settled\+Util}} $>$ $>$ {\bfseries settled\+Util\+Supplier}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility class for holding an \mbox{\hyperlink{classokapi_1_1_abstract_timer}{Abstract\+Timer}}, \mbox{\hyperlink{classokapi_1_1_abstract_rate}{Abstract\+Rate}}, and \mbox{\hyperlink{classokapi_1_1_settled_util}{Settled\+Util}} together in one class since they are commonly used together. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/okapi/api/util/time\+Util.\+hpp\end{DoxyCompactItemize}

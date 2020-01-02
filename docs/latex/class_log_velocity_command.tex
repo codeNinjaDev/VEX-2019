@@ -1,0 +1,93 @@
+\doxysection{Log\+Velocity\+Command Class Reference}
+\label{class_log_velocity_command}\index{LogVelocityCommand@{LogVelocityCommand}}
+
+
+{\ttfamily \#include $<$Log\+Velocity\+Command.\+h$>$}
+
+Inheritance diagram for Log\+Velocity\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_log_velocity_command}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Log\+Velocity\+Command} (std\+::shared\+\_\+ptr$<$ \textbf{ Drive\+Subsystem} $>$ drive, double timeout)
+\item 
+void \textbf{ start} ()
+\item 
+void \textbf{ update} ()
+\item 
+bool \textbf{ is\+Finished} ()
+\item 
+void \textbf{ finish} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 14 of file Log\+Velocity\+Command.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_log_velocity_command_a04e777a88cdbbcbde114895f3125c467}} 
+\index{LogVelocityCommand@{LogVelocityCommand}!LogVelocityCommand@{LogVelocityCommand}}
+\index{LogVelocityCommand@{LogVelocityCommand}!LogVelocityCommand@{LogVelocityCommand}}
+\doxysubsubsection{LogVelocityCommand()}
+{\footnotesize\ttfamily Log\+Velocity\+Command\+::\+Log\+Velocity\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \textbf{ Drive\+Subsystem} $>$}]{drive,  }\item[{double}]{timeout }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_log_velocity_command_aab488905c958663a8d657f0ca8abe54e}} 
+\index{LogVelocityCommand@{LogVelocityCommand}!finish@{finish}}
+\index{finish@{finish}!LogVelocityCommand@{LogVelocityCommand}}
+\doxysubsubsection{finish()}
+{\footnotesize\ttfamily void Log\+Velocity\+Command\+::finish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that runs after the while loop and only once. Normally wraps up a command and gets the robot ready to transition to a new command. 
+
+Implements \textbf{ Command} \doxyref{}{p.}{class_command_affcda825b758dbb11c2cb036913d4c90}.
+
+\mbox{\label{class_log_velocity_command_a67f8f92194ee5584c01a85a3483c4cd9}} 
+\index{LogVelocityCommand@{LogVelocityCommand}!isFinished@{isFinished}}
+\index{isFinished@{isFinished}!LogVelocityCommand@{LogVelocityCommand}}
+\doxysubsubsection{isFinished()}
+{\footnotesize\ttfamily bool Log\+Velocity\+Command\+::is\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that runs in a while loop and continously checks if the command should end. If true, ends while loop. Common use case is to check if timeout for command is exceeded \begin{DoxyReturn}{Returns}
+True if command should end, false if it should not. 
+\end{DoxyReturn}
+
+
+Implements \textbf{ Command} \doxyref{}{p.}{class_command_a9aa704d5f9d98f510a79e645701dc72a}.
+
+\mbox{\label{class_log_velocity_command_a26e9a44212f66d49c76eb75776dbe78f}} 
+\index{LogVelocityCommand@{LogVelocityCommand}!start@{start}}
+\index{start@{start}!LogVelocityCommand@{LogVelocityCommand}}
+\doxysubsubsection{start()}
+{\footnotesize\ttfamily void Log\+Velocity\+Command\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that is called before the while loop only once. Common use case is to setup the command. 
+
+Implements \textbf{ Command} \doxyref{}{p.}{class_command_a2ca7d162253b520e8a0f9325051eea61}.
+
+\mbox{\label{class_log_velocity_command_a379e0f092bb6bf38dbf534224c24a0fa}} 
+\index{LogVelocityCommand@{LogVelocityCommand}!update@{update}}
+\index{update@{update}!LogVelocityCommand@{LogVelocityCommand}}
+\doxysubsubsection{update()}
+{\footnotesize\ttfamily void Log\+Velocity\+Command\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that is run in a while loop until {\itshape \doxyref{is\+Finished()}{p.}{class_log_velocity_command_a67f8f92194ee5584c01a85a3483c4cd9}} returns true and contains the meat of the command, such as running motors. 
+
+Implements \textbf{ Command} \doxyref{}{p.}{class_command_a59432e50c228dc1a27302af0219656d9}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+User/\textbf{ Log\+Velocity\+Command.\+h}\end{DoxyCompactItemize}

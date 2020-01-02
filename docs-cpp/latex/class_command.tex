@@ -1,0 +1,102 @@
+\hypertarget{class_command}{}\doxysection{Command Class Reference}
+\label{class_command}\index{Command@{Command}}
+
+
+{\ttfamily \#include $<$Command.\+h$>$}
+
+Inheritance diagram for Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_command}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_command_a2ca7d162253b520e8a0f9325051eea61}{start}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_command_a59432e50c228dc1a27302af0219656d9}{update}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{class_command_a9aa704d5f9d98f510a79e645701dc72a}{is\+Finished}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_command_affcda825b758dbb11c2cb036913d4c90}{finish}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_command_ae7be70f26cb77cdaedc8e43f37b3c724}{start\+Time}}
+\item 
+double \mbox{\hyperlink{class_command_a797f4bf0e36bd3beef5f647756a25f98}{goal\+Time}}
+\item 
+\mbox{\Hypertarget{class_command_a5bda0a54fb91e32b76cbd5fa30db7e37}\label{class_command_a5bda0a54fb91e32b76cbd5fa30db7e37}} 
+\mbox{\hyperlink{classokapi_1_1_timer}{okapi\+::\+Timer}} {\bfseries timer}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for autonomous actions. All funtions of this class must be implemented in child classes 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_command_affcda825b758dbb11c2cb036913d4c90}\label{class_command_affcda825b758dbb11c2cb036913d4c90}} 
+\index{Command@{Command}!finish@{finish}}
+\index{finish@{finish}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{finish()}{finish()}}
+{\footnotesize\ttfamily virtual void Command\+::finish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Abstract function that runs after the while loop and only once. Normally wraps up a command and gets the robot ready to transition to a new command. 
+
+Implemented in \mbox{\hyperlink{class_log_position_command_a68c3ee4c45f14878716e359b35176d42}{Log\+Position\+Command}}, \mbox{\hyperlink{class_log_velocity_command_aab488905c958663a8d657f0ca8abe54e}{Log\+Velocity\+Command}}, and \mbox{\hyperlink{class_home_lift_command_ac2ff7fd83d879afbc25f1454a9b0acf7}{Home\+Lift\+Command}}.
+
+\mbox{\Hypertarget{class_command_a9aa704d5f9d98f510a79e645701dc72a}\label{class_command_a9aa704d5f9d98f510a79e645701dc72a}} 
+\index{Command@{Command}!isFinished@{isFinished}}
+\index{isFinished@{isFinished}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{isFinished()}{isFinished()}}
+{\footnotesize\ttfamily virtual bool Command\+::is\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Abstract function that runs in a while loop and continously checks if the command should end. If true, ends while loop. Common use case is to check if timeout for command is exceeded \begin{DoxyReturn}{Returns}
+True if command should end, false if it should not. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_log_position_command_a08fe197e191038b4893bb51c43b926c3}{Log\+Position\+Command}}, \mbox{\hyperlink{class_log_velocity_command_a67f8f92194ee5584c01a85a3483c4cd9}{Log\+Velocity\+Command}}, and \mbox{\hyperlink{class_home_lift_command_af6d49f894ee036bb102f4e1e04f4cc9f}{Home\+Lift\+Command}}.
+
+\mbox{\Hypertarget{class_command_a2ca7d162253b520e8a0f9325051eea61}\label{class_command_a2ca7d162253b520e8a0f9325051eea61}} 
+\index{Command@{Command}!start@{start}}
+\index{start@{start}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily virtual void Command\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Abstract function that is called before the while loop only once. Common use case is to setup the command. 
+
+Implemented in \mbox{\hyperlink{class_log_position_command_adb38c9aa50e42e48d018ebdf6c48493f}{Log\+Position\+Command}}, \mbox{\hyperlink{class_log_velocity_command_a26e9a44212f66d49c76eb75776dbe78f}{Log\+Velocity\+Command}}, and \mbox{\hyperlink{class_home_lift_command_a17fe55e34b5362bd0da78a7536acfb27}{Home\+Lift\+Command}}.
+
+\mbox{\Hypertarget{class_command_a59432e50c228dc1a27302af0219656d9}\label{class_command_a59432e50c228dc1a27302af0219656d9}} 
+\index{Command@{Command}!update@{update}}
+\index{update@{update}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void Command\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Abstract function that is run in a while loop until {\itshape \mbox{\hyperlink{class_command_a9aa704d5f9d98f510a79e645701dc72a}{is\+Finished()}}} returns true and contains the meat of the command, such as running motors. 
+
+Implemented in \mbox{\hyperlink{class_log_position_command_a114252c7b7952bd7bd27454557bfc7f2}{Log\+Position\+Command}}, \mbox{\hyperlink{class_log_velocity_command_a379e0f092bb6bf38dbf534224c24a0fa}{Log\+Velocity\+Command}}, and \mbox{\hyperlink{class_home_lift_command_a8161a93124de97fb133f6961ecfeebfd}{Home\+Lift\+Command}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_command_a797f4bf0e36bd3beef5f647756a25f98}\label{class_command_a797f4bf0e36bd3beef5f647756a25f98}} 
+\index{Command@{Command}!goalTime@{goalTime}}
+\index{goalTime@{goalTime}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{goalTime}{goalTime}}
+{\footnotesize\ttfamily double Command\+::goal\+Time}
+
+Variable to store the maximum allowed time for a command to run. \mbox{\Hypertarget{class_command_ae7be70f26cb77cdaedc8e43f37b3c724}\label{class_command_ae7be70f26cb77cdaedc8e43f37b3c724}} 
+\index{Command@{Command}!startTime@{startTime}}
+\index{startTime@{startTime}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{startTime}{startTime}}
+{\footnotesize\ttfamily double Command\+::start\+Time}
+
+Variable to store the starting timestamp of the command. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/\+User/Command.\+h\end{DoxyCompactItemize}

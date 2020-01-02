@@ -1,0 +1,42 @@
+.TH "CommandFactory" 3 "Sun Oct 13 2019" "Version 0.0.5" "VEX-2019 Team Convergence" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CommandFactory
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <CommandFactory\&.h>\fP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static std::unique_ptr< \fBCommand\fP > \fBcreate\fP (\fBCommand\fP *command)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+CLass to create a unique_ptr of a command 
+.PP
+Definition at line 8 of file CommandFactory\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "static std::unique_ptr<\fBCommand\fP> CommandFactory::create (\fBCommand\fP * command)\fC [static]\fP"
+Static function to convert a raw \fBCommand\fP pointer into a safe, unique_ptr 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcommand\fP Raw command pointer created with 'new' 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+safe unique command ptr 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for VEX-2019 Team Convergence from the source code\&.

@@ -1,0 +1,100 @@
+\hypertarget{lv__draw_8h}{}\doxysection{C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/display/lv\+\_\+draw/lv\+\_\+draw.h File Reference}
+\label{lv__draw_8h}\index{C:/Users/kidco/VEX-\/2019/include/display/lv\_draw/lv\_draw.h@{C:/Users/kidco/VEX-\/2019/include/display/lv\_draw/lv\_draw.h}}
+{\ttfamily \#include \char`\"{}display/lv\+\_\+core/lv\+\_\+style.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}display/lv\+\_\+misc/lv\+\_\+txt.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlv__img__t}{lv\+\_\+img\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{lv__draw_8h_a0deaa45180260ef27c9ad646ea9f0015}\label{lv__draw_8h_a0deaa45180260ef27c9ad646ea9f0015}} 
+\#define {\bfseries U\+S\+E\+\_\+\+L\+V\+\_\+\+T\+R\+I\+A\+N\+G\+LE}~0
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{lv__draw_8h_a5a5ef13a6a0f66c810fc7eeeb8ef8e39}\label{lv__draw_8h_a5a5ef13a6a0f66c810fc7eeeb8ef8e39}} 
+enum {\bfseries lv\+\_\+img\+\_\+format\+\_\+t} \{ \newline
+{\bfseries L\+V\+\_\+\+I\+M\+G\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+U\+N\+K\+O\+WN} = 0, 
+{\bfseries L\+V\+\_\+\+I\+M\+G\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+R\+AW}, 
+{\bfseries L\+V\+\_\+\+I\+M\+G\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+F\+I\+L\+E\+\_\+\+R\+A\+W\+\_\+\+R\+G\+B332}, 
+{\bfseries L\+V\+\_\+\+I\+M\+G\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+F\+I\+L\+E\+\_\+\+R\+A\+W\+\_\+\+R\+G\+B565}, 
+\newline
+{\bfseries L\+V\+\_\+\+I\+M\+G\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+F\+I\+L\+E\+\_\+\+R\+A\+W\+\_\+\+R\+G\+B888}
+ \}
+\item 
+\mbox{\Hypertarget{lv__draw_8h_aaa7120af389c5bdb9c3433ccdbe83902}\label{lv__draw_8h_aaa7120af389c5bdb9c3433ccdbe83902}} 
+enum {\bfseries lv\+\_\+img\+\_\+src\+\_\+t} \{ {\bfseries L\+V\+\_\+\+I\+M\+G\+\_\+\+S\+R\+C\+\_\+\+V\+A\+R\+I\+A\+B\+LE}, 
+{\bfseries L\+V\+\_\+\+I\+M\+G\+\_\+\+S\+R\+C\+\_\+\+F\+I\+LE}, 
+{\bfseries L\+V\+\_\+\+I\+M\+G\+\_\+\+S\+R\+C\+\_\+\+S\+Y\+M\+B\+OL}, 
+{\bfseries L\+V\+\_\+\+I\+M\+G\+\_\+\+S\+R\+C\+\_\+\+U\+N\+K\+N\+O\+WN}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{lv__draw_8h_a598e92769810573b19145b3cc7d169ec}{lv\+\_\+draw\+\_\+rect}} (const \mbox{\hyperlink{structlv__area__t}{lv\+\_\+area\+\_\+t}} $\ast$cords\+\_\+p, const \mbox{\hyperlink{structlv__area__t}{lv\+\_\+area\+\_\+t}} $\ast$mask\+\_\+p, const \mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} $\ast$style\+\_\+p)
+\item 
+void \mbox{\hyperlink{lv__draw_8h_ab88a3aa12532f337b04434c2bf64b2c0}{lv\+\_\+draw\+\_\+label}} (const \mbox{\hyperlink{structlv__area__t}{lv\+\_\+area\+\_\+t}} $\ast$cords\+\_\+p, const \mbox{\hyperlink{structlv__area__t}{lv\+\_\+area\+\_\+t}} $\ast$mask\+\_\+p, const \mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} $\ast$style\+\_\+p, const char $\ast$txt, lv\+\_\+txt\+\_\+flag\+\_\+t flag, \mbox{\hyperlink{structlv__point__t}{lv\+\_\+point\+\_\+t}} $\ast$offset)
+\item 
+void \mbox{\hyperlink{lv__draw_8h_a6a67e30e0c8a0580a83f8a394dd491b0}{lv\+\_\+draw\+\_\+line}} (const \mbox{\hyperlink{structlv__point__t}{lv\+\_\+point\+\_\+t}} $\ast$p1, const \mbox{\hyperlink{structlv__point__t}{lv\+\_\+point\+\_\+t}} $\ast$p2, const \mbox{\hyperlink{structlv__area__t}{lv\+\_\+area\+\_\+t}} $\ast$mask\+\_\+p, const \mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} $\ast$style\+\_\+p)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{lv__draw_8h_ab88a3aa12532f337b04434c2bf64b2c0}\label{lv__draw_8h_ab88a3aa12532f337b04434c2bf64b2c0}} 
+\index{lv\_draw.h@{lv\_draw.h}!lv\_draw\_label@{lv\_draw\_label}}
+\index{lv\_draw\_label@{lv\_draw\_label}!lv\_draw.h@{lv\_draw.h}}
+\doxysubsubsection{\texorpdfstring{lv\_draw\_label()}{lv\_draw\_label()}}
+{\footnotesize\ttfamily void lv\+\_\+draw\+\_\+label (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structlv__area__t}{lv\+\_\+area\+\_\+t}} $\ast$}]{cords\+\_\+p,  }\item[{const \mbox{\hyperlink{structlv__area__t}{lv\+\_\+area\+\_\+t}} $\ast$}]{mask\+\_\+p,  }\item[{const \mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} $\ast$}]{style\+\_\+p,  }\item[{const char $\ast$}]{txt,  }\item[{lv\+\_\+txt\+\_\+flag\+\_\+t}]{flag,  }\item[{\mbox{\hyperlink{structlv__point__t}{lv\+\_\+point\+\_\+t}} $\ast$}]{offset }\end{DoxyParamCaption})}
+
+Write a text 
+\begin{DoxyParams}{Parameters}
+{\em cords\+\_\+p} & coordinates of the label \\
+\hline
+{\em mask\+\_\+p} & the label will be drawn only in this area \\
+\hline
+{\em style\+\_\+p} & pointer to a style \\
+\hline
+{\em txt} & 0 terminated text to write \\
+\hline
+{\em flags} & settings for the text from \textquotesingle{}txt\+\_\+flag\+\_\+t\textquotesingle{} enum \\
+\hline
+{\em offset} & text offset in x and y direction (N\+U\+LL if unused) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{lv__draw_8h_a6a67e30e0c8a0580a83f8a394dd491b0}\label{lv__draw_8h_a6a67e30e0c8a0580a83f8a394dd491b0}} 
+\index{lv\_draw.h@{lv\_draw.h}!lv\_draw\_line@{lv\_draw\_line}}
+\index{lv\_draw\_line@{lv\_draw\_line}!lv\_draw.h@{lv\_draw.h}}
+\doxysubsubsection{\texorpdfstring{lv\_draw\_line()}{lv\_draw\_line()}}
+{\footnotesize\ttfamily void lv\+\_\+draw\+\_\+line (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structlv__point__t}{lv\+\_\+point\+\_\+t}} $\ast$}]{p1,  }\item[{const \mbox{\hyperlink{structlv__point__t}{lv\+\_\+point\+\_\+t}} $\ast$}]{p2,  }\item[{const \mbox{\hyperlink{structlv__area__t}{lv\+\_\+area\+\_\+t}} $\ast$}]{mask\+\_\+p,  }\item[{const \mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} $\ast$}]{style\+\_\+p }\end{DoxyParamCaption})}
+
+Draw a line 
+\begin{DoxyParams}{Parameters}
+{\em p1} & first point of the line \\
+\hline
+{\em p2} & second point of the line \\
+\hline
+{\em mask\+\_\+pthe} & line will be drawn only on this area \\
+\hline
+{\em style\+\_\+p} & pointer to a style \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{lv__draw_8h_a598e92769810573b19145b3cc7d169ec}\label{lv__draw_8h_a598e92769810573b19145b3cc7d169ec}} 
+\index{lv\_draw.h@{lv\_draw.h}!lv\_draw\_rect@{lv\_draw\_rect}}
+\index{lv\_draw\_rect@{lv\_draw\_rect}!lv\_draw.h@{lv\_draw.h}}
+\doxysubsubsection{\texorpdfstring{lv\_draw\_rect()}{lv\_draw\_rect()}}
+{\footnotesize\ttfamily void lv\+\_\+draw\+\_\+rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structlv__area__t}{lv\+\_\+area\+\_\+t}} $\ast$}]{cords\+\_\+p,  }\item[{const \mbox{\hyperlink{structlv__area__t}{lv\+\_\+area\+\_\+t}} $\ast$}]{mask\+\_\+p,  }\item[{const \mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} $\ast$}]{style\+\_\+p }\end{DoxyParamCaption})}
+
+Draw a rectangle 
+\begin{DoxyParams}{Parameters}
+{\em cords\+\_\+p} & the coordinates of the rectangle \\
+\hline
+{\em mask\+\_\+p} & the rectangle will be drawn only in this mask \\
+\hline
+{\em style\+\_\+p} & pointer to a style \\
+\hline
+\end{DoxyParams}

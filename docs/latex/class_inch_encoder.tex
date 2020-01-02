@@ -1,0 +1,63 @@
+\doxysection{Inch\+Encoder Class Reference}
+\label{class_inch_encoder}\index{InchEncoder@{InchEncoder}}
+
+
+{\ttfamily \#include $<$Inch\+Encoder.\+h$>$}
+
+Inheritance diagram for Inch\+Encoder\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_inch_encoder}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Inch\+Encoder} (std\+::uint8\+\_\+t iport\+Top, std\+::uint8\+\_\+t iport\+Bottom, double wheel\+Diameter, bool ireversed=false)
+\item 
+double \textbf{ get\+Inches} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Encoder class that inherits A\+D\+I\+Encoder, but adds the functionality for distance inches given wheel diameter 
+
+Definition at line 8 of file Inch\+Encoder.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_inch_encoder_ad78282c68023a4052bc8d9ccc1c40c0e}} 
+\index{InchEncoder@{InchEncoder}!InchEncoder@{InchEncoder}}
+\index{InchEncoder@{InchEncoder}!InchEncoder@{InchEncoder}}
+\doxysubsubsection{InchEncoder()}
+{\footnotesize\ttfamily Inch\+Encoder\+::\+Inch\+Encoder (\begin{DoxyParamCaption}\item[{std\+::uint8\+\_\+t}]{iport\+Top,  }\item[{std\+::uint8\+\_\+t}]{iport\+Bottom,  }\item[{double}]{wheel\+Diameter,  }\item[{bool}]{ireversed = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em iport\+Top} & Top port for Encoder \\
+\hline
+{\em iport\+Bottom} & Bottom port for E\+N\+C\+O\+D\+ER \\
+\hline
+{\em wheel\+Diameter} & Wheel diamter in inches \\
+\hline
+{\em ireversed} & Reverse direction? \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_inch_encoder_aafd844ddc7f5cf8683ed44ff63651d80}} 
+\index{InchEncoder@{InchEncoder}!getInches@{getInches}}
+\index{getInches@{getInches}!InchEncoder@{InchEncoder}}
+\doxysubsubsection{getInches()}
+{\footnotesize\ttfamily double Inch\+Encoder\+::get\+Inches (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets inches from encoder \begin{DoxyReturn}{Returns}
+Get the distance in inches 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+User/\textbf{ Inch\+Encoder.\+h}\end{DoxyCompactItemize}

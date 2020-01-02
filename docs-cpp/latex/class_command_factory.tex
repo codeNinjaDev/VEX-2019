@@ -1,0 +1,37 @@
+\hypertarget{class_command_factory}{}\doxysection{Command\+Factory Class Reference}
+\label{class_command_factory}\index{CommandFactory@{CommandFactory}}
+
+
+{\ttfamily \#include $<$Command\+Factory.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_command}{Command}} $>$ \mbox{\hyperlink{class_command_factory_a7904c1c88636604ce9d44b350d4890d4}{create}} (\mbox{\hyperlink{class_command}{Command}} $\ast$command)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+C\+Lass to create a unique\+\_\+ptr of a command 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_command_factory_a7904c1c88636604ce9d44b350d4890d4}\label{class_command_factory_a7904c1c88636604ce9d44b350d4890d4}} 
+\index{CommandFactory@{CommandFactory}!create@{create}}
+\index{create@{create}!CommandFactory@{CommandFactory}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_command}{Command}} $>$ Command\+Factory\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_command}{Command}} $\ast$}]{command }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Static function to convert a raw \mbox{\hyperlink{class_command}{Command}} pointer into a safe, unique\+\_\+ptr 
+\begin{DoxyParams}{Parameters}
+{\em command} & Raw command pointer created with \char`\"{}new\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+safe unique command ptr 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/\+User/Command\+Factory.\+h\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/src/\+Commands/Command\+Factory.\+cpp\end{DoxyCompactItemize}

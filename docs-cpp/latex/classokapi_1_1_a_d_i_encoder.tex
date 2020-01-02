@@ -1,0 +1,79 @@
+\hypertarget{classokapi_1_1_a_d_i_encoder}{}\doxysection{okapi\+::A\+D\+I\+Encoder Class Reference}
+\label{classokapi_1_1_a_d_i_encoder}\index{okapi::ADIEncoder@{okapi::ADIEncoder}}
+Inheritance diagram for okapi\+::A\+D\+I\+Encoder\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classokapi_1_1_a_d_i_encoder}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_a_d_i_encoder_ae60daf46ded27335225cc9b6522054c6}\label{classokapi_1_1_a_d_i_encoder_ae60daf46ded27335225cc9b6522054c6}} 
+{\bfseries A\+D\+I\+Encoder} (std\+::uint8\+\_\+t iport\+Top, std\+::uint8\+\_\+t iport\+Bottom, bool ireversed=false)
+\item 
+virtual double \mbox{\hyperlink{classokapi_1_1_a_d_i_encoder_a81367f0445610abc89cd4f69d6116c69}{get}} () const override
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_a_d_i_encoder_abe5504f12e2dccd208225b90d47b54c8}{reset}} () override
+\item 
+virtual double \mbox{\hyperlink{classokapi_1_1_a_d_i_encoder_a2804bb2b1cb5ff2063f0146230a6edf3}{controller\+Get}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_a_d_i_encoder_a5294596c0a481f381795c8c213f491fc}\label{classokapi_1_1_a_d_i_encoder_a5294596c0a481f381795c8c213f491fc}} 
+\mbox{\hyperlink{classpros_1_1_a_d_i_encoder}{pros\+::\+A\+D\+I\+Encoder}} {\bfseries enc}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classokapi_1_1_a_d_i_encoder_a2804bb2b1cb5ff2063f0146230a6edf3}\label{classokapi_1_1_a_d_i_encoder_a2804bb2b1cb5ff2063f0146230a6edf3}} 
+\index{okapi::ADIEncoder@{okapi::ADIEncoder}!controllerGet@{controllerGet}}
+\index{controllerGet@{controllerGet}!okapi::ADIEncoder@{okapi::ADIEncoder}}
+\doxysubsubsection{\texorpdfstring{controllerGet()}{controllerGet()}}
+{\footnotesize\ttfamily virtual double okapi\+::\+A\+D\+I\+Encoder\+::controller\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the sensor value for use in a control loop. This method might be automatically called in another thread by the controller.
+
+\begin{DoxyReturn}{Returns}
+the current sensor value, or {\ttfamily P\+R\+O\+S\+\_\+\+E\+RR} on a failure. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_controller_input_a3c6c86d897983f367928a93890551e17}{okapi\+::\+Controller\+Input$<$ double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_a_d_i_encoder_a81367f0445610abc89cd4f69d6116c69}\label{classokapi_1_1_a_d_i_encoder_a81367f0445610abc89cd4f69d6116c69}} 
+\index{okapi::ADIEncoder@{okapi::ADIEncoder}!get@{get}}
+\index{get@{get}!okapi::ADIEncoder@{okapi::ADIEncoder}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily virtual double okapi\+::\+A\+D\+I\+Encoder\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the current sensor value.
+
+\begin{DoxyReturn}{Returns}
+the current sensor value, or {\ttfamily P\+R\+O\+S\+\_\+\+E\+RR} on a failure. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_rotary_sensor_ac5534dc6c3bcbd8ea2f4e54a04cda734}{okapi\+::\+Rotary\+Sensor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_a_d_i_encoder_abe5504f12e2dccd208225b90d47b54c8}\label{classokapi_1_1_a_d_i_encoder_abe5504f12e2dccd208225b90d47b54c8}} 
+\index{okapi::ADIEncoder@{okapi::ADIEncoder}!reset@{reset}}
+\index{reset@{reset}!okapi::ADIEncoder@{okapi::ADIEncoder}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+A\+D\+I\+Encoder\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Reset the sensor to zero.
+
+\begin{DoxyReturn}{Returns}
+1 on success, P\+R\+O\+S\+\_\+\+E\+RR on fail 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor_ae7268b0603097ac2d93a67e4fefa43e0}{okapi\+::\+Continuous\+Rotary\+Sensor}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/okapi/impl/device/rotarysensor/adi\+Encoder.\+hpp\end{DoxyCompactItemize}

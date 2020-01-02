@@ -13,7 +13,7 @@
 class DriveDistanceCommand : public Command {
 public:
 
-	DriveDistanceCommand(std::shared_ptr<DriveSubsystem> drive, double distance, double maxSpeed, double timeout);
+	DriveDistanceCommand(std::shared_ptr<DriveSubsystem> drive, double distance, double maxSpeed);
 
 	void start();
 	void update();

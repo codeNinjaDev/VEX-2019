@@ -1,0 +1,123 @@
+\hypertarget{class_command}{}\doxysection{Command Class Reference}
+\label{class_command}\index{Command@{Command}}
+
+
+{\ttfamily \#include $<$Command.\+h$>$}
+
+Inheritance diagram for Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.382716cm]{class_command}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_command_a2ca7d162253b520e8a0f9325051eea61}{start}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_command_a59432e50c228dc1a27302af0219656d9}{update}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{class_command_a9aa704d5f9d98f510a79e645701dc72a}{is\+Finished}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_command_affcda825b758dbb11c2cb036913d4c90}{finish}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_command_ae7be70f26cb77cdaedc8e43f37b3c724}{start\+Time}}
+\item 
+double \mbox{\hyperlink{class_command_a797f4bf0e36bd3beef5f647756a25f98}{goal\+Time}}
+\item 
+okapi\+::\+Timer \mbox{\hyperlink{class_command_a5bda0a54fb91e32b76cbd5fa30db7e37}{timer}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for autonomous actions. All funtions of this class must be implemented in child classes 
+
+Definition at line 16 of file Command.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_command_affcda825b758dbb11c2cb036913d4c90}\label{class_command_affcda825b758dbb11c2cb036913d4c90}} 
+\index{Command@{Command}!finish@{finish}}
+\index{finish@{finish}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{finish()}{finish()}}
+{\footnotesize\ttfamily virtual void Command\+::finish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Abstract function that runs after the while loop and only once. Normally wraps up a command and gets the robot ready to transition to a new command. 
+
+Implemented in \mbox{\hyperlink{class_log_position_command_a68c3ee4c45f14878716e359b35176d42}{Log\+Position\+Command}}, \mbox{\hyperlink{class_move_tray_command_ae272b4ee20319b20120538b6d41d5ee9}{Move\+Tray\+Command}}, \mbox{\hyperlink{class_drive_turn_command_a6d1718c2a32cc185e19a06fed0c51ce7}{Drive\+Turn\+Command}}, \mbox{\hyperlink{class_drive_and_intake_command_a61a548adf944e46e41ba2346265ddb26}{Drive\+And\+Intake\+Command}}, and \mbox{\hyperlink{class_drive_distance_command_a9f323b1c969402f42443b3c59d727428}{Drive\+Distance\+Command}}.
+
+\mbox{\Hypertarget{class_command_a9aa704d5f9d98f510a79e645701dc72a}\label{class_command_a9aa704d5f9d98f510a79e645701dc72a}} 
+\index{Command@{Command}!isFinished@{isFinished}}
+\index{isFinished@{isFinished}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{isFinished()}{isFinished()}}
+{\footnotesize\ttfamily virtual bool Command\+::is\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Abstract function that runs in a while loop and continously checks if the command should end. If true, ends while loop. Common use case is to check if timeout for command is exceeded \begin{DoxyReturn}{Returns}
+True if command should end, false if it should not. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_log_position_command_a08fe197e191038b4893bb51c43b926c3}{Log\+Position\+Command}}, \mbox{\hyperlink{class_move_tray_command_a1a3b179bd95d35f348a78e579b44c4f4}{Move\+Tray\+Command}}, \mbox{\hyperlink{class_drive_turn_command_acbc815b24afd06fcb3fbd64096b59ba2}{Drive\+Turn\+Command}}, \mbox{\hyperlink{class_drive_and_intake_command_a19a3a884602a28e5186b36fec3f6d94c}{Drive\+And\+Intake\+Command}}, and \mbox{\hyperlink{class_drive_distance_command_ae0333a1a4499bdbdec3483ca9c62cd9d}{Drive\+Distance\+Command}}.
+
+\mbox{\Hypertarget{class_command_a2ca7d162253b520e8a0f9325051eea61}\label{class_command_a2ca7d162253b520e8a0f9325051eea61}} 
+\index{Command@{Command}!start@{start}}
+\index{start@{start}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily virtual void Command\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Abstract function that is called before the while loop only once. Common use case is to setup the command. 
+
+Implemented in \mbox{\hyperlink{class_log_position_command_adb38c9aa50e42e48d018ebdf6c48493f}{Log\+Position\+Command}}, \mbox{\hyperlink{class_move_tray_command_aba9850c89abb6e0b0f6faeb8cdd81ee9}{Move\+Tray\+Command}}, \mbox{\hyperlink{class_drive_turn_command_a63ce1164920cb33ef77b1e07ff9a20eb}{Drive\+Turn\+Command}}, \mbox{\hyperlink{class_drive_and_intake_command_a1daf4fef5ac876ba25fd519e9e3a9537}{Drive\+And\+Intake\+Command}}, and \mbox{\hyperlink{class_drive_distance_command_a62696b4d5758471b3b919a1cf65d7fe1}{Drive\+Distance\+Command}}.
+
+\mbox{\Hypertarget{class_command_a59432e50c228dc1a27302af0219656d9}\label{class_command_a59432e50c228dc1a27302af0219656d9}} 
+\index{Command@{Command}!update@{update}}
+\index{update@{update}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void Command\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Abstract function that is run in a while loop until {\itshape \mbox{\hyperlink{class_command_a9aa704d5f9d98f510a79e645701dc72a}{is\+Finished()}}} returns true and contains the meat of the command, such as running motors. 
+
+Implemented in \mbox{\hyperlink{class_log_position_command_a114252c7b7952bd7bd27454557bfc7f2}{Log\+Position\+Command}}, \mbox{\hyperlink{class_move_tray_command_acfd89195f89c1a8005e32b62c07c5fa1}{Move\+Tray\+Command}}, \mbox{\hyperlink{class_drive_turn_command_a6b625c7815344be7ec384d3404f40eef}{Drive\+Turn\+Command}}, \mbox{\hyperlink{class_drive_and_intake_command_aebf03b38652d0018f8ab81610c20c219}{Drive\+And\+Intake\+Command}}, and \mbox{\hyperlink{class_drive_distance_command_a76eaca8946e2b48411d0e18148604d77}{Drive\+Distance\+Command}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_command_a797f4bf0e36bd3beef5f647756a25f98}\label{class_command_a797f4bf0e36bd3beef5f647756a25f98}} 
+\index{Command@{Command}!goalTime@{goalTime}}
+\index{goalTime@{goalTime}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{goalTime}{goalTime}}
+{\footnotesize\ttfamily double Command\+::goal\+Time}
+
+Variable to store the maximum allowed time for a command to run. 
+
+Definition at line 49 of file Command.\+h.
+
+\mbox{\Hypertarget{class_command_ae7be70f26cb77cdaedc8e43f37b3c724}\label{class_command_ae7be70f26cb77cdaedc8e43f37b3c724}} 
+\index{Command@{Command}!startTime@{startTime}}
+\index{startTime@{startTime}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{startTime}{startTime}}
+{\footnotesize\ttfamily double Command\+::start\+Time}
+
+Variable to store the starting timestamp of the command. 
+
+Definition at line 45 of file Command.\+h.
+
+\mbox{\Hypertarget{class_command_a5bda0a54fb91e32b76cbd5fa30db7e37}\label{class_command_a5bda0a54fb91e32b76cbd5fa30db7e37}} 
+\index{Command@{Command}!timer@{timer}}
+\index{timer@{timer}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{timer}{timer}}
+{\footnotesize\ttfamily okapi\+::\+Timer Command\+::timer}
+
+
+
+Definition at line 50 of file Command.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/\+User/\mbox{\hyperlink{_command_8h}{Command.\+h}}\end{DoxyCompactItemize}

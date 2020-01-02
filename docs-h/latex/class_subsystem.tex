@@ -1,0 +1,78 @@
+\hypertarget{class_subsystem}{}\doxysection{Subsystem Class Reference}
+\label{class_subsystem}\index{Subsystem@{Subsystem}}
+
+
+{\ttfamily \#include $<$Subsystem.\+h$>$}
+
+Inheritance diagram for Subsystem\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_subsystem}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_subsystem_a30d9f6d85c9aa0bfbdfda62d1ed55865}{initialize}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_subsystem_a09fe9b3aa0f2d95453db41605412ec59}{update}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_subsystem_a2a0617e07fd35b6f2a5ce30045731a73}{reset}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_subsystem_a69c254f4d104b1fc50f5a0719a68ad97}{stop}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for subsystems of robot 
+
+Definition at line 17 of file Subsystem.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_subsystem_a30d9f6d85c9aa0bfbdfda62d1ed55865}\label{class_subsystem_a30d9f6d85c9aa0bfbdfda62d1ed55865}} 
+\index{Subsystem@{Subsystem}!initialize@{initialize}}
+\index{initialize@{initialize}!Subsystem@{Subsystem}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily virtual void Subsystem\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Abstract function that configures sensors and motors or anything else that needs to be done before the robot runs. 
+
+Implemented in \mbox{\hyperlink{class_drive_subsystem_a26ebc127cfe16dc9ba1825cf7d03f6c7}{Drive\+Subsystem}}, and \mbox{\hyperlink{class_tray_subsystem_a38ddb87227e9b33683f9906854a9b51a}{Tray\+Subsystem}}.
+
+\mbox{\Hypertarget{class_subsystem_a2a0617e07fd35b6f2a5ce30045731a73}\label{class_subsystem_a2a0617e07fd35b6f2a5ce30045731a73}} 
+\index{Subsystem@{Subsystem}!reset@{reset}}
+\index{reset@{reset}!Subsystem@{Subsystem}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily virtual void Subsystem\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Function to reset subsystems sensors, etc... 
+
+Implemented in \mbox{\hyperlink{class_drive_subsystem_a8a7fcdf36b4580ed4a722237a4214aa5}{Drive\+Subsystem}}, and \mbox{\hyperlink{class_tray_subsystem_a8a6b1042ce4589499acc9776ded4103d}{Tray\+Subsystem}}.
+
+\mbox{\Hypertarget{class_subsystem_a69c254f4d104b1fc50f5a0719a68ad97}\label{class_subsystem_a69c254f4d104b1fc50f5a0719a68ad97}} 
+\index{Subsystem@{Subsystem}!stop@{stop}}
+\index{stop@{stop}!Subsystem@{Subsystem}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily virtual void Subsystem\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Function to stop subsystem operations such as setting motors to zero 
+
+Implemented in \mbox{\hyperlink{class_drive_subsystem_ab209ac4a17e5aaf044b1ef7a7f9ccc1e}{Drive\+Subsystem}}, and \mbox{\hyperlink{class_tray_subsystem_aa5c4d83bb10d79050f894cb736a7faa8}{Tray\+Subsystem}}.
+
+\mbox{\Hypertarget{class_subsystem_a09fe9b3aa0f2d95453db41605412ec59}\label{class_subsystem_a09fe9b3aa0f2d95453db41605412ec59}} 
+\index{Subsystem@{Subsystem}!update@{update}}
+\index{update@{update}!Subsystem@{Subsystem}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void Subsystem\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Looped function to run subsystem motors 
+
+Implemented in \mbox{\hyperlink{class_drive_subsystem_a522ec6dd3e8065ab9ecd64c0f836c224}{Drive\+Subsystem}}, and \mbox{\hyperlink{class_tray_subsystem_a2babd9fd72f017c3a92de65adea5fb63}{Tray\+Subsystem}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/\+User/\mbox{\hyperlink{_subsystem_8h}{Subsystem.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,85 @@
+\hypertarget{main_8h}{}\doxysection{C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/main.h File Reference}
+\label{main_8h}\index{C:/Users/kidco/VEX-\/2019/include/main.h@{C:/Users/kidco/VEX-\/2019/include/main.h}}
+{\ttfamily \#include \char`\"{}api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}okapi/api.\+hpp\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8h_ae5817dbade24ea595c3ce938b34f9994}{P\+R\+O\+S\+\_\+\+U\+S\+E\+\_\+\+S\+I\+M\+P\+L\+E\+\_\+\+N\+A\+M\+ES}}
+\item 
+\#define \mbox{\hyperlink{main_8h_ab1b081349029f8bf68a7f2086732e42b}{P\+R\+O\+S\+\_\+\+U\+S\+E\+\_\+\+L\+I\+T\+E\+R\+A\+LS}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8h_a2df3d06bc5bced154da27fce393f991f}{autonomous}} (void)
+\item 
+void \mbox{\hyperlink{main_8h_a9efe22aaead3a5e936b5df459de02eba}{initialize}} (void)
+\item 
+void \mbox{\hyperlink{main_8h_a3ed01880f60e5a3afffc71f623174dbd}{disabled}} (void)
+\item 
+void \mbox{\hyperlink{main_8h_a16a77889800f9a99f69f9dd026013505}{competition\+\_\+initialize}} (void)
+\item 
+\mbox{\Hypertarget{main_8h_a1903abdb5ef0f301d660754c8315fc17}\label{main_8h_a1903abdb5ef0f301d660754c8315fc17}} 
+void {\bfseries opcontrol} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains common definitions and header files used throughout your P\+R\+OS project.
+
+Copyright (c) 2017-\/2018, Purdue University A\+CM S\+I\+G\+Bots. All rights reserved.
+
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.\+0. If a copy of the M\+PL was not distributed with this file, You can obtain one at \href{http://mozilla.org/MPL/2.0/}{\texttt{ http\+://mozilla.\+org/\+M\+P\+L/2.\+0/}}. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main_8h_ab1b081349029f8bf68a7f2086732e42b}\label{main_8h_ab1b081349029f8bf68a7f2086732e42b}} 
+\index{main.h@{main.h}!PROS\_USE\_LITERALS@{PROS\_USE\_LITERALS}}
+\index{PROS\_USE\_LITERALS@{PROS\_USE\_LITERALS}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{PROS\_USE\_LITERALS}{PROS\_USE\_LITERALS}}
+{\footnotesize\ttfamily \#define P\+R\+O\+S\+\_\+\+U\+S\+E\+\_\+\+L\+I\+T\+E\+R\+A\+LS}
+
+If defined, C++ literals will be available for use. All literals are in the pros\+::literals namespace.
+
+For instance, you can do {\ttfamily 4\+\_\+mtr = 50} to set motor 4\textquotesingle{}s target velocity to 50 \mbox{\Hypertarget{main_8h_ae5817dbade24ea595c3ce938b34f9994}\label{main_8h_ae5817dbade24ea595c3ce938b34f9994}} 
+\index{main.h@{main.h}!PROS\_USE\_SIMPLE\_NAMES@{PROS\_USE\_SIMPLE\_NAMES}}
+\index{PROS\_USE\_SIMPLE\_NAMES@{PROS\_USE\_SIMPLE\_NAMES}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{PROS\_USE\_SIMPLE\_NAMES}{PROS\_USE\_SIMPLE\_NAMES}}
+{\footnotesize\ttfamily \#define P\+R\+O\+S\+\_\+\+U\+S\+E\+\_\+\+S\+I\+M\+P\+L\+E\+\_\+\+N\+A\+M\+ES}
+
+If defined, some commonly used enums will have preprocessor macros which give a shorter, more convenient naming pattern. If this isn\textquotesingle{}t desired, simply comment the following line out.
+
+For instance, E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+M\+A\+S\+T\+ER has a shorter name\+: C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+M\+A\+S\+T\+ER. E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+M\+A\+S\+T\+ER is pedantically correct within the P\+R\+OS styleguide, but not convienent for most student programmers. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8h_a2df3d06bc5bced154da27fce393f991f}\label{main_8h_a2df3d06bc5bced154da27fce393f991f}} 
+\index{main.h@{main.h}!autonomous@{autonomous}}
+\index{autonomous@{autonomous}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{autonomous()}{autonomous()}}
+{\footnotesize\ttfamily void autonomous (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+You should add more \#includes here If you find doing \mbox{\hyperlink{classpros_1_1_motor}{pros\+::\+Motor()}} to be tedious and you\textquotesingle{}d prefer just to do Motor, you can use the namespace with the following commented out line.
+
+I\+M\+P\+O\+R\+T\+A\+NT\+: Only the okapi or pros namespace may be used, not both concurrently! The okapi namespace will export all symbols inside the pros namespace. Prototypes for the competition control tasks are redefined here to ensure that they can be called from user code (i.\+e. calling autonomous from a button press in opcontrol() for testing purposes). \mbox{\Hypertarget{main_8h_a16a77889800f9a99f69f9dd026013505}\label{main_8h_a16a77889800f9a99f69f9dd026013505}} 
+\index{main.h@{main.h}!competition\_initialize@{competition\_initialize}}
+\index{competition\_initialize@{competition\_initialize}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{competition\_initialize()}{competition\_initialize()}}
+{\footnotesize\ttfamily void competition\+\_\+initialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Runs after \mbox{\hyperlink{main_8h_a9efe22aaead3a5e936b5df459de02eba}{initialize()}}, and before autonomous when connected to the Field Management System or the V\+EX Competition Switch. This is intended for competition-\/specific initialization routines, such as an autonomous selector on the L\+CD.
+
+This task will exit when the robot is enabled and autonomous or opcontrol starts. \mbox{\Hypertarget{main_8h_a3ed01880f60e5a3afffc71f623174dbd}\label{main_8h_a3ed01880f60e5a3afffc71f623174dbd}} 
+\index{main.h@{main.h}!disabled@{disabled}}
+\index{disabled@{disabled}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{disabled()}{disabled()}}
+{\footnotesize\ttfamily void disabled (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Runs while the robot is in the disabled state of Field Management System or the V\+EX Competition Switch, following either autonomous or opcontrol. When the robot is enabled, this task will exit. \mbox{\Hypertarget{main_8h_a9efe22aaead3a5e936b5df459de02eba}\label{main_8h_a9efe22aaead3a5e936b5df459de02eba}} 
+\index{main.h@{main.h}!initialize@{initialize}}
+\index{initialize@{initialize}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Runs initialization code. This occurs as soon as the program is started.
+
+All other competition modes are blocked by initialize; it is recommended to keep execution time for this mode under a few seconds. 

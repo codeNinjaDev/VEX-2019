@@ -1,0 +1,84 @@
+\doxysection{Auto\+Selector Class Reference}
+\label{class_auto_selector}\index{AutoSelector@{AutoSelector}}
+
+
+{\ttfamily \#include $<$Auto\+Selector.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Auto\+Selector} (std\+::string auto\+Name, int default\+Auto\+Number)
+\item 
+void \textbf{ register\+Auto} (std\+::string auto\+Name, int auto\+Number)
+\item 
+void \textbf{ list\+Options} ()
+\item 
+int \textbf{ get\+Selected\+Auto} ()
+\item 
+\textbf{ $\sim$\+Auto\+Selector} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that handles user input for autonomous routine selection 
+
+Definition at line 10 of file Auto\+Selector.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_auto_selector_ae08c606ab41852aaccc27a1bab2a4869}} 
+\index{AutoSelector@{AutoSelector}!AutoSelector@{AutoSelector}}
+\index{AutoSelector@{AutoSelector}!AutoSelector@{AutoSelector}}
+\doxysubsubsection{AutoSelector()}
+{\footnotesize\ttfamily Auto\+Selector\+::\+Auto\+Selector (\begin{DoxyParamCaption}\item[{std\+::string}]{auto\+Name,  }\item[{int}]{default\+Auto\+Number }\end{DoxyParamCaption})}
+
+Constructor and sets default values for autonomous 
+\begin{DoxyParams}{Parameters}
+{\em auto\+Name} & Default autonomous routine name \\
+\hline
+{\em default\+Auto\+Number} & Default autonomous routine number \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_auto_selector_a0a6c416a864df78b7dd9732abc218401}} 
+\index{AutoSelector@{AutoSelector}!````~AutoSelector@{$\sim$AutoSelector}}
+\index{````~AutoSelector@{$\sim$AutoSelector}!AutoSelector@{AutoSelector}}
+\doxysubsubsection{$\sim$AutoSelector()}
+{\footnotesize\ttfamily Auto\+Selector\+::$\sim$\+Auto\+Selector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_auto_selector_a6674ed0e36df846dae27d584e03e1658}} 
+\index{AutoSelector@{AutoSelector}!getSelectedAuto@{getSelectedAuto}}
+\index{getSelectedAuto@{getSelectedAuto}!AutoSelector@{AutoSelector}}
+\doxysubsubsection{getSelectedAuto()}
+{\footnotesize\ttfamily int Auto\+Selector\+::get\+Selected\+Auto (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function that gets the selected autonomous routine from the dropdown \begin{DoxyReturn}{Returns}
+The autonomous number of the selected auto routine 
+\end{DoxyReturn}
+\mbox{\label{class_auto_selector_a7b8f52fb1d8adaf1b791da27fec453d6}} 
+\index{AutoSelector@{AutoSelector}!listOptions@{listOptions}}
+\index{listOptions@{listOptions}!AutoSelector@{AutoSelector}}
+\doxysubsubsection{listOptions()}
+{\footnotesize\ttfamily void Auto\+Selector\+::list\+Options (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Takes the array of autonomous routines and creates a dropdown on the screen. Only call this function after registering all autonmous routines. \mbox{\label{class_auto_selector_ad15652df3642434ba71b3abfe338c228}} 
+\index{AutoSelector@{AutoSelector}!registerAuto@{registerAuto}}
+\index{registerAuto@{registerAuto}!AutoSelector@{AutoSelector}}
+\doxysubsubsection{registerAuto()}
+{\footnotesize\ttfamily void Auto\+Selector\+::register\+Auto (\begin{DoxyParamCaption}\item[{std\+::string}]{auto\+Name,  }\item[{int}]{auto\+Number }\end{DoxyParamCaption})}
+
+Function to append a new autonomous routine to the screen 
+\begin{DoxyParams}{Parameters}
+{\em auto\+Name} & Name of autonomous routine \\
+\hline
+{\em auto\+Number} & Number of autonomous routine \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+User/\textbf{ Auto\+Selector.\+h}\end{DoxyCompactItemize}

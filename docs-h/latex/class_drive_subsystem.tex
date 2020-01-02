@@ -1,0 +1,254 @@
+\hypertarget{class_drive_subsystem}{}\doxysection{Drive\+Subsystem Class Reference}
+\label{class_drive_subsystem}\index{DriveSubsystem@{DriveSubsystem}}
+
+
+{\ttfamily \#include $<$Drive\+Subsystem.\+h$>$}
+
+Inheritance diagram for Drive\+Subsystem\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_drive_subsystem}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_drive_subsystem_a9ef32f59725fad2332b5927ed119d197}{Drive\+State}} \{ \mbox{\hyperlink{class_drive_subsystem_a9ef32f59725fad2332b5927ed119d197a1988ba274d31d794469bc0f6652af92b}{k\+Initialize}}, 
+\mbox{\hyperlink{class_drive_subsystem_a9ef32f59725fad2332b5927ed119d197a2a2096eaf4612d6f12c9504508ba4979}{k\+Teleop\+Drive}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_drive_subsystem_af4d261885b23aaa444d194a9b003342c}{Drive\+Subsystem}} (okapi\+::\+Controller driver\+Controller)
+\item 
+void \mbox{\hyperlink{class_drive_subsystem_ab209ac4a17e5aaf044b1ef7a7f9ccc1e}{stop}} ()
+\item 
+void \mbox{\hyperlink{class_drive_subsystem_a522ec6dd3e8065ab9ecd64c0f836c224}{update}} ()
+\item 
+void \mbox{\hyperlink{class_drive_subsystem_a8a7fcdf36b4580ed4a722237a4214aa5}{reset}} ()
+\item 
+void \mbox{\hyperlink{class_drive_subsystem_a26ebc127cfe16dc9ba1825cf7d03f6c7}{initialize}} ()
+\item 
+double \mbox{\hyperlink{class_drive_subsystem_a9e64b414edae875f96fc0c208990ff88}{get\+Left\+Encoder}} ()
+\item 
+double \mbox{\hyperlink{class_drive_subsystem_a2ce143da6284065a8036bb91de861b5f}{get\+Right\+Encoder}} ()
+\item 
+void \mbox{\hyperlink{class_drive_subsystem_a3dc0e595ec4705f3df09f2b92dda2f6f}{arcade\+Drive}} (double forward, double rotate, bool tele\+Op)
+\item 
+void \mbox{\hyperlink{class_drive_subsystem_ac5e1acc31eef895a3b37dac7a3453399}{tank\+Drive}} (double my\+Left, double my\+Right, bool tele\+Op)
+\item 
+void \mbox{\hyperlink{class_drive_subsystem_aa5596fbfe4a3390a97ef359e2c6a7943}{move\+Meters\+Async}} (double meters)
+\item 
+void \mbox{\hyperlink{class_drive_subsystem_a4557d8cf9eb735b49d0f615b2177d727}{move\+Inches\+Async}} (double inches)
+\item 
+void \mbox{\hyperlink{class_drive_subsystem_a9140faa7d57cbe574e2e1b64da003e6b}{turn\+Degrees}} (double angle)
+\item 
+void \mbox{\hyperlink{class_drive_subsystem_a85bd443b11467ba526117d40b59d3ddf}{generate\+Path}} (std\+::initializer\+\_\+list$<$ okapi\+::\+Point $>$ path\+Points, std\+::string path\+Name)
+\item 
+void \mbox{\hyperlink{class_drive_subsystem_ae63a8daa20acf48c83e1ad8afbd2588d}{follow\+Path}} (std\+::string path\+Name, bool backwards, bool wait\+Til\+Settled)
+\item 
+void \mbox{\hyperlink{class_drive_subsystem_aafb7108203042a04abe0a23725c719b4}{adjust\+Path}} (std\+::initializer\+\_\+list$<$ okapi\+::\+Point $>$ path\+Points)
+\item 
+bool \mbox{\hyperlink{class_drive_subsystem_ab2bfeddb9a8c4d39723645f150a313a6}{is\+Path\+Completed}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+okapi\+::\+Chassis\+Controller\+Integrated \mbox{\hyperlink{class_drive_subsystem_a60d89f2b37a4207b4e4a1c11dc50b534}{drive\+Train}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that controls the drivetrain 
+\begin{DoxyParams}{Parameters}
+{\em driver\+Controller} & V\+EX Gamepad \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 13 of file Drive\+Subsystem.\+h.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_drive_subsystem_a9ef32f59725fad2332b5927ed119d197}\label{class_drive_subsystem_a9ef32f59725fad2332b5927ed119d197}} 
+\index{DriveSubsystem@{DriveSubsystem}!DriveState@{DriveState}}
+\index{DriveState@{DriveState}!DriveSubsystem@{DriveSubsystem}}
+\doxysubsubsection{\texorpdfstring{DriveState}{DriveState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_drive_subsystem_a9ef32f59725fad2332b5927ed119d197}{Drive\+Subsystem\+::\+Drive\+State}}}
+
+State of the \mbox{\hyperlink{class_subsystem}{Subsystem}} \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kInitialize@{kInitialize}!DriveSubsystem@{DriveSubsystem}}\index{DriveSubsystem@{DriveSubsystem}!kInitialize@{kInitialize}}}\mbox{\Hypertarget{class_drive_subsystem_a9ef32f59725fad2332b5927ed119d197a1988ba274d31d794469bc0f6652af92b}\label{class_drive_subsystem_a9ef32f59725fad2332b5927ed119d197a1988ba274d31d794469bc0f6652af92b}} 
+k\+Initialize&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTeleopDrive@{kTeleopDrive}!DriveSubsystem@{DriveSubsystem}}\index{DriveSubsystem@{DriveSubsystem}!kTeleopDrive@{kTeleopDrive}}}\mbox{\Hypertarget{class_drive_subsystem_a9ef32f59725fad2332b5927ed119d197a2a2096eaf4612d6f12c9504508ba4979}\label{class_drive_subsystem_a9ef32f59725fad2332b5927ed119d197a2a2096eaf4612d6f12c9504508ba4979}} 
+k\+Teleop\+Drive&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 61 of file Drive\+Subsystem.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_drive_subsystem_af4d261885b23aaa444d194a9b003342c}\label{class_drive_subsystem_af4d261885b23aaa444d194a9b003342c}} 
+\index{DriveSubsystem@{DriveSubsystem}!DriveSubsystem@{DriveSubsystem}}
+\index{DriveSubsystem@{DriveSubsystem}!DriveSubsystem@{DriveSubsystem}}
+\doxysubsubsection{\texorpdfstring{DriveSubsystem()}{DriveSubsystem()}}
+{\footnotesize\ttfamily Drive\+Subsystem\+::\+Drive\+Subsystem (\begin{DoxyParamCaption}\item[{okapi\+::\+Controller}]{driver\+Controller }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_drive_subsystem_aafb7108203042a04abe0a23725c719b4}\label{class_drive_subsystem_aafb7108203042a04abe0a23725c719b4}} 
+\index{DriveSubsystem@{DriveSubsystem}!adjustPath@{adjustPath}}
+\index{adjustPath@{adjustPath}!DriveSubsystem@{DriveSubsystem}}
+\doxysubsubsection{\texorpdfstring{adjustPath()}{adjustPath()}}
+{\footnotesize\ttfamily void Drive\+Subsystem\+::adjust\+Path (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ okapi\+::\+Point $>$}]{path\+Points }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_drive_subsystem_a3dc0e595ec4705f3df09f2b92dda2f6f}\label{class_drive_subsystem_a3dc0e595ec4705f3df09f2b92dda2f6f}} 
+\index{DriveSubsystem@{DriveSubsystem}!arcadeDrive@{arcadeDrive}}
+\index{arcadeDrive@{arcadeDrive}!DriveSubsystem@{DriveSubsystem}}
+\doxysubsubsection{\texorpdfstring{arcadeDrive()}{arcadeDrive()}}
+{\footnotesize\ttfamily void Drive\+Subsystem\+::arcade\+Drive (\begin{DoxyParamCaption}\item[{double}]{forward,  }\item[{double}]{rotate,  }\item[{bool}]{tele\+Op }\end{DoxyParamCaption})}
+
+Drive the robot using arcade drive 
+\begin{DoxyParams}{Parameters}
+{\em forward} & Power (-\/1 to 1) to go forward \\
+\hline
+{\em rotate} & Power (-\/1 to 1) to rotate \\
+\hline
+{\em tele\+Op} & Square the input variables for easy control \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_drive_subsystem_ae63a8daa20acf48c83e1ad8afbd2588d}\label{class_drive_subsystem_ae63a8daa20acf48c83e1ad8afbd2588d}} 
+\index{DriveSubsystem@{DriveSubsystem}!followPath@{followPath}}
+\index{followPath@{followPath}!DriveSubsystem@{DriveSubsystem}}
+\doxysubsubsection{\texorpdfstring{followPath()}{followPath()}}
+{\footnotesize\ttfamily void Drive\+Subsystem\+::follow\+Path (\begin{DoxyParamCaption}\item[{std\+::string}]{path\+Name,  }\item[{bool}]{backwards,  }\item[{bool}]{wait\+Til\+Settled }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_drive_subsystem_a85bd443b11467ba526117d40b59d3ddf}\label{class_drive_subsystem_a85bd443b11467ba526117d40b59d3ddf}} 
+\index{DriveSubsystem@{DriveSubsystem}!generatePath@{generatePath}}
+\index{generatePath@{generatePath}!DriveSubsystem@{DriveSubsystem}}
+\doxysubsubsection{\texorpdfstring{generatePath()}{generatePath()}}
+{\footnotesize\ttfamily void Drive\+Subsystem\+::generate\+Path (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ okapi\+::\+Point $>$}]{path\+Points,  }\item[{std\+::string}]{path\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_drive_subsystem_a9e64b414edae875f96fc0c208990ff88}\label{class_drive_subsystem_a9e64b414edae875f96fc0c208990ff88}} 
+\index{DriveSubsystem@{DriveSubsystem}!getLeftEncoder@{getLeftEncoder}}
+\index{getLeftEncoder@{getLeftEncoder}!DriveSubsystem@{DriveSubsystem}}
+\doxysubsubsection{\texorpdfstring{getLeftEncoder()}{getLeftEncoder()}}
+{\footnotesize\ttfamily double Drive\+Subsystem\+::get\+Left\+Encoder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the distance of the left encoder in inches \begin{DoxyReturn}{Returns}
+Distance of left side in inches 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_drive_subsystem_a2ce143da6284065a8036bb91de861b5f}\label{class_drive_subsystem_a2ce143da6284065a8036bb91de861b5f}} 
+\index{DriveSubsystem@{DriveSubsystem}!getRightEncoder@{getRightEncoder}}
+\index{getRightEncoder@{getRightEncoder}!DriveSubsystem@{DriveSubsystem}}
+\doxysubsubsection{\texorpdfstring{getRightEncoder()}{getRightEncoder()}}
+{\footnotesize\ttfamily double Drive\+Subsystem\+::get\+Right\+Encoder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the distance of the right encoder in inches \begin{DoxyReturn}{Returns}
+Distance of right side in inches 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_drive_subsystem_a26ebc127cfe16dc9ba1825cf7d03f6c7}\label{class_drive_subsystem_a26ebc127cfe16dc9ba1825cf7d03f6c7}} 
+\index{DriveSubsystem@{DriveSubsystem}!initialize@{initialize}}
+\index{initialize@{initialize}!DriveSubsystem@{DriveSubsystem}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void Drive\+Subsystem\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that configures sensors and motors or anything else that needs to be done before the robot runs. 
+
+Implements \mbox{\hyperlink{class_subsystem_a30d9f6d85c9aa0bfbdfda62d1ed55865}{Subsystem}}.
+
+\mbox{\Hypertarget{class_drive_subsystem_ab2bfeddb9a8c4d39723645f150a313a6}\label{class_drive_subsystem_ab2bfeddb9a8c4d39723645f150a313a6}} 
+\index{DriveSubsystem@{DriveSubsystem}!isPathCompleted@{isPathCompleted}}
+\index{isPathCompleted@{isPathCompleted}!DriveSubsystem@{DriveSubsystem}}
+\doxysubsubsection{\texorpdfstring{isPathCompleted()}{isPathCompleted()}}
+{\footnotesize\ttfamily bool Drive\+Subsystem\+::is\+Path\+Completed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_drive_subsystem_a4557d8cf9eb735b49d0f615b2177d727}\label{class_drive_subsystem_a4557d8cf9eb735b49d0f615b2177d727}} 
+\index{DriveSubsystem@{DriveSubsystem}!moveInchesAsync@{moveInchesAsync}}
+\index{moveInchesAsync@{moveInchesAsync}!DriveSubsystem@{DriveSubsystem}}
+\doxysubsubsection{\texorpdfstring{moveInchesAsync()}{moveInchesAsync()}}
+{\footnotesize\ttfamily void Drive\+Subsystem\+::move\+Inches\+Async (\begin{DoxyParamCaption}\item[{double}]{inches }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_drive_subsystem_aa5596fbfe4a3390a97ef359e2c6a7943}\label{class_drive_subsystem_aa5596fbfe4a3390a97ef359e2c6a7943}} 
+\index{DriveSubsystem@{DriveSubsystem}!moveMetersAsync@{moveMetersAsync}}
+\index{moveMetersAsync@{moveMetersAsync}!DriveSubsystem@{DriveSubsystem}}
+\doxysubsubsection{\texorpdfstring{moveMetersAsync()}{moveMetersAsync()}}
+{\footnotesize\ttfamily void Drive\+Subsystem\+::move\+Meters\+Async (\begin{DoxyParamCaption}\item[{double}]{meters }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_drive_subsystem_a8a7fcdf36b4580ed4a722237a4214aa5}\label{class_drive_subsystem_a8a7fcdf36b4580ed4a722237a4214aa5}} 
+\index{DriveSubsystem@{DriveSubsystem}!reset@{reset}}
+\index{reset@{reset}!DriveSubsystem@{DriveSubsystem}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Drive\+Subsystem\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Function to reset subsystems sensors, etc... 
+
+Implements \mbox{\hyperlink{class_subsystem_a2a0617e07fd35b6f2a5ce30045731a73}{Subsystem}}.
+
+\mbox{\Hypertarget{class_drive_subsystem_ab209ac4a17e5aaf044b1ef7a7f9ccc1e}\label{class_drive_subsystem_ab209ac4a17e5aaf044b1ef7a7f9ccc1e}} 
+\index{DriveSubsystem@{DriveSubsystem}!stop@{stop}}
+\index{stop@{stop}!DriveSubsystem@{DriveSubsystem}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Drive\+Subsystem\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Function to stop subsystem operations such as setting motors to zero 
+
+Implements \mbox{\hyperlink{class_subsystem_a69c254f4d104b1fc50f5a0719a68ad97}{Subsystem}}.
+
+\mbox{\Hypertarget{class_drive_subsystem_ac5e1acc31eef895a3b37dac7a3453399}\label{class_drive_subsystem_ac5e1acc31eef895a3b37dac7a3453399}} 
+\index{DriveSubsystem@{DriveSubsystem}!tankDrive@{tankDrive}}
+\index{tankDrive@{tankDrive}!DriveSubsystem@{DriveSubsystem}}
+\doxysubsubsection{\texorpdfstring{tankDrive()}{tankDrive()}}
+{\footnotesize\ttfamily void Drive\+Subsystem\+::tank\+Drive (\begin{DoxyParamCaption}\item[{double}]{my\+Left,  }\item[{double}]{my\+Right,  }\item[{bool}]{tele\+Op }\end{DoxyParamCaption})}
+
+Drive the robot using arcade drive 
+\begin{DoxyParams}{Parameters}
+{\em my\+Left} & Power (-\/1 to 1) for left side \\
+\hline
+{\em my\+Right} & Power (-\/1 to 1) for right side \\
+\hline
+{\em tele\+Op} & Square the input variables for easy control \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_drive_subsystem_a9140faa7d57cbe574e2e1b64da003e6b}\label{class_drive_subsystem_a9140faa7d57cbe574e2e1b64da003e6b}} 
+\index{DriveSubsystem@{DriveSubsystem}!turnDegrees@{turnDegrees}}
+\index{turnDegrees@{turnDegrees}!DriveSubsystem@{DriveSubsystem}}
+\doxysubsubsection{\texorpdfstring{turnDegrees()}{turnDegrees()}}
+{\footnotesize\ttfamily void Drive\+Subsystem\+::turn\+Degrees (\begin{DoxyParamCaption}\item[{double}]{angle }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_drive_subsystem_a522ec6dd3e8065ab9ecd64c0f836c224}\label{class_drive_subsystem_a522ec6dd3e8065ab9ecd64c0f836c224}} 
+\index{DriveSubsystem@{DriveSubsystem}!update@{update}}
+\index{update@{update}!DriveSubsystem@{DriveSubsystem}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Drive\+Subsystem\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Looped function to run subsystem motors 
+
+Implements \mbox{\hyperlink{class_subsystem_a09fe9b3aa0f2d95453db41605412ec59}{Subsystem}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_drive_subsystem_a60d89f2b37a4207b4e4a1c11dc50b534}\label{class_drive_subsystem_a60d89f2b37a4207b4e4a1c11dc50b534}} 
+\index{DriveSubsystem@{DriveSubsystem}!driveTrain@{driveTrain}}
+\index{driveTrain@{driveTrain}!DriveSubsystem@{DriveSubsystem}}
+\doxysubsubsection{\texorpdfstring{driveTrain}{driveTrain}}
+{\footnotesize\ttfamily okapi\+::\+Chassis\+Controller\+Integrated Drive\+Subsystem\+::drive\+Train}
+
+
+
+Definition at line 57 of file Drive\+Subsystem.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/\+User/\mbox{\hyperlink{_drive_subsystem_8h}{Drive\+Subsystem.\+h}}\end{DoxyCompactItemize}

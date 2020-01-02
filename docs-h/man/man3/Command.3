@@ -1,0 +1,89 @@
+.TH "Command" 3 "Sun Oct 13 2019" "Version 0.0.5" "VEX-2019 Team Convergence" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Command
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Command\&.h>\fP
+.PP
+Inherited by \fBDriveAndIntakeCommand\fP, \fBDriveDistanceCommand\fP, \fBDriveTurnCommand\fP, \fBLogPositionCommand\fP, and \fBMoveTrayCommand\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBstart\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBupdate\fP ()=0"
+.br
+.ti -1c
+.RI "virtual bool \fBisFinished\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBfinish\fP ()=0"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBstartTime\fP"
+.br
+.ti -1c
+.RI "double \fBgoalTime\fP"
+.br
+.ti -1c
+.RI "okapi::Timer \fBtimer\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Base class for autonomous actions\&. All funtions of this class must be implemented in child classes 
+.PP
+Definition at line 16 of file Command\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void Command::finish ()\fC [pure virtual]\fP"
+Abstract function that runs after the while loop and only once\&. Normally wraps up a command and gets the robot ready to transition to a new command\&. 
+.PP
+Implemented in \fBLogPositionCommand\fP, \fBMoveTrayCommand\fP, \fBDriveTurnCommand\fP, \fBDriveAndIntakeCommand\fP, and \fBDriveDistanceCommand\fP\&.
+.SS "virtual bool Command::isFinished ()\fC [pure virtual]\fP"
+Abstract function that runs in a while loop and continously checks if the command should end\&. If true, ends while loop\&. Common use case is to check if timeout for command is exceeded 
+.PP
+\fBReturns\fP
+.RS 4
+True if command should end, false if it should not\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBLogPositionCommand\fP, \fBMoveTrayCommand\fP, \fBDriveTurnCommand\fP, \fBDriveAndIntakeCommand\fP, and \fBDriveDistanceCommand\fP\&.
+.SS "virtual void Command::start ()\fC [pure virtual]\fP"
+Abstract function that is called before the while loop only once\&. Common use case is to setup the command\&. 
+.PP
+Implemented in \fBLogPositionCommand\fP, \fBMoveTrayCommand\fP, \fBDriveTurnCommand\fP, \fBDriveAndIntakeCommand\fP, and \fBDriveDistanceCommand\fP\&.
+.SS "virtual void Command::update ()\fC [pure virtual]\fP"
+Abstract function that is run in a while loop until \fI\fBisFinished()\fP\fP returns true and contains the meat of the command, such as running motors\&. 
+.PP
+Implemented in \fBLogPositionCommand\fP, \fBMoveTrayCommand\fP, \fBDriveTurnCommand\fP, \fBDriveAndIntakeCommand\fP, and \fBDriveDistanceCommand\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "double Command::goalTime"
+Variable to store the maximum allowed time for a command to run\&. 
+.PP
+Definition at line 49 of file Command\&.h\&.
+.SS "double Command::startTime"
+Variable to store the starting timestamp of the command\&. 
+.PP
+Definition at line 45 of file Command\&.h\&.
+.SS "okapi::Timer Command::timer"
+
+.PP
+Definition at line 50 of file Command\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for VEX-2019 Team Convergence from the source code\&.

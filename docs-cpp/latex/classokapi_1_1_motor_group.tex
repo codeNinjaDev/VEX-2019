@@ -1,0 +1,943 @@
+\hypertarget{classokapi_1_1_motor_group}{}\doxysection{okapi\+::Motor\+Group Class Reference}
+\label{classokapi_1_1_motor_group}\index{okapi::MotorGroup@{okapi::MotorGroup}}
+Inheritance diagram for okapi\+::Motor\+Group\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classokapi_1_1_motor_group}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classokapi_1_1_motor_group_ab882893390d3b08ecdda0996d42cc067}{Motor\+Group}} (const std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{classokapi_1_1_motor}{Motor}} $>$ \&imotors)
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_a59d6c6a713f208292ac6e7adcc05a44e}{move\+Absolute}} (double iposition, std\+::int32\+\_\+t ivelocity) override
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_a65171e63e8d1d9193738c5dcd97b1006}{move\+Relative}} (double iposition, std\+::int32\+\_\+t ivelocity) override
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_a24a65df1a6c6a059e01ac7b7e4b765a2}{move\+Velocity}} (std\+::int16\+\_\+t ivelocity) override
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_a92d57dd5ca1be5e8f2b9dfb33dab54b0}{move\+Voltage}} (std\+::int16\+\_\+t ivoltage) override
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_a89f0ce524215fee83c4a1f9a477238e0}{modify\+Profiled\+Velocity}} (std\+::int32\+\_\+t ivelocity) override
+\item 
+virtual double \mbox{\hyperlink{classokapi_1_1_motor_group_a7f6f5409a24748c7a89887dea276bb58}{get\+Target\+Position}} () override
+\item 
+virtual double \mbox{\hyperlink{classokapi_1_1_motor_group_a468320b0465e53cb608fd75ea9b23c96}{get\+Position}} () override
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_a5f232602da73aeee4f01742d29c18d3f}{tare\+Position}} () override
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_a1514319c9d1d4b3cce27677085dfe408}{get\+Target\+Velocity}} () override
+\item 
+virtual double \mbox{\hyperlink{classokapi_1_1_motor_group_aaa4d11c8832d2395a5c0bb0a34b9cca4}{get\+Actual\+Velocity}} () override
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_a7dd868a0ad268a22fcbf12af11c459e5}{get\+Current\+Draw}} () override
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_a1346203c02779b3c5655f0a1fe102818}{get\+Direction}} () override
+\item 
+virtual double \mbox{\hyperlink{classokapi_1_1_motor_group_af2d594c6522abe478affe2da01be0e56}{get\+Efficiency}} () override
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_a1eec8618d6b1574310ec3644051813f8}{is\+Over\+Current}} () override
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_a8ada55b7890b5963379c4e9b951f56e9}{is\+Over\+Temp}} () override
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_a13f22a76a21dde49c22abb17713cf5ef}{is\+Stopped}} () override
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_a3e2f2f79d7bcc0506e1caa58eab3022e}{get\+Zero\+Position\+Flag}} () override
+\item 
+virtual uint32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_ac72c03f06b387ab1be66aaee258757cd}{get\+Faults}} () override
+\item 
+virtual uint32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_abf2b4d67da8bba8f2b3e9fe6851f1cf1}{get\+Flags}} () override
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_a94f472b31b2f99dbe3aa67e5ac80a36c}{get\+Raw\+Position}} (std\+::uint32\+\_\+t $\ast$timestamp) override
+\item 
+virtual double \mbox{\hyperlink{classokapi_1_1_motor_group_af68e53b79b28210c565c99ccf97cdee7}{get\+Power}} () override
+\item 
+virtual double \mbox{\hyperlink{classokapi_1_1_motor_group_adaf59e6383794b5eb5fdf009862043b3}{get\+Temperature}} () override
+\item 
+virtual double \mbox{\hyperlink{classokapi_1_1_motor_group_ad1a38f995c2a949a765fa90f4f06020a}{get\+Torque}} () override
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_ab418acb0b1eb045e40dcc4cc1d182568}{get\+Voltage}} () override
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_a98d4dfcd20c0eea6d4bcd47fca6e2355}{set\+Brake\+Mode}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{Abstract\+Motor\+::brake\+Mode}} imode) override
+\item 
+virtual \mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{brake\+Mode}} \mbox{\hyperlink{classokapi_1_1_motor_group_ad66f7fcc3c6be803c27b4a61507cf0cd}{get\+Brake\+Mode}} () override
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_a89fd47cff736e980077fffd76df4b228}{set\+Current\+Limit}} (std\+::int32\+\_\+t ilimit) override
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_a84b7ca7115fec88e65944f8889d11b76}{get\+Current\+Limit}} () override
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_a8aaade9fc32d77cb3201655419745224}{set\+Encoder\+Units}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{Abstract\+Motor\+::encoder\+Units}} iunits) override
+\item 
+virtual \mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{encoder\+Units}} \mbox{\hyperlink{classokapi_1_1_motor_group_a6469d69f60400416f805278b4bdbc2ef}{get\+Encoder\+Units}} () override
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_a063cfc02690fc2c215a42689f46c6243}{set\+Gearing}} (\mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{Abstract\+Motor\+::gearset}} igearset) override
+\item 
+virtual \mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{gearset}} \mbox{\hyperlink{classokapi_1_1_motor_group_a7b24ce21d02e7b4570061a35257fac91}{get\+Gearing}} () override
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_a1f8231075a770af726fa2e787a9ef2e1}{set\+Reversed}} (bool ireverse) override
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_adf1660dddb166a78737ecd9c6d5fba7f}{set\+Voltage\+Limit}} (std\+::int32\+\_\+t ilimit) override
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_a666bcab1fb7a9b002e531ed2c805141b}{set\+Pos\+P\+ID}} (double ikF, double ikP, double ikI, double ikD) override
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_a046875b60b80bcb9f227e129b6eb9499}{set\+Pos\+P\+I\+D\+Full}} (double ikF, double ikP, double ikI, double ikD, double ifilter, double ilimit, double ithreshold, double iloop\+Speed) override
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_aaf06cdafe162e178865036760b18995b}{set\+Vel\+P\+ID}} (double ikF, double ikP, double ikI, double ikD) override
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_motor_group_a74ebe352946b104419fb810fc6a5f3fb}{set\+Vel\+P\+I\+D\+Full}} (double ikF, double ikP, double ikI, double ikD, double ifilter, double ilimit, double ithreshold, double iloop\+Speed) override
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_motor_group_abb4291a06fbda6c6b5bc18f9551da9bc}{controller\+Set}} (double ivalue) override
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ \mbox{\hyperlink{classokapi_1_1_motor_group_abe8d84387ea978f3474c214bacbb917f}{get\+Encoder}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a472daa5f73e04e6679bc2f483e081836}\label{classokapi_1_1_motor_group_a472daa5f73e04e6679bc2f483e081836}} 
+std\+::vector$<$ \mbox{\hyperlink{classokapi_1_1_motor}{Motor}} $>$ {\bfseries motors}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classokapi_1_1_motor_group_ab882893390d3b08ecdda0996d42cc067}\label{classokapi_1_1_motor_group_ab882893390d3b08ecdda0996d42cc067}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!MotorGroup@{MotorGroup}}
+\index{MotorGroup@{MotorGroup}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{MotorGroup()}{MotorGroup()}}
+{\footnotesize\ttfamily okapi\+::\+Motor\+Group\+::\+Motor\+Group (\begin{DoxyParamCaption}\item[{const std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{classokapi_1_1_motor}{Motor}} $>$ \&}]{imotors }\end{DoxyParamCaption})}
+
+A group of V5 motors which act as one motor (i.\+e. they are mechanically linked). A \mbox{\hyperlink{classokapi_1_1_motor_group}{Motor\+Group}} requires at least one motor. If no motors are supplied, a std\+::invalid\+\_\+argument exception is thrown.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imotors} & the motors in this group \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classokapi_1_1_motor_group_abb4291a06fbda6c6b5bc18f9551da9bc}\label{classokapi_1_1_motor_group_abb4291a06fbda6c6b5bc18f9551da9bc}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!controllerSet@{controllerSet}}
+\index{controllerSet@{controllerSet}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{controllerSet()}{controllerSet()}}
+{\footnotesize\ttfamily virtual void okapi\+::\+Motor\+Group\+::controller\+Set (\begin{DoxyParamCaption}\item[{double}]{ivalue }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Writes the value of the controller output. This method might be automatically called in another thread by the controller. The range of input values is expected to be \mbox{[}-\/1, 1\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ivalue} & the controller\textquotesingle{}s output in the range \mbox{[}-\/1, 1\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_controller_output_a360c08f0c10b36f882d6d3100c2cad49}{okapi\+::\+Controller\+Output$<$ double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_aaa4d11c8832d2395a5c0bb0a34b9cca4}\label{classokapi_1_1_motor_group_aaa4d11c8832d2395a5c0bb0a34b9cca4}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!getActualVelocity@{getActualVelocity}}
+\index{getActualVelocity@{getActualVelocity}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{getActualVelocity()}{getActualVelocity()}}
+{\footnotesize\ttfamily virtual double okapi\+::\+Motor\+Group\+::get\+Actual\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the actual velocity of the motor.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+\begin{DoxyReturn}{Returns}
+The motor\textquotesingle{}s actual velocity in R\+PM or P\+R\+O\+S\+\_\+\+E\+R\+R\+\_\+F if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_a45b2013cc318577fad4ac38ad22ce219}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_ad66f7fcc3c6be803c27b4a61507cf0cd}\label{classokapi_1_1_motor_group_ad66f7fcc3c6be803c27b4a61507cf0cd}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!getBrakeMode@{getBrakeMode}}
+\index{getBrakeMode@{getBrakeMode}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{getBrakeMode()}{getBrakeMode()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{brake\+Mode}} okapi\+::\+Motor\+Group\+::get\+Brake\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the brake mode that was set for the motor.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+\begin{DoxyReturn}{Returns}
+One of brake\+Mode, according to what was set for the motor, or brake\+Mode\+::invalid if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_a157407c39c952a7c2eb497bddb868c93}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a7dd868a0ad268a22fcbf12af11c459e5}\label{classokapi_1_1_motor_group_a7dd868a0ad268a22fcbf12af11c459e5}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!getCurrentDraw@{getCurrentDraw}}
+\index{getCurrentDraw@{getCurrentDraw}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{getCurrentDraw()}{getCurrentDraw()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Motor\+Group\+::get\+Current\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the current drawn by the motor in mA.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+\begin{DoxyReturn}{Returns}
+The motor\textquotesingle{}s current in mA or P\+R\+O\+S\+\_\+\+E\+RR if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_a755ad2c78a4b36cc56eef1029a3aa217}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a84b7ca7115fec88e65944f8889d11b76}\label{classokapi_1_1_motor_group_a84b7ca7115fec88e65944f8889d11b76}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!getCurrentLimit@{getCurrentLimit}}
+\index{getCurrentLimit@{getCurrentLimit}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{getCurrentLimit()}{getCurrentLimit()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Motor\+Group\+::get\+Current\+Limit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the current limit for the motor in mA.
+
+The default value is 2500 mA.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+\begin{DoxyReturn}{Returns}
+The motor\textquotesingle{}s current limit in mA or P\+R\+O\+S\+\_\+\+E\+RR if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_ab83ef3319ffe1cb1d020e5a10127aab8}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a1346203c02779b3c5655f0a1fe102818}\label{classokapi_1_1_motor_group_a1346203c02779b3c5655f0a1fe102818}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!getDirection@{getDirection}}
+\index{getDirection@{getDirection}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{getDirection()}{getDirection()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Motor\+Group\+::get\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the direction of movement for the motor.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+\begin{DoxyReturn}{Returns}
+1 for moving in the positive direction, -\/1 for moving in the negative direction, and P\+R\+O\+S\+\_\+\+E\+RR if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_a94763d1700bd91b995333b012c0b683f}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_af2d594c6522abe478affe2da01be0e56}\label{classokapi_1_1_motor_group_af2d594c6522abe478affe2da01be0e56}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!getEfficiency@{getEfficiency}}
+\index{getEfficiency@{getEfficiency}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{getEfficiency()}{getEfficiency()}}
+{\footnotesize\ttfamily virtual double okapi\+::\+Motor\+Group\+::get\+Efficiency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the efficiency of the motor in percent.
+
+An efficiency of 100\% means that the motor is moving electrically while drawing no electrical power, and an efficiency of 0\% means that the motor is drawing power but not moving.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+\begin{DoxyReturn}{Returns}
+The motor\textquotesingle{}s efficiency in percent or P\+R\+O\+S\+\_\+\+E\+R\+R\+\_\+F if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_a27a6e3ec007619a9b91f9d6ebc61e613}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_abe8d84387ea978f3474c214bacbb917f}\label{classokapi_1_1_motor_group_abe8d84387ea978f3474c214bacbb917f}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!getEncoder@{getEncoder}}
+\index{getEncoder@{getEncoder}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{getEncoder()}{getEncoder()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}}$>$ okapi\+::\+Motor\+Group\+::get\+Encoder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the encoder associated with this motor.
+
+\begin{DoxyReturn}{Returns}
+encoder for this motor 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_a87177280c20a855a74354dd8ba6e1d6a}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a6469d69f60400416f805278b4bdbc2ef}\label{classokapi_1_1_motor_group_a6469d69f60400416f805278b4bdbc2ef}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!getEncoderUnits@{getEncoderUnits}}
+\index{getEncoderUnits@{getEncoderUnits}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{getEncoderUnits()}{getEncoderUnits()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{encoder\+Units}} okapi\+::\+Motor\+Group\+::get\+Encoder\+Units (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the encoder units that were set for the motor.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+\begin{DoxyReturn}{Returns}
+One of encoder\+Units according to what is set for the motor or encoder\+Units\+::invalid if the operation failed. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_ae8225381a81ca0b54469949a6022b775}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_ac72c03f06b387ab1be66aaee258757cd}\label{classokapi_1_1_motor_group_ac72c03f06b387ab1be66aaee258757cd}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!getFaults@{getFaults}}
+\index{getFaults@{getFaults}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{getFaults()}{getFaults()}}
+{\footnotesize\ttfamily virtual uint32\+\_\+t okapi\+::\+Motor\+Group\+::get\+Faults (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the faults experienced by the motor. Compare this bitfield to the bitmasks in pros\+::motor\+\_\+fault\+\_\+e\+\_\+t.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+\begin{DoxyReturn}{Returns}
+A currently unknown bitfield containing the motor\textquotesingle{}s faults. 0b00000100 = Current Limit Hit 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_ae741463ec8de88c4f7ba854b5d6d7bce}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_abf2b4d67da8bba8f2b3e9fe6851f1cf1}\label{classokapi_1_1_motor_group_abf2b4d67da8bba8f2b3e9fe6851f1cf1}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!getFlags@{getFlags}}
+\index{getFlags@{getFlags}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{getFlags()}{getFlags()}}
+{\footnotesize\ttfamily virtual uint32\+\_\+t okapi\+::\+Motor\+Group\+::get\+Flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the flags set by the motor\textquotesingle{}s operation. Compare this bitfield to the bitmasks in pros\+::motor\+\_\+flag\+\_\+e\+\_\+t.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+\begin{DoxyReturn}{Returns}
+A currently unknown bitfield containing the motor\textquotesingle{}s flags. These seem to be unrelated to the individual get\+\_\+specific\+\_\+flag functions 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_aaae44487bf20ac2e18b52ee57b7a06ad}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a7b24ce21d02e7b4570061a35257fac91}\label{classokapi_1_1_motor_group_a7b24ce21d02e7b4570061a35257fac91}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!getGearing@{getGearing}}
+\index{getGearing@{getGearing}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{getGearing()}{getGearing()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{gearset}} okapi\+::\+Motor\+Group\+::get\+Gearing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the gearset that was set for the motor.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+\begin{DoxyReturn}{Returns}
+One of gearset according to what is set for the motor, or gearset\+::invalid if the operation failed. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_adc90f1fc8af6c34c4e833355693474bb}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a468320b0465e53cb608fd75ea9b23c96}\label{classokapi_1_1_motor_group_a468320b0465e53cb608fd75ea9b23c96}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily virtual double okapi\+::\+Motor\+Group\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the absolute position of the motor in its encoder units.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+\begin{DoxyReturn}{Returns}
+The motor\textquotesingle{}s absolute position in its encoder units or P\+R\+O\+S\+\_\+\+E\+R\+R\+\_\+F if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_a4f9d74e054600c5ddb49ebb8164004d3}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_af68e53b79b28210c565c99ccf97cdee7}\label{classokapi_1_1_motor_group_af68e53b79b28210c565c99ccf97cdee7}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!getPower@{getPower}}
+\index{getPower@{getPower}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{getPower()}{getPower()}}
+{\footnotesize\ttfamily virtual double okapi\+::\+Motor\+Group\+::get\+Power (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the power drawn by the motor in Watts.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+\begin{DoxyReturn}{Returns}
+The motor\textquotesingle{}s power draw in Watts or P\+R\+O\+S\+\_\+\+E\+R\+R\+\_\+F if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_aed423ac40cec85c5880f7954b6d810fe}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a94f472b31b2f99dbe3aa67e5ac80a36c}\label{classokapi_1_1_motor_group_a94f472b31b2f99dbe3aa67e5ac80a36c}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!getRawPosition@{getRawPosition}}
+\index{getRawPosition@{getRawPosition}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{getRawPosition()}{getRawPosition()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Motor\+Group\+::get\+Raw\+Position (\begin{DoxyParamCaption}\item[{std\+::uint32\+\_\+t $\ast$}]{timestamp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the raw encoder count of the motor at a given timestamp.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+
+\begin{DoxyParams}{Parameters}
+{\em timestamp} & A pointer to a time in milliseconds for which the encoder count will be returned. If N\+U\+LL, the timestamp at which the encoder count was read will not be supplied\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The raw encoder count at the given timestamp or P\+R\+O\+S\+\_\+\+E\+RR if the operation failed. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_aa34fefa954fbff26e3d68e59c4f10964}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a7f6f5409a24748c7a89887dea276bb58}\label{classokapi_1_1_motor_group_a7f6f5409a24748c7a89887dea276bb58}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!getTargetPosition@{getTargetPosition}}
+\index{getTargetPosition@{getTargetPosition}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{getTargetPosition()}{getTargetPosition()}}
+{\footnotesize\ttfamily virtual double okapi\+::\+Motor\+Group\+::get\+Target\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\hyperlink{classokapi_1_1_motor}{Motor}} telemetry functions ~\newline
+ These functions allow programmers to collect telemetry from motors ~\newline
+ Gets the target position set for the motor by the user.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+\begin{DoxyReturn}{Returns}
+The target position in its encoder units or P\+R\+O\+S\+\_\+\+E\+R\+R\+\_\+F if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_a144377e461ec5801289c37bab5132cce}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a1514319c9d1d4b3cce27677085dfe408}\label{classokapi_1_1_motor_group_a1514319c9d1d4b3cce27677085dfe408}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!getTargetVelocity@{getTargetVelocity}}
+\index{getTargetVelocity@{getTargetVelocity}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{getTargetVelocity()}{getTargetVelocity()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Motor\+Group\+::get\+Target\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the velocity commanded to the motor by the user.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+\begin{DoxyReturn}{Returns}
+The commanded motor velocity from +-\/100, +-\/200, or +-\/600, or P\+R\+O\+S\+\_\+\+E\+RR if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_a96b02cca7b51f75c01d2d22aab474fe4}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_adaf59e6383794b5eb5fdf009862043b3}\label{classokapi_1_1_motor_group_adaf59e6383794b5eb5fdf009862043b3}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!getTemperature@{getTemperature}}
+\index{getTemperature@{getTemperature}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{getTemperature()}{getTemperature()}}
+{\footnotesize\ttfamily virtual double okapi\+::\+Motor\+Group\+::get\+Temperature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the temperature of the motor in degrees Celsius.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+\begin{DoxyReturn}{Returns}
+The motor\textquotesingle{}s temperature in degrees Celsius or P\+R\+O\+S\+\_\+\+E\+R\+R\+\_\+F if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_a96ef2dc7eeb1ac23713e3e37af9e95f2}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_ad1a38f995c2a949a765fa90f4f06020a}\label{classokapi_1_1_motor_group_ad1a38f995c2a949a765fa90f4f06020a}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!getTorque@{getTorque}}
+\index{getTorque@{getTorque}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{getTorque()}{getTorque()}}
+{\footnotesize\ttfamily virtual double okapi\+::\+Motor\+Group\+::get\+Torque (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the torque generated by the motor in Newton Metres (Nm).
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+\begin{DoxyReturn}{Returns}
+The motor\textquotesingle{}s torque in NM or P\+R\+O\+S\+\_\+\+E\+R\+R\+\_\+F if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_a955818baa689b279b36dda6a74f15d4e}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_ab418acb0b1eb045e40dcc4cc1d182568}\label{classokapi_1_1_motor_group_ab418acb0b1eb045e40dcc4cc1d182568}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!getVoltage@{getVoltage}}
+\index{getVoltage@{getVoltage}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{getVoltage()}{getVoltage()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Motor\+Group\+::get\+Voltage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the voltage delivered to the motor in millivolts.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+\begin{DoxyReturn}{Returns}
+The motor\textquotesingle{}s voltage in V or P\+R\+O\+S\+\_\+\+E\+R\+R\+\_\+F if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_a855b35b508e90074f21662b06ad2a0c8}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a3e2f2f79d7bcc0506e1caa58eab3022e}\label{classokapi_1_1_motor_group_a3e2f2f79d7bcc0506e1caa58eab3022e}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!getZeroPositionFlag@{getZeroPositionFlag}}
+\index{getZeroPositionFlag@{getZeroPositionFlag}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{getZeroPositionFlag()}{getZeroPositionFlag()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Motor\+Group\+::get\+Zero\+Position\+Flag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Checks if the motor is at its zero position.
+
+Although this function forwards data from the motor, the motor presently does not provide any value. This function returns P\+R\+O\+S\+\_\+\+E\+RR with errno set to E\+N\+O\+S\+YS.
+
+\begin{DoxyReturn}{Returns}
+1 if the motor is at zero absolute position, 0 if the motor has moved from its absolute zero, or P\+R\+O\+S\+\_\+\+E\+RR if the operation failed, setting errno 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_a07079ee87a07b98b7008f2ce91c645ea}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a1eec8618d6b1574310ec3644051813f8}\label{classokapi_1_1_motor_group_a1eec8618d6b1574310ec3644051813f8}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!isOverCurrent@{isOverCurrent}}
+\index{isOverCurrent@{isOverCurrent}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{isOverCurrent()}{isOverCurrent()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Motor\+Group\+::is\+Over\+Current (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Checks if the motor is drawing over its current limit.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+\begin{DoxyReturn}{Returns}
+1 if the motor\textquotesingle{}s current limit is being exceeded and 0 if the current limit is not exceeded, or P\+R\+O\+S\+\_\+\+E\+RR if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_a3d365496ebb8566c0a12611f090c5231}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a8ada55b7890b5963379c4e9b951f56e9}\label{classokapi_1_1_motor_group_a8ada55b7890b5963379c4e9b951f56e9}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!isOverTemp@{isOverTemp}}
+\index{isOverTemp@{isOverTemp}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{isOverTemp()}{isOverTemp()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Motor\+Group\+::is\+Over\+Temp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Checks if the motor\textquotesingle{}s temperature is above its limit.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+\begin{DoxyReturn}{Returns}
+1 if the temperature limit is exceeded and 0 if the the temperature is below the limit, or P\+R\+O\+S\+\_\+\+E\+RR if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_a61e24db43d1fe790b173cc0b4e27922f}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a13f22a76a21dde49c22abb17713cf5ef}\label{classokapi_1_1_motor_group_a13f22a76a21dde49c22abb17713cf5ef}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!isStopped@{isStopped}}
+\index{isStopped@{isStopped}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{isStopped()}{isStopped()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Motor\+Group\+::is\+Stopped (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Checks if the motor is stopped.
+
+\begin{DoxyNote}{Note}
+Although this function forwards data from the motor, the motor presently does not provide any value. This function returns P\+R\+O\+S\+\_\+\+E\+RR with errno set to E\+N\+O\+S\+YS.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+1 if the motor is not moving, 0 if the motor is moving, or P\+R\+O\+S\+\_\+\+E\+RR if the operation failed, setting errno 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_aa46c96a6eec7921ad5b12fcd4119358e}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a89f0ce524215fee83c4a1f9a477238e0}\label{classokapi_1_1_motor_group_a89f0ce524215fee83c4a1f9a477238e0}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!modifyProfiledVelocity@{modifyProfiledVelocity}}
+\index{modifyProfiledVelocity@{modifyProfiledVelocity}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{modifyProfiledVelocity()}{modifyProfiledVelocity()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Motor\+Group\+::modify\+Profiled\+Velocity (\begin{DoxyParamCaption}\item[{std\+::int32\+\_\+t}]{ivelocity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Changes the output velocity for a profiled movement (move\+Absolute or move\+Relative). This will have no effect if the motor is not following a profiled movement.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ivelocity} & The new motor velocity from -\/+-\/100, +-\/200, or +-\/600 depending on the motor\textquotesingle{}s gearset \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation was successful or P\+R\+O\+S\+\_\+\+E\+RR if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_a1d131cbf0b8a325a54034e540c3be6d2}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a59d6c6a713f208292ac6e7adcc05a44e}\label{classokapi_1_1_motor_group_a59d6c6a713f208292ac6e7adcc05a44e}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!moveAbsolute@{moveAbsolute}}
+\index{moveAbsolute@{moveAbsolute}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{moveAbsolute()}{moveAbsolute()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Motor\+Group\+::move\+Absolute (\begin{DoxyParamCaption}\item[{double}]{iposition,  }\item[{std\+::int32\+\_\+t}]{ivelocity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\hyperlink{classokapi_1_1_motor}{Motor}} movement functions ~\newline
+ These functions allow programmers to make motors move ~\newline
+ Sets the target absolute position for the motor to move to.
+
+This movement is relative to the position of the motor when initialized or the position when it was most recently reset with set\+Zero\+Position().
+
+\begin{DoxyNote}{Note}
+This function simply sets the target for the motor, it does not block program execution until the movement finishes.
+\end{DoxyNote}
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iposition} & The absolute position to move to in the motor\textquotesingle{}s encoder units \\
+\hline
+{\em ivelocity} & The maximum allowable velocity for the movement in R\+PM \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation was successful or P\+R\+O\+S\+\_\+\+E\+RR if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_ab84ff0f3e39fa14dcf74bcc867863ff8}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a65171e63e8d1d9193738c5dcd97b1006}\label{classokapi_1_1_motor_group_a65171e63e8d1d9193738c5dcd97b1006}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!moveRelative@{moveRelative}}
+\index{moveRelative@{moveRelative}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{moveRelative()}{moveRelative()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Motor\+Group\+::move\+Relative (\begin{DoxyParamCaption}\item[{double}]{iposition,  }\item[{std\+::int32\+\_\+t}]{ivelocity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the relative target position for the motor to move to.
+
+This movement is relative to the current position of the motor. Providing 10.\+0 as the position parameter would result in the motor moving clockwise 10 units, no matter what the current position is.
+
+\begin{DoxyNote}{Note}
+This function simply sets the target for the motor, it does not block program execution until the movement finishes.
+\end{DoxyNote}
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iposition} & The relative position to move to in the motor\textquotesingle{}s encoder units \\
+\hline
+{\em ivelocity} & The maximum allowable velocity for the movement in R\+PM \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation was successful or P\+R\+O\+S\+\_\+\+E\+RR if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_a5a65d70a30f536593326cb754700e240}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a24a65df1a6c6a059e01ac7b7e4b765a2}\label{classokapi_1_1_motor_group_a24a65df1a6c6a059e01ac7b7e4b765a2}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!moveVelocity@{moveVelocity}}
+\index{moveVelocity@{moveVelocity}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{moveVelocity()}{moveVelocity()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Motor\+Group\+::move\+Velocity (\begin{DoxyParamCaption}\item[{std\+::int16\+\_\+t}]{ivelocity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the velocity for the motor.
+
+This velocity corresponds to different actual speeds depending on the gearset used for the motor. This results in a range of +-\/100 for pros\+::c\+::red, +-\/200 for green, and +-\/600 for blue. The velocity is held with P\+ID to ensure consistent speed, as opposed to setting the motor\textquotesingle{}s voltage.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ivelocity} & The new motor velocity from -\/+-\/100, +-\/200, or +-\/600 depending on the motor\textquotesingle{}s gearset \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation was successful or P\+R\+O\+S\+\_\+\+E\+RR if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_a3170268f8d06f728327dcda08505e02b}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a92d57dd5ca1be5e8f2b9dfb33dab54b0}\label{classokapi_1_1_motor_group_a92d57dd5ca1be5e8f2b9dfb33dab54b0}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!moveVoltage@{moveVoltage}}
+\index{moveVoltage@{moveVoltage}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{moveVoltage()}{moveVoltage()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Motor\+Group\+::move\+Voltage (\begin{DoxyParamCaption}\item[{std\+::int16\+\_\+t}]{ivoltage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the voltage for the motor from -\/12000 to 12000.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ivoltage} & The new voltage value from -\/12000 to 12000. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation was successful or P\+R\+O\+S\+\_\+\+E\+RR if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_a15d12555f527109b046c65fe753d7e20}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a98d4dfcd20c0eea6d4bcd47fca6e2355}\label{classokapi_1_1_motor_group_a98d4dfcd20c0eea6d4bcd47fca6e2355}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!setBrakeMode@{setBrakeMode}}
+\index{setBrakeMode@{setBrakeMode}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{setBrakeMode()}{setBrakeMode()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Motor\+Group\+::set\+Brake\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{Abstract\+Motor\+::brake\+Mode}}}]{imode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\hyperlink{classokapi_1_1_motor}{Motor}} configuration functions ~\newline
+ These functions allow programmers to configure the behavior of motors ~\newline
+ Sets one of \mbox{\hyperlink{classokapi_1_1_abstract_motor_a132e0485dbb59a60c3f934338d8fa601}{Abstract\+Motor\+::brake\+Mode}} to the motor.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imode} & The new motor brake mode to set for the motor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation was successful or P\+R\+O\+S\+\_\+\+E\+RR if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_af7bb7d0d895c89d6b193f500587a818b}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a89fd47cff736e980077fffd76df4b228}\label{classokapi_1_1_motor_group_a89fd47cff736e980077fffd76df4b228}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!setCurrentLimit@{setCurrentLimit}}
+\index{setCurrentLimit@{setCurrentLimit}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{setCurrentLimit()}{setCurrentLimit()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Motor\+Group\+::set\+Current\+Limit (\begin{DoxyParamCaption}\item[{std\+::int32\+\_\+t}]{ilimit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the current limit for the motor in mA.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ilimit} & The new current limit in mA \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation was successful or P\+R\+O\+S\+\_\+\+E\+RR if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_aec97c81f3d6604363ebc8ceaf425fe39}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a8aaade9fc32d77cb3201655419745224}\label{classokapi_1_1_motor_group_a8aaade9fc32d77cb3201655419745224}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!setEncoderUnits@{setEncoderUnits}}
+\index{setEncoderUnits@{setEncoderUnits}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{setEncoderUnits()}{setEncoderUnits()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Motor\+Group\+::set\+Encoder\+Units (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{Abstract\+Motor\+::encoder\+Units}}}]{iunits }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets one of \mbox{\hyperlink{classokapi_1_1_abstract_motor_ae811cd825099f2defadeb1b7f7e7764c}{Abstract\+Motor\+::encoder\+Units}} for the motor encoder.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iunits} & The new motor encoder units \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation was successful or P\+R\+O\+S\+\_\+\+E\+RR if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_aae559b72399b0eb2124d969e40f97415}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a063cfc02690fc2c215a42689f46c6243}\label{classokapi_1_1_motor_group_a063cfc02690fc2c215a42689f46c6243}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!setGearing@{setGearing}}
+\index{setGearing@{setGearing}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{setGearing()}{setGearing()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Motor\+Group\+::set\+Gearing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{Abstract\+Motor\+::gearset}}}]{igearset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets one of \mbox{\hyperlink{classokapi_1_1_abstract_motor_a88aaa6ea2fa10f5520a537bbf26774d5}{Abstract\+Motor\+::gearset}} for the motor.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+
+\begin{DoxyParams}{Parameters}
+{\em igearset} & The new motor gearset \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation was successful or P\+R\+O\+S\+\_\+\+E\+RR if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_aba300f0e323cbdec60f1fee0f3197419}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a666bcab1fb7a9b002e531ed2c805141b}\label{classokapi_1_1_motor_group_a666bcab1fb7a9b002e531ed2c805141b}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!setPosPID@{setPosPID}}
+\index{setPosPID@{setPosPID}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{setPosPID()}{setPosPID()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Motor\+Group\+::set\+Pos\+P\+ID (\begin{DoxyParamCaption}\item[{double}]{ikF,  }\item[{double}]{ikP,  }\item[{double}]{ikI,  }\item[{double}]{ikD }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets new P\+ID constants.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ikF} & the feed-\/forward constant \\
+\hline
+{\em ikP} & the proportional constant \\
+\hline
+{\em ikI} & the integral constant \\
+\hline
+{\em ikD} & the derivative constant \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation was successful or P\+R\+O\+S\+\_\+\+E\+RR if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_ad979f7591071947ab3aec693f3c73c03}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a046875b60b80bcb9f227e129b6eb9499}\label{classokapi_1_1_motor_group_a046875b60b80bcb9f227e129b6eb9499}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!setPosPIDFull@{setPosPIDFull}}
+\index{setPosPIDFull@{setPosPIDFull}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{setPosPIDFull()}{setPosPIDFull()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Motor\+Group\+::set\+Pos\+P\+I\+D\+Full (\begin{DoxyParamCaption}\item[{double}]{ikF,  }\item[{double}]{ikP,  }\item[{double}]{ikI,  }\item[{double}]{ikD,  }\item[{double}]{ifilter,  }\item[{double}]{ilimit,  }\item[{double}]{ithreshold,  }\item[{double}]{iloop\+Speed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets new P\+ID constants.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ikF} & the feed-\/forward constant \\
+\hline
+{\em ikP} & the proportional constant \\
+\hline
+{\em ikI} & the integral constant \\
+\hline
+{\em ikD} & the derivative constant \\
+\hline
+{\em ifilter} & a constant used for filtering the profile acceleration \\
+\hline
+{\em ilimit} & the integral limit \\
+\hline
+{\em ithreshold} & the threshold for determining if a position movement has reached its goal \\
+\hline
+{\em iloop\+Speed} & the rate at which the P\+ID computation is run (in ms) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation was successful or P\+R\+O\+S\+\_\+\+E\+RR if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_aa440aaa9b5fa44e886a344e1e002485e}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a1f8231075a770af726fa2e787a9ef2e1}\label{classokapi_1_1_motor_group_a1f8231075a770af726fa2e787a9ef2e1}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!setReversed@{setReversed}}
+\index{setReversed@{setReversed}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{setReversed()}{setReversed()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Motor\+Group\+::set\+Reversed (\begin{DoxyParamCaption}\item[{bool}]{ireverse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the reverse flag for the motor.
+
+This will invert its movements and the values returned for its position.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ireverse} & True reverses the motor, false is default \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation was successful or P\+R\+O\+S\+\_\+\+E\+RR if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_a72a6a4eb9d237ad57b92401b08ad64fa}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_aaf06cdafe162e178865036760b18995b}\label{classokapi_1_1_motor_group_aaf06cdafe162e178865036760b18995b}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!setVelPID@{setVelPID}}
+\index{setVelPID@{setVelPID}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{setVelPID()}{setVelPID()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Motor\+Group\+::set\+Vel\+P\+ID (\begin{DoxyParamCaption}\item[{double}]{ikF,  }\item[{double}]{ikP,  }\item[{double}]{ikI,  }\item[{double}]{ikD }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets new P\+ID constants.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ikF} & the feed-\/forward constant \\
+\hline
+{\em ikP} & the proportional constant \\
+\hline
+{\em ikI} & the integral constant \\
+\hline
+{\em ikD} & the derivative constant \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation was successful or P\+R\+O\+S\+\_\+\+E\+RR if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_a314a495f2d7cb1ffe157c9dbdf8963b9}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a74ebe352946b104419fb810fc6a5f3fb}\label{classokapi_1_1_motor_group_a74ebe352946b104419fb810fc6a5f3fb}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!setVelPIDFull@{setVelPIDFull}}
+\index{setVelPIDFull@{setVelPIDFull}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{setVelPIDFull()}{setVelPIDFull()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Motor\+Group\+::set\+Vel\+P\+I\+D\+Full (\begin{DoxyParamCaption}\item[{double}]{ikF,  }\item[{double}]{ikP,  }\item[{double}]{ikI,  }\item[{double}]{ikD,  }\item[{double}]{ifilter,  }\item[{double}]{ilimit,  }\item[{double}]{ithreshold,  }\item[{double}]{iloop\+Speed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets new P\+ID constants.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ikF} & the feed-\/forward constant \\
+\hline
+{\em ikP} & the proportional constant \\
+\hline
+{\em ikI} & the integral constant \\
+\hline
+{\em ikD} & the derivative constant \\
+\hline
+{\em ifilter} & a constant used for filtering the profile acceleration \\
+\hline
+{\em ilimit} & the integral limit \\
+\hline
+{\em ithreshold} & the threshold for determining if a position movement has reached its goal \\
+\hline
+{\em iloop\+Speed} & the rate at which the P\+ID computation is run (in ms) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation was successful or P\+R\+O\+S\+\_\+\+E\+RR if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_afff15a595bb33454aabfac99248e8324}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_adf1660dddb166a78737ecd9c6d5fba7f}\label{classokapi_1_1_motor_group_adf1660dddb166a78737ecd9c6d5fba7f}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!setVoltageLimit@{setVoltageLimit}}
+\index{setVoltageLimit@{setVoltageLimit}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{setVoltageLimit()}{setVoltageLimit()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Motor\+Group\+::set\+Voltage\+Limit (\begin{DoxyParamCaption}\item[{std\+::int32\+\_\+t}]{ilimit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the voltage limit for the motor in Volts.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ilimit} & The new voltage limit in Volts \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation was successful or P\+R\+O\+S\+\_\+\+E\+RR if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_a2f33faf946b99cd34e9a591ccc33d644}{okapi\+::\+Abstract\+Motor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_motor_group_a5f232602da73aeee4f01742d29c18d3f}\label{classokapi_1_1_motor_group_a5f232602da73aeee4f01742d29c18d3f}} 
+\index{okapi::MotorGroup@{okapi::MotorGroup}!tarePosition@{tarePosition}}
+\index{tarePosition@{tarePosition}!okapi::MotorGroup@{okapi::MotorGroup}}
+\doxysubsubsection{\texorpdfstring{tarePosition()}{tarePosition()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Motor\+Group\+::tare\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the \char`\"{}absolute\char`\"{} zero position of the motor to its current position.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the port.
+
+\begin{DoxyReturn}{Returns}
+1 if the operation was successful or P\+R\+O\+S\+\_\+\+E\+RR if the operation failed, setting errno. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_abstract_motor_ac36edbc92db85a11adcfee56275de15b}{okapi\+::\+Abstract\+Motor}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/okapi/impl/device/motor/motor\+Group.\+hpp\end{DoxyCompactItemize}

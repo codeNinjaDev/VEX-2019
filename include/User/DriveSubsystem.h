@@ -58,7 +58,7 @@ public:
 	okapi::Motor backLeftDriveMotor, backRightDriveMotor, frontLeftDriveMotor, frontRightDriveMotor;
 	okapi::MotorGroup leftMotors, rightMotors;
 
-	okapi::ChassisControllerIntegrated driveTrain;
+	std::shared_ptr<okapi::OdomChassisController> driveTrain;
 	/**
 	 * State of the Subsystem
 	 */
@@ -77,9 +77,8 @@ private:
   uint32_t nextState;
   okapi::Controller driverController;
 
-	okapi::ControllerButton SlowDown1, SlowDown2;
+	okapi::ControllerButton SlowDown1;
 	okapi::ControllerButton toggleDriveButton, toggleDefenseButton;
-	okapi::AsyncMotionProfileController profileController;
 	/**
 	 * Squqre the variable without changing the sign
 	 * @param input The value to be squared

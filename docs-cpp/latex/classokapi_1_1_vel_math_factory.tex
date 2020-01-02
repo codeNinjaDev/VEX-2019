@@ -1,0 +1,54 @@
+\hypertarget{classokapi_1_1_vel_math_factory}{}\doxysection{okapi\+::Vel\+Math\+Factory Class Reference}
+\label{classokapi_1_1_vel_math_factory}\index{okapi::VelMathFactory@{okapi::VelMathFactory}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classokapi_1_1_vel_math}{Vel\+Math}} \mbox{\hyperlink{classokapi_1_1_vel_math_factory_afe6281f58e37cff5a6629727752ad22b}{create}} (double iticks\+Per\+Rev, Q\+Time isample\+Time=0\+\_\+ms)
+\item 
+\mbox{\Hypertarget{classokapi_1_1_vel_math_factory_a0ae03f24625fedd4f06de0eed06bd10d}\label{classokapi_1_1_vel_math_factory_a0ae03f24625fedd4f06de0eed06bd10d}} 
+static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_vel_math}{Vel\+Math}} $>$ {\bfseries create\+Ptr} (double iticks\+Per\+Rev, Q\+Time isample\+Time=0\+\_\+ms)
+\item 
+static \mbox{\hyperlink{classokapi_1_1_vel_math}{Vel\+Math}} \mbox{\hyperlink{classokapi_1_1_vel_math_factory_ae2cfbe6d2ea8eced181b26264c1258fc}{create}} (double iticks\+Per\+Rev, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_filter}{Filter}} $>$ ifilter, Q\+Time isample\+Time=0\+\_\+ms)
+\item 
+\mbox{\Hypertarget{classokapi_1_1_vel_math_factory_a2e2630e5688b57a1895376ebf6c3be9f}\label{classokapi_1_1_vel_math_factory_a2e2630e5688b57a1895376ebf6c3be9f}} 
+static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_vel_math}{Vel\+Math}} $>$ {\bfseries create\+Ptr} (double iticks\+Per\+Rev, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_filter}{Filter}} $>$ ifilter, Q\+Time isample\+Time=0\+\_\+ms)
+\item 
+\mbox{\Hypertarget{classokapi_1_1_vel_math_factory_a41d62f83274ef523c5a4ff2b4f405e9b}\label{classokapi_1_1_vel_math_factory_a41d62f83274ef523c5a4ff2b4f405e9b}} 
+static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_vel_math}{Vel\+Math}} $>$ {\bfseries create\+Ptr} (const \mbox{\hyperlink{classokapi_1_1_vel_math_args}{Vel\+Math\+Args}} \&ivel\+Math\+Args)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classokapi_1_1_vel_math_factory_afe6281f58e37cff5a6629727752ad22b}\label{classokapi_1_1_vel_math_factory_afe6281f58e37cff5a6629727752ad22b}} 
+\index{okapi::VelMathFactory@{okapi::VelMathFactory}!create@{create}}
+\index{create@{create}!okapi::VelMathFactory@{okapi::VelMathFactory}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classokapi_1_1_vel_math}{Vel\+Math}} okapi\+::\+Vel\+Math\+Factory\+::create (\begin{DoxyParamCaption}\item[{double}]{iticks\+Per\+Rev,  }\item[{Q\+Time}]{isample\+Time = {\ttfamily 0\+\_\+ms} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Velocity math helper. Calculates filtered velocity. Throws a std\+::invalid\+\_\+argument exception if iticks\+Per\+Rev is zero. Averages the last two readings.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iticks\+Per\+Rev} & number of ticks per revolution (or whatever units you are using) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_vel_math_factory_ae2cfbe6d2ea8eced181b26264c1258fc}\label{classokapi_1_1_vel_math_factory_ae2cfbe6d2ea8eced181b26264c1258fc}} 
+\index{okapi::VelMathFactory@{okapi::VelMathFactory}!create@{create}}
+\index{create@{create}!okapi::VelMathFactory@{okapi::VelMathFactory}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classokapi_1_1_vel_math}{Vel\+Math}} okapi\+::\+Vel\+Math\+Factory\+::create (\begin{DoxyParamCaption}\item[{double}]{iticks\+Per\+Rev,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_filter}{Filter}} $>$}]{ifilter,  }\item[{Q\+Time}]{isample\+Time = {\ttfamily 0\+\_\+ms} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Velocity math helper. Calculates filtered velocity. Throws a std\+::invalid\+\_\+argument exception if iticks\+Per\+Rev is zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iticks\+Per\+Rev} & number of ticks per revolution (or whatever units you are using) \\
+\hline
+{\em ifilter} & filter used for filtering the calculated velocity \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/okapi/impl/filter/vel\+Math\+Factory.\+hpp\end{DoxyCompactItemize}

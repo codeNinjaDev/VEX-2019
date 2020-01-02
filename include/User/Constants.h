@@ -22,7 +22,7 @@ const int LIMIT_SWITCH_PORT = 'A';
 
 // ROBOT CONSTANTS
 
-const okapi::QLength BACK_WHEEL_DIAMETER = 4.1_in;
+const okapi::QLength BACK_WHEEL_DIAMETER = 4_in;
 
 /**
  * Horizontal distance between center of left
@@ -30,7 +30,7 @@ const okapi::QLength BACK_WHEEL_DIAMETER = 4.1_in;
  *
  *
  */
-const okapi::QLength WHEELBASE_WIDTH = 10_in;
+const okapi::QLength WHEELBASE_WIDTH = 10.5_in;
 
 // PARAMETERS
 

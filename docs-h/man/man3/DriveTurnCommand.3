@@ -1,0 +1,68 @@
+.TH "DriveTurnCommand" 3 "Sun Oct 13 2019" "Version 0.0.5" "VEX-2019 Team Convergence" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DriveTurnCommand
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DriveTurnCommand\&.h>\fP
+.PP
+Inherits \fBCommand\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDriveTurnCommand\fP (std::shared_ptr< \fBDriveSubsystem\fP > drive, double angle, double maxSpeed, double timeout)"
+.br
+.ti -1c
+.RI "void \fBstart\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdate\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisFinished\fP ()"
+.br
+.ti -1c
+.RI "void \fBfinish\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 15 of file DriveTurnCommand\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DriveTurnCommand::DriveTurnCommand (std::shared_ptr< \fBDriveSubsystem\fP > drive, double angle, double maxSpeed, double timeout)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void DriveTurnCommand::finish ()\fC [virtual]\fP"
+Abstract function that runs after the while loop and only once\&. Normally wraps up a command and gets the robot ready to transition to a new command\&. 
+.PP
+Implements \fBCommand\fP\&.
+.SS "bool DriveTurnCommand::isFinished ()\fC [virtual]\fP"
+Abstract function that runs in a while loop and continously checks if the command should end\&. If true, ends while loop\&. Common use case is to check if timeout for command is exceeded 
+.PP
+\fBReturns\fP
+.RS 4
+True if command should end, false if it should not\&. 
+.RE
+.PP
+
+.PP
+Implements \fBCommand\fP\&.
+.SS "void DriveTurnCommand::start ()\fC [virtual]\fP"
+Abstract function that is called before the while loop only once\&. Common use case is to setup the command\&. 
+.PP
+Implements \fBCommand\fP\&.
+.SS "void DriveTurnCommand::update ()\fC [virtual]\fP"
+Abstract function that is run in a while loop until \fI\fBisFinished()\fP\fP returns true and contains the meat of the command, such as running motors\&. 
+.PP
+Implements \fBCommand\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for VEX-2019 Team Convergence from the source code\&.

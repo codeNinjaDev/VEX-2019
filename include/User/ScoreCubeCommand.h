@@ -18,7 +18,7 @@
 class ScoreCubeCommand : public Command {
 public:
 
-	ScoreCubeCommand(std::shared_ptr<TraySubsystem> tray, TraySubsystem::TowerPosition position, double maxSpeed, double timeout);
+	ScoreCubeCommand(std::shared_ptr<TraySubsystem> tray, TraySubsystem::TowerPosition position, double maxSpeed);
 
 	void start();
 	void update();

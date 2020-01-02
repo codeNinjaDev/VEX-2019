@@ -1,0 +1,71 @@
+\hypertarget{classokapi_1_1_chassis_scales}{}\doxysection{okapi\+::Chassis\+Scales Class Reference}
+\label{classokapi_1_1_chassis_scales}\index{okapi::ChassisScales@{okapi::ChassisScales}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classokapi_1_1_chassis_scales_aeecdc668b6307b1d541ab89d4f5c86e4}{Chassis\+Scales}} (const std\+::initializer\+\_\+list$<$ double $>$ \&iscales)
+\item 
+\mbox{\hyperlink{classokapi_1_1_chassis_scales_ad5f97221ff2e41e7a23ec8cad78c9b06}{Chassis\+Scales}} (const std\+::initializer\+\_\+list$<$ Q\+Length $>$ \&iwheelbase)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_chassis_scales_aaf1ec10f7cfa955d6d8eaa2b16dd345f}\label{classokapi_1_1_chassis_scales_aaf1ec10f7cfa955d6d8eaa2b16dd345f}} 
+double {\bfseries straight}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_chassis_scales_aa4babba4794c8f61d41ef6282ba94b64}\label{classokapi_1_1_chassis_scales_aa4babba4794c8f61d41ef6282ba94b64}} 
+double {\bfseries turn}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_chassis_scales_a08c7c4f04b6906683a056077cce18ba0}\label{classokapi_1_1_chassis_scales_a08c7c4f04b6906683a056077cce18ba0}} 
+Q\+Length {\bfseries wheel\+Diameter}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_chassis_scales_afed91760cf3a29c040f9525a11f15109}\label{classokapi_1_1_chassis_scales_afed91760cf3a29c040f9525a11f15109}} 
+Q\+Length {\bfseries wheelbase\+Width}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classokapi_1_1_chassis_scales_aeecdc668b6307b1d541ab89d4f5c86e4}\label{classokapi_1_1_chassis_scales_aeecdc668b6307b1d541ab89d4f5c86e4}} 
+\index{okapi::ChassisScales@{okapi::ChassisScales}!ChassisScales@{ChassisScales}}
+\index{ChassisScales@{ChassisScales}!okapi::ChassisScales@{okapi::ChassisScales}}
+\doxysubsubsection{\texorpdfstring{ChassisScales()}{ChassisScales()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily okapi\+::\+Chassis\+Scales\+::\+Chassis\+Scales (\begin{DoxyParamCaption}\item[{const std\+::initializer\+\_\+list$<$ double $>$ \&}]{iscales }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+The two scales a Chassis \mbox{\hyperlink{classokapi_1_1_controller}{Controller}} needs to do all of its closed-\/loop control. First index is the straight scale, second index is the turn scale. The straight scale converts motor degrees to meters and the turn scale converts motor degrees to robot turn degrees. Read the clawbot programming tutorial for more information behind the meaning of these two numbers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iscales} & \{straight scale, turn scale\} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_chassis_scales_ad5f97221ff2e41e7a23ec8cad78c9b06}\label{classokapi_1_1_chassis_scales_ad5f97221ff2e41e7a23ec8cad78c9b06}} 
+\index{okapi::ChassisScales@{okapi::ChassisScales}!ChassisScales@{ChassisScales}}
+\index{ChassisScales@{ChassisScales}!okapi::ChassisScales@{okapi::ChassisScales}}
+\doxysubsubsection{\texorpdfstring{ChassisScales()}{ChassisScales()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily okapi\+::\+Chassis\+Scales\+::\+Chassis\+Scales (\begin{DoxyParamCaption}\item[{const std\+::initializer\+\_\+list$<$ Q\+Length $>$ \&}]{iwheelbase }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+The two scales a Chassis \mbox{\hyperlink{classokapi_1_1_controller}{Controller}} needs to do all of its closed-\/loop control. First index is the wheel diameter, second index is the wheelbase width. Read the clawbot programming tutorial for more information behind the meaning of these two numbers.
+
+The wheelbase diameter is the center-\/to-\/center distance between the wheels (center-\/to-\/center meaning the width between the centers of both wheels). For example, if you are using four inch omni wheels and there are 11.\+5 inches between the centers of each wheel, you would call the constructor like so\+: \mbox{\hyperlink{classokapi_1_1_chassis_scales}{Chassis\+Scales}} scales(\{4\+\_\+in, 11.\+5\+\_\+in\}); \begin{DoxyVerb}                      Wheel diameter
+
+                       +-+
+                       | |
+                       v v
+
+              +--->    ===             ===
+              |         +               +
+              |        ++---------------++
+              |        |                 |
+\end{DoxyVerb}
+ Wheelbase Width $\vert$ $\vert$ $\vert$ $\vert$ $\vert$ $\vert$ $\vert$ $\vert$ $\vert$ $\vert$ ++-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---++ $\vert$ + + +---$>$ === ===
+
+
+\begin{DoxyParams}{Parameters}
+{\em iwheelbase} & \{wheel diameter, wheelbase width\} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/okapi/api/chassis/controller/chassis\+Scales.\+hpp\end{DoxyCompactItemize}

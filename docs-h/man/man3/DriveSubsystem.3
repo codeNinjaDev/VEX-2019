@@ -1,0 +1,193 @@
+.TH "DriveSubsystem" 3 "Sun Oct 13 2019" "Version 0.0.5" "VEX-2019 Team Convergence" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DriveSubsystem
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DriveSubsystem\&.h>\fP
+.PP
+Inherits \fBSubsystem\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBDriveState\fP { \fBkInitialize\fP, \fBkTeleopDrive\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDriveSubsystem\fP (okapi::Controller driverController)"
+.br
+.ti -1c
+.RI "void \fBstop\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdate\fP ()"
+.br
+.ti -1c
+.RI "void \fBreset\fP ()"
+.br
+.ti -1c
+.RI "void \fBinitialize\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetLeftEncoder\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetRightEncoder\fP ()"
+.br
+.ti -1c
+.RI "void \fBarcadeDrive\fP (double forward, double rotate, bool teleOp)"
+.br
+.ti -1c
+.RI "void \fBtankDrive\fP (double myLeft, double myRight, bool teleOp)"
+.br
+.ti -1c
+.RI "void \fBmoveMetersAsync\fP (double meters)"
+.br
+.ti -1c
+.RI "void \fBmoveInchesAsync\fP (double inches)"
+.br
+.ti -1c
+.RI "void \fBturnDegrees\fP (double angle)"
+.br
+.ti -1c
+.RI "void \fBgeneratePath\fP (std::initializer_list< okapi::Point > pathPoints, std::string pathName)"
+.br
+.ti -1c
+.RI "void \fBfollowPath\fP (std::string pathName, bool backwards, bool waitTilSettled)"
+.br
+.ti -1c
+.RI "void \fBadjustPath\fP (std::initializer_list< okapi::Point > pathPoints)"
+.br
+.ti -1c
+.RI "bool \fBisPathCompleted\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "okapi::ChassisControllerIntegrated \fBdriveTrain\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class that controls the drivetrain 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdriverController\fP VEX Gamepad 
+.RE
+.PP
+
+.PP
+Definition at line 13 of file DriveSubsystem\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBDriveSubsystem::DriveState\fP"
+State of the \fBSubsystem\fP 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIkInitialize \fP\fP
+.TP
+\fB\fIkTeleopDrive \fP\fP
+.PP
+Definition at line 61 of file DriveSubsystem\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DriveSubsystem::DriveSubsystem (okapi::Controller driverController)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void DriveSubsystem::adjustPath (std::initializer_list< okapi::Point > pathPoints)"
+
+.SS "void DriveSubsystem::arcadeDrive (double forward, double rotate, bool teleOp)"
+Drive the robot using arcade drive 
+.PP
+\fBParameters\fP
+.RS 4
+\fIforward\fP Power (-1 to 1) to go forward 
+.br
+\fIrotate\fP Power (-1 to 1) to rotate 
+.br
+\fIteleOp\fP Square the input variables for easy control 
+.RE
+.PP
+
+.SS "void DriveSubsystem::followPath (std::string pathName, bool backwards, bool waitTilSettled)"
+
+.SS "void DriveSubsystem::generatePath (std::initializer_list< okapi::Point > pathPoints, std::string pathName)"
+
+.SS "double DriveSubsystem::getLeftEncoder ()"
+Get the distance of the left encoder in inches 
+.PP
+\fBReturns\fP
+.RS 4
+Distance of left side in inches 
+.RE
+.PP
+
+.SS "double DriveSubsystem::getRightEncoder ()"
+Get the distance of the right encoder in inches 
+.PP
+\fBReturns\fP
+.RS 4
+Distance of right side in inches 
+.RE
+.PP
+
+.SS "void DriveSubsystem::initialize ()\fC [virtual]\fP"
+Abstract function that configures sensors and motors or anything else that needs to be done before the robot runs\&. 
+.PP
+Implements \fBSubsystem\fP\&.
+.SS "bool DriveSubsystem::isPathCompleted ()"
+
+.SS "void DriveSubsystem::moveInchesAsync (double inches)"
+
+.SS "void DriveSubsystem::moveMetersAsync (double meters)"
+
+.SS "void DriveSubsystem::reset ()\fC [virtual]\fP"
+Function to reset subsystems sensors, etc\&.\&.\&. 
+.PP
+Implements \fBSubsystem\fP\&.
+.SS "void DriveSubsystem::stop ()\fC [virtual]\fP"
+Function to stop subsystem operations such as setting motors to zero 
+.PP
+Implements \fBSubsystem\fP\&.
+.SS "void DriveSubsystem::tankDrive (double myLeft, double myRight, bool teleOp)"
+Drive the robot using arcade drive 
+.PP
+\fBParameters\fP
+.RS 4
+\fImyLeft\fP Power (-1 to 1) for left side 
+.br
+\fImyRight\fP Power (-1 to 1) for right side 
+.br
+\fIteleOp\fP Square the input variables for easy control 
+.RE
+.PP
+
+.SS "void DriveSubsystem::turnDegrees (double angle)"
+
+.SS "void DriveSubsystem::update ()\fC [virtual]\fP"
+Looped function to run subsystem motors 
+.PP
+Implements \fBSubsystem\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "okapi::ChassisControllerIntegrated DriveSubsystem::driveTrain"
+
+.PP
+Definition at line 57 of file DriveSubsystem\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for VEX-2019 Team Convergence from the source code\&.

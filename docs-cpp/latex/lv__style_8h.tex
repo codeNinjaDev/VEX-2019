@@ -1,0 +1,109 @@
+\hypertarget{lv__style_8h}{}\doxysection{C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/display/lv\+\_\+core/lv\+\_\+style.h File Reference}
+\label{lv__style_8h}\index{C:/Users/kidco/VEX-\/2019/include/display/lv\_core/lv\_style.h@{C:/Users/kidco/VEX-\/2019/include/display/lv\_core/lv\_style.h}}
+{\ttfamily \#include \char`\"{}display/lv\+\_\+misc/lv\+\_\+anim.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}display/lv\+\_\+misc/lv\+\_\+area.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}display/lv\+\_\+misc/lv\+\_\+color.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}display/lv\+\_\+misc/lv\+\_\+font.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{lv__style_8h_a426785bea126345f648486e35e940ad9}\label{lv__style_8h_a426785bea126345f648486e35e940ad9}} 
+\#define {\bfseries L\+V\+\_\+\+R\+A\+D\+I\+U\+S\+\_\+\+C\+I\+R\+C\+LE}~(L\+V\+\_\+\+C\+O\+O\+R\+D\+\_\+\+M\+AX) /$\ast$A very big radius to always draw as circle$\ast$/
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{lv__style_8h_abd440f38c298ada996fc9fe217d1192a}\label{lv__style_8h_abd440f38c298ada996fc9fe217d1192a}} 
+enum {\bfseries lv\+\_\+border\+\_\+part\+\_\+t} \{ \newline
+{\bfseries L\+V\+\_\+\+B\+O\+R\+D\+E\+R\+\_\+\+N\+O\+NE} = 0x00, 
+{\bfseries L\+V\+\_\+\+B\+O\+R\+D\+E\+R\+\_\+\+B\+O\+T\+T\+OM} = 0x01, 
+{\bfseries L\+V\+\_\+\+B\+O\+R\+D\+E\+R\+\_\+\+T\+OP} = 0x02, 
+{\bfseries L\+V\+\_\+\+B\+O\+R\+D\+E\+R\+\_\+\+L\+E\+FT} = 0x04, 
+\newline
+{\bfseries L\+V\+\_\+\+B\+O\+R\+D\+E\+R\+\_\+\+R\+I\+G\+HT} = 0x08, 
+{\bfseries L\+V\+\_\+\+B\+O\+R\+D\+E\+R\+\_\+\+F\+U\+LL} = 0x0F
+ \}
+\item 
+\mbox{\Hypertarget{lv__style_8h_aeb73bf834d61f4c12b3800ddcd5f00b2}\label{lv__style_8h_aeb73bf834d61f4c12b3800ddcd5f00b2}} 
+enum {\bfseries lv\+\_\+shadow\+\_\+type\+\_\+t} \{ {\bfseries L\+V\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+B\+O\+T\+T\+OM} = 0, 
+{\bfseries L\+V\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+F\+U\+LL}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{lv__style_8h_afc818ff55470dd37008a43e3ddc421c1}{lv\+\_\+style\+\_\+init}} (void)
+\item 
+void \mbox{\hyperlink{lv__style_8h_ac3dde1c9756e1b89c7fe5aa16dc3289b}{lv\+\_\+style\+\_\+copy}} (\mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} $\ast$dest, const \mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} $\ast$src)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{lv__style_8h_a95f9291429a4d552f573d784b4559535}\label{lv__style_8h_a95f9291429a4d552f573d784b4559535}} 
+\mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} {\bfseries lv\+\_\+style\+\_\+scr}
+\item 
+\mbox{\Hypertarget{lv__style_8h_a9af5aba4ecddaa39455ea743b623f954}\label{lv__style_8h_a9af5aba4ecddaa39455ea743b623f954}} 
+\mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} {\bfseries lv\+\_\+style\+\_\+transp}
+\item 
+\mbox{\Hypertarget{lv__style_8h_a5ff0fafb22d3e6bf18782bcf1b5c27ff}\label{lv__style_8h_a5ff0fafb22d3e6bf18782bcf1b5c27ff}} 
+\mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} {\bfseries lv\+\_\+style\+\_\+transp\+\_\+fit}
+\item 
+\mbox{\Hypertarget{lv__style_8h_ad508168e011017bb6bdca71c2387f6ee}\label{lv__style_8h_ad508168e011017bb6bdca71c2387f6ee}} 
+\mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} {\bfseries lv\+\_\+style\+\_\+transp\+\_\+tight}
+\item 
+\mbox{\Hypertarget{lv__style_8h_a3f39f5ee905a0e05c14e3facf3af36c2}\label{lv__style_8h_a3f39f5ee905a0e05c14e3facf3af36c2}} 
+\mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} {\bfseries lv\+\_\+style\+\_\+plain}
+\item 
+\mbox{\Hypertarget{lv__style_8h_a82fb6854d0a219f58ceb73ef868df2c4}\label{lv__style_8h_a82fb6854d0a219f58ceb73ef868df2c4}} 
+\mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} {\bfseries lv\+\_\+style\+\_\+plain\+\_\+color}
+\item 
+\mbox{\Hypertarget{lv__style_8h_a10a89fc44bdae36d130226c61ccba532}\label{lv__style_8h_a10a89fc44bdae36d130226c61ccba532}} 
+\mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} {\bfseries lv\+\_\+style\+\_\+pretty}
+\item 
+\mbox{\Hypertarget{lv__style_8h_a32c346dea92fb755ad250ba38b84c985}\label{lv__style_8h_a32c346dea92fb755ad250ba38b84c985}} 
+\mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} {\bfseries lv\+\_\+style\+\_\+pretty\+\_\+color}
+\item 
+\mbox{\Hypertarget{lv__style_8h_a76047a01315061c980e50a9b7a66f6e7}\label{lv__style_8h_a76047a01315061c980e50a9b7a66f6e7}} 
+\mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} {\bfseries lv\+\_\+style\+\_\+btn\+\_\+rel}
+\item 
+\mbox{\Hypertarget{lv__style_8h_a480029964e9d7c3c32c00d4400918c7f}\label{lv__style_8h_a480029964e9d7c3c32c00d4400918c7f}} 
+\mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} {\bfseries lv\+\_\+style\+\_\+btn\+\_\+pr}
+\item 
+\mbox{\Hypertarget{lv__style_8h_a9c148eb923e3b14451adea0a4219ada2}\label{lv__style_8h_a9c148eb923e3b14451adea0a4219ada2}} 
+\mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} {\bfseries lv\+\_\+style\+\_\+btn\+\_\+tgl\+\_\+rel}
+\item 
+\mbox{\Hypertarget{lv__style_8h_ad915ec5b557d00660245ec504171611c}\label{lv__style_8h_ad915ec5b557d00660245ec504171611c}} 
+\mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} {\bfseries lv\+\_\+style\+\_\+btn\+\_\+tgl\+\_\+pr}
+\item 
+\mbox{\Hypertarget{lv__style_8h_aafc6f59980fe7522d2559ab3d0588425}\label{lv__style_8h_aafc6f59980fe7522d2559ab3d0588425}} 
+\mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} {\bfseries lv\+\_\+style\+\_\+btn\+\_\+ina}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{lv__style_8h_ac3dde1c9756e1b89c7fe5aa16dc3289b}\label{lv__style_8h_ac3dde1c9756e1b89c7fe5aa16dc3289b}} 
+\index{lv\_style.h@{lv\_style.h}!lv\_style\_copy@{lv\_style\_copy}}
+\index{lv\_style\_copy@{lv\_style\_copy}!lv\_style.h@{lv\_style.h}}
+\doxysubsubsection{\texorpdfstring{lv\_style\_copy()}{lv\_style\_copy()}}
+{\footnotesize\ttfamily void lv\+\_\+style\+\_\+copy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} $\ast$}]{dest,  }\item[{const \mbox{\hyperlink{structlv__style__t}{lv\+\_\+style\+\_\+t}} $\ast$}]{src }\end{DoxyParamCaption})}
+
+Copy a style to an other 
+\begin{DoxyParams}{Parameters}
+{\em dest} & pointer to the destination style \\
+\hline
+{\em src} & pointer to the source style \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{lv__style_8h_afc818ff55470dd37008a43e3ddc421c1}\label{lv__style_8h_afc818ff55470dd37008a43e3ddc421c1}} 
+\index{lv\_style.h@{lv\_style.h}!lv\_style\_init@{lv\_style\_init}}
+\index{lv\_style\_init@{lv\_style\_init}!lv\_style.h@{lv\_style.h}}
+\doxysubsubsection{\texorpdfstring{lv\_style\_init()}{lv\_style\_init()}}
+{\footnotesize\ttfamily void lv\+\_\+style\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Init the basic styles 

@@ -1,0 +1,179 @@
+\hypertarget{class_lift_subsystem}{}\doxysection{Lift\+Subsystem Class Reference}
+\label{class_lift_subsystem}\index{LiftSubsystem@{LiftSubsystem}}
+
+
+{\ttfamily \#include $<$Lift\+Subsystem.\+h$>$}
+
+Inheritance diagram for Lift\+Subsystem\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_lift_subsystem}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_lift_subsystem_ac51ee092b1bca3f2f7932958984eba9e}{Lift\+State}} \{ {\bfseries k\+Initialize}, 
+{\bfseries k\+Teleop\+Drive}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_lift_subsystem_af91f8ff318fdb7877c403b32e0c5750f}\label{class_lift_subsystem_af91f8ff318fdb7877c403b32e0c5750f}} 
+{\bfseries Lift\+Subsystem} (\mbox{\hyperlink{classokapi_1_1_controller}{okapi\+::\+Controller}} driver\+Controller)
+\item 
+void \mbox{\hyperlink{class_lift_subsystem_a02b30cba0b9d0e62a0c9a1e27efd61bf}{stop}} ()
+\item 
+void \mbox{\hyperlink{class_lift_subsystem_a9826803b31911dbb215ac8d2c7173399}{update}} ()
+\item 
+void \mbox{\hyperlink{class_lift_subsystem_a6a776143aa6e5e7823d7615f3e8e8c05}{reset}} ()
+\item 
+void \mbox{\hyperlink{class_lift_subsystem_a5e64bf4110495ff3599f57dec2717ba9}{initialize}} ()
+\item 
+double \mbox{\hyperlink{class_lift_subsystem_a3686db9f6506089adb911af249f2ff03}{get\+Lift\+Encoder}} ()
+\item 
+void \mbox{\hyperlink{class_lift_subsystem_a35b2f5fbb674b54a7f88837f107d6ff8}{step\+Lift\+Up}} ()
+\item 
+void \mbox{\hyperlink{class_lift_subsystem_af5000b6337d5e73a77e1f05327a46aa6}{step\+Lift\+Down}} ()
+\item 
+void \mbox{\hyperlink{class_lift_subsystem_a5a254a65f9f764d64e1dcb88800fcb8f}{intake\+Cube}} ()
+\item 
+void \mbox{\hyperlink{class_lift_subsystem_ad478dcd51196bf8270fcc06272aeea97}{outtake\+Cube}} ()
+\item 
+void \mbox{\hyperlink{class_lift_subsystem_acc18ed4e8d810ff2b07f4d86bf89d920}{descore\+Cube\+Position}} ()
+\item 
+void \mbox{\hyperlink{class_lift_subsystem_a5c68e3d55674453c4832f792498bd3de}{tower\+Score\+Postiton}} ()
+\item 
+void \mbox{\hyperlink{class_lift_subsystem_a273d7f6203edd7b9a795873f94ef8db2}{disable\+P\+ID}} ()
+\item 
+void \mbox{\hyperlink{class_lift_subsystem_a2e6c3d52aadddeea9eece5d39fc6da01}{enable\+P\+ID}} ()
+\item 
+bool \mbox{\hyperlink{class_lift_subsystem_af9f42ff7b7424eb160f05d6ee4e7f68e}{home}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gearset 100\+:1 Gear ratio 7\+:1 Class that controls the lift 
+\begin{DoxyParams}{Parameters}
+{\em driver\+Controller} & V\+EX Gamepad \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_lift_subsystem_ac51ee092b1bca3f2f7932958984eba9e}\label{class_lift_subsystem_ac51ee092b1bca3f2f7932958984eba9e}} 
+\index{LiftSubsystem@{LiftSubsystem}!LiftState@{LiftState}}
+\index{LiftState@{LiftState}!LiftSubsystem@{LiftSubsystem}}
+\doxysubsubsection{\texorpdfstring{LiftState}{LiftState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_lift_subsystem_ac51ee092b1bca3f2f7932958984eba9e}{Lift\+Subsystem\+::\+Lift\+State}}}
+
+State of the Lift 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_lift_subsystem_acc18ed4e8d810ff2b07f4d86bf89d920}\label{class_lift_subsystem_acc18ed4e8d810ff2b07f4d86bf89d920}} 
+\index{LiftSubsystem@{LiftSubsystem}!descoreCubePosition@{descoreCubePosition}}
+\index{descoreCubePosition@{descoreCubePosition}!LiftSubsystem@{LiftSubsystem}}
+\doxysubsubsection{\texorpdfstring{descoreCubePosition()}{descoreCubePosition()}}
+{\footnotesize\ttfamily void Lift\+Subsystem\+::descore\+Cube\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Descore tower cube \mbox{\Hypertarget{class_lift_subsystem_a273d7f6203edd7b9a795873f94ef8db2}\label{class_lift_subsystem_a273d7f6203edd7b9a795873f94ef8db2}} 
+\index{LiftSubsystem@{LiftSubsystem}!disablePID@{disablePID}}
+\index{disablePID@{disablePID}!LiftSubsystem@{LiftSubsystem}}
+\doxysubsubsection{\texorpdfstring{disablePID()}{disablePID()}}
+{\footnotesize\ttfamily void Lift\+Subsystem\+::disable\+P\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Disable P\+ID \mbox{\Hypertarget{class_lift_subsystem_a2e6c3d52aadddeea9eece5d39fc6da01}\label{class_lift_subsystem_a2e6c3d52aadddeea9eece5d39fc6da01}} 
+\index{LiftSubsystem@{LiftSubsystem}!enablePID@{enablePID}}
+\index{enablePID@{enablePID}!LiftSubsystem@{LiftSubsystem}}
+\doxysubsubsection{\texorpdfstring{enablePID()}{enablePID()}}
+{\footnotesize\ttfamily void Lift\+Subsystem\+::enable\+P\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Enable pid \mbox{\Hypertarget{class_lift_subsystem_a3686db9f6506089adb911af249f2ff03}\label{class_lift_subsystem_a3686db9f6506089adb911af249f2ff03}} 
+\index{LiftSubsystem@{LiftSubsystem}!getLiftEncoder@{getLiftEncoder}}
+\index{getLiftEncoder@{getLiftEncoder}!LiftSubsystem@{LiftSubsystem}}
+\doxysubsubsection{\texorpdfstring{getLiftEncoder()}{getLiftEncoder()}}
+{\footnotesize\ttfamily double Lift\+Subsystem\+::get\+Lift\+Encoder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the height of the lift (inches) \mbox{\Hypertarget{class_lift_subsystem_af9f42ff7b7424eb160f05d6ee4e7f68e}\label{class_lift_subsystem_af9f42ff7b7424eb160f05d6ee4e7f68e}} 
+\index{LiftSubsystem@{LiftSubsystem}!home@{home}}
+\index{home@{home}!LiftSubsystem@{LiftSubsystem}}
+\doxysubsubsection{\texorpdfstring{home()}{home()}}
+{\footnotesize\ttfamily bool Lift\+Subsystem\+::home (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Tare the encoder position when it hits the bottom \mbox{\Hypertarget{class_lift_subsystem_a5e64bf4110495ff3599f57dec2717ba9}\label{class_lift_subsystem_a5e64bf4110495ff3599f57dec2717ba9}} 
+\index{LiftSubsystem@{LiftSubsystem}!initialize@{initialize}}
+\index{initialize@{initialize}!LiftSubsystem@{LiftSubsystem}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void Lift\+Subsystem\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that configures sensors and motors or anything else that needs to be done before the robot runs. 
+
+Implements \mbox{\hyperlink{class_subsystem_a30d9f6d85c9aa0bfbdfda62d1ed55865}{Subsystem}}.
+
+\mbox{\Hypertarget{class_lift_subsystem_a5a254a65f9f764d64e1dcb88800fcb8f}\label{class_lift_subsystem_a5a254a65f9f764d64e1dcb88800fcb8f}} 
+\index{LiftSubsystem@{LiftSubsystem}!intakeCube@{intakeCube}}
+\index{intakeCube@{intakeCube}!LiftSubsystem@{LiftSubsystem}}
+\doxysubsubsection{\texorpdfstring{intakeCube()}{intakeCube()}}
+{\footnotesize\ttfamily void Lift\+Subsystem\+::intake\+Cube (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Go to the intake position and run intake wheels if on automatic, if on manual only control wheels \mbox{\Hypertarget{class_lift_subsystem_ad478dcd51196bf8270fcc06272aeea97}\label{class_lift_subsystem_ad478dcd51196bf8270fcc06272aeea97}} 
+\index{LiftSubsystem@{LiftSubsystem}!outtakeCube@{outtakeCube}}
+\index{outtakeCube@{outtakeCube}!LiftSubsystem@{LiftSubsystem}}
+\doxysubsubsection{\texorpdfstring{outtakeCube()}{outtakeCube()}}
+{\footnotesize\ttfamily void Lift\+Subsystem\+::outtake\+Cube (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Outtake cube with clamp; dedicated \mbox{\Hypertarget{class_lift_subsystem_a6a776143aa6e5e7823d7615f3e8e8c05}\label{class_lift_subsystem_a6a776143aa6e5e7823d7615f3e8e8c05}} 
+\index{LiftSubsystem@{LiftSubsystem}!reset@{reset}}
+\index{reset@{reset}!LiftSubsystem@{LiftSubsystem}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Lift\+Subsystem\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Function to reset subsystems sensors, etc... 
+
+Implements \mbox{\hyperlink{class_subsystem_a2a0617e07fd35b6f2a5ce30045731a73}{Subsystem}}.
+
+\mbox{\Hypertarget{class_lift_subsystem_af5000b6337d5e73a77e1f05327a46aa6}\label{class_lift_subsystem_af5000b6337d5e73a77e1f05327a46aa6}} 
+\index{LiftSubsystem@{LiftSubsystem}!stepLiftDown@{stepLiftDown}}
+\index{stepLiftDown@{stepLiftDown}!LiftSubsystem@{LiftSubsystem}}
+\doxysubsubsection{\texorpdfstring{stepLiftDown()}{stepLiftDown()}}
+{\footnotesize\ttfamily void Lift\+Subsystem\+::step\+Lift\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Decrease the height one cube height. \mbox{\Hypertarget{class_lift_subsystem_a35b2f5fbb674b54a7f88837f107d6ff8}\label{class_lift_subsystem_a35b2f5fbb674b54a7f88837f107d6ff8}} 
+\index{LiftSubsystem@{LiftSubsystem}!stepLiftUp@{stepLiftUp}}
+\index{stepLiftUp@{stepLiftUp}!LiftSubsystem@{LiftSubsystem}}
+\doxysubsubsection{\texorpdfstring{stepLiftUp()}{stepLiftUp()}}
+{\footnotesize\ttfamily void Lift\+Subsystem\+::step\+Lift\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Increase the height one cube height. \mbox{\Hypertarget{class_lift_subsystem_a02b30cba0b9d0e62a0c9a1e27efd61bf}\label{class_lift_subsystem_a02b30cba0b9d0e62a0c9a1e27efd61bf}} 
+\index{LiftSubsystem@{LiftSubsystem}!stop@{stop}}
+\index{stop@{stop}!LiftSubsystem@{LiftSubsystem}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Lift\+Subsystem\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Function to stop subsystem operations such as setting motors to zero 
+
+Implements \mbox{\hyperlink{class_subsystem_a69c254f4d104b1fc50f5a0719a68ad97}{Subsystem}}.
+
+\mbox{\Hypertarget{class_lift_subsystem_a5c68e3d55674453c4832f792498bd3de}\label{class_lift_subsystem_a5c68e3d55674453c4832f792498bd3de}} 
+\index{LiftSubsystem@{LiftSubsystem}!towerScorePostiton@{towerScorePostiton}}
+\index{towerScorePostiton@{towerScorePostiton}!LiftSubsystem@{LiftSubsystem}}
+\doxysubsubsection{\texorpdfstring{towerScorePostiton()}{towerScorePostiton()}}
+{\footnotesize\ttfamily void Lift\+Subsystem\+::tower\+Score\+Postiton (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Tower postion \mbox{\Hypertarget{class_lift_subsystem_a9826803b31911dbb215ac8d2c7173399}\label{class_lift_subsystem_a9826803b31911dbb215ac8d2c7173399}} 
+\index{LiftSubsystem@{LiftSubsystem}!update@{update}}
+\index{update@{update}!LiftSubsystem@{LiftSubsystem}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Lift\+Subsystem\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Looped function to run subsystem motors 
+
+Implements \mbox{\hyperlink{class_subsystem_a09fe9b3aa0f2d95453db41605412ec59}{Subsystem}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/\+User/Lift\+Subsystem.\+h\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/src/\+Subsystems/Lift\+Subsystem.\+cpp\end{DoxyCompactItemize}

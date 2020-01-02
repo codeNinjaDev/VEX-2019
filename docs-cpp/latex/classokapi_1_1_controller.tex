@@ -1,0 +1,214 @@
+\hypertarget{classokapi_1_1_controller}{}\doxysection{okapi\+::Controller Class Reference}
+\label{classokapi_1_1_controller}\index{okapi::Controller@{okapi::Controller}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_controller_ab4fa918e91c0173123581cfe4dc9f5f6}\label{classokapi_1_1_controller_ab4fa918e91c0173123581cfe4dc9f5f6}} 
+{\bfseries Controller} (\mbox{\hyperlink{namespaceokapi_a56349a0562b06c6ffc742e94cb1e4361}{Controller\+Id}} iid=Controller\+Id\+::master)
+\item 
+virtual bool \mbox{\hyperlink{classokapi_1_1_controller_adc36eca47e8a9f6489f27416722d7211}{is\+Connected}} ()
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_controller_a272fd898159617c4e71f6a9bf8faa671}{get\+Connection\+State}} ()
+\item 
+virtual float \mbox{\hyperlink{classokapi_1_1_controller_a3ccd51b3015c7729e1b765a8ff98be95}{get\+Analog}} (\mbox{\hyperlink{namespaceokapi_afcc83d6a64f075a4dba212ff612c31d0}{Controller\+Analog}} ichannel)
+\item 
+virtual bool \mbox{\hyperlink{classokapi_1_1_controller_a4aff4f5577f77b08928ce3e451b5f0c9}{get\+Digital}} (\mbox{\hyperlink{namespaceokapi_af5040b3f1f33d27698871423e1453ab6}{Controller\+Digital}} ibutton)
+\item 
+virtual \mbox{\hyperlink{classokapi_1_1_controller_button}{Controller\+Button}} \& \mbox{\hyperlink{classokapi_1_1_controller_ac5247624358c877e9278bd14b2286ace}{operator\mbox{[}$\,$\mbox{]}}} (\mbox{\hyperlink{namespaceokapi_af5040b3f1f33d27698871423e1453ab6}{Controller\+Digital}} ibtn)
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_controller_a34b1e354f0600798e49e37ac142b641e}{set\+Text}} (std\+::uint8\+\_\+t iline, std\+::uint8\+\_\+t icol, std\+::string itext)
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_controller_a434c92487cefe37753413580f17ab4f2}{clear}} ()
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_controller_a8c62b891d06d42c48c4a198ed28e2390}{clear\+Line}} (std\+::uint8\+\_\+t iline)
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_controller_a0892402cfc2f2c88aec2a7a3ec94dc37}{rumble}} (std\+::string irumble\+Pattern)
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_controller_aa3a76fb3fc4d2fe430c7e20083c4fb79}{get\+Battery\+Capacity}} ()
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_controller_affbb74de7f9b5855110eb0af7a431014}{get\+Battery\+Level}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_controller_afc54b033269cc4ffd9e89157795ed704}\label{classokapi_1_1_controller_afc54b033269cc4ffd9e89157795ed704}} 
+\mbox{\hyperlink{namespaceokapi_a56349a0562b06c6ffc742e94cb1e4361}{Controller\+Id}} {\bfseries m\+\_\+id}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_controller_a6bdb6bf2d516d6bac3168062d45e4082}\label{classokapi_1_1_controller_a6bdb6bf2d516d6bac3168062d45e4082}} 
+\mbox{\hyperlink{classpros_1_1_controller}{pros\+::\+Controller}} {\bfseries controller}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_controller_a687a8678fd01b6d62f013b96c1cac6e4}\label{classokapi_1_1_controller_a687a8678fd01b6d62f013b96c1cac6e4}} 
+static std\+::array$<$ \mbox{\hyperlink{classokapi_1_1_controller_button}{Controller\+Button}} $\ast$, 12 $>$ {\bfseries button\+Array}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classokapi_1_1_controller_a434c92487cefe37753413580f17ab4f2}\label{classokapi_1_1_controller_a434c92487cefe37753413580f17ab4f2}} 
+\index{okapi::Controller@{okapi::Controller}!clear@{clear}}
+\index{clear@{clear}!okapi::Controller@{okapi::Controller}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Controller\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Clears all of the lines of the controller screen.
+
+\begin{DoxyReturn}{Returns}
+1 if the operation was successful, P\+R\+O\+S\+\_\+\+E\+RR otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_controller_a8c62b891d06d42c48c4a198ed28e2390}\label{classokapi_1_1_controller_a8c62b891d06d42c48c4a198ed28e2390}} 
+\index{okapi::Controller@{okapi::Controller}!clearLine@{clearLine}}
+\index{clearLine@{clearLine}!okapi::Controller@{okapi::Controller}}
+\doxysubsubsection{\texorpdfstring{clearLine()}{clearLine()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Controller\+::clear\+Line (\begin{DoxyParamCaption}\item[{std\+::uint8\+\_\+t}]{iline }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Clears an individual line of the controller screen.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iline} & the line number to clear \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation was successful, P\+R\+O\+S\+\_\+\+E\+RR otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_controller_a3ccd51b3015c7729e1b765a8ff98be95}\label{classokapi_1_1_controller_a3ccd51b3015c7729e1b765a8ff98be95}} 
+\index{okapi::Controller@{okapi::Controller}!getAnalog@{getAnalog}}
+\index{getAnalog@{getAnalog}!okapi::Controller@{okapi::Controller}}
+\doxysubsubsection{\texorpdfstring{getAnalog()}{getAnalog()}}
+{\footnotesize\ttfamily virtual float okapi\+::\+Controller\+::get\+Analog (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceokapi_afcc83d6a64f075a4dba212ff612c31d0}{Controller\+Analog}}}]{ichannel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the current analog reading for the channel in the range \mbox{[}-\/1, 1\mbox{]}. Returns 0 if the controller is not connected.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ichannel} & the channel to read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value of that channel in the range \mbox{[}-\/1, 1\mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_controller_aa3a76fb3fc4d2fe430c7e20083c4fb79}\label{classokapi_1_1_controller_aa3a76fb3fc4d2fe430c7e20083c4fb79}} 
+\index{okapi::Controller@{okapi::Controller}!getBatteryCapacity@{getBatteryCapacity}}
+\index{getBatteryCapacity@{getBatteryCapacity}!okapi::Controller@{okapi::Controller}}
+\doxysubsubsection{\texorpdfstring{getBatteryCapacity()}{getBatteryCapacity()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Controller\+::get\+Battery\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the battery capacity of the given controller.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the controller port.
+
+\begin{DoxyReturn}{Returns}
+the controller\textquotesingle{}s battery capacity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_controller_affbb74de7f9b5855110eb0af7a431014}\label{classokapi_1_1_controller_affbb74de7f9b5855110eb0af7a431014}} 
+\index{okapi::Controller@{okapi::Controller}!getBatteryLevel@{getBatteryLevel}}
+\index{getBatteryLevel@{getBatteryLevel}!okapi::Controller@{okapi::Controller}}
+\doxysubsubsection{\texorpdfstring{getBatteryLevel()}{getBatteryLevel()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Controller\+::get\+Battery\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the battery level of the given controller.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the controller port.
+
+\begin{DoxyReturn}{Returns}
+the controller\textquotesingle{}s battery level 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_controller_a272fd898159617c4e71f6a9bf8faa671}\label{classokapi_1_1_controller_a272fd898159617c4e71f6a9bf8faa671}} 
+\index{okapi::Controller@{okapi::Controller}!getConnectionState@{getConnectionState}}
+\index{getConnectionState@{getConnectionState}!okapi::Controller@{okapi::Controller}}
+\doxysubsubsection{\texorpdfstring{getConnectionState()}{getConnectionState()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Controller\+::get\+Connection\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the full connection state of the controller. 0 = disconnected 1 = tethered 2 = V\+E\+Xnet
+
+\begin{DoxyReturn}{Returns}
+the connection state of the controller 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_controller_a4aff4f5577f77b08928ce3e451b5f0c9}\label{classokapi_1_1_controller_a4aff4f5577f77b08928ce3e451b5f0c9}} 
+\index{okapi::Controller@{okapi::Controller}!getDigital@{getDigital}}
+\index{getDigital@{getDigital}!okapi::Controller@{okapi::Controller}}
+\doxysubsubsection{\texorpdfstring{getDigital()}{getDigital()}}
+{\footnotesize\ttfamily virtual bool okapi\+::\+Controller\+::get\+Digital (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceokapi_af5040b3f1f33d27698871423e1453ab6}{Controller\+Digital}}}]{ibutton }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns whether the digital button is currently pressed. Returns false if the controller is not connected.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ibutton} & the button to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the button is pressed, false if the controller is not connected 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_controller_adc36eca47e8a9f6489f27416722d7211}\label{classokapi_1_1_controller_adc36eca47e8a9f6489f27416722d7211}} 
+\index{okapi::Controller@{okapi::Controller}!isConnected@{isConnected}}
+\index{isConnected@{isConnected}!okapi::Controller@{okapi::Controller}}
+\doxysubsubsection{\texorpdfstring{isConnected()}{isConnected()}}
+{\footnotesize\ttfamily virtual bool okapi\+::\+Controller\+::is\+Connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns whether the controller is connected.
+
+\begin{DoxyReturn}{Returns}
+true if the controller is connected 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_controller_ac5247624358c877e9278bd14b2286ace}\label{classokapi_1_1_controller_ac5247624358c877e9278bd14b2286ace}} 
+\index{okapi::Controller@{okapi::Controller}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!okapi::Controller@{okapi::Controller}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classokapi_1_1_controller_button}{Controller\+Button}}\& okapi\+::\+Controller\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceokapi_af5040b3f1f33d27698871423e1453ab6}{Controller\+Digital}}}]{ibtn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns a \mbox{\hyperlink{classokapi_1_1_controller_button}{Controller\+Button}} for the given button on this controller.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ibtn} & the button \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{classokapi_1_1_controller_button}{Controller\+Button}} on this controller 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_controller_a0892402cfc2f2c88aec2a7a3ec94dc37}\label{classokapi_1_1_controller_a0892402cfc2f2c88aec2a7a3ec94dc37}} 
+\index{okapi::Controller@{okapi::Controller}!rumble@{rumble}}
+\index{rumble@{rumble}!okapi::Controller@{okapi::Controller}}
+\doxysubsubsection{\texorpdfstring{rumble()}{rumble()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Controller\+::rumble (\begin{DoxyParamCaption}\item[{std\+::string}]{irumble\+Pattern }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Rumble the controller.
+
+\mbox{\hyperlink{classokapi_1_1_controller}{Controller}} rumble activation is currently in beta, so continuous, fast updates will not work well.
+
+
+\begin{DoxyParams}{Parameters}
+{\em irumble\+Pattern} & A string consisting of the characters \textquotesingle{}.\textquotesingle{}, \textquotesingle{}-\/\textquotesingle{}, and \textquotesingle{} \textquotesingle{}, where dots are short rumbles, dashes are long rumbles, and spaces are pauses. Maximum supported length is 8 characters.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation was successful or P\+R\+O\+S\+\_\+\+E\+RR if the operation failed, setting errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_controller_a34b1e354f0600798e49e37ac142b641e}\label{classokapi_1_1_controller_a34b1e354f0600798e49e37ac142b641e}} 
+\index{okapi::Controller@{okapi::Controller}!setText@{setText}}
+\index{setText@{setText}!okapi::Controller@{okapi::Controller}}
+\doxysubsubsection{\texorpdfstring{setText()}{setText()}}
+{\footnotesize\ttfamily virtual std\+::int32\+\_\+t okapi\+::\+Controller\+::set\+Text (\begin{DoxyParamCaption}\item[{std\+::uint8\+\_\+t}]{iline,  }\item[{std\+::uint8\+\_\+t}]{icol,  }\item[{std\+::string}]{itext }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets text to the controller L\+CD screen.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iline} & the line number at which the text will be displayed \mbox{[}0-\/2\mbox{]} \\
+\hline
+{\em icol} & the column number at which the text will be displayed \mbox{[}0-\/14\mbox{]} \\
+\hline
+{\em itext} & the string to display \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation was successful, P\+R\+O\+S\+\_\+\+E\+RR otherwise 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/okapi/impl/device/controller.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,354 @@
+\hypertarget{classokapi_1_1_async_linear_motion_profile_controller}{}\doxysection{okapi\+::Async\+Linear\+Motion\+Profile\+Controller Class Reference}
+\label{classokapi_1_1_async_linear_motion_profile_controller}\index{okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}}
+Inheritance diagram for okapi\+::Async\+Linear\+Motion\+Profile\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classokapi_1_1_async_linear_motion_profile_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structokapi_1_1_async_linear_motion_profile_controller_1_1_trajectory_pair}{Trajectory\+Pair}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a6af275b065a5b4a02524c832157be5df}{Async\+Linear\+Motion\+Profile\+Controller}} (const \mbox{\hyperlink{classokapi_1_1_time_util}{Time\+Util}} \&itime\+Util, double imax\+Vel, double imax\+Accel, double imax\+Jerk, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_output}{Controller\+Output}}$<$ double $>$$>$ \&ioutput)
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_a7a5caebd84ff75f9bc70e21a254b0ecc}\label{classokapi_1_1_async_linear_motion_profile_controller_a7a5caebd84ff75f9bc70e21a254b0ecc}} 
+{\bfseries Async\+Linear\+Motion\+Profile\+Controller} (\mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller}{Async\+Linear\+Motion\+Profile\+Controller}} \&\&other) noexcept
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_aa483fcd9fb2b11c3b529843a58a3155d}{generate\+Path}} (std\+::initializer\+\_\+list$<$ double $>$ iwaypoints, const std\+::string \&ipath\+Id)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_aba1a46253429dc67830bb8796d2d60a3}{remove\+Path}} (const std\+::string \&ipath\+Id)
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a71f5be40d828460679339506c4c4ea73}{get\+Paths}} ()
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a18e3ba77f08cb5dd93a9cba23d4c2a1e}{set\+Target}} (std\+::string ipath\+Id) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a45b62483002333a2d99deea8de2af43e}{controller\+Set}} (std\+::string ivalue) override
+\item 
+std\+::string \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_afc9a1b30a5fd499c38455e8b05982be9}{get\+Target}} () override
+\item 
+std\+::string \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_accae83d74f347e9a839eeae9d2693917}{get\+Target}} () const
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_ad2609e435baad67b73b86b48730fdc9c}{wait\+Until\+Settled}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a161283c31b7786a803cf077099c5b8f1}{move\+To}} (double iposition, double itarget)
+\item 
+double \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a31057c2bb8cface61147b1edd0d97ce5}{get\+Error}} () const override
+\item 
+bool \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_aecfed2c6a0ead2c38253250e26ce17d4}{is\+Settled}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a925381153aeda65c448489a8f2c3803c}{reset}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a56b05f978f2a98c2183fdae0f13466e7}{flip\+Disable}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a3072d7ac1e5d0f387f739657e9f82fd8}{flip\+Disable}} (bool iis\+Disabled) override
+\item 
+bool \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a99ae2e378cc88745c82a08b6ddf52ee4}{is\+Disabled}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a6b9c0bc4fc13623225f0c02b992b3ed6}{start\+Thread}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_aee386f2d2697feff54005cf9e91a6e52}\label{classokapi_1_1_async_linear_motion_profile_controller_aee386f2d2697feff54005cf9e91a6e52}} 
+void {\bfseries loop} ()
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a9fae8e9e14d3035275ebef52c8fb90ca}{execute\+Single\+Path}} (const \mbox{\hyperlink{structokapi_1_1_async_linear_motion_profile_controller_1_1_trajectory_pair}{Trajectory\+Pair}} \&path, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_rate}{Abstract\+Rate}} $>$ rate)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_a3a449a267fed129861822e1b76551898}\label{classokapi_1_1_async_linear_motion_profile_controller_a3a449a267fed129861822e1b76551898}} 
+static void {\bfseries trampoline} (void $\ast$context)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_a71e829a5dffd98e32f1951825a2cffef}\label{classokapi_1_1_async_linear_motion_profile_controller_a71e829a5dffd98e32f1951825a2cffef}} 
+\mbox{\hyperlink{classokapi_1_1_logger}{Logger}} $\ast$ {\bfseries logger}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_a955697ca2debe00771c8039b3df328f0}\label{classokapi_1_1_async_linear_motion_profile_controller_a955697ca2debe00771c8039b3df328f0}} 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{structokapi_1_1_async_linear_motion_profile_controller_1_1_trajectory_pair}{Trajectory\+Pair}} $>$ {\bfseries paths} \{\}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_aebcc33e8693d5d4726307763b9f350a3}\label{classokapi_1_1_async_linear_motion_profile_controller_aebcc33e8693d5d4726307763b9f350a3}} 
+double {\bfseries max\+Vel} \{0\}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_aa894cc0d33fa2147babf77b8ee2777d9}\label{classokapi_1_1_async_linear_motion_profile_controller_aa894cc0d33fa2147babf77b8ee2777d9}} 
+double {\bfseries max\+Accel} \{0\}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_aca61bf0c712377d7566336cb4caddaeb}\label{classokapi_1_1_async_linear_motion_profile_controller_aca61bf0c712377d7566336cb4caddaeb}} 
+double {\bfseries max\+Jerk} \{0\}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_a5a718fd422ce52e613e1d231910860a9}\label{classokapi_1_1_async_linear_motion_profile_controller_a5a718fd422ce52e613e1d231910860a9}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_output}{Controller\+Output}}$<$ double $>$ $>$ {\bfseries output}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_a94c203e635765357bd825ffc4d061741}\label{classokapi_1_1_async_linear_motion_profile_controller_a94c203e635765357bd825ffc4d061741}} 
+double {\bfseries current\+Profile\+Position} \{0\}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_a320e12b446817ebc8dfb01c6bb36e3cb}\label{classokapi_1_1_async_linear_motion_profile_controller_a320e12b446817ebc8dfb01c6bb36e3cb}} 
+\mbox{\hyperlink{classokapi_1_1_time_util}{Time\+Util}} {\bfseries time\+Util}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_a010cd3afaa58154ee7a32059cadae555}\label{classokapi_1_1_async_linear_motion_profile_controller_a010cd3afaa58154ee7a32059cadae555}} 
+std\+::string {\bfseries current\+Path} \{\char`\"{}\char`\"{}\}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_a587f56ae443b18e8fe0b9feeca624b07}\label{classokapi_1_1_async_linear_motion_profile_controller_a587f56ae443b18e8fe0b9feeca624b07}} 
+std\+::atomic\+\_\+bool {\bfseries is\+Running} \{false\}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_a6fc7e4b240646a8e2a8ecc06701e5ee0}\label{classokapi_1_1_async_linear_motion_profile_controller_a6fc7e4b240646a8e2a8ecc06701e5ee0}} 
+std\+::atomic\+\_\+bool {\bfseries disabled} \{false\}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_aa876f79a2053e1f6b01519f17ccaebfa}\label{classokapi_1_1_async_linear_motion_profile_controller_aa876f79a2053e1f6b01519f17ccaebfa}} 
+std\+::atomic\+\_\+bool {\bfseries dtor\+Called} \{false\}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_aa49e2d190f4e8af09fdc4b13951c212d}\label{classokapi_1_1_async_linear_motion_profile_controller_aa49e2d190f4e8af09fdc4b13951c212d}} 
+\mbox{\hyperlink{class_crossplatform_thread}{Crossplatform\+Thread}} $\ast$ {\bfseries task} \{nullptr\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_a6af275b065a5b4a02524c832157be5df}\label{classokapi_1_1_async_linear_motion_profile_controller_a6af275b065a5b4a02524c832157be5df}} 
+\index{okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}!AsyncLinearMotionProfileController@{AsyncLinearMotionProfileController}}
+\index{AsyncLinearMotionProfileController@{AsyncLinearMotionProfileController}!okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}}
+\doxysubsubsection{\texorpdfstring{AsyncLinearMotionProfileController()}{AsyncLinearMotionProfileController()}}
+{\footnotesize\ttfamily okapi\+::\+Async\+Linear\+Motion\+Profile\+Controller\+::\+Async\+Linear\+Motion\+Profile\+Controller (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classokapi_1_1_time_util}{Time\+Util}} \&}]{itime\+Util,  }\item[{double}]{imax\+Vel,  }\item[{double}]{imax\+Accel,  }\item[{double}]{imax\+Jerk,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_controller_output}{Controller\+Output}}$<$ double $>$$>$ \&}]{ioutput }\end{DoxyParamCaption})}
+
+An Async \mbox{\hyperlink{classokapi_1_1_controller}{Controller}} which generates and follows 1D motion profiles.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax\+Vel} & The maximum possible velocity. \\
+\hline
+{\em imax\+Accel} & The maximum possible acceleration. \\
+\hline
+{\em imax\+Jerk} & The maximum possible jerk. \\
+\hline
+{\em ioutput} & The output to write velocity targets to. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_a45b62483002333a2d99deea8de2af43e}\label{classokapi_1_1_async_linear_motion_profile_controller_a45b62483002333a2d99deea8de2af43e}} 
+\index{okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}!controllerSet@{controllerSet}}
+\index{controllerSet@{controllerSet}!okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}}
+\doxysubsubsection{\texorpdfstring{controllerSet()}{controllerSet()}}
+{\footnotesize\ttfamily void okapi\+::\+Async\+Linear\+Motion\+Profile\+Controller\+::controller\+Set (\begin{DoxyParamCaption}\item[{std\+::string}]{ivalue }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Writes the value of the controller output. This method might be automatically called in another thread by the controller. This just calls \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_a18e3ba77f08cb5dd93a9cba23d4c2a1e}{set\+Target()}}. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_controller_output_a360c08f0c10b36f882d6d3100c2cad49}{okapi\+::\+Controller\+Output$<$ std\+::string $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_a9fae8e9e14d3035275ebef52c8fb90ca}\label{classokapi_1_1_async_linear_motion_profile_controller_a9fae8e9e14d3035275ebef52c8fb90ca}} 
+\index{okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}!executeSinglePath@{executeSinglePath}}
+\index{executeSinglePath@{executeSinglePath}!okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}}
+\doxysubsubsection{\texorpdfstring{executeSinglePath()}{executeSinglePath()}}
+{\footnotesize\ttfamily virtual void okapi\+::\+Async\+Linear\+Motion\+Profile\+Controller\+::execute\+Single\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structokapi_1_1_async_linear_motion_profile_controller_1_1_trajectory_pair}{Trajectory\+Pair}} \&}]{path,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_rate}{Abstract\+Rate}} $>$}]{rate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Follow the supplied path. Must follow the disabled lifecycle. \mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_a56b05f978f2a98c2183fdae0f13466e7}\label{classokapi_1_1_async_linear_motion_profile_controller_a56b05f978f2a98c2183fdae0f13466e7}} 
+\index{okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}!flipDisable@{flipDisable}}
+\index{flipDisable@{flipDisable}!okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}}
+\doxysubsubsection{\texorpdfstring{flipDisable()}{flipDisable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void okapi\+::\+Async\+Linear\+Motion\+Profile\+Controller\+::flip\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Changes whether the controller is off or on. Turning the controller on after it was off will N\+OT cause the controller to move to its last set target. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a9de69b60885df41cd2164fe1a23f34d3}{okapi\+::\+Closed\+Loop\+Controller$<$ std\+::string, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_a3072d7ac1e5d0f387f739657e9f82fd8}\label{classokapi_1_1_async_linear_motion_profile_controller_a3072d7ac1e5d0f387f739657e9f82fd8}} 
+\index{okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}!flipDisable@{flipDisable}}
+\index{flipDisable@{flipDisable}!okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}}
+\doxysubsubsection{\texorpdfstring{flipDisable()}{flipDisable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void okapi\+::\+Async\+Linear\+Motion\+Profile\+Controller\+::flip\+Disable (\begin{DoxyParamCaption}\item[{bool}]{iis\+Disabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets whether the controller is off or on. Turning the controller on after it was off will N\+OT cause the controller to move to its last set target, unless it was reset in that time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iis\+Disabled} & whether the controller is disabled \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a768cd1db40ce9cd5c89b20be6e838ccc}{okapi\+::\+Closed\+Loop\+Controller$<$ std\+::string, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_aa483fcd9fb2b11c3b529843a58a3155d}\label{classokapi_1_1_async_linear_motion_profile_controller_aa483fcd9fb2b11c3b529843a58a3155d}} 
+\index{okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}!generatePath@{generatePath}}
+\index{generatePath@{generatePath}!okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}}
+\doxysubsubsection{\texorpdfstring{generatePath()}{generatePath()}}
+{\footnotesize\ttfamily void okapi\+::\+Async\+Linear\+Motion\+Profile\+Controller\+::generate\+Path (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ double $>$}]{iwaypoints,  }\item[{const std\+::string \&}]{ipath\+Id }\end{DoxyParamCaption})}
+
+Generates a path which intersects the given waypoints and saves it internally with a key of path\+Id. Call execute\+Path() with the same path\+Id to run it.
+
+If the waypoints form a path which is impossible to achieve, an instance of std\+::runtime\+\_\+error is thrown (and an error is logged) which describes the waypoints. If there are no waypoints, no path is generated.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iwaypoints} & The waypoints to hit on the path. \\
+\hline
+{\em ipath\+Id} & A unique identifier to save the path with. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_a31057c2bb8cface61147b1edd0d97ce5}\label{classokapi_1_1_async_linear_motion_profile_controller_a31057c2bb8cface61147b1edd0d97ce5}} 
+\index{okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}!getError@{getError}}
+\index{getError@{getError}!okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}}
+\doxysubsubsection{\texorpdfstring{getError()}{getError()}}
+{\footnotesize\ttfamily double okapi\+::\+Async\+Linear\+Motion\+Profile\+Controller\+::get\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the last error of the controller. Does not update when disabled. Returns zero if there is no path currently being followed.
+
+\begin{DoxyReturn}{Returns}
+the last error 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a50c73444ff6e3e631951c43d0f951953}{okapi\+::\+Closed\+Loop\+Controller$<$ std\+::string, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_a71f5be40d828460679339506c4c4ea73}\label{classokapi_1_1_async_linear_motion_profile_controller_a71f5be40d828460679339506c4c4ea73}} 
+\index{okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}!getPaths@{getPaths}}
+\index{getPaths@{getPaths}!okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}}
+\doxysubsubsection{\texorpdfstring{getPaths()}{getPaths()}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ okapi\+::\+Async\+Linear\+Motion\+Profile\+Controller\+::get\+Paths (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets the identifiers of all paths saved in this \mbox{\hyperlink{classokapi_1_1_async_motion_profile_controller}{Async\+Motion\+Profile\+Controller}}.
+
+\begin{DoxyReturn}{Returns}
+The identifiers of all paths 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_accae83d74f347e9a839eeae9d2693917}\label{classokapi_1_1_async_linear_motion_profile_controller_accae83d74f347e9a839eeae9d2693917}} 
+\index{okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}!getTarget@{getTarget}}
+\index{getTarget@{getTarget}!okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}}
+\doxysubsubsection{\texorpdfstring{getTarget()}{getTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string okapi\+::\+Async\+Linear\+Motion\+Profile\+Controller\+::get\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the last set target, or the default target if none was set.
+
+\begin{DoxyReturn}{Returns}
+the last target 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_afc9a1b30a5fd499c38455e8b05982be9}\label{classokapi_1_1_async_linear_motion_profile_controller_afc9a1b30a5fd499c38455e8b05982be9}} 
+\index{okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}!getTarget@{getTarget}}
+\index{getTarget@{getTarget}!okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}}
+\doxysubsubsection{\texorpdfstring{getTarget()}{getTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string okapi\+::\+Async\+Linear\+Motion\+Profile\+Controller\+::get\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the last set target, or the default target if none was set.
+
+\begin{DoxyReturn}{Returns}
+the last target 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a22012bedbfaff6e5a3a508f274ec2497}{okapi\+::\+Closed\+Loop\+Controller$<$ std\+::string, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_a99ae2e378cc88745c82a08b6ddf52ee4}\label{classokapi_1_1_async_linear_motion_profile_controller_a99ae2e378cc88745c82a08b6ddf52ee4}} 
+\index{okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}!isDisabled@{isDisabled}}
+\index{isDisabled@{isDisabled}!okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}}
+\doxysubsubsection{\texorpdfstring{isDisabled()}{isDisabled()}}
+{\footnotesize\ttfamily bool okapi\+::\+Async\+Linear\+Motion\+Profile\+Controller\+::is\+Disabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns whether the controller is currently disabled.
+
+\begin{DoxyReturn}{Returns}
+whether the controller is currently disabled 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a40bd4ec2b8c75503fbf6f494fd7cbe69}{okapi\+::\+Closed\+Loop\+Controller$<$ std\+::string, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_aecfed2c6a0ead2c38253250e26ce17d4}\label{classokapi_1_1_async_linear_motion_profile_controller_aecfed2c6a0ead2c38253250e26ce17d4}} 
+\index{okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}!isSettled@{isSettled}}
+\index{isSettled@{isSettled}!okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}}
+\doxysubsubsection{\texorpdfstring{isSettled()}{isSettled()}}
+{\footnotesize\ttfamily bool okapi\+::\+Async\+Linear\+Motion\+Profile\+Controller\+::is\+Settled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns whether the controller has settled at the target. Determining what settling means is implementation-\/dependent.
+
+If the controller is disabled, this method must return true.
+
+\begin{DoxyReturn}{Returns}
+whether the controller is settled 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_aed7aa0e94b6474c28314f8517d6cb4d8}{okapi\+::\+Closed\+Loop\+Controller$<$ std\+::string, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_a161283c31b7786a803cf077099c5b8f1}\label{classokapi_1_1_async_linear_motion_profile_controller_a161283c31b7786a803cf077099c5b8f1}} 
+\index{okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}!moveTo@{moveTo}}
+\index{moveTo@{moveTo}!okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}}
+\doxysubsubsection{\texorpdfstring{moveTo()}{moveTo()}}
+{\footnotesize\ttfamily void okapi\+::\+Async\+Linear\+Motion\+Profile\+Controller\+::move\+To (\begin{DoxyParamCaption}\item[{double}]{iposition,  }\item[{double}]{itarget }\end{DoxyParamCaption})}
+
+Generates a new path from the position (typically the current position) to the target and blocks until the controller has settled. Does not save the path which was generated.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iposition} & The starting position. \\
+\hline
+{\em itarget} & The target position. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_aba1a46253429dc67830bb8796d2d60a3}\label{classokapi_1_1_async_linear_motion_profile_controller_aba1a46253429dc67830bb8796d2d60a3}} 
+\index{okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}!removePath@{removePath}}
+\index{removePath@{removePath}!okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}}
+\doxysubsubsection{\texorpdfstring{removePath()}{removePath()}}
+{\footnotesize\ttfamily void okapi\+::\+Async\+Linear\+Motion\+Profile\+Controller\+::remove\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ipath\+Id }\end{DoxyParamCaption})}
+
+Removes a path and frees the memory it used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ipath\+Id} & A unique identifier for the path, previously passed to \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_aa483fcd9fb2b11c3b529843a58a3155d}{generate\+Path()}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_a925381153aeda65c448489a8f2c3803c}\label{classokapi_1_1_async_linear_motion_profile_controller_a925381153aeda65c448489a8f2c3803c}} 
+\index{okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}!reset@{reset}}
+\index{reset@{reset}!okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void okapi\+::\+Async\+Linear\+Motion\+Profile\+Controller\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Resets the controller\textquotesingle{}s internal state so it is similar to when it was first initialized, while keeping any user-\/configured information. This implementation also stops movement. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a7dd6ce28b3e38bdf987514a1b6c83c8c}{okapi\+::\+Closed\+Loop\+Controller$<$ std\+::string, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_a18e3ba77f08cb5dd93a9cba23d4c2a1e}\label{classokapi_1_1_async_linear_motion_profile_controller_a18e3ba77f08cb5dd93a9cba23d4c2a1e}} 
+\index{okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}!setTarget@{setTarget}}
+\index{setTarget@{setTarget}!okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}}
+\doxysubsubsection{\texorpdfstring{setTarget()}{setTarget()}}
+{\footnotesize\ttfamily void okapi\+::\+Async\+Linear\+Motion\+Profile\+Controller\+::set\+Target (\begin{DoxyParamCaption}\item[{std\+::string}]{ipath\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes a path with the given ID. If there is no path matching the ID, the method will return. Any targets set while a path is being followed will be ignored.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ipath\+Id} & A unique identifier for the path, previously passed to \mbox{\hyperlink{classokapi_1_1_async_linear_motion_profile_controller_aa483fcd9fb2b11c3b529843a58a3155d}{generate\+Path()}}. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_ac14482d0768b3f157d52e0214a4c36d7}{okapi\+::\+Closed\+Loop\+Controller$<$ std\+::string, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_a6b9c0bc4fc13623225f0c02b992b3ed6}\label{classokapi_1_1_async_linear_motion_profile_controller_a6b9c0bc4fc13623225f0c02b992b3ed6}} 
+\index{okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}!startThread@{startThread}}
+\index{startThread@{startThread}!okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}}
+\doxysubsubsection{\texorpdfstring{startThread()}{startThread()}}
+{\footnotesize\ttfamily void okapi\+::\+Async\+Linear\+Motion\+Profile\+Controller\+::start\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Starts the internal thread. This should not be called by normal users. This method is called by the \mbox{\hyperlink{classokapi_1_1_async_controller_factory}{Async\+Controller\+Factory}} when making a new instance of this class. \mbox{\Hypertarget{classokapi_1_1_async_linear_motion_profile_controller_ad2609e435baad67b73b86b48730fdc9c}\label{classokapi_1_1_async_linear_motion_profile_controller_ad2609e435baad67b73b86b48730fdc9c}} 
+\index{okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}!waitUntilSettled@{waitUntilSettled}}
+\index{waitUntilSettled@{waitUntilSettled}!okapi::AsyncLinearMotionProfileController@{okapi::AsyncLinearMotionProfileController}}
+\doxysubsubsection{\texorpdfstring{waitUntilSettled()}{waitUntilSettled()}}
+{\footnotesize\ttfamily void okapi\+::\+Async\+Linear\+Motion\+Profile\+Controller\+::wait\+Until\+Settled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Blocks the current task until the controller has settled. This controller is settled when it has finished following a path. If no path is being followed, it is settled. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_async_controller_a20e19f334e3dc7a3092e0e4355edcf49}{okapi\+::\+Async\+Controller$<$ std\+::string, double $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/okapi/api/control/async/async\+Linear\+Motion\+Profile\+Controller.\+hpp\end{DoxyCompactItemize}

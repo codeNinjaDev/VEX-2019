@@ -1,0 +1,31 @@
+\hypertarget{classokapi_1_1_controller_input}{}\doxysection{okapi\+::Controller\+Input$<$ T $>$ Class Template Reference}
+\label{classokapi_1_1_controller_input}\index{okapi::ControllerInput$<$ T $>$@{okapi::ControllerInput$<$ T $>$}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual T \mbox{\hyperlink{classokapi_1_1_controller_input_a3c6c86d897983f367928a93890551e17}{controller\+Get}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classokapi_1_1_controller_input_a3c6c86d897983f367928a93890551e17}\label{classokapi_1_1_controller_input_a3c6c86d897983f367928a93890551e17}} 
+\index{okapi::ControllerInput$<$ T $>$@{okapi::ControllerInput$<$ T $>$}!controllerGet@{controllerGet}}
+\index{controllerGet@{controllerGet}!okapi::ControllerInput$<$ T $>$@{okapi::ControllerInput$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{controllerGet()}{controllerGet()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+virtual T \mbox{\hyperlink{classokapi_1_1_controller_input}{okapi\+::\+Controller\+Input}}$<$ T $>$\+::controller\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get the sensor value for use in a control loop. This method might be automatically called in another thread by the controller.
+
+\begin{DoxyReturn}{Returns}
+the current sensor value, or {\ttfamily P\+R\+O\+S\+\_\+\+E\+RR} on a failure. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classokapi_1_1_a_d_i_gyro_ad6a8ed104c8383a64c984ceb1147bca4}{okapi\+::\+A\+D\+I\+Gyro}}, \mbox{\hyperlink{classokapi_1_1_integrated_encoder_a7b527b46819174d4af3a599e3648a07c}{okapi\+::\+Integrated\+Encoder}}, \mbox{\hyperlink{classokapi_1_1_a_d_i_ultrasonic_ae8b090dfb116c1486fc605edcb668789}{okapi\+::\+A\+D\+I\+Ultrasonic}}, \mbox{\hyperlink{classokapi_1_1_abstract_button_a5fbce0129b080a66f38a89b8e7c775ec}{okapi\+::\+Abstract\+Button}}, \mbox{\hyperlink{classokapi_1_1_filtered_controller_input_abc48c2eb875b0e927d0fd6b462d391d6}{okapi\+::\+Filtered\+Controller\+Input$<$ Input\+Type, Filter\+Type $>$}}, \mbox{\hyperlink{classokapi_1_1_a_d_i_encoder_a2804bb2b1cb5ff2063f0146230a6edf3}{okapi\+::\+A\+D\+I\+Encoder}}, and \mbox{\hyperlink{classokapi_1_1_potentiometer_a101d54c5316fefece10636daf9f9c995}{okapi\+::\+Potentiometer}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/okapi/api/control/controller\+Input.\+hpp\end{DoxyCompactItemize}

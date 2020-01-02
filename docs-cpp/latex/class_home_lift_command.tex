@@ -1,0 +1,75 @@
+\hypertarget{class_home_lift_command}{}\doxysection{Home\+Lift\+Command Class Reference}
+\label{class_home_lift_command}\index{HomeLiftCommand@{HomeLiftCommand}}
+Inheritance diagram for Home\+Lift\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_home_lift_command}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_home_lift_command_ad39c465e10d127c50b3f92723a6a81c9}\label{class_home_lift_command_ad39c465e10d127c50b3f92723a6a81c9}} 
+{\bfseries Home\+Lift\+Command} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_lift_subsystem}{Lift\+Subsystem}} $>$ lift, double timeout)
+\item 
+void \mbox{\hyperlink{class_home_lift_command_a17fe55e34b5362bd0da78a7536acfb27}{start}} ()
+\item 
+void \mbox{\hyperlink{class_home_lift_command_a8161a93124de97fb133f6961ecfeebfd}{update}} ()
+\item 
+bool \mbox{\hyperlink{class_home_lift_command_af6d49f894ee036bb102f4e1e04f4cc9f}{is\+Finished}} ()
+\item 
+void \mbox{\hyperlink{class_home_lift_command_ac2ff7fd83d879afbc25f1454a9b0acf7}{finish}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_home_lift_command_ac2ff7fd83d879afbc25f1454a9b0acf7}\label{class_home_lift_command_ac2ff7fd83d879afbc25f1454a9b0acf7}} 
+\index{HomeLiftCommand@{HomeLiftCommand}!finish@{finish}}
+\index{finish@{finish}!HomeLiftCommand@{HomeLiftCommand}}
+\doxysubsubsection{\texorpdfstring{finish()}{finish()}}
+{\footnotesize\ttfamily void Home\+Lift\+Command\+::finish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that runs after the while loop and only once. Normally wraps up a command and gets the robot ready to transition to a new command. 
+
+Implements \mbox{\hyperlink{class_command_affcda825b758dbb11c2cb036913d4c90}{Command}}.
+
+\mbox{\Hypertarget{class_home_lift_command_af6d49f894ee036bb102f4e1e04f4cc9f}\label{class_home_lift_command_af6d49f894ee036bb102f4e1e04f4cc9f}} 
+\index{HomeLiftCommand@{HomeLiftCommand}!isFinished@{isFinished}}
+\index{isFinished@{isFinished}!HomeLiftCommand@{HomeLiftCommand}}
+\doxysubsubsection{\texorpdfstring{isFinished()}{isFinished()}}
+{\footnotesize\ttfamily bool Home\+Lift\+Command\+::is\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that runs in a while loop and continously checks if the command should end. If true, ends while loop. Common use case is to check if timeout for command is exceeded \begin{DoxyReturn}{Returns}
+True if command should end, false if it should not. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_command_a9aa704d5f9d98f510a79e645701dc72a}{Command}}.
+
+\mbox{\Hypertarget{class_home_lift_command_a17fe55e34b5362bd0da78a7536acfb27}\label{class_home_lift_command_a17fe55e34b5362bd0da78a7536acfb27}} 
+\index{HomeLiftCommand@{HomeLiftCommand}!start@{start}}
+\index{start@{start}!HomeLiftCommand@{HomeLiftCommand}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Home\+Lift\+Command\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that is called before the while loop only once. Common use case is to setup the command. 
+
+Implements \mbox{\hyperlink{class_command_a2ca7d162253b520e8a0f9325051eea61}{Command}}.
+
+\mbox{\Hypertarget{class_home_lift_command_a8161a93124de97fb133f6961ecfeebfd}\label{class_home_lift_command_a8161a93124de97fb133f6961ecfeebfd}} 
+\index{HomeLiftCommand@{HomeLiftCommand}!update@{update}}
+\index{update@{update}!HomeLiftCommand@{HomeLiftCommand}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Home\+Lift\+Command\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that is run in a while loop until {\itshape \mbox{\hyperlink{class_home_lift_command_af6d49f894ee036bb102f4e1e04f4cc9f}{is\+Finished()}}} returns true and contains the meat of the command, such as running motors. 
+
+Implements \mbox{\hyperlink{class_command_a59432e50c228dc1a27302af0219656d9}{Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/\+User/Home\+Lift\+Command.\+h\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/src/\+Commands/Home\+Lift\+Command.\+cpp\end{DoxyCompactItemize}

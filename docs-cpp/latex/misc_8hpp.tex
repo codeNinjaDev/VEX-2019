@@ -1,0 +1,109 @@
+\hypertarget{misc_8hpp}{}\doxysection{C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/pros/misc.hpp File Reference}
+\label{misc_8hpp}\index{C:/Users/kidco/VEX-\/2019/include/pros/misc.hpp@{C:/Users/kidco/VEX-\/2019/include/pros/misc.hpp}}
+{\ttfamily \#include \char`\"{}pros/misc.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classpros_1_1_controller}{pros\+::\+Controller}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{misc_8hpp_a42876357c2ed5a047a535aca84f4458e}{pros\+::battery\+::get\+\_\+capacity}} (void)
+\item 
+int32\+\_\+t \mbox{\hyperlink{misc_8hpp_ad0f092e6341126d68ae15d41b5dba352}{pros\+::battery\+::get\+\_\+current}} (void)
+\item 
+double \mbox{\hyperlink{misc_8hpp_a33d1a503808ed06148a1884e3ccf88ae}{pros\+::battery\+::get\+\_\+temperature}} (void)
+\item 
+int32\+\_\+t \mbox{\hyperlink{misc_8hpp_a2c325b346f66c15ca7e5a844a66b20d9}{pros\+::battery\+::get\+\_\+voltage}} (void)
+\item 
+std\+::uint8\+\_\+t \mbox{\hyperlink{misc_8hpp_ad75e0e06e0817959c08798358eaa8ab0}{pros\+::competition\+::get\+\_\+status}} (void)
+\item 
+\mbox{\Hypertarget{misc_8hpp_a88353a4f8e5e283558ee6504c54283af}\label{misc_8hpp_a88353a4f8e5e283558ee6504c54283af}} 
+std\+::uint8\+\_\+t {\bfseries pros\+::competition\+::is\+\_\+autonomous} (void)
+\item 
+\mbox{\Hypertarget{misc_8hpp_aaf36367a2369390657f6bc4285f68c64}\label{misc_8hpp_aaf36367a2369390657f6bc4285f68c64}} 
+std\+::uint8\+\_\+t {\bfseries pros\+::competition\+::is\+\_\+connected} (void)
+\item 
+\mbox{\Hypertarget{misc_8hpp_a2d4f4555af4c45f7f82ea75e1223899b}\label{misc_8hpp_a2d4f4555af4c45f7f82ea75e1223899b}} 
+std\+::uint8\+\_\+t {\bfseries pros\+::competition\+::is\+\_\+disabled} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains prototypes for miscellaneous functions pertaining to the controller, battery, and competition control.
+
+Visit \href{https://pros.cs.purdue.edu/v5/tutorials/topical/controller.html}{\texttt{ https\+://pros.\+cs.\+purdue.\+edu/v5/tutorials/topical/controller.\+html}} to learn more.
+
+This file should not be modified by users, since it gets replaced whenever a kernel upgrade occurs.
+
+Copyright (c) 2017-\/2018, Purdue University A\+CM S\+I\+G\+Bots. All rights reservered.
+
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.\+0. If a copy of the M\+PL was not distributed with this file, You can obtain one at \href{http://mozilla.org/MPL/2.0/}{\texttt{ http\+://mozilla.\+org/\+M\+P\+L/2.\+0/}}. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{misc_8hpp_file_a42876357c2ed5a047a535aca84f4458e}\label{misc_8hpp_file_a42876357c2ed5a047a535aca84f4458e}} 
+\index{misc.hpp@{misc.hpp}!get\_capacity@{get\_capacity}}
+\index{get\_capacity@{get\_capacity}!misc.hpp@{misc.hpp}}
+\doxysubsubsection{\texorpdfstring{get\_capacity()}{get\_capacity()}}
+{\footnotesize\ttfamily double pros\+::battery\+::get\+\_\+capacity (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Gets the current voltage of the battery, as reported by V\+E\+Xos.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the battery port.
+
+\begin{DoxyReturn}{Returns}
+The current voltage of the battery 
+\end{DoxyReturn}
+\mbox{\Hypertarget{misc_8hpp_file_ad0f092e6341126d68ae15d41b5dba352}\label{misc_8hpp_file_ad0f092e6341126d68ae15d41b5dba352}} 
+\index{misc.hpp@{misc.hpp}!get\_current@{get\_current}}
+\index{get\_current@{get\_current}!misc.hpp@{misc.hpp}}
+\doxysubsubsection{\texorpdfstring{get\_current()}{get\_current()}}
+{\footnotesize\ttfamily int32\+\_\+t pros\+::battery\+::get\+\_\+current (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Gets the current current of the battery in milliamps, as reported by V\+E\+Xos.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the battery port.
+
+\begin{DoxyReturn}{Returns}
+The current current of the battery 
+\end{DoxyReturn}
+\mbox{\Hypertarget{misc_8hpp_file_ad75e0e06e0817959c08798358eaa8ab0}\label{misc_8hpp_file_ad75e0e06e0817959c08798358eaa8ab0}} 
+\index{misc.hpp@{misc.hpp}!get\_status@{get\_status}}
+\index{get\_status@{get\_status}!misc.hpp@{misc.hpp}}
+\doxysubsubsection{\texorpdfstring{get\_status()}{get\_status()}}
+{\footnotesize\ttfamily std\+::uint8\+\_\+t pros\+::competition\+::get\+\_\+status (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Get the current status of the competition control.
+
+\begin{DoxyReturn}{Returns}
+The competition control status as a mask of bits with C\+O\+M\+P\+E\+T\+I\+T\+I\+O\+N\+\_\+\{E\+N\+A\+B\+L\+ED,A\+U\+T\+O\+N\+O\+M\+O\+US,C\+O\+N\+N\+E\+C\+T\+ED\}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{misc_8hpp_file_a33d1a503808ed06148a1884e3ccf88ae}\label{misc_8hpp_file_a33d1a503808ed06148a1884e3ccf88ae}} 
+\index{misc.hpp@{misc.hpp}!get\_temperature@{get\_temperature}}
+\index{get\_temperature@{get\_temperature}!misc.hpp@{misc.hpp}}
+\doxysubsubsection{\texorpdfstring{get\_temperature()}{get\_temperature()}}
+{\footnotesize\ttfamily double pros\+::battery\+::get\+\_\+temperature (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Gets the current temperature of the battery, as reported by V\+E\+Xos.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the battery port.
+
+\begin{DoxyReturn}{Returns}
+The current temperature of the battery 
+\end{DoxyReturn}
+\mbox{\Hypertarget{misc_8hpp_file_a2c325b346f66c15ca7e5a844a66b20d9}\label{misc_8hpp_file_a2c325b346f66c15ca7e5a844a66b20d9}} 
+\index{misc.hpp@{misc.hpp}!get\_voltage@{get\_voltage}}
+\index{get\_voltage@{get\_voltage}!misc.hpp@{misc.hpp}}
+\doxysubsubsection{\texorpdfstring{get\_voltage()}{get\_voltage()}}
+{\footnotesize\ttfamily int32\+\_\+t pros\+::battery\+::get\+\_\+voltage (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Gets the current capacity of the battery in millivolts, as reported by V\+E\+Xos.
+
+This function uses the following values of errno when an error state is reached\+: E\+A\+C\+C\+ES -\/ Another resource is currently trying to access the battery port.
+
+\begin{DoxyReturn}{Returns}
+The current capacity of the battery 
+\end{DoxyReturn}

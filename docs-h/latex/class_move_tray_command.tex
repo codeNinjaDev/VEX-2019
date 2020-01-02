@@ -1,0 +1,93 @@
+\hypertarget{class_move_tray_command}{}\doxysection{Move\+Tray\+Command Class Reference}
+\label{class_move_tray_command}\index{MoveTrayCommand@{MoveTrayCommand}}
+
+
+{\ttfamily \#include $<$Move\+Tray\+Command.\+h$>$}
+
+Inheritance diagram for Move\+Tray\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_move_tray_command}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_move_tray_command_a8dcf1cd79e90553e84d76ac4538d651a}{Move\+Tray\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_tray_subsystem}{Tray\+Subsystem}} $>$ tray, \mbox{\hyperlink{class_tray_subsystem_a4d85889effc17da736f6f673f94c3d99}{Tray\+Subsystem\+::\+Tray\+Position}} position, double timeout)
+\item 
+void \mbox{\hyperlink{class_move_tray_command_aba9850c89abb6e0b0f6faeb8cdd81ee9}{start}} ()
+\item 
+void \mbox{\hyperlink{class_move_tray_command_acfd89195f89c1a8005e32b62c07c5fa1}{update}} ()
+\item 
+bool \mbox{\hyperlink{class_move_tray_command_a1a3b179bd95d35f348a78e579b44c4f4}{is\+Finished}} ()
+\item 
+void \mbox{\hyperlink{class_move_tray_command_ae272b4ee20319b20120538b6d41d5ee9}{finish}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Base class for autonomous actions. All funtions of this class must be implemented in child classes 
+
+Definition at line 18 of file Move\+Tray\+Command.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_move_tray_command_a8dcf1cd79e90553e84d76ac4538d651a}\label{class_move_tray_command_a8dcf1cd79e90553e84d76ac4538d651a}} 
+\index{MoveTrayCommand@{MoveTrayCommand}!MoveTrayCommand@{MoveTrayCommand}}
+\index{MoveTrayCommand@{MoveTrayCommand}!MoveTrayCommand@{MoveTrayCommand}}
+\doxysubsubsection{\texorpdfstring{MoveTrayCommand()}{MoveTrayCommand()}}
+{\footnotesize\ttfamily Move\+Tray\+Command\+::\+Move\+Tray\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_tray_subsystem}{Tray\+Subsystem}} $>$}]{tray,  }\item[{\mbox{\hyperlink{class_tray_subsystem_a4d85889effc17da736f6f673f94c3d99}{Tray\+Subsystem\+::\+Tray\+Position}}}]{position,  }\item[{double}]{timeout }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_move_tray_command_ae272b4ee20319b20120538b6d41d5ee9}\label{class_move_tray_command_ae272b4ee20319b20120538b6d41d5ee9}} 
+\index{MoveTrayCommand@{MoveTrayCommand}!finish@{finish}}
+\index{finish@{finish}!MoveTrayCommand@{MoveTrayCommand}}
+\doxysubsubsection{\texorpdfstring{finish()}{finish()}}
+{\footnotesize\ttfamily void Move\+Tray\+Command\+::finish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that runs after the while loop and only once. Normally wraps up a command and gets the robot ready to transition to a new command. 
+
+Implements \mbox{\hyperlink{class_command_affcda825b758dbb11c2cb036913d4c90}{Command}}.
+
+\mbox{\Hypertarget{class_move_tray_command_a1a3b179bd95d35f348a78e579b44c4f4}\label{class_move_tray_command_a1a3b179bd95d35f348a78e579b44c4f4}} 
+\index{MoveTrayCommand@{MoveTrayCommand}!isFinished@{isFinished}}
+\index{isFinished@{isFinished}!MoveTrayCommand@{MoveTrayCommand}}
+\doxysubsubsection{\texorpdfstring{isFinished()}{isFinished()}}
+{\footnotesize\ttfamily bool Move\+Tray\+Command\+::is\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that runs in a while loop and continously checks if the command should end. If true, ends while loop. Common use case is to check if timeout for command is exceeded \begin{DoxyReturn}{Returns}
+True if command should end, false if it should not. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_command_a9aa704d5f9d98f510a79e645701dc72a}{Command}}.
+
+\mbox{\Hypertarget{class_move_tray_command_aba9850c89abb6e0b0f6faeb8cdd81ee9}\label{class_move_tray_command_aba9850c89abb6e0b0f6faeb8cdd81ee9}} 
+\index{MoveTrayCommand@{MoveTrayCommand}!start@{start}}
+\index{start@{start}!MoveTrayCommand@{MoveTrayCommand}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Move\+Tray\+Command\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that is called before the while loop only once. Common use case is to setup the command. 
+
+Implements \mbox{\hyperlink{class_command_a2ca7d162253b520e8a0f9325051eea61}{Command}}.
+
+\mbox{\Hypertarget{class_move_tray_command_acfd89195f89c1a8005e32b62c07c5fa1}\label{class_move_tray_command_acfd89195f89c1a8005e32b62c07c5fa1}} 
+\index{MoveTrayCommand@{MoveTrayCommand}!update@{update}}
+\index{update@{update}!MoveTrayCommand@{MoveTrayCommand}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Move\+Tray\+Command\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that is run in a while loop until {\itshape \mbox{\hyperlink{class_move_tray_command_a1a3b179bd95d35f348a78e579b44c4f4}{is\+Finished()}}} returns true and contains the meat of the command, such as running motors. 
+
+Implements \mbox{\hyperlink{class_command_a59432e50c228dc1a27302af0219656d9}{Command}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/\+User/\mbox{\hyperlink{_move_tray_command_8h}{Move\+Tray\+Command.\+h}}\end{DoxyCompactItemize}

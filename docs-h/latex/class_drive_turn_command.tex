@@ -1,0 +1,93 @@
+\hypertarget{class_drive_turn_command}{}\doxysection{Drive\+Turn\+Command Class Reference}
+\label{class_drive_turn_command}\index{DriveTurnCommand@{DriveTurnCommand}}
+
+
+{\ttfamily \#include $<$Drive\+Turn\+Command.\+h$>$}
+
+Inheritance diagram for Drive\+Turn\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_drive_turn_command}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_drive_turn_command_afbf33cd136bea8c98ea0a7ecdb28fc26}{Drive\+Turn\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_drive_subsystem}{Drive\+Subsystem}} $>$ drive, double angle, double max\+Speed, double timeout)
+\item 
+void \mbox{\hyperlink{class_drive_turn_command_a63ce1164920cb33ef77b1e07ff9a20eb}{start}} ()
+\item 
+void \mbox{\hyperlink{class_drive_turn_command_a6b625c7815344be7ec384d3404f40eef}{update}} ()
+\item 
+bool \mbox{\hyperlink{class_drive_turn_command_acbc815b24afd06fcb3fbd64096b59ba2}{is\+Finished}} ()
+\item 
+void \mbox{\hyperlink{class_drive_turn_command_a6d1718c2a32cc185e19a06fed0c51ce7}{finish}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 15 of file Drive\+Turn\+Command.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_drive_turn_command_afbf33cd136bea8c98ea0a7ecdb28fc26}\label{class_drive_turn_command_afbf33cd136bea8c98ea0a7ecdb28fc26}} 
+\index{DriveTurnCommand@{DriveTurnCommand}!DriveTurnCommand@{DriveTurnCommand}}
+\index{DriveTurnCommand@{DriveTurnCommand}!DriveTurnCommand@{DriveTurnCommand}}
+\doxysubsubsection{\texorpdfstring{DriveTurnCommand()}{DriveTurnCommand()}}
+{\footnotesize\ttfamily Drive\+Turn\+Command\+::\+Drive\+Turn\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_drive_subsystem}{Drive\+Subsystem}} $>$}]{drive,  }\item[{double}]{angle,  }\item[{double}]{max\+Speed,  }\item[{double}]{timeout }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_drive_turn_command_a6d1718c2a32cc185e19a06fed0c51ce7}\label{class_drive_turn_command_a6d1718c2a32cc185e19a06fed0c51ce7}} 
+\index{DriveTurnCommand@{DriveTurnCommand}!finish@{finish}}
+\index{finish@{finish}!DriveTurnCommand@{DriveTurnCommand}}
+\doxysubsubsection{\texorpdfstring{finish()}{finish()}}
+{\footnotesize\ttfamily void Drive\+Turn\+Command\+::finish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that runs after the while loop and only once. Normally wraps up a command and gets the robot ready to transition to a new command. 
+
+Implements \mbox{\hyperlink{class_command_affcda825b758dbb11c2cb036913d4c90}{Command}}.
+
+\mbox{\Hypertarget{class_drive_turn_command_acbc815b24afd06fcb3fbd64096b59ba2}\label{class_drive_turn_command_acbc815b24afd06fcb3fbd64096b59ba2}} 
+\index{DriveTurnCommand@{DriveTurnCommand}!isFinished@{isFinished}}
+\index{isFinished@{isFinished}!DriveTurnCommand@{DriveTurnCommand}}
+\doxysubsubsection{\texorpdfstring{isFinished()}{isFinished()}}
+{\footnotesize\ttfamily bool Drive\+Turn\+Command\+::is\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that runs in a while loop and continously checks if the command should end. If true, ends while loop. Common use case is to check if timeout for command is exceeded \begin{DoxyReturn}{Returns}
+True if command should end, false if it should not. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_command_a9aa704d5f9d98f510a79e645701dc72a}{Command}}.
+
+\mbox{\Hypertarget{class_drive_turn_command_a63ce1164920cb33ef77b1e07ff9a20eb}\label{class_drive_turn_command_a63ce1164920cb33ef77b1e07ff9a20eb}} 
+\index{DriveTurnCommand@{DriveTurnCommand}!start@{start}}
+\index{start@{start}!DriveTurnCommand@{DriveTurnCommand}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Drive\+Turn\+Command\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that is called before the while loop only once. Common use case is to setup the command. 
+
+Implements \mbox{\hyperlink{class_command_a2ca7d162253b520e8a0f9325051eea61}{Command}}.
+
+\mbox{\Hypertarget{class_drive_turn_command_a6b625c7815344be7ec384d3404f40eef}\label{class_drive_turn_command_a6b625c7815344be7ec384d3404f40eef}} 
+\index{DriveTurnCommand@{DriveTurnCommand}!update@{update}}
+\index{update@{update}!DriveTurnCommand@{DriveTurnCommand}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Drive\+Turn\+Command\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that is run in a while loop until {\itshape \mbox{\hyperlink{class_drive_turn_command_acbc815b24afd06fcb3fbd64096b59ba2}{is\+Finished()}}} returns true and contains the meat of the command, such as running motors. 
+
+Implements \mbox{\hyperlink{class_command_a59432e50c228dc1a27302af0219656d9}{Command}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/\+User/\mbox{\hyperlink{_drive_turn_command_8h}{Drive\+Turn\+Command.\+h}}\end{DoxyCompactItemize}

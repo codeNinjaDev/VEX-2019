@@ -1,0 +1,50 @@
+\hypertarget{class_command_runner}{}\doxysection{Command\+Runner Class Reference}
+\label{class_command_runner}\index{CommandRunner@{CommandRunner}}
+
+
+{\ttfamily \#include $<$Command\+Runner.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_command_runner_ae088803d61cdbf2dbb092b89aee2170a}{run\+Command}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_command}{Command}} $>$ command)
+\item 
+\mbox{\Hypertarget{class_command_runner_a35dd71cf3f5cb5840180589e5e8814de}\label{class_command_runner_a35dd71cf3f5cb5840180589e5e8814de}} 
+static void {\bfseries run\+Command} (\mbox{\hyperlink{class_command}{Command}} $\ast$command)
+\item 
+static void \mbox{\hyperlink{class_command_runner_a3daede51a4f64ffeb0f478ad2c3d4603}{run\+Command\+Group}} (std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_command}{Command}} $>$$>$ command\+Group)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that runs and \char`\"{}schedules\char`\"{} a command 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_command_runner_ae088803d61cdbf2dbb092b89aee2170a}\label{class_command_runner_ae088803d61cdbf2dbb092b89aee2170a}} 
+\index{CommandRunner@{CommandRunner}!runCommand@{runCommand}}
+\index{runCommand@{runCommand}!CommandRunner@{CommandRunner}}
+\doxysubsubsection{\texorpdfstring{runCommand()}{runCommand()}}
+{\footnotesize\ttfamily void Command\+Runner\+::run\+Command (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_command}{Command}} $>$}]{command }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Runs the command\textquotesingle{}s start function, then loops the update function until the is\+Finished function returns true. Finally, it runs the finish() function. 
+\begin{DoxyParams}{Parameters}
+{\em command} & The command to be run \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_command_runner_a3daede51a4f64ffeb0f478ad2c3d4603}\label{class_command_runner_a3daede51a4f64ffeb0f478ad2c3d4603}} 
+\index{CommandRunner@{CommandRunner}!runCommandGroup@{runCommandGroup}}
+\index{runCommandGroup@{runCommandGroup}!CommandRunner@{CommandRunner}}
+\doxysubsubsection{\texorpdfstring{runCommandGroup()}{runCommandGroup()}}
+{\footnotesize\ttfamily void Command\+Runner\+::run\+Command\+Group (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_command}{Command}} $>$$>$}]{command\+Group }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Runs an array of commands sequentially 
+\begin{DoxyParams}{Parameters}
+{\em command} & An array(vector) of commands \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/\+User/Command\+Runner.\+h\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/src/\+Commands/Command\+Runner.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,437 @@
+\hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller}{}\doxysection{okapi\+::Iterative\+Vel\+P\+I\+D\+Controller Class Reference}
+\label{classokapi_1_1_iterative_vel_p_i_d_controller}\index{okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}}
+Inheritance diagram for okapi\+::Iterative\+Vel\+P\+I\+D\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classokapi_1_1_iterative_vel_p_i_d_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_af11f5e8d6379bcc9d091875ecf22c19b}{Iterative\+Vel\+P\+I\+D\+Controller}} (double ikP, double ikD, double ikF, double ik\+SF, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_vel_math}{Vel\+Math}} $>$ ivel\+Math, const \mbox{\hyperlink{classokapi_1_1_time_util}{Time\+Util}} \&itime\+Util, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_filter}{Filter}} $>$ iderivative\+Filter=std\+::make\+\_\+unique$<$ \mbox{\hyperlink{classokapi_1_1_passthrough_filter}{Passthrough\+Filter}} $>$())
+\item 
+double \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a7d75bb1622974daba25a9dec4df68325}{step}} (double inew\+Reading) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_ab4ec4344fa758ba8cce93633aa0851d2}{set\+Target}} (double itarget) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a50c069752036261395871fbe175ae101}{controller\+Set}} (double ivalue) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a5f2bbad6e916345f8a3abf762609321c}{get\+Target}} () override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_ab3f4050524cb54b4e3df951a8d84ac57}{get\+Output}} () const override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_acf26277c959a7fd03c918340e194a361}{get\+Max\+Output}} () override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a0401715743d991c5ca9f3afa51a5a069}{get\+Min\+Output}} () override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a7e60b432a91d73db0a62c5d31759ed10}{get\+Error}} () const override
+\item 
+bool \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a818347e199d8e7fd3e11f9f1aa369749}{is\+Settled}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_aef5ba457e81871d47519413551856bb8}{set\+Sample\+Time}} (Q\+Time isample\+Time) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a02efd865f97b0f2da3f826c1120ec07b}{set\+Output\+Limits}} (double imax, double imin) override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a51607c29e072a672522a9e93bbd12410}{reset}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a9a575df2d0a53ca71a812a86d673b8fa}{flip\+Disable}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a6bd2a04813b0fd99f0904808ff963f28}{flip\+Disable}} (bool iis\+Disabled) override
+\item 
+bool \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a628a5093634f85d788015c4cc1353c54}{is\+Disabled}} () const override
+\item 
+Q\+Time \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_aa786680075677c2f43619d48cad0e154}{get\+Sample\+Time}} () const override
+\item 
+virtual Q\+Angular\+Speed \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_add5783b19186944e74334e2fd72f1b02}{step\+Vel}} (double inew\+Reading)
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a8124f0fb7dfd21b39910a11534bf3fbc}{set\+Gains}} (double ikP, double ikD, double ikF, double ik\+SF)
+\item 
+virtual void \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a1b8daee60eb1d693efca174bf5a0351e}{set\+Ticks\+Per\+Rev}} (double tpr)
+\item 
+virtual Q\+Angular\+Speed \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_affacdc23775f995fe61fb0667e6f098e}{get\+Vel}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_ad4c88cf83334b8743886b41ae7c0fb77}\label{classokapi_1_1_iterative_vel_p_i_d_controller_ad4c88cf83334b8743886b41ae7c0fb77}} 
+\mbox{\hyperlink{classokapi_1_1_logger}{Logger}} $\ast$ {\bfseries logger}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_a39e27eefd9472119889c38144c0594dd}\label{classokapi_1_1_iterative_vel_p_i_d_controller_a39e27eefd9472119889c38144c0594dd}} 
+double {\bfseries kP}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_a52cebe581d6ce98fd8cb904303b05a5c}\label{classokapi_1_1_iterative_vel_p_i_d_controller_a52cebe581d6ce98fd8cb904303b05a5c}} 
+double {\bfseries kD}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_a8cc93f84dd1726ecfd8c73a266370f16}\label{classokapi_1_1_iterative_vel_p_i_d_controller_a8cc93f84dd1726ecfd8c73a266370f16}} 
+double {\bfseries kF}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_a3b95c5e55360fff952840bf7961026c9}\label{classokapi_1_1_iterative_vel_p_i_d_controller_a3b95c5e55360fff952840bf7961026c9}} 
+double {\bfseries k\+SF}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_a2026bfca681440317f7438015cd5e8b6}\label{classokapi_1_1_iterative_vel_p_i_d_controller_a2026bfca681440317f7438015cd5e8b6}} 
+Q\+Time {\bfseries sample\+Time} \{10\+\_\+ms\}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_aab9a4c3a210222d4cbf657275ecfe0c2}\label{classokapi_1_1_iterative_vel_p_i_d_controller_aab9a4c3a210222d4cbf657275ecfe0c2}} 
+double {\bfseries error} \{0\}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_a3e99093a42c63df3a0fd226e109f9e2f}\label{classokapi_1_1_iterative_vel_p_i_d_controller_a3e99093a42c63df3a0fd226e109f9e2f}} 
+double {\bfseries derivative} \{0\}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_aa4c6743b6c5fcfe58ea89c726dd26b7c}\label{classokapi_1_1_iterative_vel_p_i_d_controller_aa4c6743b6c5fcfe58ea89c726dd26b7c}} 
+double {\bfseries target} \{0\}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_a5bb1e61b7ff4f5059bf8478a23c00e67}\label{classokapi_1_1_iterative_vel_p_i_d_controller_a5bb1e61b7ff4f5059bf8478a23c00e67}} 
+double {\bfseries output\+Sum} \{0\}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_aafae6f8e5a24247978322b3d0b5913d4}\label{classokapi_1_1_iterative_vel_p_i_d_controller_aafae6f8e5a24247978322b3d0b5913d4}} 
+double {\bfseries output} \{0\}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_ad73d0f93c88697ddeb3c8c72cc006d22}\label{classokapi_1_1_iterative_vel_p_i_d_controller_ad73d0f93c88697ddeb3c8c72cc006d22}} 
+double {\bfseries output\+Max} \{1\}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_adfe740241f314d7965491c04dce6a5da}\label{classokapi_1_1_iterative_vel_p_i_d_controller_adfe740241f314d7965491c04dce6a5da}} 
+double {\bfseries output\+Min} \{-\/1\}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_a0732ec5a765af01af100370d54754fc4}\label{classokapi_1_1_iterative_vel_p_i_d_controller_a0732ec5a765af01af100370d54754fc4}} 
+bool {\bfseries controller\+Is\+Disabled} \{false\}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_ada933662b0e7fc732590a46dfc643945}\label{classokapi_1_1_iterative_vel_p_i_d_controller_ada933662b0e7fc732590a46dfc643945}} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_vel_math}{Vel\+Math}} $>$ {\bfseries vel\+Math}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_af017ec38ad8aa08ef50459e957cc7e3a}\label{classokapi_1_1_iterative_vel_p_i_d_controller_af017ec38ad8aa08ef50459e957cc7e3a}} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_filter}{Filter}} $>$ {\bfseries derivative\+Filter}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_a2c0baa9245befaa18bba4cb22f541594}\label{classokapi_1_1_iterative_vel_p_i_d_controller_a2c0baa9245befaa18bba4cb22f541594}} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_timer}{Abstract\+Timer}} $>$ {\bfseries loop\+Dt\+Timer}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_af37e9751a7e976232074b855efefa06b}\label{classokapi_1_1_iterative_vel_p_i_d_controller_af37e9751a7e976232074b855efefa06b}} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_settled_util}{Settled\+Util}} $>$ {\bfseries settled\+Util}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_af11f5e8d6379bcc9d091875ecf22c19b}\label{classokapi_1_1_iterative_vel_p_i_d_controller_af11f5e8d6379bcc9d091875ecf22c19b}} 
+\index{okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}!IterativeVelPIDController@{IterativeVelPIDController}}
+\index{IterativeVelPIDController@{IterativeVelPIDController}!okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}}
+\doxysubsubsection{\texorpdfstring{IterativeVelPIDController()}{IterativeVelPIDController()}}
+{\footnotesize\ttfamily okapi\+::\+Iterative\+Vel\+P\+I\+D\+Controller\+::\+Iterative\+Vel\+P\+I\+D\+Controller (\begin{DoxyParamCaption}\item[{double}]{ikP,  }\item[{double}]{ikD,  }\item[{double}]{ikF,  }\item[{double}]{ik\+SF,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_vel_math}{Vel\+Math}} $>$}]{ivel\+Math,  }\item[{const \mbox{\hyperlink{classokapi_1_1_time_util}{Time\+Util}} \&}]{itime\+Util,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_filter}{Filter}} $>$}]{iderivative\+Filter = {\ttfamily std\+:\+:make\+\_\+unique$<$~\mbox{\hyperlink{classokapi_1_1_passthrough_filter}{Passthrough\+Filter}}~$>$()} }\end{DoxyParamCaption})}
+
+Velocity PD controller.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ikP} & the proportional gain \\
+\hline
+{\em ikD} & the derivative gain \\
+\hline
+{\em ikF} & the feed-\/forward gain \\
+\hline
+{\em ik\+SF} & a feed-\/forward gain to counteract static friction \\
+\hline
+{\em itime\+Util} & see \mbox{\hyperlink{classokapi_1_1_time_util}{Time\+Util}} docs \\
+\hline
+{\em iderivative\+Filter} & a filter for filtering the derivative term \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_a50c069752036261395871fbe175ae101}\label{classokapi_1_1_iterative_vel_p_i_d_controller_a50c069752036261395871fbe175ae101}} 
+\index{okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}!controllerSet@{controllerSet}}
+\index{controllerSet@{controllerSet}!okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}}
+\doxysubsubsection{\texorpdfstring{controllerSet()}{controllerSet()}}
+{\footnotesize\ttfamily void okapi\+::\+Iterative\+Vel\+P\+I\+D\+Controller\+::controller\+Set (\begin{DoxyParamCaption}\item[{double}]{ivalue }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Writes the value of the controller output. This method might be automatically called in another thread by the controller. The range of input values is expected to be \mbox{[}-\/1, 1\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ivalue} & the controller\textquotesingle{}s output in the range \mbox{[}-\/1, 1\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_controller_output_a360c08f0c10b36f882d6d3100c2cad49}{okapi\+::\+Controller\+Output$<$ double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_a9a575df2d0a53ca71a812a86d673b8fa}\label{classokapi_1_1_iterative_vel_p_i_d_controller_a9a575df2d0a53ca71a812a86d673b8fa}} 
+\index{okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}!flipDisable@{flipDisable}}
+\index{flipDisable@{flipDisable}!okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}}
+\doxysubsubsection{\texorpdfstring{flipDisable()}{flipDisable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void okapi\+::\+Iterative\+Vel\+P\+I\+D\+Controller\+::flip\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Changes whether the controller is off or on. Turning the controller on after it was off will cause the controller to move to its last set target, unless it was reset in that time. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a9de69b60885df41cd2164fe1a23f34d3}{okapi\+::\+Closed\+Loop\+Controller$<$ double, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_a6bd2a04813b0fd99f0904808ff963f28}\label{classokapi_1_1_iterative_vel_p_i_d_controller_a6bd2a04813b0fd99f0904808ff963f28}} 
+\index{okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}!flipDisable@{flipDisable}}
+\index{flipDisable@{flipDisable}!okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}}
+\doxysubsubsection{\texorpdfstring{flipDisable()}{flipDisable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void okapi\+::\+Iterative\+Vel\+P\+I\+D\+Controller\+::flip\+Disable (\begin{DoxyParamCaption}\item[{bool}]{iis\+Disabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets whether the controller is off or on. Turning the controller on after it was off will cause the controller to move to its last set target, unless it was reset in that time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iis\+Disabled} & whether the controller is disabled \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a768cd1db40ce9cd5c89b20be6e838ccc}{okapi\+::\+Closed\+Loop\+Controller$<$ double, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_a7e60b432a91d73db0a62c5d31759ed10}\label{classokapi_1_1_iterative_vel_p_i_d_controller_a7e60b432a91d73db0a62c5d31759ed10}} 
+\index{okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}!getError@{getError}}
+\index{getError@{getError}!okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}}
+\doxysubsubsection{\texorpdfstring{getError()}{getError()}}
+{\footnotesize\ttfamily double okapi\+::\+Iterative\+Vel\+P\+I\+D\+Controller\+::get\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the last error of the controller. Does not update when disabled. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a50c73444ff6e3e631951c43d0f951953}{okapi\+::\+Closed\+Loop\+Controller$<$ double, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_acf26277c959a7fd03c918340e194a361}\label{classokapi_1_1_iterative_vel_p_i_d_controller_acf26277c959a7fd03c918340e194a361}} 
+\index{okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}!getMaxOutput@{getMaxOutput}}
+\index{getMaxOutput@{getMaxOutput}!okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}}
+\doxysubsubsection{\texorpdfstring{getMaxOutput()}{getMaxOutput()}}
+{\footnotesize\ttfamily double okapi\+::\+Iterative\+Vel\+P\+I\+D\+Controller\+::get\+Max\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the upper output bound.
+
+\begin{DoxyReturn}{Returns}
+the upper output bound 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_iterative_controller_a09bdba3a6d7854d943ed5401210b0595}{okapi\+::\+Iterative\+Controller$<$ double, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_a0401715743d991c5ca9f3afa51a5a069}\label{classokapi_1_1_iterative_vel_p_i_d_controller_a0401715743d991c5ca9f3afa51a5a069}} 
+\index{okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}!getMinOutput@{getMinOutput}}
+\index{getMinOutput@{getMinOutput}!okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}}
+\doxysubsubsection{\texorpdfstring{getMinOutput()}{getMinOutput()}}
+{\footnotesize\ttfamily double okapi\+::\+Iterative\+Vel\+P\+I\+D\+Controller\+::get\+Min\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the lower output bound.
+
+\begin{DoxyReturn}{Returns}
+the lower output bound 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_iterative_controller_a4d271df97caeedbcc807b714a48eaa30}{okapi\+::\+Iterative\+Controller$<$ double, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_ab3f4050524cb54b4e3df951a8d84ac57}\label{classokapi_1_1_iterative_vel_p_i_d_controller_ab3f4050524cb54b4e3df951a8d84ac57}} 
+\index{okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}!getOutput@{getOutput}}
+\index{getOutput@{getOutput}!okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}}
+\doxysubsubsection{\texorpdfstring{getOutput()}{getOutput()}}
+{\footnotesize\ttfamily double okapi\+::\+Iterative\+Vel\+P\+I\+D\+Controller\+::get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the last calculated output of the controller. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_iterative_controller_a83e0aac640804974f0e06936b9f7898a}{okapi\+::\+Iterative\+Controller$<$ double, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_aa786680075677c2f43619d48cad0e154}\label{classokapi_1_1_iterative_vel_p_i_d_controller_aa786680075677c2f43619d48cad0e154}} 
+\index{okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}!getSampleTime@{getSampleTime}}
+\index{getSampleTime@{getSampleTime}!okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}}
+\doxysubsubsection{\texorpdfstring{getSampleTime()}{getSampleTime()}}
+{\footnotesize\ttfamily Q\+Time okapi\+::\+Iterative\+Vel\+P\+I\+D\+Controller\+::get\+Sample\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the last set sample time.
+
+\begin{DoxyReturn}{Returns}
+sample time 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_iterative_controller_a48cd86626af7036db4f36b4124df4f98}{okapi\+::\+Iterative\+Controller$<$ double, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_a5f2bbad6e916345f8a3abf762609321c}\label{classokapi_1_1_iterative_vel_p_i_d_controller_a5f2bbad6e916345f8a3abf762609321c}} 
+\index{okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}!getTarget@{getTarget}}
+\index{getTarget@{getTarget}!okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}}
+\doxysubsubsection{\texorpdfstring{getTarget()}{getTarget()}}
+{\footnotesize\ttfamily double okapi\+::\+Iterative\+Vel\+P\+I\+D\+Controller\+::get\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the last set target, or the default target if none was set.
+
+\begin{DoxyReturn}{Returns}
+the last target 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a22012bedbfaff6e5a3a508f274ec2497}{okapi\+::\+Closed\+Loop\+Controller$<$ double, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_affacdc23775f995fe61fb0667e6f098e}\label{classokapi_1_1_iterative_vel_p_i_d_controller_affacdc23775f995fe61fb0667e6f098e}} 
+\index{okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}!getVel@{getVel}}
+\index{getVel@{getVel}!okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}}
+\doxysubsubsection{\texorpdfstring{getVel()}{getVel()}}
+{\footnotesize\ttfamily virtual Q\+Angular\+Speed okapi\+::\+Iterative\+Vel\+P\+I\+D\+Controller\+::get\+Vel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the current velocity. \mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_a628a5093634f85d788015c4cc1353c54}\label{classokapi_1_1_iterative_vel_p_i_d_controller_a628a5093634f85d788015c4cc1353c54}} 
+\index{okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}!isDisabled@{isDisabled}}
+\index{isDisabled@{isDisabled}!okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}}
+\doxysubsubsection{\texorpdfstring{isDisabled()}{isDisabled()}}
+{\footnotesize\ttfamily bool okapi\+::\+Iterative\+Vel\+P\+I\+D\+Controller\+::is\+Disabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns whether the controller is currently disabled.
+
+\begin{DoxyReturn}{Returns}
+whether the controller is currently disabled 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a40bd4ec2b8c75503fbf6f494fd7cbe69}{okapi\+::\+Closed\+Loop\+Controller$<$ double, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_a818347e199d8e7fd3e11f9f1aa369749}\label{classokapi_1_1_iterative_vel_p_i_d_controller_a818347e199d8e7fd3e11f9f1aa369749}} 
+\index{okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}!isSettled@{isSettled}}
+\index{isSettled@{isSettled}!okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}}
+\doxysubsubsection{\texorpdfstring{isSettled()}{isSettled()}}
+{\footnotesize\ttfamily bool okapi\+::\+Iterative\+Vel\+P\+I\+D\+Controller\+::is\+Settled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns whether the controller has settled at the target. Determining what settling means is implementation-\/dependent.
+
+If the controller is disabled, this method must return true.
+
+\begin{DoxyReturn}{Returns}
+whether the controller is settled 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_aed7aa0e94b6474c28314f8517d6cb4d8}{okapi\+::\+Closed\+Loop\+Controller$<$ double, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_a51607c29e072a672522a9e93bbd12410}\label{classokapi_1_1_iterative_vel_p_i_d_controller_a51607c29e072a672522a9e93bbd12410}} 
+\index{okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}!reset@{reset}}
+\index{reset@{reset}!okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void okapi\+::\+Iterative\+Vel\+P\+I\+D\+Controller\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Resets the controller\textquotesingle{}s internal state so it is similar to when it was first initialized, while keeping any user-\/configured information. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a7dd6ce28b3e38bdf987514a1b6c83c8c}{okapi\+::\+Closed\+Loop\+Controller$<$ double, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_a8124f0fb7dfd21b39910a11534bf3fbc}\label{classokapi_1_1_iterative_vel_p_i_d_controller_a8124f0fb7dfd21b39910a11534bf3fbc}} 
+\index{okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}!setGains@{setGains}}
+\index{setGains@{setGains}!okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}}
+\doxysubsubsection{\texorpdfstring{setGains()}{setGains()}}
+{\footnotesize\ttfamily virtual void okapi\+::\+Iterative\+Vel\+P\+I\+D\+Controller\+::set\+Gains (\begin{DoxyParamCaption}\item[{double}]{ikP,  }\item[{double}]{ikD,  }\item[{double}]{ikF,  }\item[{double}]{ik\+SF }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set controller gains.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ikP} & proportional gain \\
+\hline
+{\em ikD} & derivative gain \\
+\hline
+{\em ikF} & the feed-\/forward gain \\
+\hline
+{\em ik\+SF} & a feed-\/forward gain to counteract static friction \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_a02efd865f97b0f2da3f826c1120ec07b}\label{classokapi_1_1_iterative_vel_p_i_d_controller_a02efd865f97b0f2da3f826c1120ec07b}} 
+\index{okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}!setOutputLimits@{setOutputLimits}}
+\index{setOutputLimits@{setOutputLimits}!okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}}
+\doxysubsubsection{\texorpdfstring{setOutputLimits()}{setOutputLimits()}}
+{\footnotesize\ttfamily void okapi\+::\+Iterative\+Vel\+P\+I\+D\+Controller\+::set\+Output\+Limits (\begin{DoxyParamCaption}\item[{double}]{imax,  }\item[{double}]{imin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set controller output bounds. Default bounds are \mbox{[}-\/1, 1\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em imax} & max output \\
+\hline
+{\em imin} & min output \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_iterative_controller_ae1a7d9bd29d176a26bcc70c741f0d50f}{okapi\+::\+Iterative\+Controller$<$ double, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_aef5ba457e81871d47519413551856bb8}\label{classokapi_1_1_iterative_vel_p_i_d_controller_aef5ba457e81871d47519413551856bb8}} 
+\index{okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}!setSampleTime@{setSampleTime}}
+\index{setSampleTime@{setSampleTime}!okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}}
+\doxysubsubsection{\texorpdfstring{setSampleTime()}{setSampleTime()}}
+{\footnotesize\ttfamily void okapi\+::\+Iterative\+Vel\+P\+I\+D\+Controller\+::set\+Sample\+Time (\begin{DoxyParamCaption}\item[{Q\+Time}]{isample\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set time between loops in ms.
+
+
+\begin{DoxyParams}{Parameters}
+{\em isample\+Time} & time between loops \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_iterative_controller_ac4cfb1b37a3c707b2fc8f2fbda526f3e}{okapi\+::\+Iterative\+Controller$<$ double, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_ab4ec4344fa758ba8cce93633aa0851d2}\label{classokapi_1_1_iterative_vel_p_i_d_controller_ab4ec4344fa758ba8cce93633aa0851d2}} 
+\index{okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}!setTarget@{setTarget}}
+\index{setTarget@{setTarget}!okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}}
+\doxysubsubsection{\texorpdfstring{setTarget()}{setTarget()}}
+{\footnotesize\ttfamily void okapi\+::\+Iterative\+Vel\+P\+I\+D\+Controller\+::set\+Target (\begin{DoxyParamCaption}\item[{double}]{itarget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the target for the controller.
+
+
+\begin{DoxyParams}{Parameters}
+{\em itarget} & new target velocity \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_ac14482d0768b3f157d52e0214a4c36d7}{okapi\+::\+Closed\+Loop\+Controller$<$ double, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_a1b8daee60eb1d693efca174bf5a0351e}\label{classokapi_1_1_iterative_vel_p_i_d_controller_a1b8daee60eb1d693efca174bf5a0351e}} 
+\index{okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}!setTicksPerRev@{setTicksPerRev}}
+\index{setTicksPerRev@{setTicksPerRev}!okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}}
+\doxysubsubsection{\texorpdfstring{setTicksPerRev()}{setTicksPerRev()}}
+{\footnotesize\ttfamily virtual void okapi\+::\+Iterative\+Vel\+P\+I\+D\+Controller\+::set\+Ticks\+Per\+Rev (\begin{DoxyParamCaption}\item[{double}]{tpr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the number of encoder ticks per revolution. Default is 1800.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tpr} & number of measured units per revolution \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_a7d75bb1622974daba25a9dec4df68325}\label{classokapi_1_1_iterative_vel_p_i_d_controller_a7d75bb1622974daba25a9dec4df68325}} 
+\index{okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}!step@{step}}
+\index{step@{step}!okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}}
+\doxysubsubsection{\texorpdfstring{step()}{step()}}
+{\footnotesize\ttfamily double okapi\+::\+Iterative\+Vel\+P\+I\+D\+Controller\+::step (\begin{DoxyParamCaption}\item[{double}]{inew\+Reading }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Do one iteration of the controller. Returns the reading in the range \mbox{[}-\/1, 1\mbox{]} unless the bounds have been changed with \mbox{\hyperlink{classokapi_1_1_iterative_vel_p_i_d_controller_a02efd865f97b0f2da3f826c1120ec07b}{set\+Output\+Limits()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em inew\+Reading} & new measurement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+controller output 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_iterative_controller_a751bcad1407099e629e3ffbe395daf2b}{okapi\+::\+Iterative\+Controller$<$ double, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_iterative_vel_p_i_d_controller_add5783b19186944e74334e2fd72f1b02}\label{classokapi_1_1_iterative_vel_p_i_d_controller_add5783b19186944e74334e2fd72f1b02}} 
+\index{okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}!stepVel@{stepVel}}
+\index{stepVel@{stepVel}!okapi::IterativeVelPIDController@{okapi::IterativeVelPIDController}}
+\doxysubsubsection{\texorpdfstring{stepVel()}{stepVel()}}
+{\footnotesize\ttfamily virtual Q\+Angular\+Speed okapi\+::\+Iterative\+Vel\+P\+I\+D\+Controller\+::step\+Vel (\begin{DoxyParamCaption}\item[{double}]{inew\+Reading }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Do one iteration of velocity calculation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em inew\+Reading} & new measurement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+filtered velocity 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/okapi/api/control/iterative/iterative\+Vel\+Pid\+Controller.\+hpp\end{DoxyCompactItemize}

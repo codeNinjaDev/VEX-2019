@@ -1,0 +1,210 @@
+\hypertarget{classokapi_1_1_async_vel_integrated_controller}{}\doxysection{okapi\+::Async\+Vel\+Integrated\+Controller Class Reference}
+\label{classokapi_1_1_async_vel_integrated_controller}\index{okapi::AsyncVelIntegratedController@{okapi::AsyncVelIntegratedController}}
+
+
+{\ttfamily \#include $<$async\+Vel\+Integrated\+Controller.\+hpp$>$}
+
+Inheritance diagram for okapi\+::Async\+Vel\+Integrated\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classokapi_1_1_async_vel_integrated_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_vel_integrated_controller_af79540a7a0614206ad5231bc08b1b22f}\label{classokapi_1_1_async_vel_integrated_controller_af79540a7a0614206ad5231bc08b1b22f}} 
+{\bfseries Async\+Vel\+Integrated\+Controller} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \&imotor, const \mbox{\hyperlink{classokapi_1_1_time_util}{Time\+Util}} \&itime\+Util)
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_vel_integrated_controller_a5f1444ba57a64a21bfbdbdc57a264c2d}{set\+Target}} (double itarget) override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_async_vel_integrated_controller_a030ca47508587f799dfdd7d97ed86d7d}{get\+Target}} () override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_async_vel_integrated_controller_a6641352cebd3f0baa4e3e1ab4ad27be3}{get\+Error}} () const override
+\item 
+bool \mbox{\hyperlink{classokapi_1_1_async_vel_integrated_controller_a8518d706827ccc8d42d0a401566d58f7}{is\+Settled}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_vel_integrated_controller_aef78a032062241ece030d58407179912}{reset}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_vel_integrated_controller_ab75c1617544e0817949df5998fa2a8d7}{flip\+Disable}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_vel_integrated_controller_a1e906e904500fe920ea4cad6a922b523}{flip\+Disable}} (bool iis\+Disabled) override
+\item 
+bool \mbox{\hyperlink{classokapi_1_1_async_vel_integrated_controller_ad4c6394b3512ae44ffa36c9e01f6321b}{is\+Disabled}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_vel_integrated_controller_aa1a838d836496ca5565c1d8379c2897a}{wait\+Until\+Settled}} () override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_async_vel_integrated_controller_ae50c09f44077284278e4d8a80656077d}{controller\+Set}} (double ivalue) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_vel_integrated_controller_a97f018d757dde53a19fe36f907d6c157}\label{classokapi_1_1_async_vel_integrated_controller_a97f018d757dde53a19fe36f907d6c157}} 
+virtual void {\bfseries resume\+Movement} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_vel_integrated_controller_aada73926ed1a9ad3b4549cd78bf4f93b}\label{classokapi_1_1_async_vel_integrated_controller_aada73926ed1a9ad3b4549cd78bf4f93b}} 
+\mbox{\hyperlink{classokapi_1_1_logger}{Logger}} $\ast$ {\bfseries logger}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_vel_integrated_controller_a4160de7d42a6817cf037e6a7d91abf37}\label{classokapi_1_1_async_vel_integrated_controller_a4160de7d42a6817cf037e6a7d91abf37}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ {\bfseries motor}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_vel_integrated_controller_adeffae970b04bf2d484dd19e449810fb}\label{classokapi_1_1_async_vel_integrated_controller_adeffae970b04bf2d484dd19e449810fb}} 
+double {\bfseries last\+Target} = 0
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_vel_integrated_controller_aed3ebba016794f5eb888edde33a929af}\label{classokapi_1_1_async_vel_integrated_controller_aed3ebba016794f5eb888edde33a929af}} 
+bool {\bfseries controller\+Is\+Disabled} = false
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_vel_integrated_controller_acaf2cbb592c8011df80c5ce618bfb79b}\label{classokapi_1_1_async_vel_integrated_controller_acaf2cbb592c8011df80c5ce618bfb79b}} 
+bool {\bfseries has\+First\+Target} = false
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_vel_integrated_controller_aa9890eed087ca10be20b6fc3936508b9}\label{classokapi_1_1_async_vel_integrated_controller_aa9890eed087ca10be20b6fc3936508b9}} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_settled_util}{Settled\+Util}} $>$ {\bfseries settled\+Util}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_async_vel_integrated_controller_a6f5835a55048fbce060b5890d6f2210c}\label{classokapi_1_1_async_vel_integrated_controller_a6f5835a55048fbce060b5890d6f2210c}} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_rate}{Abstract\+Rate}} $>$ {\bfseries rate}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Closed-\/loop controller that uses the V5 motor\textquotesingle{}s onboard control to move. Input units are whatever units the motor is in. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classokapi_1_1_async_vel_integrated_controller_ae50c09f44077284278e4d8a80656077d}\label{classokapi_1_1_async_vel_integrated_controller_ae50c09f44077284278e4d8a80656077d}} 
+\index{okapi::AsyncVelIntegratedController@{okapi::AsyncVelIntegratedController}!controllerSet@{controllerSet}}
+\index{controllerSet@{controllerSet}!okapi::AsyncVelIntegratedController@{okapi::AsyncVelIntegratedController}}
+\doxysubsubsection{\texorpdfstring{controllerSet()}{controllerSet()}}
+{\footnotesize\ttfamily void okapi\+::\+Async\+Vel\+Integrated\+Controller\+::controller\+Set (\begin{DoxyParamCaption}\item[{double}]{ivalue }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Writes the value of the controller output. This method might be automatically called in another thread by the controller. The range of input values is expected to be \mbox{[}-\/1, 1\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ivalue} & the controller\textquotesingle{}s output in the range \mbox{[}-\/1, 1\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_controller_output_a360c08f0c10b36f882d6d3100c2cad49}{okapi\+::\+Controller\+Output$<$ double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_vel_integrated_controller_ab75c1617544e0817949df5998fa2a8d7}\label{classokapi_1_1_async_vel_integrated_controller_ab75c1617544e0817949df5998fa2a8d7}} 
+\index{okapi::AsyncVelIntegratedController@{okapi::AsyncVelIntegratedController}!flipDisable@{flipDisable}}
+\index{flipDisable@{flipDisable}!okapi::AsyncVelIntegratedController@{okapi::AsyncVelIntegratedController}}
+\doxysubsubsection{\texorpdfstring{flipDisable()}{flipDisable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void okapi\+::\+Async\+Vel\+Integrated\+Controller\+::flip\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Changes whether the controller is off or on. Turning the controller on after it was off will cause the controller to move to its last set target, unless it was reset in that time. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a9de69b60885df41cd2164fe1a23f34d3}{okapi\+::\+Closed\+Loop\+Controller$<$ double, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_vel_integrated_controller_a1e906e904500fe920ea4cad6a922b523}\label{classokapi_1_1_async_vel_integrated_controller_a1e906e904500fe920ea4cad6a922b523}} 
+\index{okapi::AsyncVelIntegratedController@{okapi::AsyncVelIntegratedController}!flipDisable@{flipDisable}}
+\index{flipDisable@{flipDisable}!okapi::AsyncVelIntegratedController@{okapi::AsyncVelIntegratedController}}
+\doxysubsubsection{\texorpdfstring{flipDisable()}{flipDisable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void okapi\+::\+Async\+Vel\+Integrated\+Controller\+::flip\+Disable (\begin{DoxyParamCaption}\item[{bool}]{iis\+Disabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets whether the controller is off or on. Turning the controller on after it was off will cause the controller to move to its last set target, unless it was reset in that time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iis\+Disabled} & whether the controller is disabled \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a768cd1db40ce9cd5c89b20be6e838ccc}{okapi\+::\+Closed\+Loop\+Controller$<$ double, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_vel_integrated_controller_a6641352cebd3f0baa4e3e1ab4ad27be3}\label{classokapi_1_1_async_vel_integrated_controller_a6641352cebd3f0baa4e3e1ab4ad27be3}} 
+\index{okapi::AsyncVelIntegratedController@{okapi::AsyncVelIntegratedController}!getError@{getError}}
+\index{getError@{getError}!okapi::AsyncVelIntegratedController@{okapi::AsyncVelIntegratedController}}
+\doxysubsubsection{\texorpdfstring{getError()}{getError()}}
+{\footnotesize\ttfamily double okapi\+::\+Async\+Vel\+Integrated\+Controller\+::get\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the last error of the controller. Does not update when disabled. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a50c73444ff6e3e631951c43d0f951953}{okapi\+::\+Closed\+Loop\+Controller$<$ double, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_vel_integrated_controller_a030ca47508587f799dfdd7d97ed86d7d}\label{classokapi_1_1_async_vel_integrated_controller_a030ca47508587f799dfdd7d97ed86d7d}} 
+\index{okapi::AsyncVelIntegratedController@{okapi::AsyncVelIntegratedController}!getTarget@{getTarget}}
+\index{getTarget@{getTarget}!okapi::AsyncVelIntegratedController@{okapi::AsyncVelIntegratedController}}
+\doxysubsubsection{\texorpdfstring{getTarget()}{getTarget()}}
+{\footnotesize\ttfamily double okapi\+::\+Async\+Vel\+Integrated\+Controller\+::get\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the last set target, or the default target if none was set.
+
+\begin{DoxyReturn}{Returns}
+the last target 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a22012bedbfaff6e5a3a508f274ec2497}{okapi\+::\+Closed\+Loop\+Controller$<$ double, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_vel_integrated_controller_ad4c6394b3512ae44ffa36c9e01f6321b}\label{classokapi_1_1_async_vel_integrated_controller_ad4c6394b3512ae44ffa36c9e01f6321b}} 
+\index{okapi::AsyncVelIntegratedController@{okapi::AsyncVelIntegratedController}!isDisabled@{isDisabled}}
+\index{isDisabled@{isDisabled}!okapi::AsyncVelIntegratedController@{okapi::AsyncVelIntegratedController}}
+\doxysubsubsection{\texorpdfstring{isDisabled()}{isDisabled()}}
+{\footnotesize\ttfamily bool okapi\+::\+Async\+Vel\+Integrated\+Controller\+::is\+Disabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns whether the controller is currently disabled.
+
+\begin{DoxyReturn}{Returns}
+whether the controller is currently disabled 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a40bd4ec2b8c75503fbf6f494fd7cbe69}{okapi\+::\+Closed\+Loop\+Controller$<$ double, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_vel_integrated_controller_a8518d706827ccc8d42d0a401566d58f7}\label{classokapi_1_1_async_vel_integrated_controller_a8518d706827ccc8d42d0a401566d58f7}} 
+\index{okapi::AsyncVelIntegratedController@{okapi::AsyncVelIntegratedController}!isSettled@{isSettled}}
+\index{isSettled@{isSettled}!okapi::AsyncVelIntegratedController@{okapi::AsyncVelIntegratedController}}
+\doxysubsubsection{\texorpdfstring{isSettled()}{isSettled()}}
+{\footnotesize\ttfamily bool okapi\+::\+Async\+Vel\+Integrated\+Controller\+::is\+Settled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns whether the controller has settled at the target. Determining what settling means is implementation-\/dependent.
+
+If the controller is disabled, this method must return true.
+
+\begin{DoxyReturn}{Returns}
+whether the controller is settled 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_aed7aa0e94b6474c28314f8517d6cb4d8}{okapi\+::\+Closed\+Loop\+Controller$<$ double, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_vel_integrated_controller_aef78a032062241ece030d58407179912}\label{classokapi_1_1_async_vel_integrated_controller_aef78a032062241ece030d58407179912}} 
+\index{okapi::AsyncVelIntegratedController@{okapi::AsyncVelIntegratedController}!reset@{reset}}
+\index{reset@{reset}!okapi::AsyncVelIntegratedController@{okapi::AsyncVelIntegratedController}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void okapi\+::\+Async\+Vel\+Integrated\+Controller\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Resets the controller\textquotesingle{}s internal state so it is similar to when it was first initialized, while keeping any user-\/configured information. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_a7dd6ce28b3e38bdf987514a1b6c83c8c}{okapi\+::\+Closed\+Loop\+Controller$<$ double, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_vel_integrated_controller_a5f1444ba57a64a21bfbdbdc57a264c2d}\label{classokapi_1_1_async_vel_integrated_controller_a5f1444ba57a64a21bfbdbdc57a264c2d}} 
+\index{okapi::AsyncVelIntegratedController@{okapi::AsyncVelIntegratedController}!setTarget@{setTarget}}
+\index{setTarget@{setTarget}!okapi::AsyncVelIntegratedController@{okapi::AsyncVelIntegratedController}}
+\doxysubsubsection{\texorpdfstring{setTarget()}{setTarget()}}
+{\footnotesize\ttfamily void okapi\+::\+Async\+Vel\+Integrated\+Controller\+::set\+Target (\begin{DoxyParamCaption}\item[{double}]{itarget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the target for the controller. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_closed_loop_controller_ac14482d0768b3f157d52e0214a4c36d7}{okapi\+::\+Closed\+Loop\+Controller$<$ double, double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_async_vel_integrated_controller_aa1a838d836496ca5565c1d8379c2897a}\label{classokapi_1_1_async_vel_integrated_controller_aa1a838d836496ca5565c1d8379c2897a}} 
+\index{okapi::AsyncVelIntegratedController@{okapi::AsyncVelIntegratedController}!waitUntilSettled@{waitUntilSettled}}
+\index{waitUntilSettled@{waitUntilSettled}!okapi::AsyncVelIntegratedController@{okapi::AsyncVelIntegratedController}}
+\doxysubsubsection{\texorpdfstring{waitUntilSettled()}{waitUntilSettled()}}
+{\footnotesize\ttfamily void okapi\+::\+Async\+Vel\+Integrated\+Controller\+::wait\+Until\+Settled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Blocks the current task until the controller has settled. Determining what settling means is implementation-\/dependent. 
+
+Implements \mbox{\hyperlink{classokapi_1_1_async_controller_a20e19f334e3dc7a3092e0e4355edcf49}{okapi\+::\+Async\+Controller$<$ double, double $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/okapi/api/control/async/async\+Vel\+Integrated\+Controller.\+hpp\end{DoxyCompactItemize}

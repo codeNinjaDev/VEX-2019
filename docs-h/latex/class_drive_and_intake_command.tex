@@ -1,0 +1,93 @@
+\hypertarget{class_drive_and_intake_command}{}\doxysection{Drive\+And\+Intake\+Command Class Reference}
+\label{class_drive_and_intake_command}\index{DriveAndIntakeCommand@{DriveAndIntakeCommand}}
+
+
+{\ttfamily \#include $<$Drive\+And\+Intake\+Command.\+h$>$}
+
+Inheritance diagram for Drive\+And\+Intake\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_drive_and_intake_command}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_drive_and_intake_command_aa2ab2a8d82accafd346c2fa8105b081d}{Drive\+And\+Intake\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_drive_subsystem}{Drive\+Subsystem}} $>$ drive, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_tray_subsystem}{Tray\+Subsystem}} $>$ tray, double distance, double max\+Speed, double timeout)
+\item 
+void \mbox{\hyperlink{class_drive_and_intake_command_a1daf4fef5ac876ba25fd519e9e3a9537}{start}} ()
+\item 
+void \mbox{\hyperlink{class_drive_and_intake_command_aebf03b38652d0018f8ab81610c20c219}{update}} ()
+\item 
+bool \mbox{\hyperlink{class_drive_and_intake_command_a19a3a884602a28e5186b36fec3f6d94c}{is\+Finished}} ()
+\item 
+void \mbox{\hyperlink{class_drive_and_intake_command_a61a548adf944e46e41ba2346265ddb26}{finish}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 14 of file Drive\+And\+Intake\+Command.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_drive_and_intake_command_aa2ab2a8d82accafd346c2fa8105b081d}\label{class_drive_and_intake_command_aa2ab2a8d82accafd346c2fa8105b081d}} 
+\index{DriveAndIntakeCommand@{DriveAndIntakeCommand}!DriveAndIntakeCommand@{DriveAndIntakeCommand}}
+\index{DriveAndIntakeCommand@{DriveAndIntakeCommand}!DriveAndIntakeCommand@{DriveAndIntakeCommand}}
+\doxysubsubsection{\texorpdfstring{DriveAndIntakeCommand()}{DriveAndIntakeCommand()}}
+{\footnotesize\ttfamily Drive\+And\+Intake\+Command\+::\+Drive\+And\+Intake\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_drive_subsystem}{Drive\+Subsystem}} $>$}]{drive,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_tray_subsystem}{Tray\+Subsystem}} $>$}]{tray,  }\item[{double}]{distance,  }\item[{double}]{max\+Speed,  }\item[{double}]{timeout }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_drive_and_intake_command_a61a548adf944e46e41ba2346265ddb26}\label{class_drive_and_intake_command_a61a548adf944e46e41ba2346265ddb26}} 
+\index{DriveAndIntakeCommand@{DriveAndIntakeCommand}!finish@{finish}}
+\index{finish@{finish}!DriveAndIntakeCommand@{DriveAndIntakeCommand}}
+\doxysubsubsection{\texorpdfstring{finish()}{finish()}}
+{\footnotesize\ttfamily void Drive\+And\+Intake\+Command\+::finish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that runs after the while loop and only once. Normally wraps up a command and gets the robot ready to transition to a new command. 
+
+Implements \mbox{\hyperlink{class_command_affcda825b758dbb11c2cb036913d4c90}{Command}}.
+
+\mbox{\Hypertarget{class_drive_and_intake_command_a19a3a884602a28e5186b36fec3f6d94c}\label{class_drive_and_intake_command_a19a3a884602a28e5186b36fec3f6d94c}} 
+\index{DriveAndIntakeCommand@{DriveAndIntakeCommand}!isFinished@{isFinished}}
+\index{isFinished@{isFinished}!DriveAndIntakeCommand@{DriveAndIntakeCommand}}
+\doxysubsubsection{\texorpdfstring{isFinished()}{isFinished()}}
+{\footnotesize\ttfamily bool Drive\+And\+Intake\+Command\+::is\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that runs in a while loop and continously checks if the command should end. If true, ends while loop. Common use case is to check if timeout for command is exceeded \begin{DoxyReturn}{Returns}
+True if command should end, false if it should not. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_command_a9aa704d5f9d98f510a79e645701dc72a}{Command}}.
+
+\mbox{\Hypertarget{class_drive_and_intake_command_a1daf4fef5ac876ba25fd519e9e3a9537}\label{class_drive_and_intake_command_a1daf4fef5ac876ba25fd519e9e3a9537}} 
+\index{DriveAndIntakeCommand@{DriveAndIntakeCommand}!start@{start}}
+\index{start@{start}!DriveAndIntakeCommand@{DriveAndIntakeCommand}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Drive\+And\+Intake\+Command\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that is called before the while loop only once. Common use case is to setup the command. 
+
+Implements \mbox{\hyperlink{class_command_a2ca7d162253b520e8a0f9325051eea61}{Command}}.
+
+\mbox{\Hypertarget{class_drive_and_intake_command_aebf03b38652d0018f8ab81610c20c219}\label{class_drive_and_intake_command_aebf03b38652d0018f8ab81610c20c219}} 
+\index{DriveAndIntakeCommand@{DriveAndIntakeCommand}!update@{update}}
+\index{update@{update}!DriveAndIntakeCommand@{DriveAndIntakeCommand}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Drive\+And\+Intake\+Command\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that is run in a while loop until {\itshape \mbox{\hyperlink{class_drive_and_intake_command_a19a3a884602a28e5186b36fec3f6d94c}{is\+Finished()}}} returns true and contains the meat of the command, such as running motors. 
+
+Implements \mbox{\hyperlink{class_command_a59432e50c228dc1a27302af0219656d9}{Command}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/\+User/\mbox{\hyperlink{_drive_and_intake_command_8h}{Drive\+And\+Intake\+Command.\+h}}\end{DoxyCompactItemize}

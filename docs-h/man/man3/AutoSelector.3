@@ -1,0 +1,77 @@
+.TH "AutoSelector" 3 "Sun Oct 13 2019" "Version 0.0.5" "VEX-2019 Team Convergence" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AutoSelector
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <AutoSelector\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAutoSelector\fP (std::string autoName, int defaultAutoNumber)"
+.br
+.ti -1c
+.RI "void \fBregisterAuto\fP (std::string autoName, int autoNumber)"
+.br
+.ti -1c
+.RI "void \fBlistOptions\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetSelectedAuto\fP ()"
+.br
+.ti -1c
+.RI "\fB~AutoSelector\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class that handles user input for autonomous routine selection 
+.PP
+Definition at line 10 of file AutoSelector\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AutoSelector::AutoSelector (std::string autoName, int defaultAutoNumber)"
+Constructor and sets default values for autonomous 
+.PP
+\fBParameters\fP
+.RS 4
+\fIautoName\fP Default autonomous routine name 
+.br
+\fIdefaultAutoNumber\fP Default autonomous routine number 
+.RE
+.PP
+
+.SS "AutoSelector::~AutoSelector ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "int AutoSelector::getSelectedAuto ()"
+Function that gets the selected autonomous routine from the dropdown 
+.PP
+\fBReturns\fP
+.RS 4
+The autonomous number of the selected auto routine 
+.RE
+.PP
+
+.SS "void AutoSelector::listOptions ()"
+Takes the array of autonomous routines and creates a dropdown on the screen\&. Only call this function after registering all autonmous routines\&. 
+.SS "void AutoSelector::registerAuto (std::string autoName, int autoNumber)"
+Function to append a new autonomous routine to the screen 
+.PP
+\fBParameters\fP
+.RS 4
+\fIautoName\fP Name of autonomous routine 
+.br
+\fIautoNumber\fP Number of autonomous routine 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for VEX-2019 Team Convergence from the source code\&.

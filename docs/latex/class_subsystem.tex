@@ -1,0 +1,78 @@
+\doxysection{Subsystem Class Reference}
+\label{class_subsystem}\index{Subsystem@{Subsystem}}
+
+
+{\ttfamily \#include $<$Subsystem.\+h$>$}
+
+Inheritance diagram for Subsystem\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_subsystem}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ initialize} ()=0
+\item 
+virtual void \textbf{ update} ()=0
+\item 
+virtual void \textbf{ reset} ()=0
+\item 
+virtual void \textbf{ stop} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for subsystems of robot 
+
+Definition at line 17 of file Subsystem.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_subsystem_a30d9f6d85c9aa0bfbdfda62d1ed55865}} 
+\index{Subsystem@{Subsystem}!initialize@{initialize}}
+\index{initialize@{initialize}!Subsystem@{Subsystem}}
+\doxysubsubsection{initialize()}
+{\footnotesize\ttfamily virtual void Subsystem\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Abstract function that configures sensors and motors or anything else that needs to be done before the robot runs. 
+
+Implemented in \textbf{ Drive\+Subsystem} \doxyref{}{p.}{class_drive_subsystem_a26ebc127cfe16dc9ba1825cf7d03f6c7}.
+
+\mbox{\label{class_subsystem_a2a0617e07fd35b6f2a5ce30045731a73}} 
+\index{Subsystem@{Subsystem}!reset@{reset}}
+\index{reset@{reset}!Subsystem@{Subsystem}}
+\doxysubsubsection{reset()}
+{\footnotesize\ttfamily virtual void Subsystem\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Function to reset subsystems sensors, etc... 
+
+Implemented in \textbf{ Drive\+Subsystem} \doxyref{}{p.}{class_drive_subsystem_a8a7fcdf36b4580ed4a722237a4214aa5}.
+
+\mbox{\label{class_subsystem_a69c254f4d104b1fc50f5a0719a68ad97}} 
+\index{Subsystem@{Subsystem}!stop@{stop}}
+\index{stop@{stop}!Subsystem@{Subsystem}}
+\doxysubsubsection{stop()}
+{\footnotesize\ttfamily virtual void Subsystem\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Function to stop subsystem operations such as setting motors to zero 
+
+Implemented in \textbf{ Drive\+Subsystem} \doxyref{}{p.}{class_drive_subsystem_ab209ac4a17e5aaf044b1ef7a7f9ccc1e}.
+
+\mbox{\label{class_subsystem_a09fe9b3aa0f2d95453db41605412ec59}} 
+\index{Subsystem@{Subsystem}!update@{update}}
+\index{update@{update}!Subsystem@{Subsystem}}
+\doxysubsubsection{update()}
+{\footnotesize\ttfamily virtual void Subsystem\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Looped function to run subsystem motors 
+
+Implemented in \textbf{ Drive\+Subsystem} \doxyref{}{p.}{class_drive_subsystem_a522ec6dd3e8065ab9ecd64c0f836c224}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+User/\textbf{ Subsystem.\+h}\end{DoxyCompactItemize}

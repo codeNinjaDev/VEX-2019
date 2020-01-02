@@ -1,0 +1,54 @@
+.TH "CommandRunner" 3 "Sun Oct 13 2019" "Version 0.0.5" "VEX-2019 Team Convergence" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CommandRunner
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <CommandRunner\&.h>\fP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBrunCommand\fP (std::unique_ptr< \fBCommand\fP > command)"
+.br
+.ti -1c
+.RI "static void \fBrunCommand\fP (\fBCommand\fP *command)"
+.br
+.ti -1c
+.RI "static void \fBrunCommandGroup\fP (std::vector< std::unique_ptr< \fBCommand\fP >> commandGroup)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class that runs and 'schedules' a command 
+.PP
+Definition at line 9 of file CommandRunner\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "static void CommandRunner::runCommand (\fBCommand\fP * command)\fC [static]\fP"
+
+.SS "static void CommandRunner::runCommand (std::unique_ptr< \fBCommand\fP > command)\fC [static]\fP"
+Runs the command's start function, then loops the update function until the isFinished function returns true\&. Finally, it runs the finish() function\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcommand\fP The command to be run 
+.RE
+.PP
+
+.SS "static void CommandRunner::runCommandGroup (std::vector< std::unique_ptr< \fBCommand\fP >> commandGroup)\fC [static]\fP"
+Runs an array of commands sequentially 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcommand\fP An array(vector) of commands 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for VEX-2019 Team Convergence from the source code\&.

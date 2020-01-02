@@ -1,0 +1,40 @@
+\doxysection{Command\+Factory Class Reference}
+\label{class_command_factory}\index{CommandFactory@{CommandFactory}}
+
+
+{\ttfamily \#include $<$Command\+Factory.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unique\+\_\+ptr$<$ \textbf{ Command} $>$ \textbf{ create} (\textbf{ Command} $\ast$command)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+C\+Lass to create a unique\+\_\+ptr of a command 
+
+Definition at line 8 of file Command\+Factory.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_command_factory_a8d1d9c11e2f3e843c06095c6c89e8034}} 
+\index{CommandFactory@{CommandFactory}!create@{create}}
+\index{create@{create}!CommandFactory@{CommandFactory}}
+\doxysubsubsection{create()}
+{\footnotesize\ttfamily static std\+::unique\+\_\+ptr$<$\textbf{ Command}$>$ Command\+Factory\+::create (\begin{DoxyParamCaption}\item[{\textbf{ Command} $\ast$}]{command }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Static function to convert a raw \doxyref{Command}{p.}{class_command} pointer into a safe, unique\+\_\+ptr 
+\begin{DoxyParams}{Parameters}
+{\em command} & Raw command pointer created with \char`\"{}new\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+safe unique command ptr 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+User/\textbf{ Command\+Factory.\+h}\end{DoxyCompactItemize}

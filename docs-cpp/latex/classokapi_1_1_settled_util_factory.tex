@@ -1,0 +1,35 @@
+\hypertarget{classokapi_1_1_settled_util_factory}{}\doxysection{okapi\+::Settled\+Util\+Factory Class Reference}
+\label{classokapi_1_1_settled_util_factory}\index{okapi::SettledUtilFactory@{okapi::SettledUtilFactory}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classokapi_1_1_settled_util}{Settled\+Util}} \mbox{\hyperlink{classokapi_1_1_settled_util_factory_a018ec63b9220466aa408f63aa282d791}{create}} (double iat\+Target\+Error=50, double iat\+Target\+Derivative=5, Q\+Time iat\+Target\+Time=250\+\_\+ms)
+\item 
+\mbox{\Hypertarget{classokapi_1_1_settled_util_factory_a5bac5ba176964aeccefe1cadbf064b74}\label{classokapi_1_1_settled_util_factory_a5bac5ba176964aeccefe1cadbf064b74}} 
+static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_settled_util}{Settled\+Util}} $>$ {\bfseries create\+Ptr} (double iat\+Target\+Error=50, double iat\+Target\+Derivative=5, Q\+Time iat\+Target\+Time=250\+\_\+ms)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classokapi_1_1_settled_util_factory_a018ec63b9220466aa408f63aa282d791}\label{classokapi_1_1_settled_util_factory_a018ec63b9220466aa408f63aa282d791}} 
+\index{okapi::SettledUtilFactory@{okapi::SettledUtilFactory}!create@{create}}
+\index{create@{create}!okapi::SettledUtilFactory@{okapi::SettledUtilFactory}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classokapi_1_1_settled_util}{Settled\+Util}} okapi\+::\+Settled\+Util\+Factory\+::create (\begin{DoxyParamCaption}\item[{double}]{iat\+Target\+Error = {\ttfamily 50},  }\item[{double}]{iat\+Target\+Derivative = {\ttfamily 5},  }\item[{Q\+Time}]{iat\+Target\+Time = {\ttfamily 250\+\_\+ms} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+A utility class to determine if a control loop has settled based on error. A control loop is settled if the error is within at\+Target\+Error for at\+Target\+Time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iat\+Target\+Error} & minimum error to be considered settled \\
+\hline
+{\em iat\+Target\+Derivative} & minimum error derivative to be considered settled \\
+\hline
+{\em iat\+Target\+Time} & minimum time within at\+Target\+Error to be considered settled \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/okapi/impl/control/util/settled\+Util\+Factory.\+hpp\end{DoxyCompactItemize}

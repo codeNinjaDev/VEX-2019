@@ -1,0 +1,55 @@
+.TH "Subsystem" 3 "Sun Oct 13 2019" "Version 0.0.5" "VEX-2019 Team Convergence" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Subsystem
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Subsystem\&.h>\fP
+.PP
+Inherited by \fBDriveSubsystem\fP, and \fBTraySubsystem\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBinitialize\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBupdate\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBreset\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBstop\fP ()=0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Base class for subsystems of robot 
+.PP
+Definition at line 17 of file Subsystem\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void Subsystem::initialize ()\fC [pure virtual]\fP"
+Abstract function that configures sensors and motors or anything else that needs to be done before the robot runs\&. 
+.PP
+Implemented in \fBDriveSubsystem\fP, and \fBTraySubsystem\fP\&.
+.SS "virtual void Subsystem::reset ()\fC [pure virtual]\fP"
+Function to reset subsystems sensors, etc\&.\&.\&. 
+.PP
+Implemented in \fBDriveSubsystem\fP, and \fBTraySubsystem\fP\&.
+.SS "virtual void Subsystem::stop ()\fC [pure virtual]\fP"
+Function to stop subsystem operations such as setting motors to zero 
+.PP
+Implemented in \fBDriveSubsystem\fP, and \fBTraySubsystem\fP\&.
+.SS "virtual void Subsystem::update ()\fC [pure virtual]\fP"
+Looped function to run subsystem motors 
+.PP
+Implemented in \fBDriveSubsystem\fP, and \fBTraySubsystem\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for VEX-2019 Team Convergence from the source code\&.

@@ -1,0 +1,103 @@
+\hypertarget{classokapi_1_1_logger}{}\doxysection{okapi\+::Logger Class Reference}
+\label{classokapi_1_1_logger}\index{okapi::Logger@{okapi::Logger}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_logger_a66826a92c568743a2722d3c3f6887d81}\label{classokapi_1_1_logger_a66826a92c568743a2722d3c3f6887d81}} 
+enum {\bfseries Log\+Level} \{ \newline
+{\bfseries off} = 0, 
+{\bfseries debug} = 4, 
+{\bfseries info} = 3, 
+{\bfseries warn} = 2, 
+\newline
+{\bfseries error} = 1
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_logger_ae4a630aae59dc8fa069aac6f5ff63362}\label{classokapi_1_1_logger_ae4a630aae59dc8fa069aac6f5ff63362}} 
+void {\bfseries debug} (std\+::string\+\_\+view message) const noexcept
+\item 
+\mbox{\Hypertarget{classokapi_1_1_logger_a9ce990eb99127ef5a5a6c03b3019cde6}\label{classokapi_1_1_logger_a9ce990eb99127ef5a5a6c03b3019cde6}} 
+void {\bfseries info} (std\+::string\+\_\+view message) const noexcept
+\item 
+\mbox{\Hypertarget{classokapi_1_1_logger_a0c00e113cbb2aca5fce27a282b99a5d8}\label{classokapi_1_1_logger_a0c00e113cbb2aca5fce27a282b99a5d8}} 
+void {\bfseries warn} (std\+::string\+\_\+view message) const noexcept
+\item 
+\mbox{\Hypertarget{classokapi_1_1_logger_a1f0cfcf2af3afb4b3f0ba7c21d98760e}\label{classokapi_1_1_logger_a1f0cfcf2af3afb4b3f0ba7c21d98760e}} 
+void {\bfseries error} (std\+::string\+\_\+view message) const noexcept
+\item 
+void \mbox{\hyperlink{classokapi_1_1_logger_ae6ebaea42e90499bd09680b46c1cf733}{close}} () noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classokapi_1_1_logger_a5bbf6e84644ae56bde21042ca4c7870e}{initialize}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_timer}{Abstract\+Timer}} $>$ itimer, std\+::string\+\_\+view filename, Log\+Level level) noexcept
+\item 
+static void \mbox{\hyperlink{classokapi_1_1_logger_a62ff75c1426c686210c85440310eecb9}{initialize}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_timer}{Abstract\+Timer}} $>$ itimer, F\+I\+LE $\ast$file, Log\+Level level) noexcept
+\item 
+static \mbox{\hyperlink{classokapi_1_1_logger}{Logger}} $\ast$ \mbox{\hyperlink{classokapi_1_1_logger_a14fe80a40e2f3ebdb573ed0b96d351be}{instance}} () noexcept
+\item 
+static void \mbox{\hyperlink{classokapi_1_1_logger_ae4d4873496e665cb51227a772ab9e96b}{set\+Log\+Level}} (Log\+Level level) noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classokapi_1_1_logger_ae6ebaea42e90499bd09680b46c1cf733}\label{classokapi_1_1_logger_ae6ebaea42e90499bd09680b46c1cf733}} 
+\index{okapi::Logger@{okapi::Logger}!close@{close}}
+\index{close@{close}!okapi::Logger@{okapi::Logger}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily void okapi\+::\+Logger\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Closes the connection to the log file. \mbox{\Hypertarget{classokapi_1_1_logger_a62ff75c1426c686210c85440310eecb9}\label{classokapi_1_1_logger_a62ff75c1426c686210c85440310eecb9}} 
+\index{okapi::Logger@{okapi::Logger}!initialize@{initialize}}
+\index{initialize@{initialize}!okapi::Logger@{okapi::Logger}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void okapi\+::\+Logger\+::initialize (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_timer}{Abstract\+Timer}} $>$}]{itimer,  }\item[{F\+I\+LE $\ast$}]{file,  }\item[{Log\+Level}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+Initializes the logger. If the logger is not initialized when logging methods are called, nothing will be logged.
+
+
+\begin{DoxyParams}{Parameters}
+{\em itimer} & A timer used to get the current time for log statements. \\
+\hline
+{\em logfile\+Name} & The name of the log file to open. \\
+\hline
+{\em level} & The log level. Log statements above this level will be disabled. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_logger_a5bbf6e84644ae56bde21042ca4c7870e}\label{classokapi_1_1_logger_a5bbf6e84644ae56bde21042ca4c7870e}} 
+\index{okapi::Logger@{okapi::Logger}!initialize@{initialize}}
+\index{initialize@{initialize}!okapi::Logger@{okapi::Logger}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void okapi\+::\+Logger\+::initialize (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_timer}{Abstract\+Timer}} $>$}]{itimer,  }\item[{std\+::string\+\_\+view}]{filename,  }\item[{Log\+Level}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+Initializes the logger. If the logger is not initialized when logging methods are called, nothing will be logged.
+
+
+\begin{DoxyParams}{Parameters}
+{\em itimer} & A timer used to get the current time for log statements. \\
+\hline
+{\em logfile\+Name} & The name of the log file to open. \\
+\hline
+{\em level} & The log level. Log statements above this level will be disabled. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classokapi_1_1_logger_a14fe80a40e2f3ebdb573ed0b96d351be}\label{classokapi_1_1_logger_a14fe80a40e2f3ebdb573ed0b96d351be}} 
+\index{okapi::Logger@{okapi::Logger}!instance@{instance}}
+\index{instance@{instance}!okapi::Logger@{okapi::Logger}}
+\doxysubsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classokapi_1_1_logger}{Logger}}$\ast$ okapi\+::\+Logger\+::instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+Get the logger instance. \mbox{\Hypertarget{classokapi_1_1_logger_ae4d4873496e665cb51227a772ab9e96b}\label{classokapi_1_1_logger_ae4d4873496e665cb51227a772ab9e96b}} 
+\index{okapi::Logger@{okapi::Logger}!setLogLevel@{setLogLevel}}
+\index{setLogLevel@{setLogLevel}!okapi::Logger@{okapi::Logger}}
+\doxysubsubsection{\texorpdfstring{setLogLevel()}{setLogLevel()}}
+{\footnotesize\ttfamily static void okapi\+::\+Logger\+::set\+Log\+Level (\begin{DoxyParamCaption}\item[{Log\+Level}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+Set a new logging level. Log statements above this level will be disabled. For example, if the level is set to Log\+Level\+::warn, then Log\+Level\+::warn and Log\+Level\+::error will be enabled, but Log\+Level\+::info and Log\+Level\+::debug will be disabled. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/okapi/api/util/logging.\+hpp\end{DoxyCompactItemize}

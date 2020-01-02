@@ -1,0 +1,100 @@
+\doxysection{Log\+Position\+Command Class Reference}
+\label{class_log_position_command}\index{LogPositionCommand@{LogPositionCommand}}
+
+
+{\ttfamily \#include $<$Log\+Position\+Command.\+h$>$}
+
+Inheritance diagram for Log\+Position\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_log_position_command}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Log\+Position\+Command} (std\+::shared\+\_\+ptr$<$ \textbf{ Drive\+Subsystem} $>$ drive, double timeout)
+\item 
+void \textbf{ start} ()
+\item 
+void \textbf{ update} ()
+\item 
+bool \textbf{ is\+Finished} ()
+\item 
+void \textbf{ finish} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Command}{p.}{class_command} to log the distance of the robot (to a csv file) while spinning in order to find the max constants for motion profiling. 
+
+Definition at line 17 of file Log\+Position\+Command.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_log_position_command_a66c1a4ee7b4c7428ebc0391b09122d6c}} 
+\index{LogPositionCommand@{LogPositionCommand}!LogPositionCommand@{LogPositionCommand}}
+\index{LogPositionCommand@{LogPositionCommand}!LogPositionCommand@{LogPositionCommand}}
+\doxysubsubsection{LogPositionCommand()}
+{\footnotesize\ttfamily Log\+Position\+Command\+::\+Log\+Position\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \textbf{ Drive\+Subsystem} $>$}]{drive,  }\item[{double}]{timeout }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em drive} & Needs drive subsystem \\
+\hline
+{\em timeout} & Time limit for the command \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_log_position_command_a68c3ee4c45f14878716e359b35176d42}} 
+\index{LogPositionCommand@{LogPositionCommand}!finish@{finish}}
+\index{finish@{finish}!LogPositionCommand@{LogPositionCommand}}
+\doxysubsubsection{finish()}
+{\footnotesize\ttfamily void Log\+Position\+Command\+::finish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that runs after the while loop and only once. Normally wraps up a command and gets the robot ready to transition to a new command. 
+
+Implements \textbf{ Command} \doxyref{}{p.}{class_command_affcda825b758dbb11c2cb036913d4c90}.
+
+\mbox{\label{class_log_position_command_a08fe197e191038b4893bb51c43b926c3}} 
+\index{LogPositionCommand@{LogPositionCommand}!isFinished@{isFinished}}
+\index{isFinished@{isFinished}!LogPositionCommand@{LogPositionCommand}}
+\doxysubsubsection{isFinished()}
+{\footnotesize\ttfamily bool Log\+Position\+Command\+::is\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that runs in a while loop and continously checks if the command should end. If true, ends while loop. Common use case is to check if timeout for command is exceeded \begin{DoxyReturn}{Returns}
+True if command should end, false if it should not. 
+\end{DoxyReturn}
+
+
+Implements \textbf{ Command} \doxyref{}{p.}{class_command_a9aa704d5f9d98f510a79e645701dc72a}.
+
+\mbox{\label{class_log_position_command_adb38c9aa50e42e48d018ebdf6c48493f}} 
+\index{LogPositionCommand@{LogPositionCommand}!start@{start}}
+\index{start@{start}!LogPositionCommand@{LogPositionCommand}}
+\doxysubsubsection{start()}
+{\footnotesize\ttfamily void Log\+Position\+Command\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that is called before the while loop only once. Common use case is to setup the command. 
+
+Implements \textbf{ Command} \doxyref{}{p.}{class_command_a2ca7d162253b520e8a0f9325051eea61}.
+
+\mbox{\label{class_log_position_command_a114252c7b7952bd7bd27454557bfc7f2}} 
+\index{LogPositionCommand@{LogPositionCommand}!update@{update}}
+\index{update@{update}!LogPositionCommand@{LogPositionCommand}}
+\doxysubsubsection{update()}
+{\footnotesize\ttfamily void Log\+Position\+Command\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that is run in a while loop until {\itshape \doxyref{is\+Finished()}{p.}{class_log_position_command_a08fe197e191038b4893bb51c43b926c3}} returns true and contains the meat of the command, such as running motors. 
+
+Implements \textbf{ Command} \doxyref{}{p.}{class_command_a59432e50c228dc1a27302af0219656d9}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+User/\textbf{ Log\+Position\+Command.\+h}\end{DoxyCompactItemize}

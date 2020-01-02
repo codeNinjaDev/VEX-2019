@@ -1,0 +1,80 @@
+\hypertarget{classokapi_1_1_three_encoder_skid_steer_model}{}\doxysection{okapi\+::Three\+Encoder\+Skid\+Steer\+Model Class Reference}
+\label{classokapi_1_1_three_encoder_skid_steer_model}\index{okapi::ThreeEncoderSkidSteerModel@{okapi::ThreeEncoderSkidSteerModel}}
+Inheritance diagram for okapi\+::Three\+Encoder\+Skid\+Steer\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classokapi_1_1_three_encoder_skid_steer_model}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a6697fa6cff263a2962dba1da6a7f1d3a}{Three\+Encoder\+Skid\+Steer\+Model}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \&ileft\+Side\+Motor, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \&iright\+Side\+Motor, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ \&ileft\+Enc, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ \&imiddle\+Enc, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ \&iright\+Enc, double imax\+Velocity, double imax\+Voltage=12000)
+\item 
+std\+::valarray$<$ std\+::int32\+\_\+t $>$ \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a03c07f22a3d82145e5dc7e2adcb6dbc2}{get\+Sensor\+Vals}} () const override
+\item 
+void \mbox{\hyperlink{classokapi_1_1_three_encoder_skid_steer_model_a797456f30b29e0afab48430afc7a8f8f}{reset\+Sensors}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_three_encoder_skid_steer_model_a24ca08fb88096f1f3e5b84974086e972}\label{classokapi_1_1_three_encoder_skid_steer_model_a24ca08fb88096f1f3e5b84974086e972}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ {\bfseries middle\+Sensor}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classokapi_1_1_three_encoder_skid_steer_model_a6697fa6cff263a2962dba1da6a7f1d3a}\label{classokapi_1_1_three_encoder_skid_steer_model_a6697fa6cff263a2962dba1da6a7f1d3a}} 
+\index{okapi::ThreeEncoderSkidSteerModel@{okapi::ThreeEncoderSkidSteerModel}!ThreeEncoderSkidSteerModel@{ThreeEncoderSkidSteerModel}}
+\index{ThreeEncoderSkidSteerModel@{ThreeEncoderSkidSteerModel}!okapi::ThreeEncoderSkidSteerModel@{okapi::ThreeEncoderSkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{ThreeEncoderSkidSteerModel()}{ThreeEncoderSkidSteerModel()}}
+{\footnotesize\ttfamily okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model\+::\+Three\+Encoder\+Skid\+Steer\+Model (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \&}]{ileft\+Side\+Motor,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_abstract_motor}{Abstract\+Motor}} $>$ \&}]{iright\+Side\+Motor,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ \&}]{ileft\+Enc,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ \&}]{imiddle\+Enc,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor}{Continuous\+Rotary\+Sensor}} $>$ \&}]{iright\+Enc,  }\item[{double}]{imax\+Velocity,  }\item[{double}]{imax\+Voltage = {\ttfamily 12000} }\end{DoxyParamCaption})}
+
+Model for a skid steer drive (wheels parallel with robot\textquotesingle{}s direction of motion). When all motors are powered +100\%, the robot should move forward in a straight line.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ileft\+Side\+Motor} & left side motor \\
+\hline
+{\em iright\+Side\+Motor} & right side motor \\
+\hline
+{\em ileft\+Enc} & left side encoder \\
+\hline
+{\em imiddle\+Enc} & middle encoder (mounted perpendicular to the left and right side encoders) \\
+\hline
+{\em iright\+Enc} & right side encoder \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classokapi_1_1_three_encoder_skid_steer_model_a03c07f22a3d82145e5dc7e2adcb6dbc2}\label{classokapi_1_1_three_encoder_skid_steer_model_a03c07f22a3d82145e5dc7e2adcb6dbc2}} 
+\index{okapi::ThreeEncoderSkidSteerModel@{okapi::ThreeEncoderSkidSteerModel}!getSensorVals@{getSensorVals}}
+\index{getSensorVals@{getSensorVals}!okapi::ThreeEncoderSkidSteerModel@{okapi::ThreeEncoderSkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{getSensorVals()}{getSensorVals()}}
+{\footnotesize\ttfamily std\+::valarray$<$std\+::int32\+\_\+t$>$ okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model\+::get\+Sensor\+Vals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Read the sensors.
+
+\begin{DoxyReturn}{Returns}
+sensor readings in the format \{left, right, middle\} 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a7ecce6e26b2e9ca40e6a70d2405703e7}{okapi\+::\+Skid\+Steer\+Model}}.
+
+\mbox{\Hypertarget{classokapi_1_1_three_encoder_skid_steer_model_a797456f30b29e0afab48430afc7a8f8f}\label{classokapi_1_1_three_encoder_skid_steer_model_a797456f30b29e0afab48430afc7a8f8f}} 
+\index{okapi::ThreeEncoderSkidSteerModel@{okapi::ThreeEncoderSkidSteerModel}!resetSensors@{resetSensors}}
+\index{resetSensors@{resetSensors}!okapi::ThreeEncoderSkidSteerModel@{okapi::ThreeEncoderSkidSteerModel}}
+\doxysubsubsection{\texorpdfstring{resetSensors()}{resetSensors()}}
+{\footnotesize\ttfamily void okapi\+::\+Three\+Encoder\+Skid\+Steer\+Model\+::reset\+Sensors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Reset the sensors to their zero point. 
+
+Reimplemented from \mbox{\hyperlink{classokapi_1_1_skid_steer_model_a82d0e2b637ff49f18900f309d651b863}{okapi\+::\+Skid\+Steer\+Model}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/okapi/api/chassis/model/three\+Encoder\+Skid\+Steer\+Model.\+hpp\end{DoxyCompactItemize}

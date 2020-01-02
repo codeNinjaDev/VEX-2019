@@ -1,0 +1,156 @@
+.TH "TraySubsystem" 3 "Sun Oct 13 2019" "Version 0.0.5" "VEX-2019 Team Convergence" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TraySubsystem
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <TraySubsystem\&.h>\fP
+.PP
+Inherits \fBSubsystem\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBRobotState\fP { \fBkInitialize\fP, \fBkTeleopDrive\fP }"
+.br
+.ti -1c
+.RI "enum \fBTowerPosition\fP { \fBkTray\fP = 0, \fBkLowTower\fP = 400, \fBkHighTower\fP = 0, \fBkExtendTray\fP = 350 }"
+.br
+.ti -1c
+.RI "enum \fBTrayPosition\fP { \fBkSlant\fP = 0, \fBkStack\fP = 1800 }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTraySubsystem\fP (okapi::Controller driverController, okapi::Controller operatorController)"
+.br
+.ti -1c
+.RI "void \fBstop\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdate\fP ()"
+.br
+.ti -1c
+.RI "void \fBreset\fP ()"
+.br
+.ti -1c
+.RI "void \fBinitialize\fP ()"
+.br
+.ti -1c
+.RI "void \fBmoveTray\fP (\fBTrayPosition\fP position, double targetVelocity)"
+.br
+.ti -1c
+.RI "void \fBscoreTower\fP (\fBTowerPosition\fP position, double targetVelocity)"
+.br
+.ti -1c
+.RI "void \fBintakeCube\fP ()"
+.br
+.ti -1c
+.RI "void \fBouttakeCube\fP (double targetVelocity)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "okapi::Motor \fBtrayMotor\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIdriverController\fP VEX Gamepad for driver 
+.br
+\fIoperatorController\fP VEX Gamepad for Operator 
+.RE
+.PP
+
+.PP
+Definition at line 12 of file TraySubsystem\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBTraySubsystem::RobotState\fP"
+State of the Robot 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIkInitialize \fP\fP
+.TP
+\fB\fIkTeleopDrive \fP\fP
+.PP
+Definition at line 25 of file TraySubsystem\&.h\&.
+.SS "enum \fBTraySubsystem::TowerPosition\fP"
+Positions of the Intake Arm 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIkTray \fP\fP
+.TP
+\fB\fIkLowTower \fP\fP
+.TP
+\fB\fIkHighTower \fP\fP
+.TP
+\fB\fIkExtendTray \fP\fP
+.PP
+Definition at line 32 of file TraySubsystem\&.h\&.
+.SS "enum \fBTraySubsystem::TrayPosition\fP"
+Positions of the Intake Arm 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIkSlant \fP\fP
+.TP
+\fB\fIkStack \fP\fP
+.PP
+Definition at line 39 of file TraySubsystem\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "TraySubsystem::TraySubsystem (okapi::Controller driverController, okapi::Controller operatorController)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void TraySubsystem::initialize ()\fC [virtual]\fP"
+Abstract function that configures sensors and motors or anything else that needs to be done before the robot runs\&. 
+.PP
+Implements \fBSubsystem\fP\&.
+.SS "void TraySubsystem::intakeCube ()"
+
+.SS "void TraySubsystem::moveTray (\fBTrayPosition\fP position, double targetVelocity)"
+
+.SS "void TraySubsystem::outtakeCube (double targetVelocity)"
+
+.SS "void TraySubsystem::reset ()\fC [virtual]\fP"
+Function to reset subsystems sensors, etc\&.\&.\&. 
+.PP
+Implements \fBSubsystem\fP\&.
+.SS "void TraySubsystem::scoreTower (\fBTowerPosition\fP position, double targetVelocity)"
+
+.SS "void TraySubsystem::stop ()\fC [virtual]\fP"
+Function to stop subsystem operations such as setting motors to zero 
+.PP
+Implements \fBSubsystem\fP\&.
+.SS "void TraySubsystem::update ()\fC [virtual]\fP"
+Looped function to run subsystem motors 
+.PP
+Implements \fBSubsystem\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "okapi::Motor TraySubsystem::trayMotor"
+
+.PP
+Definition at line 47 of file TraySubsystem\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for VEX-2019 Team Convergence from the source code\&.

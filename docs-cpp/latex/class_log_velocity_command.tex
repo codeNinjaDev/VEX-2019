@@ -1,0 +1,75 @@
+\hypertarget{class_log_velocity_command}{}\doxysection{Log\+Velocity\+Command Class Reference}
+\label{class_log_velocity_command}\index{LogVelocityCommand@{LogVelocityCommand}}
+Inheritance diagram for Log\+Velocity\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_log_velocity_command}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_log_velocity_command_a04e777a88cdbbcbde114895f3125c467}\label{class_log_velocity_command_a04e777a88cdbbcbde114895f3125c467}} 
+{\bfseries Log\+Velocity\+Command} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_drive_subsystem}{Drive\+Subsystem}} $>$ drive, double timeout)
+\item 
+void \mbox{\hyperlink{class_log_velocity_command_a26e9a44212f66d49c76eb75776dbe78f}{start}} ()
+\item 
+void \mbox{\hyperlink{class_log_velocity_command_a379e0f092bb6bf38dbf534224c24a0fa}{update}} ()
+\item 
+bool \mbox{\hyperlink{class_log_velocity_command_a67f8f92194ee5584c01a85a3483c4cd9}{is\+Finished}} ()
+\item 
+void \mbox{\hyperlink{class_log_velocity_command_aab488905c958663a8d657f0ca8abe54e}{finish}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_log_velocity_command_aab488905c958663a8d657f0ca8abe54e}\label{class_log_velocity_command_aab488905c958663a8d657f0ca8abe54e}} 
+\index{LogVelocityCommand@{LogVelocityCommand}!finish@{finish}}
+\index{finish@{finish}!LogVelocityCommand@{LogVelocityCommand}}
+\doxysubsubsection{\texorpdfstring{finish()}{finish()}}
+{\footnotesize\ttfamily void Log\+Velocity\+Command\+::finish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that runs after the while loop and only once. Normally wraps up a command and gets the robot ready to transition to a new command. 
+
+Implements \mbox{\hyperlink{class_command_affcda825b758dbb11c2cb036913d4c90}{Command}}.
+
+\mbox{\Hypertarget{class_log_velocity_command_a67f8f92194ee5584c01a85a3483c4cd9}\label{class_log_velocity_command_a67f8f92194ee5584c01a85a3483c4cd9}} 
+\index{LogVelocityCommand@{LogVelocityCommand}!isFinished@{isFinished}}
+\index{isFinished@{isFinished}!LogVelocityCommand@{LogVelocityCommand}}
+\doxysubsubsection{\texorpdfstring{isFinished()}{isFinished()}}
+{\footnotesize\ttfamily bool Log\+Velocity\+Command\+::is\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that runs in a while loop and continously checks if the command should end. If true, ends while loop. Common use case is to check if timeout for command is exceeded \begin{DoxyReturn}{Returns}
+True if command should end, false if it should not. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_command_a9aa704d5f9d98f510a79e645701dc72a}{Command}}.
+
+\mbox{\Hypertarget{class_log_velocity_command_a26e9a44212f66d49c76eb75776dbe78f}\label{class_log_velocity_command_a26e9a44212f66d49c76eb75776dbe78f}} 
+\index{LogVelocityCommand@{LogVelocityCommand}!start@{start}}
+\index{start@{start}!LogVelocityCommand@{LogVelocityCommand}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Log\+Velocity\+Command\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that is called before the while loop only once. Common use case is to setup the command. 
+
+Implements \mbox{\hyperlink{class_command_a2ca7d162253b520e8a0f9325051eea61}{Command}}.
+
+\mbox{\Hypertarget{class_log_velocity_command_a379e0f092bb6bf38dbf534224c24a0fa}\label{class_log_velocity_command_a379e0f092bb6bf38dbf534224c24a0fa}} 
+\index{LogVelocityCommand@{LogVelocityCommand}!update@{update}}
+\index{update@{update}!LogVelocityCommand@{LogVelocityCommand}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Log\+Velocity\+Command\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that is run in a while loop until {\itshape \mbox{\hyperlink{class_log_velocity_command_a67f8f92194ee5584c01a85a3483c4cd9}{is\+Finished()}}} returns true and contains the meat of the command, such as running motors. 
+
+Implements \mbox{\hyperlink{class_command_a59432e50c228dc1a27302af0219656d9}{Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/\+User/Log\+Velocity\+Command.\+h\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/src/\+Commands/Log\+Velocity\+Command.\+cpp\end{DoxyCompactItemize}

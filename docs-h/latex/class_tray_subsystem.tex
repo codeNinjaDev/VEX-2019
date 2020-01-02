@@ -1,0 +1,234 @@
+\hypertarget{class_tray_subsystem}{}\doxysection{Tray\+Subsystem Class Reference}
+\label{class_tray_subsystem}\index{TraySubsystem@{TraySubsystem}}
+
+
+{\ttfamily \#include $<$Tray\+Subsystem.\+h$>$}
+
+Inheritance diagram for Tray\+Subsystem\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_tray_subsystem}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_tray_subsystem_aa271e250ca05dfd076ea82e357454465}{Robot\+State}} \{ \mbox{\hyperlink{class_tray_subsystem_aa271e250ca05dfd076ea82e357454465afd0b3c57acb713f1d027cda86451af1d}{k\+Initialize}}, 
+\mbox{\hyperlink{class_tray_subsystem_aa271e250ca05dfd076ea82e357454465a1239bdc96793557c53e1b964eaa758e6}{k\+Teleop\+Drive}}
+ \}
+\item 
+enum \mbox{\hyperlink{class_tray_subsystem_a3437da5da521eb55cba52a2b3c213194}{Tower\+Position}} \{ \mbox{\hyperlink{class_tray_subsystem_a3437da5da521eb55cba52a2b3c213194a933ebb4d0b4b8c10a837bb94346287bc}{k\+Tray}} = 0, 
+\mbox{\hyperlink{class_tray_subsystem_a3437da5da521eb55cba52a2b3c213194a22f410f682878af8c435413fbead2f96}{k\+Low\+Tower}} = 400, 
+\mbox{\hyperlink{class_tray_subsystem_a3437da5da521eb55cba52a2b3c213194a4e2ff33a8c02efd11ea73ea99168a589}{k\+High\+Tower}} = 0, 
+\mbox{\hyperlink{class_tray_subsystem_a3437da5da521eb55cba52a2b3c213194a6b039b6a8a4b037b56efc8d89e9d1f1b}{k\+Extend\+Tray}} = 350
+ \}
+\item 
+enum \mbox{\hyperlink{class_tray_subsystem_a4d85889effc17da736f6f673f94c3d99}{Tray\+Position}} \{ \mbox{\hyperlink{class_tray_subsystem_a4d85889effc17da736f6f673f94c3d99aa5621e4edd958c5180ceeac4b3ae8b29}{k\+Slant}} = 0, 
+\mbox{\hyperlink{class_tray_subsystem_a4d85889effc17da736f6f673f94c3d99a479b9d319a0b251cf843d6a32f5428c6}{k\+Stack}} = 1800
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_tray_subsystem_a44cd9a91384b1b7dc9e7c3756d588590}{Tray\+Subsystem}} (okapi\+::\+Controller driver\+Controller, okapi\+::\+Controller operator\+Controller)
+\item 
+void \mbox{\hyperlink{class_tray_subsystem_aa5c4d83bb10d79050f894cb736a7faa8}{stop}} ()
+\item 
+void \mbox{\hyperlink{class_tray_subsystem_a2babd9fd72f017c3a92de65adea5fb63}{update}} ()
+\item 
+void \mbox{\hyperlink{class_tray_subsystem_a8a6b1042ce4589499acc9776ded4103d}{reset}} ()
+\item 
+void \mbox{\hyperlink{class_tray_subsystem_a38ddb87227e9b33683f9906854a9b51a}{initialize}} ()
+\item 
+void \mbox{\hyperlink{class_tray_subsystem_a653d56cfb175fdfa068c432c88d1de6c}{move\+Tray}} (\mbox{\hyperlink{class_tray_subsystem_a4d85889effc17da736f6f673f94c3d99}{Tray\+Position}} position, double target\+Velocity)
+\item 
+void \mbox{\hyperlink{class_tray_subsystem_adad9617e93be7f60f6f771637a364ca9}{score\+Tower}} (\mbox{\hyperlink{class_tray_subsystem_a3437da5da521eb55cba52a2b3c213194}{Tower\+Position}} position, double target\+Velocity)
+\item 
+void \mbox{\hyperlink{class_tray_subsystem_a7361fa4bb46c40a1d4e8d276e7ecad7e}{intake\+Cube}} ()
+\item 
+void \mbox{\hyperlink{class_tray_subsystem_a47981de1676a21a491b5bee1b6a694ff}{outtake\+Cube}} (double target\+Velocity)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+okapi\+::\+Motor \mbox{\hyperlink{class_tray_subsystem_aef5221b79caa63912852f504b9e1373e}{tray\+Motor}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+\begin{DoxyParams}{Parameters}
+{\em driver\+Controller} & V\+EX Gamepad for driver \\
+\hline
+{\em operator\+Controller} & V\+EX Gamepad for Operator \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 12 of file Tray\+Subsystem.\+h.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_tray_subsystem_aa271e250ca05dfd076ea82e357454465}\label{class_tray_subsystem_aa271e250ca05dfd076ea82e357454465}} 
+\index{TraySubsystem@{TraySubsystem}!RobotState@{RobotState}}
+\index{RobotState@{RobotState}!TraySubsystem@{TraySubsystem}}
+\doxysubsubsection{\texorpdfstring{RobotState}{RobotState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_tray_subsystem_aa271e250ca05dfd076ea82e357454465}{Tray\+Subsystem\+::\+Robot\+State}}}
+
+State of the Robot \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kInitialize@{kInitialize}!TraySubsystem@{TraySubsystem}}\index{TraySubsystem@{TraySubsystem}!kInitialize@{kInitialize}}}\mbox{\Hypertarget{class_tray_subsystem_aa271e250ca05dfd076ea82e357454465afd0b3c57acb713f1d027cda86451af1d}\label{class_tray_subsystem_aa271e250ca05dfd076ea82e357454465afd0b3c57acb713f1d027cda86451af1d}} 
+k\+Initialize&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTeleopDrive@{kTeleopDrive}!TraySubsystem@{TraySubsystem}}\index{TraySubsystem@{TraySubsystem}!kTeleopDrive@{kTeleopDrive}}}\mbox{\Hypertarget{class_tray_subsystem_aa271e250ca05dfd076ea82e357454465a1239bdc96793557c53e1b964eaa758e6}\label{class_tray_subsystem_aa271e250ca05dfd076ea82e357454465a1239bdc96793557c53e1b964eaa758e6}} 
+k\+Teleop\+Drive&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 25 of file Tray\+Subsystem.\+h.
+
+\mbox{\Hypertarget{class_tray_subsystem_a3437da5da521eb55cba52a2b3c213194}\label{class_tray_subsystem_a3437da5da521eb55cba52a2b3c213194}} 
+\index{TraySubsystem@{TraySubsystem}!TowerPosition@{TowerPosition}}
+\index{TowerPosition@{TowerPosition}!TraySubsystem@{TraySubsystem}}
+\doxysubsubsection{\texorpdfstring{TowerPosition}{TowerPosition}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_tray_subsystem_a3437da5da521eb55cba52a2b3c213194}{Tray\+Subsystem\+::\+Tower\+Position}}}
+
+Positions of the Intake Arm \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTray@{kTray}!TraySubsystem@{TraySubsystem}}\index{TraySubsystem@{TraySubsystem}!kTray@{kTray}}}\mbox{\Hypertarget{class_tray_subsystem_a3437da5da521eb55cba52a2b3c213194a933ebb4d0b4b8c10a837bb94346287bc}\label{class_tray_subsystem_a3437da5da521eb55cba52a2b3c213194a933ebb4d0b4b8c10a837bb94346287bc}} 
+k\+Tray&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kLowTower@{kLowTower}!TraySubsystem@{TraySubsystem}}\index{TraySubsystem@{TraySubsystem}!kLowTower@{kLowTower}}}\mbox{\Hypertarget{class_tray_subsystem_a3437da5da521eb55cba52a2b3c213194a22f410f682878af8c435413fbead2f96}\label{class_tray_subsystem_a3437da5da521eb55cba52a2b3c213194a22f410f682878af8c435413fbead2f96}} 
+k\+Low\+Tower&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kHighTower@{kHighTower}!TraySubsystem@{TraySubsystem}}\index{TraySubsystem@{TraySubsystem}!kHighTower@{kHighTower}}}\mbox{\Hypertarget{class_tray_subsystem_a3437da5da521eb55cba52a2b3c213194a4e2ff33a8c02efd11ea73ea99168a589}\label{class_tray_subsystem_a3437da5da521eb55cba52a2b3c213194a4e2ff33a8c02efd11ea73ea99168a589}} 
+k\+High\+Tower&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kExtendTray@{kExtendTray}!TraySubsystem@{TraySubsystem}}\index{TraySubsystem@{TraySubsystem}!kExtendTray@{kExtendTray}}}\mbox{\Hypertarget{class_tray_subsystem_a3437da5da521eb55cba52a2b3c213194a6b039b6a8a4b037b56efc8d89e9d1f1b}\label{class_tray_subsystem_a3437da5da521eb55cba52a2b3c213194a6b039b6a8a4b037b56efc8d89e9d1f1b}} 
+k\+Extend\+Tray&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 32 of file Tray\+Subsystem.\+h.
+
+\mbox{\Hypertarget{class_tray_subsystem_a4d85889effc17da736f6f673f94c3d99}\label{class_tray_subsystem_a4d85889effc17da736f6f673f94c3d99}} 
+\index{TraySubsystem@{TraySubsystem}!TrayPosition@{TrayPosition}}
+\index{TrayPosition@{TrayPosition}!TraySubsystem@{TraySubsystem}}
+\doxysubsubsection{\texorpdfstring{TrayPosition}{TrayPosition}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_tray_subsystem_a4d85889effc17da736f6f673f94c3d99}{Tray\+Subsystem\+::\+Tray\+Position}}}
+
+Positions of the Intake Arm \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kSlant@{kSlant}!TraySubsystem@{TraySubsystem}}\index{TraySubsystem@{TraySubsystem}!kSlant@{kSlant}}}\mbox{\Hypertarget{class_tray_subsystem_a4d85889effc17da736f6f673f94c3d99aa5621e4edd958c5180ceeac4b3ae8b29}\label{class_tray_subsystem_a4d85889effc17da736f6f673f94c3d99aa5621e4edd958c5180ceeac4b3ae8b29}} 
+k\+Slant&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kStack@{kStack}!TraySubsystem@{TraySubsystem}}\index{TraySubsystem@{TraySubsystem}!kStack@{kStack}}}\mbox{\Hypertarget{class_tray_subsystem_a4d85889effc17da736f6f673f94c3d99a479b9d319a0b251cf843d6a32f5428c6}\label{class_tray_subsystem_a4d85889effc17da736f6f673f94c3d99a479b9d319a0b251cf843d6a32f5428c6}} 
+k\+Stack&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 39 of file Tray\+Subsystem.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_tray_subsystem_a44cd9a91384b1b7dc9e7c3756d588590}\label{class_tray_subsystem_a44cd9a91384b1b7dc9e7c3756d588590}} 
+\index{TraySubsystem@{TraySubsystem}!TraySubsystem@{TraySubsystem}}
+\index{TraySubsystem@{TraySubsystem}!TraySubsystem@{TraySubsystem}}
+\doxysubsubsection{\texorpdfstring{TraySubsystem()}{TraySubsystem()}}
+{\footnotesize\ttfamily Tray\+Subsystem\+::\+Tray\+Subsystem (\begin{DoxyParamCaption}\item[{okapi\+::\+Controller}]{driver\+Controller,  }\item[{okapi\+::\+Controller}]{operator\+Controller }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_tray_subsystem_a38ddb87227e9b33683f9906854a9b51a}\label{class_tray_subsystem_a38ddb87227e9b33683f9906854a9b51a}} 
+\index{TraySubsystem@{TraySubsystem}!initialize@{initialize}}
+\index{initialize@{initialize}!TraySubsystem@{TraySubsystem}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void Tray\+Subsystem\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that configures sensors and motors or anything else that needs to be done before the robot runs. 
+
+Implements \mbox{\hyperlink{class_subsystem_a30d9f6d85c9aa0bfbdfda62d1ed55865}{Subsystem}}.
+
+\mbox{\Hypertarget{class_tray_subsystem_a7361fa4bb46c40a1d4e8d276e7ecad7e}\label{class_tray_subsystem_a7361fa4bb46c40a1d4e8d276e7ecad7e}} 
+\index{TraySubsystem@{TraySubsystem}!intakeCube@{intakeCube}}
+\index{intakeCube@{intakeCube}!TraySubsystem@{TraySubsystem}}
+\doxysubsubsection{\texorpdfstring{intakeCube()}{intakeCube()}}
+{\footnotesize\ttfamily void Tray\+Subsystem\+::intake\+Cube (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_tray_subsystem_a653d56cfb175fdfa068c432c88d1de6c}\label{class_tray_subsystem_a653d56cfb175fdfa068c432c88d1de6c}} 
+\index{TraySubsystem@{TraySubsystem}!moveTray@{moveTray}}
+\index{moveTray@{moveTray}!TraySubsystem@{TraySubsystem}}
+\doxysubsubsection{\texorpdfstring{moveTray()}{moveTray()}}
+{\footnotesize\ttfamily void Tray\+Subsystem\+::move\+Tray (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_tray_subsystem_a4d85889effc17da736f6f673f94c3d99}{Tray\+Position}}}]{position,  }\item[{double}]{target\+Velocity }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_tray_subsystem_a47981de1676a21a491b5bee1b6a694ff}\label{class_tray_subsystem_a47981de1676a21a491b5bee1b6a694ff}} 
+\index{TraySubsystem@{TraySubsystem}!outtakeCube@{outtakeCube}}
+\index{outtakeCube@{outtakeCube}!TraySubsystem@{TraySubsystem}}
+\doxysubsubsection{\texorpdfstring{outtakeCube()}{outtakeCube()}}
+{\footnotesize\ttfamily void Tray\+Subsystem\+::outtake\+Cube (\begin{DoxyParamCaption}\item[{double}]{target\+Velocity }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_tray_subsystem_a8a6b1042ce4589499acc9776ded4103d}\label{class_tray_subsystem_a8a6b1042ce4589499acc9776ded4103d}} 
+\index{TraySubsystem@{TraySubsystem}!reset@{reset}}
+\index{reset@{reset}!TraySubsystem@{TraySubsystem}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Tray\+Subsystem\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Function to reset subsystems sensors, etc... 
+
+Implements \mbox{\hyperlink{class_subsystem_a2a0617e07fd35b6f2a5ce30045731a73}{Subsystem}}.
+
+\mbox{\Hypertarget{class_tray_subsystem_adad9617e93be7f60f6f771637a364ca9}\label{class_tray_subsystem_adad9617e93be7f60f6f771637a364ca9}} 
+\index{TraySubsystem@{TraySubsystem}!scoreTower@{scoreTower}}
+\index{scoreTower@{scoreTower}!TraySubsystem@{TraySubsystem}}
+\doxysubsubsection{\texorpdfstring{scoreTower()}{scoreTower()}}
+{\footnotesize\ttfamily void Tray\+Subsystem\+::score\+Tower (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_tray_subsystem_a3437da5da521eb55cba52a2b3c213194}{Tower\+Position}}}]{position,  }\item[{double}]{target\+Velocity }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_tray_subsystem_aa5c4d83bb10d79050f894cb736a7faa8}\label{class_tray_subsystem_aa5c4d83bb10d79050f894cb736a7faa8}} 
+\index{TraySubsystem@{TraySubsystem}!stop@{stop}}
+\index{stop@{stop}!TraySubsystem@{TraySubsystem}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Tray\+Subsystem\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Function to stop subsystem operations such as setting motors to zero 
+
+Implements \mbox{\hyperlink{class_subsystem_a69c254f4d104b1fc50f5a0719a68ad97}{Subsystem}}.
+
+\mbox{\Hypertarget{class_tray_subsystem_a2babd9fd72f017c3a92de65adea5fb63}\label{class_tray_subsystem_a2babd9fd72f017c3a92de65adea5fb63}} 
+\index{TraySubsystem@{TraySubsystem}!update@{update}}
+\index{update@{update}!TraySubsystem@{TraySubsystem}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Tray\+Subsystem\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Looped function to run subsystem motors 
+
+Implements \mbox{\hyperlink{class_subsystem_a09fe9b3aa0f2d95453db41605412ec59}{Subsystem}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_tray_subsystem_aef5221b79caa63912852f504b9e1373e}\label{class_tray_subsystem_aef5221b79caa63912852f504b9e1373e}} 
+\index{TraySubsystem@{TraySubsystem}!trayMotor@{trayMotor}}
+\index{trayMotor@{trayMotor}!TraySubsystem@{TraySubsystem}}
+\doxysubsubsection{\texorpdfstring{trayMotor}{trayMotor}}
+{\footnotesize\ttfamily okapi\+::\+Motor Tray\+Subsystem\+::tray\+Motor}
+
+
+
+Definition at line 47 of file Tray\+Subsystem.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/\+User/\mbox{\hyperlink{_tray_subsystem_8h}{Tray\+Subsystem.\+h}}\end{DoxyCompactItemize}

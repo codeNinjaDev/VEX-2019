@@ -1,0 +1,52 @@
+\hypertarget{struct__lv__indev__proc__t}{}\doxysection{\+\_\+lv\+\_\+indev\+\_\+proc\+\_\+t Struct Reference}
+\label{struct__lv__indev__proc__t}\index{\_lv\_indev\_proc\_t@{\_lv\_indev\_proc\_t}}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct__lv__indev__proc__t_a993ced14d531f55381346cebf8a978d8}\label{struct__lv__indev__proc__t_a993ced14d531f55381346cebf8a978d8}} 
+lv\+\_\+indev\+\_\+state\+\_\+t {\bfseries state}
+\item 
+\mbox{\Hypertarget{struct__lv__indev__proc__t_ac874a427e5509c9d4776901d32a1166c}\label{struct__lv__indev__proc__t_ac874a427e5509c9d4776901d32a1166c}} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\mbox{\Hypertarget{union__lv__indev__proc__t_1_1_0d14_a02a1751ae6846bccad1e0533fa178e31}\label{union__lv__indev__proc__t_1_1_0d14_a02a1751ae6846bccad1e0533fa178e31}} 
+\>struct \{\\
+\>\>\mbox{\hyperlink{structlv__point__t}{lv\_point\_t}} {\bfseries act\_point}\\
+\>\>\mbox{\hyperlink{structlv__point__t}{lv\_point\_t}} {\bfseries last\_point}\\
+\>\>\mbox{\hyperlink{structlv__point__t}{lv\_point\_t}} {\bfseries vect}\\
+\>\>\mbox{\hyperlink{structlv__point__t}{lv\_point\_t}} {\bfseries drag\_sum}\\
+\>\>struct \mbox{\hyperlink{struct__lv__obj__t}{\_lv\_obj\_t}} $\ast$ {\bfseries act\_obj}\\
+\>\>struct \mbox{\hyperlink{struct__lv__obj__t}{\_lv\_obj\_t}} $\ast$ {\bfseries last\_obj}\\
+\>\>uint8\_t {\bfseries drag\_range\_out}: 1\\
+\>\>uint8\_t {\bfseries drag\_in\_prog}: 1\\
+\>\>uint8\_t {\bfseries wait\_unil\_release}: 1\\
+\>\} \\
+\mbox{\Hypertarget{union__lv__indev__proc__t_1_1_0d14_a029b8681953fa3ca9da3a5a3cc21fe40}\label{union__lv__indev__proc__t_1_1_0d14_a029b8681953fa3ca9da3a5a3cc21fe40}} 
+\>struct \{\\
+\>\>lv\_indev\_state\_t {\bfseries last\_state}\\
+\>\>uint32\_t {\bfseries last\_key}\\
+\>\} \\
+\}; \\
+
+\end{tabbing}\item 
+\mbox{\Hypertarget{struct__lv__indev__proc__t_a610fbc71cd450b55c0ad5fdf38dfaf5a}\label{struct__lv__indev__proc__t_a610fbc71cd450b55c0ad5fdf38dfaf5a}} 
+uint32\+\_\+t {\bfseries pr\+\_\+timestamp}
+\item 
+\mbox{\Hypertarget{struct__lv__indev__proc__t_a943cbd9cf549902dc4cfae4fbcea181f}\label{struct__lv__indev__proc__t_a943cbd9cf549902dc4cfae4fbcea181f}} 
+uint32\+\_\+t {\bfseries longpr\+\_\+rep\+\_\+timestamp}
+\item 
+\mbox{\Hypertarget{struct__lv__indev__proc__t_a69c492deb716c6f9e9ce7bd1e691c19d}\label{struct__lv__indev__proc__t_a69c492deb716c6f9e9ce7bd1e691c19d}} 
+uint8\+\_\+t {\bfseries long\+\_\+pr\+\_\+sent}\+: 1
+\item 
+\mbox{\Hypertarget{struct__lv__indev__proc__t_ab7a4b61acd0befd72fd772d2e51704f5}\label{struct__lv__indev__proc__t_ab7a4b61acd0befd72fd772d2e51704f5}} 
+uint8\+\_\+t {\bfseries reset\+\_\+query}\+: 1
+\item 
+\mbox{\Hypertarget{struct__lv__indev__proc__t_af72a80aed5ad581416e5c33dfe3e93f8}\label{struct__lv__indev__proc__t_af72a80aed5ad581416e5c33dfe3e93f8}} 
+uint8\+\_\+t {\bfseries disabled}\+: 1
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/display/lv\+\_\+hal/lv\+\_\+hal\+\_\+indev.\+h\end{DoxyCompactItemize}

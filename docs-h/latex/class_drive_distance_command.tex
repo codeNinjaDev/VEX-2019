@@ -1,0 +1,93 @@
+\hypertarget{class_drive_distance_command}{}\doxysection{Drive\+Distance\+Command Class Reference}
+\label{class_drive_distance_command}\index{DriveDistanceCommand@{DriveDistanceCommand}}
+
+
+{\ttfamily \#include $<$Drive\+Distance\+Command.\+h$>$}
+
+Inheritance diagram for Drive\+Distance\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_drive_distance_command}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_drive_distance_command_a9994442e31f5444dcfd71a0b5bb83eda}{Drive\+Distance\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_drive_subsystem}{Drive\+Subsystem}} $>$ drive, double distance, double max\+Speed, double timeout)
+\item 
+void \mbox{\hyperlink{class_drive_distance_command_a62696b4d5758471b3b919a1cf65d7fe1}{start}} ()
+\item 
+void \mbox{\hyperlink{class_drive_distance_command_a76eaca8946e2b48411d0e18148604d77}{update}} ()
+\item 
+bool \mbox{\hyperlink{class_drive_distance_command_ae0333a1a4499bdbdec3483ca9c62cd9d}{is\+Finished}} ()
+\item 
+void \mbox{\hyperlink{class_drive_distance_command_a9f323b1c969402f42443b3c59d727428}{finish}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 13 of file Drive\+Distance\+Command.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_drive_distance_command_a9994442e31f5444dcfd71a0b5bb83eda}\label{class_drive_distance_command_a9994442e31f5444dcfd71a0b5bb83eda}} 
+\index{DriveDistanceCommand@{DriveDistanceCommand}!DriveDistanceCommand@{DriveDistanceCommand}}
+\index{DriveDistanceCommand@{DriveDistanceCommand}!DriveDistanceCommand@{DriveDistanceCommand}}
+\doxysubsubsection{\texorpdfstring{DriveDistanceCommand()}{DriveDistanceCommand()}}
+{\footnotesize\ttfamily Drive\+Distance\+Command\+::\+Drive\+Distance\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_drive_subsystem}{Drive\+Subsystem}} $>$}]{drive,  }\item[{double}]{distance,  }\item[{double}]{max\+Speed,  }\item[{double}]{timeout }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_drive_distance_command_a9f323b1c969402f42443b3c59d727428}\label{class_drive_distance_command_a9f323b1c969402f42443b3c59d727428}} 
+\index{DriveDistanceCommand@{DriveDistanceCommand}!finish@{finish}}
+\index{finish@{finish}!DriveDistanceCommand@{DriveDistanceCommand}}
+\doxysubsubsection{\texorpdfstring{finish()}{finish()}}
+{\footnotesize\ttfamily void Drive\+Distance\+Command\+::finish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that runs after the while loop and only once. Normally wraps up a command and gets the robot ready to transition to a new command. 
+
+Implements \mbox{\hyperlink{class_command_affcda825b758dbb11c2cb036913d4c90}{Command}}.
+
+\mbox{\Hypertarget{class_drive_distance_command_ae0333a1a4499bdbdec3483ca9c62cd9d}\label{class_drive_distance_command_ae0333a1a4499bdbdec3483ca9c62cd9d}} 
+\index{DriveDistanceCommand@{DriveDistanceCommand}!isFinished@{isFinished}}
+\index{isFinished@{isFinished}!DriveDistanceCommand@{DriveDistanceCommand}}
+\doxysubsubsection{\texorpdfstring{isFinished()}{isFinished()}}
+{\footnotesize\ttfamily bool Drive\+Distance\+Command\+::is\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that runs in a while loop and continously checks if the command should end. If true, ends while loop. Common use case is to check if timeout for command is exceeded \begin{DoxyReturn}{Returns}
+True if command should end, false if it should not. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_command_a9aa704d5f9d98f510a79e645701dc72a}{Command}}.
+
+\mbox{\Hypertarget{class_drive_distance_command_a62696b4d5758471b3b919a1cf65d7fe1}\label{class_drive_distance_command_a62696b4d5758471b3b919a1cf65d7fe1}} 
+\index{DriveDistanceCommand@{DriveDistanceCommand}!start@{start}}
+\index{start@{start}!DriveDistanceCommand@{DriveDistanceCommand}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Drive\+Distance\+Command\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that is called before the while loop only once. Common use case is to setup the command. 
+
+Implements \mbox{\hyperlink{class_command_a2ca7d162253b520e8a0f9325051eea61}{Command}}.
+
+\mbox{\Hypertarget{class_drive_distance_command_a76eaca8946e2b48411d0e18148604d77}\label{class_drive_distance_command_a76eaca8946e2b48411d0e18148604d77}} 
+\index{DriveDistanceCommand@{DriveDistanceCommand}!update@{update}}
+\index{update@{update}!DriveDistanceCommand@{DriveDistanceCommand}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Drive\+Distance\+Command\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract function that is run in a while loop until {\itshape \mbox{\hyperlink{class_drive_distance_command_ae0333a1a4499bdbdec3483ca9c62cd9d}{is\+Finished()}}} returns true and contains the meat of the command, such as running motors. 
+
+Implements \mbox{\hyperlink{class_command_a59432e50c228dc1a27302af0219656d9}{Command}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/\+User/\mbox{\hyperlink{_drive_distance_command_8h}{Drive\+Distance\+Command.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,116 @@
+\hypertarget{classokapi_1_1_a_d_i_gyro}{}\doxysection{okapi\+::A\+D\+I\+Gyro Class Reference}
+\label{classokapi_1_1_a_d_i_gyro}\index{okapi::ADIGyro@{okapi::ADIGyro}}
+Inheritance diagram for okapi\+::A\+D\+I\+Gyro\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classokapi_1_1_a_d_i_gyro}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classokapi_1_1_a_d_i_gyro_a04db661121327089b43d82f9aa21e168}{A\+D\+I\+Gyro}} (std\+::uint8\+\_\+t iport, double imultiplier=1)
+\item 
+double \mbox{\hyperlink{classokapi_1_1_a_d_i_gyro_a3a4a0a319c723091aad0b2125d701ca4}{get}} () const override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_a_d_i_gyro_a5fa8fa3653e8c2eeff81a56b80e79f7c}{get\+Remapped}} (double iupper\+Bound=1800, double ilower\+Bound=-\/1800) const \mbox{\hyperlink{vision_8h_ae55a6efc231c3cf6ab009c08ae920a8b}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}}((optimize(3)))
+\item 
+std\+::int32\+\_\+t \mbox{\hyperlink{classokapi_1_1_a_d_i_gyro_a316eec0bf6008c50fea6d1a621fd2e87}{reset}} () override
+\item 
+double \mbox{\hyperlink{classokapi_1_1_a_d_i_gyro_ad6a8ed104c8383a64c984ceb1147bca4}{controller\+Get}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classokapi_1_1_a_d_i_gyro_ac6182d37266811b38b8745aef7d0de0d}\label{classokapi_1_1_a_d_i_gyro_ac6182d37266811b38b8745aef7d0de0d}} 
+\mbox{\hyperlink{classpros_1_1_a_d_i_gyro}{pros\+::\+A\+D\+I\+Gyro}} {\bfseries gyro}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classokapi_1_1_a_d_i_gyro_a04db661121327089b43d82f9aa21e168}\label{classokapi_1_1_a_d_i_gyro_a04db661121327089b43d82f9aa21e168}} 
+\index{okapi::ADIGyro@{okapi::ADIGyro}!ADIGyro@{ADIGyro}}
+\index{ADIGyro@{ADIGyro}!okapi::ADIGyro@{okapi::ADIGyro}}
+\doxysubsubsection{\texorpdfstring{ADIGyro()}{ADIGyro()}}
+{\footnotesize\ttfamily okapi\+::\+A\+D\+I\+Gyro\+::\+A\+D\+I\+Gyro (\begin{DoxyParamCaption}\item[{std\+::uint8\+\_\+t}]{iport,  }\item[{double}]{imultiplier = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+A gyroscope on the given A\+DI port. If the port has not previously been configured as a gyro, then the constructor will block for 1 second for calibration. The gyro measures in tenths of a degree, so there are 3600 measurement points per revolution.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iport} & the A\+DI port number \\
+\hline
+{\em imultiplier} & a value multiplied by the gyro heading value \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classokapi_1_1_a_d_i_gyro_ad6a8ed104c8383a64c984ceb1147bca4}\label{classokapi_1_1_a_d_i_gyro_ad6a8ed104c8383a64c984ceb1147bca4}} 
+\index{okapi::ADIGyro@{okapi::ADIGyro}!controllerGet@{controllerGet}}
+\index{controllerGet@{controllerGet}!okapi::ADIGyro@{okapi::ADIGyro}}
+\doxysubsubsection{\texorpdfstring{controllerGet()}{controllerGet()}}
+{\footnotesize\ttfamily double okapi\+::\+A\+D\+I\+Gyro\+::controller\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the sensor value for use in a control loop. This method might be automatically called in another thread by the controller.
+
+\begin{DoxyReturn}{Returns}
+the current sensor value, or {\ttfamily P\+R\+O\+S\+\_\+\+E\+RR} on a failure. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_controller_input_a3c6c86d897983f367928a93890551e17}{okapi\+::\+Controller\+Input$<$ double $>$}}.
+
+\mbox{\Hypertarget{classokapi_1_1_a_d_i_gyro_a3a4a0a319c723091aad0b2125d701ca4}\label{classokapi_1_1_a_d_i_gyro_a3a4a0a319c723091aad0b2125d701ca4}} 
+\index{okapi::ADIGyro@{okapi::ADIGyro}!get@{get}}
+\index{get@{get}!okapi::ADIGyro@{okapi::ADIGyro}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily double okapi\+::\+A\+D\+I\+Gyro\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the current sensor value.
+
+\begin{DoxyReturn}{Returns}
+the current sensor value, or {\ttfamily P\+R\+O\+S\+\_\+\+E\+RR} on a failure. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_rotary_sensor_ac5534dc6c3bcbd8ea2f4e54a04cda734}{okapi\+::\+Rotary\+Sensor}}.
+
+\mbox{\Hypertarget{classokapi_1_1_a_d_i_gyro_a5fa8fa3653e8c2eeff81a56b80e79f7c}\label{classokapi_1_1_a_d_i_gyro_a5fa8fa3653e8c2eeff81a56b80e79f7c}} 
+\index{okapi::ADIGyro@{okapi::ADIGyro}!getRemapped@{getRemapped}}
+\index{getRemapped@{getRemapped}!okapi::ADIGyro@{okapi::ADIGyro}}
+\doxysubsubsection{\texorpdfstring{getRemapped()}{getRemapped()}}
+{\footnotesize\ttfamily double okapi\+::\+A\+D\+I\+Gyro\+::get\+Remapped (\begin{DoxyParamCaption}\item[{double}]{iupper\+Bound = {\ttfamily 1800},  }\item[{double}]{ilower\+Bound = {\ttfamily -\/1800} }\end{DoxyParamCaption}) const}
+
+Get the current sensor value remapped into the target range (\mbox{[}1800, -\/1800\mbox{]} by default).
+
+
+\begin{DoxyParams}{Parameters}
+{\em iupper\+Bound} & the upper bound of the range. \\
+\hline
+{\em ilower\+Bound} & the lower bound of the range. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the remapped sensor value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classokapi_1_1_a_d_i_gyro_a316eec0bf6008c50fea6d1a621fd2e87}\label{classokapi_1_1_a_d_i_gyro_a316eec0bf6008c50fea6d1a621fd2e87}} 
+\index{okapi::ADIGyro@{okapi::ADIGyro}!reset@{reset}}
+\index{reset@{reset}!okapi::ADIGyro@{okapi::ADIGyro}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily std\+::int32\+\_\+t okapi\+::\+A\+D\+I\+Gyro\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Reset the sensor to zero.
+
+\begin{DoxyReturn}{Returns}
+1 on success, P\+R\+O\+S\+\_\+\+E\+RR on fail 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classokapi_1_1_continuous_rotary_sensor_ae7268b0603097ac2d93a67e4fefa43e0}{okapi\+::\+Continuous\+Rotary\+Sensor}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kidco/\+V\+E\+X-\/2019/include/okapi/impl/device/rotarysensor/adi\+Gyro.\+hpp\end{DoxyCompactItemize}
