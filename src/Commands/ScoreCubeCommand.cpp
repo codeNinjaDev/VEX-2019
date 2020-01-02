@@ -23,6 +23,6 @@ bool ScoreCubeCommand::isFinished() {
 }
 
 void ScoreCubeCommand::finish() {
-  tray->scoreTower(TraySubsystem::TowerPosition::kTray, 50);
+  tray->scoreTower(TraySubsystem::TowerPosition::kIntake, 50);
   tray->stop();
 }

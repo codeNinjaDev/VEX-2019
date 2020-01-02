@@ -1,4 +1,4 @@
-#include "User/DriveTurnCommand.h"
+#include "User/DriveToPointCommand.h"
 #include <cmath>
 #include <math.h>
 
@@ -12,7 +12,7 @@ DriveToPointCommand::DriveToPointCommand(std::shared_ptr<DriveSubsystem> drive, 
 }
 
 void DriveToPointCommand::start() {
-  drive->driveTrain->getModel()->setMaxVelocity(maxSpeed);
+  drive->driveTrain->getModel()->setMaxVelocity(80);
   drive->driveTrain->driveToPoint({forwardCoord, sideCoord});
   drive->driveTrain->turnToAngle(finalHeading);
 
