@@ -30,17 +30,17 @@ public:
 	 * Positions of the Intake Arm
 	 */
 	enum TowerPosition {
-		kIntake = 0, kLowTower = 400, kMidTower = 500
+		kIntake = 0, kLowTower = 307, kMidTower = 400
 	};
 
 	/**
 	 * Positions of the Intake Arm
 	 */
 	enum TrayPosition {
-		kSlant = 0, kStack = 580, kPartialStack = 550, kRealeaseTray = 175
+		kSlant = 0, kStack = 800
 	};
 
-	void moveTray(TrayPosition position, double targetVelocity);
+	void moveTray(TrayPosition position, double targetVelocity, bool ramp);
 	void scoreTower(TowerPosition position, double targetVelocity);
 	void intakeCube();
 	void outtakeCube(double targetVelocity);

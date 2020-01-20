@@ -13,7 +13,7 @@
 class DriveToPointCommand : public Command {
 public:
 
-	DriveToPointCommand(std::shared_ptr<DriveSubsystem> drive, okapi::QLength forwardCoord, okapi::QLength sideCoord, okapi::QAngle finalHeading);
+	DriveToPointCommand(std::shared_ptr<DriveSubsystem> drive, okapi::QLength forwardCoord, okapi::QLength sideCoord, okapi::QAngle finalHeading, bool reverse);
 
 	void start();
 	void update();
@@ -24,7 +24,7 @@ private:
   std::shared_ptr<DriveSubsystem> drive;
   okapi::QLength forwardCoord, sideCoord;
   okapi::QAngle finalHeading;
-
+	bool reverse;
 
 };
 

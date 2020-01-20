@@ -16,36 +16,43 @@ TraySubsystem::TraySubsystem(okapi::Controller iDriverController, okapi::Control
   , scoreStackButton(okapi::ControllerId::master, okapi::ControllerDigital::L2)
   , lowTowerButton(okapi::ControllerId::partner, okapi::ControllerDigital::L2)
   , midTowerButton(okapi::ControllerId::partner, okapi::ControllerDigital::L1)
-  , intakePosButton(okapi::ControllerId::partner, okapi::ControllerDigital::B)
+  , intakePosButton(okapi::ControllerId::partner, okapi::ControllerDigital::A)
   , toggleManualTowerButton(okapi::ControllerId::partner, okapi::ControllerDigital::X)
   , manualUpButton(okapi::ControllerId::partner, okapi::ControllerDigital::up)
   , manualDownButton(okapi::ControllerId::partner, okapi::ControllerDigital::down)
 {
 
 
+  trayMotor.tarePosition();
   trayMotor.setGearing(okapi::AbstractMotor::gearset::red);
   trayMotor.setEncoderUnits(okapi::AbstractMotor::encoderUnits::degrees);
   trayMotor.setBrakeMode(okapi::AbstractMotor::brakeMode::hold);
   //trayMotor.setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
-
   cubeScorer.setGearing(okapi::AbstractMotor::gearset::red);
   cubeScorer.setEncoderUnits(okapi::AbstractMotor::encoderUnits::degrees);
   cubeScorer.setBrakeMode(okapi::AbstractMotor::brakeMode::hold);
   intakeMotors.setBrakeMode(okapi::AbstractMotor::brakeMode::hold);
   intakeMotors.setGearing(okapi::AbstractMotor::gearset::green);
   intakeMotors.setEncoderUnits(okapi::AbstractMotor::encoderUnits::rotations);
+  cubeScorer.tarePosition();
 
   towerToggles = 0;
   toggleManualTower = false;
   // Set current state to initialize state
   m_stateVal = RobotState::kInitialize;
-
+  stackTrayToggle = false;
 }
 
-void TraySubsystem::moveTray(TrayPosition position, double targetVelocity) {
+void TraySubsystem::moveTray(TrayPosition position, double targetVelocity, bool ramp) {
   double currPosition = trayMotor.getPosition();
-  trayMotor.moveAbsolute((double) position, abs(targetVelocity - (90/(double) position)*currPosition));
+  double velocity = targetVelocity;
 
+  if(ramp) {
+    if(abs(currPosition / (double) position) > 0.6) {
+      velocity *= 0.3;
+    }
+  }
+  trayMotor.moveAbsolute(position, velocity);
 }
 
 void TraySubsystem::scoreTower(TowerPosition position, double targetVelocity) {
@@ -84,6 +91,8 @@ void TraySubsystem::update() {
     case RobotState::kInitialize:
 
       nextState = RobotState::kTeleopDrive;
+      cubeScorer.tarePosition();
+
       break;
 
     case RobotState::kTeleopDrive:
@@ -100,20 +109,19 @@ void TraySubsystem::update() {
 
       // Operator functions
 
-      // Tray functions
-      if (scoreStackButton.changedToPressed()) {
-        stackTrayToggle = !stackTrayToggle;
-      }
-
       if (toggleManualTowerButton.changedToPressed()) {
         toggleManualTower = !toggleManualTower;
         operatorController.rumble(".-.");
       }
 
+      if(scoreStackButton.changedToPressed()) {
+        stackTrayToggle = !stackTrayToggle;
+      }
+
       if(stackTrayToggle) {
-        moveTray(TrayPosition::kStack, 100);
+        moveTray(TrayPosition::kStack, 100, true);
       } else {
-        moveTray(TrayPosition::kSlant, 100);
+        moveTray(TrayPosition::kSlant, 100, false);
       }
 
       if(midTowerButton.changedToPressed()) {

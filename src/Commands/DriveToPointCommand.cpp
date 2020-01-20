@@ -2,18 +2,21 @@
 #include <cmath>
 #include <math.h>
 
-DriveToPointCommand::DriveToPointCommand(std::shared_ptr<DriveSubsystem> drive, okapi::QLength forwardCoord, okapi::QLength sideCoord, okapi::QAngle finalHeading) : drive(drive)
+DriveToPointCommand::DriveToPointCommand(std::shared_ptr<DriveSubsystem> drive, okapi::QLength forwardCoord, okapi::QLength sideCoord, okapi::QAngle finalHeading, bool reverse) : drive(drive)
 {
 
   drive->stop();
   this->forwardCoord = forwardCoord;
   this->sideCoord = sideCoord;
   this->finalHeading = finalHeading;
+  this->reverse = reverse;
 }
 
 void DriveToPointCommand::start() {
-  drive->driveTrain->getModel()->setMaxVelocity(80);
-  drive->driveTrain->driveToPoint({forwardCoord, sideCoord});
+  
+
+  drive->driveTrain->driveToPoint({forwardCoord, sideCoord}, reverse);
+
   drive->driveTrain->turnToAngle(finalHeading);
 
 }

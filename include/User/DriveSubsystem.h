@@ -55,6 +55,8 @@ public:
 	void followPath(std::string pathName, bool backwards, bool waitTilSettled);
 	void adjustPath(std::initializer_list<okapi::Point> pathPoints);
 	bool isPathCompleted();
+
+	void setBrakeMode(okapi::AbstractMotor::brakeMode brake);
 	okapi::Motor backLeftDriveMotor, backRightDriveMotor, frontLeftDriveMotor, frontRightDriveMotor;
 	okapi::MotorGroup leftMotors, rightMotors;
 

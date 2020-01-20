@@ -10,12 +10,12 @@ MoveTrayCommand::MoveTrayCommand(std::shared_ptr<TraySubsystem> tray, TraySubsys
 }
 
 void MoveTrayCommand::start() {
-  
+  tray->moveTray(position, maxSpeed,true);
+
 }
 
 void MoveTrayCommand::update() {
-  double currPosition = tray->trayMotor.getPosition();
-  tray->moveTray(position, maxSpeed - (90/(double) position)*currPosition);
+  tray->moveTray(position, maxSpeed,true);
 
 }
 

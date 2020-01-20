@@ -11,7 +11,7 @@ DriveSubsystem::DriveSubsystem(okapi::Controller iDriverController) : driverCont
   , frontRightDriveMotor(-FRONT_RIGHT_MOTOR_PORT)
   , leftMotors({backLeftDriveMotor, frontLeftDriveMotor})
   , rightMotors({backRightDriveMotor, frontRightDriveMotor})
-  , driveTrain(okapi::ChassisControllerBuilder().withMotors(leftMotors, rightMotors).withDimensions(okapi::AbstractMotor::gearset::green, {{4_in, 11.5_in}, okapi::imev5GreenTPR}).withOdometry().buildOdometry()) // use the same scales as the chassis (above)
+  , driveTrain(okapi::ChassisControllerBuilder().withMotors(leftMotors, rightMotors).withDimensions(okapi::AbstractMotor::gearset::green, {{4_in, 10_in}, okapi::imev5GreenTPR}).withOdometry().buildOdometry()) // use the same scales as the chassis (above)
      // build an odometry chassis) // build an odometry chassis
     , SlowDown1(okapi::ControllerId::master, okapi::ControllerDigital::R2)
     , toggleDriveButton(okapi::ControllerId::master, okapi::ControllerDigital::right)
@@ -29,6 +29,7 @@ DriveSubsystem::DriveSubsystem(okapi::Controller iDriverController) : driverCont
 
 
 void DriveSubsystem::initialize() {
+  driveTrain->setState({0_in, 0_in, 0_deg});
   reset();
 }
 
@@ -54,7 +55,9 @@ void DriveSubsystem::update() {
        run the initialize function and set the next state to be teleop
        */
       initialize();
-      driveTrain->getModel()->setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
+
+      setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
+
 
       nextState = DriveState::kTeleopDrive;
       break;
@@ -85,13 +88,8 @@ void DriveSubsystem::update() {
           , driverController.getAnalog(okapi::ControllerAnalog::rightY)
           , true);
       }
-      okapi::AbstractMotor::brakeMode currBrake = leftMotors.getBrakeMode();
-      
-      if(toggleDefense) {
-        driveTrain->getModel()->setBrakeMode(okapi::AbstractMotor::brakeMode::hold);
-      } else {
-        driveTrain->getModel()->setBrakeMode(currBrake);
-      }
+
+
 
       break;
   }
@@ -105,17 +103,23 @@ void DriveSubsystem::arcadeDrive(double forward, double rotate, bool teleOp) {
   double multiplier = 1;
 
   if (SlowDown1.isPressed()) {
-    multiplier = 0.75;
-    driveTrain->getModel()->setBrakeMode(okapi::AbstractMotor::brakeMode::brake);
+    multiplier = 0.55;
+    setBrakeMode(okapi::AbstractMotor::brakeMode::brake);
   } else {
     multiplier = 1;
-    driveTrain->getModel()->setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
+    setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
 
   }
 
   double left = forward + rotate;
   double right = forward - rotate;
+  okapi::AbstractMotor::brakeMode currBrake = leftMotors.getBrakeMode();
 
+  if(toggleDefense) {
+    setBrakeMode(okapi::AbstractMotor::brakeMode::hold);
+  } else {
+    setBrakeMode(currBrake);
+  }
   if (teleOp) {
     // Square the joystick inputs, but keep the orignal sign
     driveTrain->getModel()->arcade(squareInput(forward) * multiplier, squareInput(rotate) * multiplier);
@@ -129,13 +133,20 @@ void DriveSubsystem::tankDrive(double myLeft, double myRight, bool teleOp) {
 
   double multiplier = 1;
   if (SlowDown1.isPressed()) {
-    multiplier = 0.75;
-    driveTrain->getModel()->setBrakeMode(okapi::AbstractMotor::brakeMode::brake);
+    multiplier = 0.55;
+    setBrakeMode(okapi::AbstractMotor::brakeMode::brake);
   } else {
     multiplier = 1;
-    driveTrain->getModel()->setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
-  }
+    setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
 
+  }
+  okapi::AbstractMotor::brakeMode currBrake = leftMotors.getBrakeMode();
+
+  if(toggleDefense) {
+    setBrakeMode(okapi::AbstractMotor::brakeMode::hold);
+  } else {
+    setBrakeMode(currBrake);
+  }
   if (teleOp) {
     driveTrain->getModel()->tank((squareInput(myLeft) * multiplier), (squareInput(myRight) * multiplier));
   } else {
@@ -171,4 +182,11 @@ void DriveSubsystem::moveInchesAsync(double inches) {
 void DriveSubsystem::turnAngleAsync(double angle) {
   reset();
   driveTrain->turnAngleAsync(angle * okapi::degree);
+}
+
+void DriveSubsystem::setBrakeMode(okapi::AbstractMotor::brakeMode brake) {
+  frontLeftDriveMotor.setBrakeMode(brake);
+  frontRightDriveMotor.setBrakeMode(brake);
+  backLeftDriveMotor.setBrakeMode(brake);
+  backRightDriveMotor.setBrakeMode(brake);
 }
