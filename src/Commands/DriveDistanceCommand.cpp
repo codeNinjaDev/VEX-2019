@@ -12,7 +12,7 @@ DriveDistanceCommand::DriveDistanceCommand(std::shared_ptr<DriveSubsystem> drive
 
 void DriveDistanceCommand::start() {
   this->startTime = (timer.millis().getValue() / 1000);
-  drive->driveTrain->getModel()->setMaxVelocity(maxSpeed);
+  drive->driveTrain->setMaxVelocity(maxSpeed);
   drive->moveInchesAsync(distance);
 
 }

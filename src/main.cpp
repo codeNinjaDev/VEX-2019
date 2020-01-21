@@ -62,26 +62,37 @@ void autonomous() {
       }
       break;
     case SMALL_RED:
+      tray->trayMotor.tarePosition();
       drive->initialize();
+      drive->leftMotors.tarePosition();
+      drive->rightMotors.tarePosition();
+      drive->driveTrain->setState({0_in, 0_in, 0_deg});
       //CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kSlant, 100), 1);
       tray->intakeCube();
-      drive->driveTrain->setMaxVelocity(50);
-      drive->driveTrain->driveToPoint({12_in, 0_in});
-      drive->driveTrain->turnToAngle(-45_deg);
-      drive->driveTrain->driveToPoint({4_in, 3_in});
-      drive->driveTrain->turnToAngle(0_deg);
-      drive->driveTrain->driveToPoint({12_in, 3_in});
-      drive->driveTrain->turnToPoint({0_in, 0_in});
-      drive->driveTrain->driveToPoint({0_in, 0_in});
+      drive->driveTrain->setMaxVelocity(60);
+      drive->driveTrain->driveToPoint({0.4_m, 0_m});
+      drive->driveTrain->turnAngle(-15_deg);
       tray->outtakeCube(0);
-      CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kStack, 100), 2);
-
-
+      drive->driveTrain->setMaxVelocity(100);
+      drive->driveTrain->moveDistance(-15_in);
+      drive->driveTrain->setMaxVelocity(75);
+      tray->intakeCube();
+      drive->driveTrain->turnToAngle(1.92_deg);
+      drive->driveTrain->driveToPoint({0.4_m, 0.1_m});
       tray->outtakeCube(0);
+      drive->driveTrain->turnAngle({64.6_deg});
+      drive->driveTrain->setMaxVelocity(100);
+      drive->driveTrain->moveDistance(15.3_in);
+
+      tray->trayMotor.moveRelative((double) TraySubsystem::TrayPosition::kStack, 75);
       pros::delay(1000);
-      pros::delay(1000);
+      tray->outtakeCube(0);
+
 
       CommandRunner::runCommand(new DriveDistanceCommand(drive, -4, 40), 1);
+      tray->trayMotor.moveRelative(-(double) TraySubsystem::TrayPosition::kStack, 100);
+      pros::delay(2000);
+      tray->trayMotor.moveVelocity(0);
       break;
     case SMALL_RED_MANUAL:
       tray->intakeCube();
@@ -93,7 +104,7 @@ void autonomous() {
       CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kStack, 60), 2);
 
       CommandRunner::runCommand(new DriveDistanceCommand(drive, -12, 40), 1.5);
-      CommandRunner::runCommand(new DriveDistanceCommand(drive, 15, 40), 1.5);
+      CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kSlant, 60), 2);
 
       break;
     case ONE_CUBE_AUTO:
