@@ -13,7 +13,7 @@ DriveToPointCommand::DriveToPointCommand(std::shared_ptr<DriveSubsystem> drive, 
 }
 
 void DriveToPointCommand::start() {
-  
+
 
   drive->driveTrain->driveToPoint({forwardCoord, sideCoord}, reverse);
 

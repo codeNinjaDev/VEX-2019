@@ -42,7 +42,7 @@ void DriveSubsystem::reset() {
 
 void DriveSubsystem::stop() {
   driveTrain->stop();
-  driveTrain->getModel()->setMaxVelocity(200);
+  driveTrain->setMaxVelocity(200);
 
 }
 
@@ -151,6 +151,7 @@ void DriveSubsystem::tankDrive(double myLeft, double myRight, bool teleOp) {
     driveTrain->getModel()->tank((squareInput(myLeft) * multiplier), (squareInput(myRight) * multiplier));
   } else {
     driveTrain->getModel()->tank(myLeft * multiplier, myRight * multiplier);
+
 
   }
 
