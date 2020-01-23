@@ -12,7 +12,7 @@ const int BACK_RIGHT_MOTOR_PORT = 20;
 
 const int TRAY_MOTOR_PORT = 11;
 
-const int LEFT_INTAKE_MOTOR_PORT = 14;
+const int LEFT_INTAKE_MOTOR_PORT = 15;
 const int RIGHT_INTAKE_MOTOR_PORT = 19;
 
 const int ARM_MOTOR_PORT = 9;
@@ -37,17 +37,18 @@ const okapi::QLength WHEELBASE_WIDTH = 10_in;
 const bool ARCADE_DRIVE = true;
 
 // AUTONOMOUS ROUTINES
-
+const int IMU_PORT = 2;
 const int DO_NOTHING_AUTO = 0;
-const int SMALL_RED = 1;
+const int SMALL_RED_8_CUBE = 1;
 const int SMALL_BLUE = 2;
-const int LARGE_RED = 3;
-const int LARGE_BLUE = 4;
+const int LARGE_RED_4 = 3;
+const int LARGE_BLUE_4 = 4;
 const int SKILLS_RUN = 5;
 const int DRIVE_FORWARD_AUTO = 6;
 const int ONE_CUBE_AUTO = 7;
 const int SMALL_RED_MANUAL = 8;
-
+const int SMALL_RED_6 = 9;
+const int SMALL_BLUE_6 = 10;
 
 
 

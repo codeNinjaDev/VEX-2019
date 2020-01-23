@@ -15,7 +15,6 @@ void MoveTrayCommand::start() {
 }
 
 void MoveTrayCommand::update() {
-  tray->moveTray(position, maxSpeed,true);
 
 }
 

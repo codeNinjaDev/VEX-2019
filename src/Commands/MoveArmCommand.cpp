@@ -10,11 +10,11 @@ MoveArmCommand::MoveArmCommand(std::shared_ptr<TraySubsystem> tray, TraySubsyste
 }
 
 void MoveArmCommand::start() {
+  tray->scoreTower(position, maxSpeed);
 
 }
 
 void MoveArmCommand::update() {
-  tray->scoreTower(position, maxSpeed);
 
 }
 

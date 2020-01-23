@@ -20,6 +20,8 @@ TraySubsystem::TraySubsystem(okapi::Controller iDriverController, okapi::Control
   , toggleManualTowerButton(okapi::ControllerId::partner, okapi::ControllerDigital::X)
   , manualUpButton(okapi::ControllerId::partner, okapi::ControllerDigital::up)
   , manualDownButton(okapi::ControllerId::partner, okapi::ControllerDigital::down)
+  , trayDownButton(okapi::ControllerId::master, okapi::ControllerDigital::down)
+  , resetTrayButton(okapi::ControllerId::master, okapi::ControllerDigital::up)
 {
 
 
@@ -118,7 +120,14 @@ void TraySubsystem::update() {
         stackTrayToggle = !stackTrayToggle;
       }
 
-      if(stackTrayToggle) {
+      if(resetTrayButton.isPressed()) {
+        trayMotor.tarePosition();
+      }
+      if(trayDownButton.isPressed()) {
+        trayMotor.moveVelocity(-30);
+        trayMotor.tarePosition();
+
+      } else if(stackTrayToggle) {
         moveTray(TrayPosition::kStack, 100, true);
       } else {
         moveTray(TrayPosition::kSlant, 100, false);
@@ -134,9 +143,9 @@ void TraySubsystem::update() {
 
       if(toggleManualTower) {
         if(manualUpButton.isPressed()) {
-          cubeScorer.moveVelocity(50);
+          cubeScorer.moveVelocity(75);
         } else if(manualDownButton.isPressed()) {
-          cubeScorer.moveVelocity(-50);
+          cubeScorer.moveVelocity(-75);
         } else {
           cubeScorer.moveVelocity(0);
         }

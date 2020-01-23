@@ -50,6 +50,8 @@ public:
 	void turnDegreesAsync(double degrees);
 	void turnAngleAsync(double angle);
 
+	void resetGyro();
+	double getHeading();
 
 	void generatePath(std::initializer_list<okapi::Point> pathPoints, std::string pathName);
 	void followPath(std::string pathName, bool backwards, bool waitTilSettled);
@@ -59,7 +61,7 @@ public:
 	void setBrakeMode(okapi::AbstractMotor::brakeMode brake);
 	okapi::Motor backLeftDriveMotor, backRightDriveMotor, frontLeftDriveMotor, frontRightDriveMotor;
 	okapi::MotorGroup leftMotors, rightMotors;
-
+	pros::Imu gyro;
 	std::shared_ptr<okapi::OdomChassisController> driveTrain;
 	/**
 	 * State of the Subsystem

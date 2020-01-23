@@ -30,7 +30,7 @@ public:
 	 * Positions of the Intake Arm
 	 */
 	enum TowerPosition {
-		kIntake = 0, kLowTower = 307, kMidTower = 400
+		kIntake = 0, kLowTower = 307, kMidTower = 425
 	};
 
 	/**
@@ -64,7 +64,7 @@ private:
 	okapi::ControllerButton intakeRollersButton, outtakeRollersButton;
 
 	// Operator Buttons
-	okapi::ControllerButton scoreStackButton, lowTowerButton, midTowerButton, intakePosButton, manualUpButton, manualDownButton, toggleManualTowerButton;
+	okapi::ControllerButton scoreStackButton, lowTowerButton, midTowerButton, intakePosButton, manualUpButton, manualDownButton, toggleManualTowerButton, trayDownButton, resetTrayButton;
 	int towerToggles;
 	//toggles
 	bool stackTrayToggle, toggleManualTower;

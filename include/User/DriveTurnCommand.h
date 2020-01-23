@@ -15,7 +15,7 @@
 class DriveTurnCommand : public Command {
 public:
 
-	DriveTurnCommand(std::shared_ptr<DriveSubsystem> drive, double angle, double maxSpeed);
+	DriveTurnCommand(std::shared_ptr<DriveSubsystem> drive, double angle, double kP, bool absolute,double maxSpeed);
 
 	void start();
 	void update();
@@ -24,7 +24,7 @@ public:
 
 private:
 	std::shared_ptr<DriveSubsystem> drive;
-	double maxSpeed, angle;
+	double maxSpeed, angle, kP, offset;
 };
 
 #endif /* COMMAND_H_ */
