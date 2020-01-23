@@ -2,26 +2,34 @@
 #include <cmath>
 #include <math.h>
 
-DriveTurnCommand::DriveTurnCommand(std::shared_ptr<DriveSubsystem> drive, double angle, double maxSpeed) : drive(drive)
+DriveTurnCommand::DriveTurnCommand(std::shared_ptr<DriveSubsystem> drive, double angle, double kP, bool absolute, double maxSpeed) : drive(drive)
 {
 
   drive->stop();
-  this->angle = angle;
+  this->offset = drive->getHeading();
+  if (absolute)
+    this->angle = angle;
+  else
+    this->angle = angle + offset;
   this->maxSpeed = maxSpeed;
 }
 
 void DriveTurnCommand::start() {
   drive->driveTrain->getModel()->setMaxVelocity(maxSpeed);
-  drive->turnAngleAsync(angle);
+
 }
 
 void DriveTurnCommand::update() {
-
+  double error = angle - drive->getHeading();
+  drive->arcadeDrive(0, kP * error, false);
 }
 
 bool DriveTurnCommand::isFinished() {
-  return drive->driveTrain->isSettled();
-;
+  double error = angle - drive->getHeading();
+  if (abs(error) < 3) {
+    return true;
+  }
+  return false;
 }
 
 void DriveTurnCommand::finish() {

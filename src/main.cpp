@@ -22,6 +22,7 @@ AutoSelector autoSelector("Do Nothing", DO_NOTHING_AUTO);
 std::shared_ptr<DriveSubsystem> drive;
 std::shared_ptr<TraySubsystem> tray;
 
+
 void initialize() {
   okapi::Logger::setDefaultLogger(
     std::make_shared<okapi::Logger>(
@@ -37,6 +38,8 @@ void initialize() {
   autoSelector.registerAuto("ONE Cube",ONE_CUBE_AUTO);
   autoSelector.registerAuto("SMALL_RED_MANUAL", SMALL_RED_MANUAL);
   autoSelector.listOptions();
+
+
 }
 
 
@@ -70,8 +73,8 @@ void autonomous() {
       //CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kSlant, 100), 1);
       tray->intakeCube();
       drive->driveTrain->setMaxVelocity(60);
-      drive->driveTrain->driveToPoint({0.4_m, 0_m});
-      drive->driveTrain->turnAngle(-15_deg);
+      drive->driveTrain->moveDistance(0.4_m);
+      CommandRunner::runCommand(new DriveTurnCommand(drive, -45, 0.5, false, 75), 1.5);
       tray->outtakeCube(0);
       drive->driveTrain->setMaxVelocity(100);
       drive->driveTrain->moveDistance(-15_in);
@@ -93,19 +96,6 @@ void autonomous() {
       tray->trayMotor.moveRelative(-(double) TraySubsystem::TrayPosition::kStack, 100);
       pros::delay(2000);
       tray->trayMotor.moveVelocity(0);
-      break;
-    case SMALL_RED_MANUAL:
-      tray->intakeCube();
-      CommandRunner::runCommand(new DriveDistanceCommand(drive, 12, 10), 1.5);
-      CommandRunner::runCommand(new DriveTurnCommand(drive, 65, 40), 1.5);
-      CommandRunner::runCommand(new DriveDistanceCommand(drive, 18, 10), 1.5);
-      tray->outtakeCube(0);
-
-      CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kStack, 60), 2);
-
-      CommandRunner::runCommand(new DriveDistanceCommand(drive, -12, 40), 1.5);
-      CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kSlant, 60), 2);
-
       break;
     case ONE_CUBE_AUTO:
       CommandRunner::runCommand(new DriveDistanceCommand(drive, -8, 40), 1);

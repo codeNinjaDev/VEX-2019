@@ -9,6 +9,7 @@ DriveSubsystem::DriveSubsystem(okapi::Controller iDriverController) : driverCont
   , backRightDriveMotor(-BACK_RIGHT_MOTOR_PORT)
   , frontLeftDriveMotor(FRONT_LEFT_MOTOR_PORT)
   , frontRightDriveMotor(-FRONT_RIGHT_MOTOR_PORT)
+  , gyro(IMU_PORT)
   , leftMotors({backLeftDriveMotor, frontLeftDriveMotor})
   , rightMotors({backRightDriveMotor, frontRightDriveMotor})
   , driveTrain(okapi::ChassisControllerBuilder().withMotors(leftMotors, rightMotors).withDimensions(okapi::AbstractMotor::gearset::green, {{4_in, 10_in}, okapi::imev5GreenTPR}).withOdometry().buildOdometry()) // use the same scales as the chassis (above)
@@ -32,6 +33,15 @@ void DriveSubsystem::initialize() {
   driveTrain->setState({0_in, 0_in, 0_deg});
   reset();
 }
+
+void DriveSubsystem::resetGyro() {
+  gyro.reset();
+}
+
+double DriveSubsystem::getHeading() {
+  return gyro.get_heading();
+}
+
 
 void DriveSubsystem::reset() {
   // Reset sensors and stop all drive motors
