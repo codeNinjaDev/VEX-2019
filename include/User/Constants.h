@@ -47,9 +47,9 @@ const int SKILLS_RUN = 5;
 const int DRIVE_FORWARD_AUTO = 6;
 const int ONE_CUBE_AUTO = 7;
 const int SMALL_RED_MANUAL = 8;
-const int SMALL_RED_6 = 9;
-const int SMALL_BLUE_6 = 10;
-
+const int SMALL_RED_5 = 9;
+const int SMALL_BLUE_5 = 10;
+const int SKILLS_6 = 11;
 
 
 // LIFT SETPOINTS

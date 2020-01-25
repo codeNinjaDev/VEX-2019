@@ -19,6 +19,9 @@ public:
 	void reset();
   void initialize();
 
+	okapi::Motor cubeScorer;
+
+
 	/**
 	 * State of the Robot
 	 */
@@ -53,7 +56,7 @@ private:
   uint32_t nextState;
 
   okapi::Controller driverController, operatorController;
-	okapi::Motor cubeScorer;
+
 
 	okapi::Motor leftIntakeMotor, rightIntakeMotor;
 	okapi::MotorGroup intakeMotors;
