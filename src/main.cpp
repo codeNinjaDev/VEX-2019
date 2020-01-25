@@ -42,8 +42,8 @@ void initialize() {
   autoSelector.registerAuto("SMALL_BLUE_5", SMALL_BLUE_5);
   autoSelector.registerAuto("LARGE_RED_4", LARGE_RED_4);
   autoSelector.registerAuto("LARGE_BLUE_4", LARGE_BLUE_4);
-  autoSelector.registerAuto("SKILLS_RUN", SKILLS_RUN);
-  autoSelector.registerAuto("SKILLS_6", SKILLS_6);
+//  autoSelector.registerAuto("SKILLS_RUN", SKILLS_RUN);
+  autoSelector.registerAuto("SKILLS_15", SKILLS_15);
   autoSelector.listOptions();
 }
 
@@ -140,12 +140,13 @@ void autonomous() {
       tray->intakeCube();
 
       drive->driveTrain->setMaxVelocity(75);
-      drive->driveTrain->driveToPoint({0.30_m, 0_m});
-      pros::delay(600);
+      drive->driveTrain->moveDistance(0.30_m);
+      pros::delay(440);
       drive->driveTrain->setMaxVelocity(45);
-      drive->driveTrain->driveToPoint({0.45_m, 0_m});
+      drive->driveTrain->moveDistance(0.16_m);
+      tray->outtakeCube(0);
       drive->driveTrain->setMaxVelocity(140);
-      drive->driveTrain->moveDistance(-10.5_in);
+      drive->driveTrain->moveDistance(-10.6_in);
       drive->driveTrain->setMaxVelocity(80);
       drive->driveTrain->turnAngle(53_deg);
       drive->driveTrain->setMaxVelocity(50);
@@ -174,12 +175,13 @@ void autonomous() {
       tray->intakeCube();
 
       drive->driveTrain->setMaxVelocity(75);
-      drive->driveTrain->driveToPoint({0.30_m, 0_m});
-      pros::delay(600);
+      drive->driveTrain->moveDistance(0.30_m);
+      pros::delay(440);
       drive->driveTrain->setMaxVelocity(45);
-      drive->driveTrain->driveToPoint({0.45_m, 0_m});
+      drive->driveTrain->moveDistance(0.16_m);
+      tray->outtakeCube(0);
       drive->driveTrain->setMaxVelocity(140);
-      drive->driveTrain->moveDistance(-10.5_in);
+      drive->driveTrain->moveDistance(-10.6_in);
       drive->driveTrain->setMaxVelocity(80);
       drive->driveTrain->turnAngle(-53_deg);
       drive->driveTrain->setMaxVelocity(50);
@@ -356,7 +358,7 @@ void autonomous() {
       drive->driveTrain->setMaxVelocity(40);
       drive->driveTrain->turnAngle(58_deg);
       drive->driveTrain->setMaxVelocity(50);
-      drive->driveTrain->moveDistance(6_in);
+      drive->driveTrain->moveDistance(5.2_in);
       tray->outtakeCube(40);
       pros::delay(500);
 
@@ -367,7 +369,7 @@ void autonomous() {
 
       drive->driveTrain->stop();
       break;
-    case SKILLS_6:
+    case SKILLS_15:
       tray->cubeScorer.tarePosition();
       tray->cubeScorer.moveAbsolute(307, 100);
       pros::delay(700);
@@ -439,16 +441,20 @@ void autonomous() {
     drive->driveTrain->setMaxVelocity(40);
     drive->driveTrain->turnAngle(58_deg);
     drive->driveTrain->setMaxVelocity(50);
-    drive->driveTrain->moveDistance(6_in);
+    drive->driveTrain->moveDistance(5.2_in);
     tray->outtakeCube(40);
     pros::delay(500);
 
     CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kStack, 75), 3);
     drive->driveTrain->setMaxVelocity(100);
     drive->driveTrain->moveDistance(-4_in);
-    CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kSlant, 150), 3);
+    CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kSlant, 100), 3);
+    tray->trayMotor.moveVelocity(0);
+    pros::delay(500);
 
-    drive->driveTrain->stop();
+    drive->driveTrain->setMaxVelocity(40);
+    drive->driveTrain->turnAngle(40_deg);
+    pros::delay(500);
     break;  }
   tray->stop();
   drive->stop();

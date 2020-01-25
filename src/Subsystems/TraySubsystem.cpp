@@ -124,7 +124,7 @@ void TraySubsystem::update() {
         trayMotor.tarePosition();
       }
       if(trayDownButton.isPressed()) {
-        trayMotor.moveVelocity(-30);
+        trayMotor.moveVelocity(-60);
         trayMotor.tarePosition();
 
       } else if(stackTrayToggle) {
