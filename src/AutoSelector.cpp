@@ -44,6 +44,7 @@ lv_obj_t * AutoSelector::createDropdown(lv_obj_t * parent, lv_coord_t x, lv_coor
     lv_obj_set_pos(dd, x, y);
     lv_obj_set_size(dd, width, height);
     lv_obj_set_free_num(dd, id);
+    lv_ddlist_set_sb_mode(dd, LV_SB_MODE_ON);
     return dd;
 }
 
