@@ -91,6 +91,7 @@ private:
 	bool toggleDrive;
 	bool toggleDefense;
 
+	double newAngle;
 };
 
 #endif

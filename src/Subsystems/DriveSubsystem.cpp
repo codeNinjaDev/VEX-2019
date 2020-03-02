@@ -34,12 +34,19 @@ void DriveSubsystem::initialize() {
   reset();
 }
 
+double normalizeAngle(double angle) {
+    double newAngle = angle;
+    while (newAngle <= -180) newAngle += 360;
+    while (newAngle > 180) newAngle -= 360;
+    return newAngle;
+}
+
 void DriveSubsystem::resetGyro() {
   gyro.reset();
 }
 
 double DriveSubsystem::getHeading() {
-  return gyro.get_heading();
+  return normalizeAngle(gyro.get_heading());
 }
 
 

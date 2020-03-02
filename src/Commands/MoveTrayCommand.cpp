@@ -10,16 +10,17 @@ MoveTrayCommand::MoveTrayCommand(std::shared_ptr<TraySubsystem> tray, TraySubsys
 }
 
 void MoveTrayCommand::start() {
-  tray->moveTray(position, maxSpeed,true);
 
 }
 
 void MoveTrayCommand::update() {
-
+  double p = 0.5;
+  double error = (double) position - tray->trayMotor.getPosition();
+  tray->trayMotor.moveVelocity(error * p);
 }
 
 bool MoveTrayCommand::isFinished() {
-  bool hitTarget = abs(tray->trayMotor.getTargetPosition() - tray->trayMotor.getPosition()) < 10;
+  bool hitTarget = abs((double) position - tray->trayMotor.getPosition()) < 10;
   return hitTarget;
 }
 
