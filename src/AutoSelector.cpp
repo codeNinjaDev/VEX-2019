@@ -14,7 +14,7 @@ void AutoSelector::registerAuto(std::string autoName, int autoNumber) {
 
 void AutoSelector::listOptions() {
   // Create the dropdown
-  autoList = createDropdown(lv_scr_act(), 100, 0, 100, 100, 2);
+  autoList = createDropdown(lv_scr_act(), 100, 0, 100, 50, 2);
   // Create a string containing all of the routine autoNames
 
   std::string options = "";
