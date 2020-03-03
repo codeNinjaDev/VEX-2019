@@ -11,7 +11,6 @@
 #include "User/DriveTurnCommand.h"
 #include "User/MoveTrayCommand.h"
 #include "User/IntakeCommand.h"
-#include "User/DriveToPointCommand.h"
 #include "User/MoveArmCommand.h"
 
 int SELECTED_AUTO;
@@ -34,23 +33,23 @@ void initialize() {
 
   drive.reset(new DriveSubsystem(driver));
   tray.reset(new TraySubsystem(driver, operatorController));
-  drive->resetGyro();
+  drive->reset();
+  pros::delay(2000);
 
 
 //  autoSelector.registerAuto("SMALL_RED_8_CUBE", SMALL_RED_8_CUBE);
 //  autoSelector.registerAuto("SMALL_RED_MANUAL", SMALL_RED_MANUAL);
-  autoSelector.registerAuto("red","ONE Cube",ONE_CUBE_AUTO);
-  autoSelector.registerAuto("blue","ONE Cube",ONE_CUBE_AUTO);
-  autoSelector.registerAuto("red", "LARGE_RED_3", LARGE_RED_3);
-  autoSelector.registerAuto("blue", "SMALL_BLUE_3", LARGE_BLUE_3);
-  autoSelector.registerAuto("red", "TEST_DISTANCE", TEST_DISTANCE);
-  autoSelector.registerAuto("red", "TEST_TURN", TEST_TURN);
-  autoSelector.registerAuto("red", "SMALL_RED_6", SMALL_RED_6);
-  autoSelector.registerAuto("blue", "SMALL_BLUE_6", SMALL_BLUE_6);
-  autoSelector.registerAuto("red", "SMALL_RED_8", SMALL_RED_8);
-  autoSelector.registerAuto("blue", "SMALL_BLUE_8", SMALL_BLUE_8);
-  autoSelector.registerAuto("red", "SKILLS", SKILLS);
-  autoSelector.registerAuto("red", "SKILLS_15", SKILLS_15);
+  autoSelector.registerAuto("ONE Cube",ONE_CUBE_AUTO);
+  autoSelector.registerAuto("LARGE_RED_3", LARGE_RED_3);
+  autoSelector.registerAuto("SMALL_BLUE_3", LARGE_BLUE_3);
+  autoSelector.registerAuto("TEST_DISTANCE", TEST_DISTANCE);
+  autoSelector.registerAuto("TEST_TURN", TEST_TURN);
+  autoSelector.registerAuto("SMALL_RED_6", SMALL_RED_6);
+  autoSelector.registerAuto("SMALL_BLUE_6", SMALL_BLUE_6);
+  autoSelector.registerAuto("SMALL_RED_8", SMALL_RED_8);
+  autoSelector.registerAuto("SMALL_BLUE_8", SMALL_BLUE_8);
+  autoSelector.registerAuto("SKILLS", SKILLS);
+  autoSelector.registerAuto("SKILLS_15", SKILLS_15);
   autoSelector.listOptions();
 }
 
@@ -65,8 +64,8 @@ void competition_initialize() {
 
 void autonomous() {
   tray->reset();
-  drive->reset();
   drive->setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
+  drive->reset();
 
   switch(SELECTED_AUTO) {
     case DO_NOTHING_AUTO:
@@ -74,9 +73,11 @@ void autonomous() {
         std::cout << drive->getHeading() << std::flush;
         std::cout << "" << std::flush;
 
+//        std::cout << drive->getLeftEncoder() << std::flush;
+
         pros::delay(1000);
-      }
       break;
+    }
 
     case ONE_CUBE_AUTO:
       tray->cubeScorer.tarePosition();
@@ -91,11 +92,13 @@ void autonomous() {
       break;
 
     case TEST_DISTANCE:
-      drive->driveTrain->moveDistance(40_in);
+      drive->reset();
+      drive->driveTrain->setMaxVelocity(40);
+      drive->driveTrain->moveDistance(24_in);
       break;
 
     case TEST_TURN:
-      CommandRunner::runCommand(new DriveTurnCommand(drive, 90, 0.05, false, 80), 2);
+      CommandRunner::runCommand(new DriveTurnCommand(drive, 90, 0.001, false, 10), 2);
       break;
 
     default:
@@ -113,7 +116,7 @@ void autonomous() {
       drive->initialize();
       drive->rightMotors.tarePosition();
       drive->leftMotors.tarePosition();
-      drive->driveTrain->setState({0_in, 0_in, 0_deg});
+//      drive->driveTrain->setState({0_in, 0_in, 0_deg});
 
       tray->intakeCube();
       pros::delay(800);
@@ -155,17 +158,17 @@ void autonomous() {
       drive->driveTrain->setMaxVelocity(35);
       drive->driveTrain->turnAngle(-5_deg);
 
-      drive->driveTrain->setState({0_in, 0_in, 0_deg});
+//      drive->driveTrain->setState({0_in, 0_in, 0_deg});
       tray->intakeCube();
 
       drive->driveTrain->setMaxVelocity(75);
-      drive->driveTrain->driveToPoint({0.30_m, 0_m});
+//      drive->driveTrain->driveToPoint({0.30_m, 0_m});
       pros::delay(600);
       drive->driveTrain->setMaxVelocity(45);
-      drive->driveTrain->driveToPoint({0.45_m, 0_m});
+//      drive->driveTrain->driveToPoint({0.45_m, 0_m});
       pros::delay(600);
       drive->driveTrain->setMaxVelocity(40);
-      drive->driveTrain->driveToPoint({0.50_m, 0_m});
+//      drive->driveTrain->driveToPoint({0.50_m, 0_m});
       pros::delay(600);
       tray->outtakeCube(0);
 
@@ -198,7 +201,7 @@ void autonomous() {
       drive->initialize();
       drive->rightMotors.tarePosition();
       drive->leftMotors.tarePosition();
-      drive->driveTrain->setState({0_in, 0_in, 0_deg});
+//      drive->driveTrain->setState({0_in, 0_in, 0_deg});
 
       tray->intakeCube();
       pros::delay(800);
@@ -240,7 +243,7 @@ void autonomous() {
       drive->driveTrain->setMaxVelocity(35);
       drive->driveTrain->turnAngle(-5_deg);
 
-      drive->driveTrain->setState({0_in, 0_in, 0_deg});
+//      drive->driveTrain->setState({0_in, 0_in, 0_deg});
       tray->intakeCube();
 
       drive->driveTrain->setMaxVelocity(75);

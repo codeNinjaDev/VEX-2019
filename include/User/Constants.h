@@ -39,16 +39,16 @@ const bool ARCADE_DRIVE = true;
 // AUTONOMOUS ROUTINES
 const int IMU_PORT = 2;
 const int DO_NOTHING_AUTO = 0;
-const int SMALL_RED_8_CUBE = 1;
-const int SMALL_BLUE = 2;
-const int LARGE_RED_2 = 3;
-const int LARGE_BLUE_4 = 4;
-const int SKILLS_RUN = 5;
-const int DRIVE_FORWARD_AUTO = 6;
-const int ONE_CUBE_AUTO = 7;
-const int SMALL_RED_MANUAL = 8;
-const int SMALL_RED_5 = 9;
-const int SMALL_BLUE_5 = 10;
+const int ONE_CUBE_AUTO = 1;
+const int LARGE_RED_3 = 2;
+const int LARGE_BLUE_3 = 3;
+const int TEST_DISTANCE = 4;
+const int TEST_TURN = 5;
+const int SMALL_RED_6 = 6;
+const int SMALL_BLUE_6 = 7;
+const int SMALL_RED_8 = 8;
+const int SMALL_BLUE_8 = 9;
+const int SKILLS = 10;
 const int SKILLS_15 = 11;
 
 

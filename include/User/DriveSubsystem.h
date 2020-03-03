@@ -62,7 +62,7 @@ public:
 	okapi::Motor backLeftDriveMotor, backRightDriveMotor, frontLeftDriveMotor, frontRightDriveMotor;
 	okapi::MotorGroup leftMotors, rightMotors;
 	pros::Imu gyro;
-	std::shared_ptr<okapi::OdomChassisController> driveTrain;
+	std::shared_ptr<okapi::ChassisController> driveTrain;
 	/**
 	 * State of the Subsystem
 	 */

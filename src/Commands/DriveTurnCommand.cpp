@@ -21,7 +21,7 @@ void DriveTurnCommand::start() {
 
 void DriveTurnCommand::update() {
   double error = angle - drive->getHeading();
-  drive->arcadeDrive(0, -kP * error, false);
+  drive->arcadeDrive(0, kP * error*0.3, false);
 }
 
 bool DriveTurnCommand::isFinished() {
