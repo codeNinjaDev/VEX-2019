@@ -4,6 +4,7 @@
 
 DriveTurnCommand::DriveTurnCommand(std::shared_ptr<DriveSubsystem> drive, double angle, double kP, bool absolute, double maxSpeed) : drive(drive)
 {
+  bool turning = false;
 
   drive->stop();
   this->offset = drive->getHeading();
@@ -11,17 +12,17 @@ DriveTurnCommand::DriveTurnCommand(std::shared_ptr<DriveSubsystem> drive, double
     this->angle = angle;
   else
     this->angle = angle + offset;
-  this->maxSpeed = maxSpeed;
+    this->maxSpeed = maxSpeed;
 }
 
 void DriveTurnCommand::start() {
+  bool turning = true;
   drive->driveTrain->getModel()->setMaxVelocity(maxSpeed);
-
 }
 
 void DriveTurnCommand::update() {
   double error = angle - drive->getHeading();
-  drive->arcadeDrive(0, kP * error*0.3, false);
+  drive->arcadeDrive(0, kP * error*0.001, false);
 }
 
 bool DriveTurnCommand::isFinished() {

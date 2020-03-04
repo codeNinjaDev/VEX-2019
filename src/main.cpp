@@ -37,19 +37,19 @@ void initialize() {
   pros::delay(2000);
 
 
+  autoSelector.registerAuto("SMALL_RED_6", SMALL_RED_6);
+  autoSelector.registerAuto("SMALL_BLUE_6", SMALL_BLUE_6);
 //  autoSelector.registerAuto("SMALL_RED_8_CUBE", SMALL_RED_8_CUBE);
 //  autoSelector.registerAuto("SMALL_RED_MANUAL", SMALL_RED_MANUAL);
   autoSelector.registerAuto("ONE Cube",ONE_CUBE_AUTO);
-  autoSelector.registerAuto("LARGE_RED_3", LARGE_RED_3);
-  autoSelector.registerAuto("SMALL_BLUE_3", LARGE_BLUE_3);
-  autoSelector.registerAuto("TEST_DISTANCE", TEST_DISTANCE);
-  autoSelector.registerAuto("TEST_TURN", TEST_TURN);
-  autoSelector.registerAuto("SMALL_RED_6", SMALL_RED_6);
-  autoSelector.registerAuto("SMALL_BLUE_6", SMALL_BLUE_6);
+  autoSelector.registerAuto("LARGE_RED_3", LARGE_RED_3); //tested
+  autoSelector.registerAuto("LARGE_BLUE_3", LARGE_BLUE_3); //tested
   autoSelector.registerAuto("SMALL_RED_8", SMALL_RED_8);
   autoSelector.registerAuto("SMALL_BLUE_8", SMALL_BLUE_8);
   autoSelector.registerAuto("SKILLS", SKILLS);
   autoSelector.registerAuto("SKILLS_15", SKILLS_15);
+  autoSelector.registerAuto("TEST_TURN", TEST_TURN);
+  autoSelector.registerAuto("TEST_DISTANCE", TEST_DISTANCE);
   autoSelector.listOptions();
 }
 
@@ -61,7 +61,33 @@ void competition_initialize() {
     pros::delay(20);
   }
 }
+void turn(double angle, double maxSpeed, double timeout) {
+  drive->driveTrain->setMaxVelocity(maxSpeed);
+  okapi::Timer timer = okapi::Timer();
+  timer.placeMark();
 
+  while((abs(drive->getHeading() - angle) > .5) && ((timer.getDtFromMark().convert(okapi::second)) < (timeout))) {
+    double error = (angle - drive->getHeading());
+    double kP = 0.013;
+    drive->tankDrive(kP*error, -kP*error, false);
+    pros::delay(100);
+  }
+  drive->stop();
+}
+void stack(){
+  tray->outtakeCube(55);
+  pros::delay(500);
+  tray->outtakeCube(25);
+
+  CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kStack, 75), 3);
+  tray->outtakeCube(100);
+  drive->driveTrain->setMaxVelocity(100);
+  drive->driveTrain->moveDistance(-10_in);
+  tray->outtakeCube(0);
+  CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kSlant, 100), 3);
+  tray->trayMotor.moveVelocity(0);
+  pros::delay(500);
+}
 void autonomous() {
   tray->reset();
   drive->setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
@@ -91,6 +117,66 @@ void autonomous() {
       drive->driveTrain->moveDistance(-6_in);
       break;
 
+      case SMALL_RED_6:
+        //deploy tray
+        drive->reset();
+        tray->intakeCube();
+        drive->driveTrain->setMaxVelocity(110);
+        drive->driveTrain->moveDistance(47_in);
+        turn(5, 80, .3);
+        drive->driveTrain->setMaxVelocity(65);
+        drive->driveTrain->moveDistance(10_in);
+        //got cube 1
+        drive->driveTrain->moveDistance(-12_in);
+        turn(-25, 90, .7);
+        drive->driveTrain->setMaxVelocity(60);
+        drive->driveTrain->moveDistance(11_in);
+        drive->driveTrain->moveDistance(-11_in);
+        tray->outtakeCube(0);
+        turn(0, 90, .7);
+        drive->driveTrain->setMaxVelocity(70);
+        drive->driveTrain->moveDistance(-21_in);
+        turn(135, 20, 2);
+        drive->driveTrain->setMaxVelocity(90);
+        drive->driveTrain->moveDistance(13_in);
+
+        stack();
+        break;
+
+      case LARGE_RED_3:
+      //deploy tray
+      drive->reset();
+      tray->intakeCube();
+      drive->driveTrain->setMaxVelocity(100);
+      drive->driveTrain->moveDistance(22_in);
+      turn(-90, 80, 2);
+      drive->driveTrain->setMaxVelocity(90);
+      drive->driveTrain->moveDistance(22_in);
+      tray->outtakeCube(0);
+      turn(-125, 80, 1);
+      drive->driveTrain->setMaxVelocity(100);
+      drive->driveTrain->moveDistance(12_in);
+
+      stack();
+      break;
+
+    case LARGE_BLUE_3:
+    //deploy tray
+    drive->reset();
+    tray->intakeCube();
+    drive->driveTrain->setMaxVelocity(100);
+    drive->driveTrain->moveDistance(22_in);
+    turn(90, 80, 2);
+    drive->driveTrain->setMaxVelocity(90);
+    drive->driveTrain->moveDistance(22_in);
+    tray->outtakeCube(0);
+    turn(125, 80, 1);
+    drive->driveTrain->setMaxVelocity(100);
+    drive->driveTrain->moveDistance(12_in);
+
+    stack();
+    break;
+
     case TEST_DISTANCE:
       drive->reset();
       drive->driveTrain->setMaxVelocity(40);
@@ -98,7 +184,8 @@ void autonomous() {
       break;
 
     case TEST_TURN:
-      CommandRunner::runCommand(new DriveTurnCommand(drive, 90, 0.001, false, 10), 2);
+      drive->reset();
+      turn(90, 150, 1.5);
       break;
 
     default:

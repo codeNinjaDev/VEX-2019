@@ -18,6 +18,7 @@ void CommandRunner::runCommand(Command* rawCommand, double timeout) {
   command->finish();
 }
 
+
 void CommandRunner::runCommand(std::unique_ptr<Command> command, double timeout) {
   okapi::Timer timer = okapi::Timer();
 

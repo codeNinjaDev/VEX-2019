@@ -12,7 +12,7 @@ DriveSubsystem::DriveSubsystem(okapi::Controller iDriverController) : driverCont
   , gyro(IMU_PORT)
   , leftMotors({backLeftDriveMotor, frontLeftDriveMotor})
   , rightMotors({backRightDriveMotor, frontRightDriveMotor})
-  , driveTrain(okapi::ChassisControllerBuilder().withMotors(leftMotors, rightMotors).withDimensions(okapi::AbstractMotor::gearset::green, {{8.5_in, 10_in}, okapi::imev5GreenTPR}).build())
+  , driveTrain(okapi::ChassisControllerBuilder().withMotors(leftMotors, rightMotors).withDimensions(okapi::AbstractMotor::gearset::green, {{4.125_in, 10_in}, okapi::imev5GreenTPR}).build())
      // build an odometry chassis) // build an odometry chassis
     , SlowDown1(okapi::ControllerId::master, okapi::ControllerDigital::R2)
     , toggleDriveButton(okapi::ControllerId::master, okapi::ControllerDigital::right)
@@ -23,7 +23,7 @@ DriveSubsystem::DriveSubsystem(okapi::Controller iDriverController) : driverCont
   toggleDefense = false;
 
 
-  driveTrain->getModel()->setEncoderUnits(okapi::AbstractMotor::encoderUnits::degrees);
+  //driveTrain->getModel()->setEncoderUnits(okapi::AbstractMotor::encoderUnits::rotations);
 
   m_stateVal = DriveState::kInitialize;
 }
