@@ -98,7 +98,6 @@ void autonomous() {
       break;
 
     case TEST_TURN:
-      CommandRunner::runCommand(new DriveTurnCommand(drive, 90, 0.001, false, 10), 2);
       break;
 
     default:
@@ -181,10 +180,8 @@ void autonomous() {
       tray->outtakeCube(40);
       pros::delay(500);
 
-      CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kStack, 75), 3);
       drive->driveTrain->setMaxVelocity(100);
       drive->driveTrain->moveDistance(-4_in);
-      CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kSlant, 150), 3);
 
       drive->driveTrain->stop();
       break;
@@ -266,10 +263,8 @@ void autonomous() {
     tray->outtakeCube(40);
     pros::delay(500);
 
-    CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kStack, 75), 3);
     drive->driveTrain->setMaxVelocity(100);
     drive->driveTrain->moveDistance(-4_in);
-    CommandRunner::runCommand(new MoveTrayCommand(tray, TraySubsystem::TrayPosition::kSlant, 100), 3);
     tray->trayMotor.moveVelocity(0);
     pros::delay(500);
 

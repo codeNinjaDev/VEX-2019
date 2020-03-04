@@ -3,6 +3,7 @@
 
 #include "../main.h"
 #include "Command.h"
+#include "PIDController.h"
 #include "DriveSubsystem.h"
 #include <iostream>
 #include "Constants.h"
@@ -22,6 +23,7 @@ public:
 
 private:
   std::shared_ptr<DriveSubsystem> drive;
+	PIDController pid;
   double distance, maxSpeed;
 
 

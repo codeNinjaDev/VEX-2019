@@ -2,7 +2,6 @@
 #define DRIVESUBYSTEM_H_
 #include "../main.h"
 #include "Subsystem.h"
-#include "User/EncoderUtil.h"
 
 #include <iostream>
 

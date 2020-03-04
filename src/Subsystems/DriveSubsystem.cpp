@@ -12,7 +12,10 @@ DriveSubsystem::DriveSubsystem(okapi::Controller iDriverController) : driverCont
   , gyro(IMU_PORT)
   , leftMotors({backLeftDriveMotor, frontLeftDriveMotor})
   , rightMotors({backRightDriveMotor, frontRightDriveMotor})
-  , driveTrain(okapi::ChassisControllerBuilder().withMotors(leftMotors, rightMotors).withDimensions(okapi::AbstractMotor::gearset::green, {{8.5_in, 10_in}, okapi::imev5GreenTPR}).build())
+  , driveTrain(okapi::ChassisControllerBuilder().withMotors(
+        leftMotors, // Left motors are 1 & 2 (reversed)
+        rightMotors    // Right motors are 3 & 4
+    ).withDimensions(okapi::AbstractMotor::gearset::green, {{4_in, 11.5_in}, okapi::imev5GreenTPR}).build())
      // build an odometry chassis) // build an odometry chassis
     , SlowDown1(okapi::ControllerId::master, okapi::ControllerDigital::R2)
     , toggleDriveButton(okapi::ControllerId::master, okapi::ControllerDigital::right)
@@ -22,8 +25,6 @@ DriveSubsystem::DriveSubsystem(okapi::Controller iDriverController) : driverCont
   toggleDrive = false;
   toggleDefense = false;
 
-
-  driveTrain->getModel()->setEncoderUnits(okapi::AbstractMotor::encoderUnits::degrees);
 
   m_stateVal = DriveState::kInitialize;
 }
@@ -47,7 +48,6 @@ void DriveSubsystem::resetGyro() {
 double DriveSubsystem::getHeading() {
   return normalizeAngle(gyro.get_heading());
 }
-
 
 void DriveSubsystem::reset() {
   // Reset sensors and stop all drive motors
@@ -97,7 +97,6 @@ void DriveSubsystem::update() {
         arcadeDrive(driverController.getAnalog(okapi::ControllerAnalog::leftY)
           , driverController.getAnalog(okapi::ControllerAnalog::rightX)
           , true);
-
           std::printf("%f", -driverController.getAnalog(okapi::ControllerAnalog::leftY));
       } else {
         tankDrive(driverController.getAnalog(okapi::ControllerAnalog::leftY)
@@ -136,6 +135,7 @@ void DriveSubsystem::arcadeDrive(double forward, double rotate, bool teleOp) {
   } else {
     setBrakeMode(currBrake);
   }
+
   if (teleOp) {
     // Square the joystick inputs, but keep the orignal sign
     driveTrain->getModel()->arcade(squareInput(forward) * multiplier, squareInput(rotate) * multiplier);
@@ -148,6 +148,7 @@ void DriveSubsystem::arcadeDrive(double forward, double rotate, bool teleOp) {
 void DriveSubsystem::tankDrive(double myLeft, double myRight, bool teleOp) {
 
   double multiplier = 1;
+
   if (SlowDown1.isPressed()) {
     multiplier = 0.55;
     setBrakeMode(okapi::AbstractMotor::brakeMode::brake);
@@ -156,6 +157,7 @@ void DriveSubsystem::tankDrive(double myLeft, double myRight, bool teleOp) {
     setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
 
   }
+
   okapi::AbstractMotor::brakeMode currBrake = leftMotors.getBrakeMode();
 
   if(toggleDefense) {
@@ -163,22 +165,13 @@ void DriveSubsystem::tankDrive(double myLeft, double myRight, bool teleOp) {
   } else {
     setBrakeMode(currBrake);
   }
+
   if (teleOp) {
     driveTrain->getModel()->tank((squareInput(myLeft) * multiplier), (squareInput(myRight) * multiplier));
   } else {
     driveTrain->getModel()->tank(myLeft * multiplier, myRight * multiplier);
-
-
   }
 
-}
-
-double DriveSubsystem::getLeftEncoder() {
-  return EncoderUtil::getInches(driveTrain->getModel()->getSensorVals()[0], BACK_WHEEL_DIAMETER.getValue());
-}
-
-double DriveSubsystem::getRightEncoder() {
-  return EncoderUtil::getInches(driveTrain->getModel()->getSensorVals()[1], BACK_WHEEL_DIAMETER.getValue());
 }
 
 double DriveSubsystem::squareInput(double input) {
