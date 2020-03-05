@@ -116,32 +116,28 @@ void DriveSubsystem::update() {
 
 void DriveSubsystem::arcadeDrive(double forward, double rotate, bool teleOp) {
 
-  double multiplier = 1;
+    double multiplier = 1;
+    if (SlowDown1.isPressed()) {
+      multiplier = 0.7;
+      setBrakeMode(okapi::AbstractMotor::brakeMode::brake);
+    } else {
+      multiplier = 1;
+      setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
 
-  if (SlowDown1.isPressed()) {
-    multiplier = 0.55;
-    setBrakeMode(okapi::AbstractMotor::brakeMode::brake);
-  } else {
-    multiplier = 1;
-    setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
+    }
+    okapi::AbstractMotor::brakeMode currBrake = leftMotors.getBrakeMode();
 
-  }
-
-  double left = forward + rotate;
-  double right = forward - rotate;
-  okapi::AbstractMotor::brakeMode currBrake = leftMotors.getBrakeMode();
-
-  if(toggleDefense) {
-    setBrakeMode(okapi::AbstractMotor::brakeMode::hold);
-  } else {
-    setBrakeMode(currBrake);
-  }
-  if (teleOp) {
+    if(toggleDefense) {
+      setBrakeMode(okapi::AbstractMotor::brakeMode::hold);
+    } else {
+      setBrakeMode(currBrake);
+    }
+    if (teleOp) {
     // Square the joystick inputs, but keep the orignal sign
-    driveTrain->getModel()->arcade(squareInput(forward) * multiplier, squareInput(rotate) * multiplier);
-  } else {
-    driveTrain->getModel()->arcade(forward * multiplier, rotate * multiplier);
-  }
+      driveTrain->getModel()->arcade(squareInput(forward) * multiplier, squareInput(rotate) * multiplier);
+    } else {
+      driveTrain->getModel()->arcade(forward * multiplier, rotate * multiplier);
+    }
 
 }
 
@@ -149,7 +145,7 @@ void DriveSubsystem::tankDrive(double myLeft, double myRight, bool teleOp) {
 
   double multiplier = 1;
   if (SlowDown1.isPressed()) {
-    multiplier = 0.55;
+    multiplier = 0.7;
     setBrakeMode(okapi::AbstractMotor::brakeMode::brake);
   } else {
     multiplier = 1;

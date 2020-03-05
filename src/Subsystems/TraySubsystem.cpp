@@ -10,7 +10,6 @@ TraySubsystem::TraySubsystem(okapi::Controller iDriverController, okapi::Control
   , leftIntakeMotor(LEFT_INTAKE_MOTOR_PORT)
   , rightIntakeMotor(-RIGHT_INTAKE_MOTOR_PORT)
   , intakeMotors({this->leftIntakeMotor, this->rightIntakeMotor})
-  , limitSwitch(LIMIT_SWITCH_PORT)
   , intakeRollersButton(okapi::ControllerId::master ,okapi::ControllerDigital::R1)
   , outtakeRollersButton(okapi::ControllerId::master ,okapi::ControllerDigital::L1)
   , scoreStackButton(okapi::ControllerId::master, okapi::ControllerDigital::L2)
@@ -22,6 +21,7 @@ TraySubsystem::TraySubsystem(okapi::Controller iDriverController, okapi::Control
   , manualDownButton(okapi::ControllerId::partner, okapi::ControllerDigital::down)
   , trayDownButton(okapi::ControllerId::master, okapi::ControllerDigital::down)
   , resetTrayButton(okapi::ControllerId::master, okapi::ControllerDigital::up)
+  , limitSwitch('A')
 {
 
 
@@ -46,15 +46,18 @@ TraySubsystem::TraySubsystem(okapi::Controller iDriverController, okapi::Control
 }
 
 void TraySubsystem::moveTray(TrayPosition position, double targetVelocity, bool ramp) {
-  double currPosition = trayMotor.getPosition();
-  double velocity = targetVelocity;
-
-  if(ramp) {
-    if(abs(currPosition / (double) position) > 0.6) {
-      velocity *= 0.3;
-    }
+  double p = 0.5;
+  double multiplier = 1;
+  double degrees = (double) position;
+  if(((degrees - trayMotor.getPosition()) < 400) && ((degrees - trayMotor.getPosition()) > 0)) {
+    p = 0.15;
   }
-  trayMotor.moveAbsolute(position, velocity);
+  if(position == TrayPosition::kSlant)
+    degrees -= 10;
+  double error = degrees - trayMotor.getPosition();
+  bool hitTarget = abs(degrees - trayMotor.getPosition()) < 5;
+  if (hitTarget) error = 0;
+  trayMotor.moveVelocity(error * p * multiplier);
 }
 
 void TraySubsystem::scoreTower(TowerPosition position, double targetVelocity) {
@@ -92,9 +95,16 @@ void TraySubsystem::update() {
   switch(m_stateVal) {
     case RobotState::kInitialize:
 
-      nextState = RobotState::kTeleopDrive;
-      cubeScorer.tarePosition();
+      if(limitSwitch.get_value() == 1) {
+        trayMotor.moveVelocity(0);
+        nextState = RobotState::kTeleopDrive;
+        trayMotor.tarePosition();
+        cubeScorer.tarePosition();
+      } else {
+        trayMotor.moveVelocity(-60);
+        nextState = RobotState::kInitialize;
 
+      }
       break;
 
     case RobotState::kTeleopDrive:
