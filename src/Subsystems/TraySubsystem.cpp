@@ -10,7 +10,7 @@ TraySubsystem::TraySubsystem(okapi::Controller iDriverController, okapi::Control
   , leftIntakeMotor(LEFT_INTAKE_MOTOR_PORT)
   , rightIntakeMotor(-RIGHT_INTAKE_MOTOR_PORT)
   , intakeMotors({this->leftIntakeMotor, this->rightIntakeMotor})
-  , limitSwitch(LIMIT_SWITCH_PORT)
+  , limitSwitch('A')
   , intakeRollersButton(okapi::ControllerId::master ,okapi::ControllerDigital::R1)
   , outtakeRollersButton(okapi::ControllerId::master ,okapi::ControllerDigital::L1)
   , scoreStackButton(okapi::ControllerId::master, okapi::ControllerDigital::L2)
@@ -46,15 +46,13 @@ TraySubsystem::TraySubsystem(okapi::Controller iDriverController, okapi::Control
 }
 
 void TraySubsystem::moveTray(TrayPosition position, double targetVelocity, bool ramp) {
-  double currPosition = trayMotor.getPosition();
-  double velocity = targetVelocity;
-
-  if(ramp) {
-    if(abs(currPosition / (double) position) > 0.6) {
-      velocity *= 0.3;
-    }
+  double p = 0.5;
+  double error = (double) position - trayMotor.getPosition();
+  double output = error*p;
+  if(abs(error) < 5) {
+    output = 0;
   }
-  trayMotor.moveAbsolute(position, velocity);
+  trayMotor.moveVelocity(output);
 }
 
 void TraySubsystem::scoreTower(TowerPosition position, double targetVelocity) {
@@ -91,9 +89,13 @@ void TraySubsystem::stop() {
 void TraySubsystem::update() {
   switch(m_stateVal) {
     case RobotState::kInitialize:
-
-      nextState = RobotState::kTeleopDrive;
-      cubeScorer.tarePosition();
+      if(limitSwitch.get_value()) {
+        nextState = RobotState::kTeleopDrive;
+        trayMotor.moveVelocity(0);
+        cubeScorer.tarePosition();
+      } else {
+        trayMotor.moveVelocity(-15);
+      }
 
       break;
 

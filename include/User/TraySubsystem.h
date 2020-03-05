@@ -61,7 +61,7 @@ private:
 	okapi::Motor leftIntakeMotor, rightIntakeMotor;
 	okapi::MotorGroup intakeMotors;
 
-	okapi::ADIButton limitSwitch;
+	pros::ADIButton limitSwitch;
 
 	// Driver Buttons
 	okapi::ControllerButton intakeRollersButton, outtakeRollersButton;

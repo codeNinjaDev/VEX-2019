@@ -12,11 +12,11 @@ DriveSubsystem::DriveSubsystem(okapi::Controller iDriverController) : driverCont
   , gyro(IMU_PORT)
   , leftMotors({backLeftDriveMotor, frontLeftDriveMotor})
   , rightMotors({backRightDriveMotor, frontRightDriveMotor})
-
      // build an odometry chassis) // build an odometry chassis
     , SlowDown1(okapi::ControllerId::master, okapi::ControllerDigital::R2)
     , toggleDriveButton(okapi::ControllerId::master, okapi::ControllerDigital::right)
     , toggleDefenseButton(okapi::ControllerId::master, okapi::ControllerDigital::X)
+
 {
   // Set current state to initialize state
   toggleDrive = false;
@@ -72,8 +72,6 @@ void DriveSubsystem::update() {
       initialize();
 
       setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
-
-
       nextState = DriveState::kTeleopDrive;
       break;
     case (DriveState::kTeleopDrive):
@@ -117,7 +115,7 @@ void DriveSubsystem::arcadeDrive(double forward, double rotate, bool teleOp) {
   double multiplier = 1;
 
   if (SlowDown1.isPressed()) {
-    multiplier = 0.55;
+    multiplier = 0.7;
     setBrakeMode(okapi::AbstractMotor::brakeMode::brake);
   } else {
     multiplier = 1;
@@ -125,8 +123,6 @@ void DriveSubsystem::arcadeDrive(double forward, double rotate, bool teleOp) {
 
   }
 
-  double left = forward + rotate;
-  double right = forward - rotate;
   okapi::AbstractMotor::brakeMode currBrake = leftMotors.getBrakeMode();
 
   if(toggleDefense) {
@@ -136,8 +132,7 @@ void DriveSubsystem::arcadeDrive(double forward, double rotate, bool teleOp) {
   }
 
   if (teleOp) {
-    // Square the joystick inputs, but keep the orignal sign
-    driveTrain->getModel()->arcade(squareInput(forward) * multiplier, squareInput(rotate) * multiplier);
+    driveTrain->getModel()->arcade((squareInput(forward) * multiplier), (squareInput(rotate) * multiplier));
   } else {
     driveTrain->getModel()->arcade(forward * multiplier, rotate * multiplier);
   }
@@ -149,7 +144,7 @@ void DriveSubsystem::tankDrive(double myLeft, double myRight, bool teleOp) {
   double multiplier = 1;
 
   if (SlowDown1.isPressed()) {
-    multiplier = 0.55;
+    multiplier = 0.7;
     setBrakeMode(okapi::AbstractMotor::brakeMode::brake);
   } else {
     multiplier = 1;

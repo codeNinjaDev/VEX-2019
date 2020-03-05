@@ -6,12 +6,12 @@
 #include "User/DriveSubsystem.h"
 #include "User/TraySubsystem.h"
 #include "User/AutoSelector.h"
-#include "User/DriveDistanceCommand.h"
 #include "User/DriveAndIntakeCommand.h"
 #include "User/DriveTurnCommand.h"
 #include "User/MoveTrayCommand.h"
 #include "User/IntakeCommand.h"
 #include "User/MoveArmCommand.h"
+#include "User/PIDController.h"
 
 int SELECTED_AUTO;
 
@@ -62,15 +62,19 @@ void competition_initialize() {
   }
 }
 void turn(double angle, double maxSpeed, double timeout) {
+
+  PIDController pid = PIDController(0.013, 0, 0.001);
+  pid.SetSetpoint(angle);
+  pid.SetTolerance(.5);
+
   drive->driveTrain->setMaxVelocity(maxSpeed);
   okapi::Timer timer = okapi::Timer();
   timer.placeMark();
-
-  while((abs(drive->getHeading() - angle) > .5) && ((timer.getDtFromMark().convert(okapi::second)) < (timeout))) {
-    double error = (angle - drive->getHeading());
-    double kP = 0.013;
-    drive->tankDrive(kP*error, -kP*error, false);
-    pros::delay(100);
+  double output = pid.Calculate(drive->getHeading());
+  while(pid.AtSetpoint() && ((timer.getDtFromMark().convert(okapi::second)) < (timeout))) {
+    output = pid.Calculate(drive->getHeading());
+    drive->tankDrive(output, -output, false);
+    pros::delay(20);
   }
   drive->stop();
 }
