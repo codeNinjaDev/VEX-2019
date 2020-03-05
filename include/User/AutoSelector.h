@@ -28,6 +28,7 @@ public:
    * Only call this function after registering all autonmous routines.
    */
   void listOptions();
+  void update();
   /**
    * Function that gets the selected autonomous routine from the dropdown
    * @return The autonomous number of the selected auto routine
@@ -37,8 +38,11 @@ public:
 private:
   // Array of auto routine names
   std::vector<std::string> autoNames;
+
+
   // Array of auto routine numbers
   std::vector<int> autoNumbers;
+
   // Function that creates a dropdown ui element
   lv_obj_t * createDropdown(lv_obj_t * parent, lv_coord_t x, lv_coord_t y, lv_coord_t width, lv_coord_t height,
           int id);

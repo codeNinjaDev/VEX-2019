@@ -53,7 +53,8 @@ void initialize() {
   autoSelector.listOptions();
 }
 
-void disabled() {}
+void disabled() {
+}
 
 void competition_initialize() {
   while (true) {
@@ -63,16 +64,19 @@ void competition_initialize() {
 }
 void turn(double angle, double maxSpeed, double timeout) {
   drive->driveTrain->setMaxVelocity(maxSpeed);
-  PIDController pid = PIDController(0.013, 0, 0);
-  pid.SetSetpoint(angle);
-  pid.SetTolerance(0.5);
+
 
   okapi::Timer timer = okapi::Timer();
   timer.placeMark();
-  double output = pid.Calculate(drive->getHeading());
-  while(pid.AtSetpoint() && ((timer.getDtFromMark().convert(okapi::second)) < (timeout))) {
-
-    output = pid.Calculate(drive->getHeading());
+  double kP = 0.013;
+  double kD = 0.0001;
+  double pastError = 0;
+  double error = drive->getHeading() - angle;
+  double output;
+  while(((abs(drive->getHeading() - angle)) < .5) && ((timer.getDtFromMark().convert(okapi::second)) < (timeout))) {
+    error = angle - drive->getHeading();
+    output = kP * error + kD * ((error - pastError));
+    pastError = error;
     drive->tankDrive(output, -output, false);
     pros::delay(20);
   }
@@ -125,14 +129,12 @@ void autonomous() {
         //deploy tray
         drive->reset();
         tray->intakeCube();
-        drive->driveTrain->setMaxVelocity(110);
-        drive->driveTrain->moveDistance(47_in);
-        turn(5, 80, .3);
-        drive->driveTrain->setMaxVelocity(65);
-        drive->driveTrain->moveDistance(10_in);
+        drive->driveTrain->setMaxVelocity(125);
+        drive->driveTrain->moveDistance(57_in);
+
         //got cube 1
-        drive->driveTrain->moveDistance(-12_in);
-        turn(-25, 90, .7);
+        drive->driveTrain->moveDistance(-22_in);
+        turn(-25, 90, 3);
         drive->driveTrain->setMaxVelocity(60);
         drive->driveTrain->moveDistance(11_in);
         drive->driveTrain->moveDistance(-11_in);

@@ -14,7 +14,7 @@ void AutoSelector::registerAuto(std::string autoName, int autoNumber) {
 
 void AutoSelector::listOptions() {
   // Create the dropdown
-  autoList = createDropdown(lv_scr_act(), 100, 0, 100, 50, 2);
+  autoList = createDropdown(lv_scr_act(), 100, 0, 100, 250, 2);
   // Create a string containing all of the routine autoNames
 
   std::string options = "";
@@ -42,7 +42,8 @@ lv_obj_t * AutoSelector::createDropdown(lv_obj_t * parent, lv_coord_t x, lv_coor
 
     lv_obj_t * dd = lv_ddlist_create(parent, NULL);
     lv_obj_set_pos(dd, x, y);
-    lv_obj_set_size(dd, width, height);
+    lv_obj_set_size(dd, width, height-50);
+    lv_obj_set_height(dd, height);
     lv_obj_set_free_num(dd, id);
     lv_ddlist_set_sb_mode(dd, LV_SB_MODE_ON);
     return dd;

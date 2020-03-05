@@ -118,8 +118,8 @@ void DriveSubsystem::arcadeDrive(double forward, double rotate, bool teleOp) {
 
     double multiplier = 1;
     if (SlowDown1.isPressed()) {
-      multiplier = 0.7;
-      setBrakeMode(okapi::AbstractMotor::brakeMode::brake);
+      multiplier = 0.65;
+      setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
     } else {
       multiplier = 1;
       setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
@@ -145,8 +145,8 @@ void DriveSubsystem::tankDrive(double myLeft, double myRight, bool teleOp) {
 
   double multiplier = 1;
   if (SlowDown1.isPressed()) {
-    multiplier = 0.7;
-    setBrakeMode(okapi::AbstractMotor::brakeMode::brake);
+    multiplier = 0.65;
+    setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
   } else {
     multiplier = 1;
     setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
