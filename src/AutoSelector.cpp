@@ -39,11 +39,10 @@ int AutoSelector::getSelectedAuto() {
 lv_obj_t * AutoSelector::createDropdown(lv_obj_t * parent, lv_coord_t x, lv_coord_t y, lv_coord_t width, lv_coord_t height,
     int id)
 {
-
     lv_obj_t * dd = lv_ddlist_create(parent, NULL);
     lv_obj_set_pos(dd, x, y);
     lv_obj_set_size(dd, width, height-50);
-    lv_obj_set_height(dd, height);
+    lv_ddlist_set_fix_height(dd, height);
     lv_obj_set_free_num(dd, id);
     lv_ddlist_set_sb_mode(dd, LV_SB_MODE_ON);
     return dd;

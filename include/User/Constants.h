@@ -49,8 +49,7 @@ const int SMALL_BLUE_6 = 7;
 const int SMALL_RED_8 = 8;
 const int SMALL_BLUE_8 = 9;
 const int SKILLS = 10;
-const int SKILLS_15 = 11;
-
+const int PREP_AUTO = 11;
 
 // LIFT SETPOINTS
 const double HOME = 0;

@@ -20,7 +20,7 @@ void MoveTrayCommand::update() {
 }
 
 bool MoveTrayCommand::isFinished() {
-  bool hitTarget = abs((double) position - tray->trayMotor.getPosition()) < 10;
+  bool hitTarget = abs((double) position - tray->trayMotor.getPosition()) < 30;
   return hitTarget;
 }
 
