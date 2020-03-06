@@ -64,21 +64,14 @@ void competition_initialize() {
 }
 void turn(double angle, double maxSpeed, double timeout) {
   drive->driveTrain->setMaxVelocity(maxSpeed);
-
-
   okapi::Timer timer = okapi::Timer();
   timer.placeMark();
-  double kP = 0.013;
-  double kD = 0.0001;
-  double pastError = 0;
-  double error = drive->getHeading() - angle;
-  double output;
-  while(((abs(drive->getHeading() - angle)) < .5) && ((timer.getDtFromMark().convert(okapi::second)) < (timeout))) {
-    error = angle - drive->getHeading();
-    output = kP * error + kD * ((error - pastError));
-    pastError = error;
-    drive->tankDrive(output, -output, false);
-    pros::delay(20);
+
+  while((abs(drive->getHeading() - angle) > .5) && ((timer.getDtFromMark().convert(okapi::second)) < (timeout))) {
+    double error = (angle - drive->getHeading());
+    double kP = 0.013;
+    drive->tankDrive(kP*error, -kP*error, false);
+    pros::delay(100);
   }
   drive->stop();
 }
@@ -129,23 +122,19 @@ void autonomous() {
         //deploy tray
         drive->reset();
         tray->intakeCube();
-        drive->driveTrain->setMaxVelocity(125);
-        drive->driveTrain->moveDistance(57_in);
-
+        drive->driveTrain->setMaxVelocity(110);
+        drive->driveTrain->moveDistance(43_in);
+        turn(-19, 100, 0.75);
+        drive->driveTrain->setMaxVelocity(50);
         //got cube 1
-        drive->driveTrain->moveDistance(-22_in);
-        turn(-25, 90, 3);
-        drive->driveTrain->setMaxVelocity(60);
-        drive->driveTrain->moveDistance(11_in);
-        drive->driveTrain->moveDistance(-11_in);
-        tray->outtakeCube(0);
-        turn(0, 90, .7);
-        drive->driveTrain->setMaxVelocity(70);
-        drive->driveTrain->moveDistance(-21_in);
-        turn(135, 20, 2);
-        drive->driveTrain->setMaxVelocity(90);
-        drive->driveTrain->moveDistance(13_in);
+        drive->driveTrain->moveDistance(7_in);
 
+        drive->driveTrain->moveDistance(-12_in);
+        turn(120, 50, 1.5);
+        turn(152, 30, 1);
+
+        drive->driveTrain->setMaxVelocity(100);
+        drive->driveTrain->moveDistance(31_in);
         stack();
         break;
 
@@ -154,15 +143,19 @@ void autonomous() {
       drive->reset();
       tray->intakeCube();
       drive->driveTrain->setMaxVelocity(100);
-      drive->driveTrain->moveDistance(22_in);
-      turn(-90, 80, 2);
-      drive->driveTrain->setMaxVelocity(90);
-      drive->driveTrain->moveDistance(22_in);
-      tray->outtakeCube(0);
-      turn(-125, 80, 1);
-      drive->driveTrain->setMaxVelocity(100);
-      drive->driveTrain->moveDistance(12_in);
+      drive->driveTrain->moveDistance(15_in);
+      drive->driveTrain->setMaxVelocity(50);
+      drive->driveTrain->moveDistance(15_in);
 
+      drive->driveTrain->setMaxVelocity(100);
+      drive->driveTrain->moveDistance(24_in);
+      drive->driveTrain->moveDistance(-24_in);
+
+      turn(-120, 80, 2);
+
+      drive->driveTrain->setMaxVelocity(90);
+      drive->driveTrain->moveDistance(30_in);
+      tray->outtakeCube(0);
       stack();
       break;
 
